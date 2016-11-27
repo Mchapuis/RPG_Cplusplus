@@ -509,14 +509,21 @@ void testSave8()
 
 int main(int argc, char *argv[])
 {
-	std::srand(time(0));
-
 	int k;
+	
+	//std::srand(time(0));
+
+	
 
 	//testSave6();
 	
 	testSave8();
 	cout << endl << "Aaaaaah yeeeee daaawg!!!!";
+	
+	
+	//Game newGame = Game();
+	//newGame.display();
+
 
 	cin >> k;
 }

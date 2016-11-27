@@ -320,7 +320,7 @@ bool Inventory::unequip(EquipType aType)
 
 std::string Equipment::toString()
 {
-	std::string result = Item::toString();
+	std::string result = Item::toString()+"...";
 	int i;
 
 	while (result.size() < 20) result += " ";
@@ -360,7 +360,7 @@ std::string Inventory::toString()
 		if (e != NULL || e != nullptr)	result += e->toString() + "\n";
 	}
 
-	result += "\nBakpack: \n";
+	result += "\nBackpack: \n";
 
 	for (Item* e : backpack)
 	{

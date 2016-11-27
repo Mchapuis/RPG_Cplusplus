@@ -16,12 +16,12 @@ private:
 
 	static Game INSTANCE;
 
-	Game();
-
+	
 	Map map;
 	Player player;
 	
 public:
+	Game();
 	~Game();
 	Game getInstance();
 	void turn(GameCharacter);
@@ -30,6 +30,7 @@ public:
 	void createPlayer();
 	void createPlayerFromLoad();
 	void mapEditor(Map map);
+	void display();
 };
 
 #endif

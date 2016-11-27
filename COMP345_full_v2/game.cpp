@@ -535,3 +535,12 @@ void Game::mapEditor(Map map){
 	}
 
 }
+
+//!Display the inventory, worn items and backpack
+//!@param : Call to string methods
+void Game::display(){
+	
+	//Call the character in play to display what he has.
+	//This calls ---> 
+	Game::player.toString();
+}

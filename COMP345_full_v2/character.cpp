@@ -1,6 +1,7 @@
 
 #include "stdafx.h"
 #include "character.h"
+#include <algorithm>//used for sort elements in abilities array
 
 BOOST_CLASS_EXPORT_GUID(GameCharacter, "GameCharacter")
 BOOST_CLASS_EXPORT_GUID(Player, "Player")
@@ -45,7 +46,7 @@ vector<int> GameCharacter::abilitiesRoll()
 	}
 
 	//order the elements in the array
-	std::sort(result[0], result[6]);
+	std::sort(result.begin(), result.end());
 
 	return result;
 }
@@ -345,16 +346,18 @@ int GameCharacter::getNetStat(Ability abl)
 
 std::string GameCharacter::toString()
 {
-	std::string result = this->getClassName() + "Character\n";
+	std::string result = this->getClassName() + "class\n";
 	std::string temp = "";
 	int i;
 	int j;
 
-	result += "Name:      " + name + '\n';
-	result += "Level:     " + to_string(level) + '\n';
-	result += "HP:        " + to_string(Hp) + '/' + to_string(MaxHp);
+	result += " " + name + '\n';
+	result += "Lvl:" + to_string(level) + " ";
+	result += "HP:" + to_string(Hp) + "/" + to_string(MaxHp);
 	
-	result += "\n\nAbilities and Modifiers:\n";
+
+
+	result += "\n"; //new line for the abilities and modifiers
 
 	for (i = 0; i < abilities.size(); i++)
 	{
