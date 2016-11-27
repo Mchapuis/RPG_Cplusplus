@@ -1,0 +1,188 @@
+\hypertarget{class_cell_set}{}\section{Cell\+Set Class Reference}
+\label{class_cell_set}\index{Cell\+Set@{Cell\+Set}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_cell_set_a0f0e0b518cd5fd70c0e1841e3df6eff9}{}\label{class_cell_set_a0f0e0b518cd5fd70c0e1841e3df6eff9} 
+\hyperlink{class_cell_set_a0f0e0b518cd5fd70c0e1841e3df6eff9}{Cell\+Set} ()
+\begin{DoxyCompactList}\small\item\em Default constructor of a \hyperlink{class_cell_set}{Cell\+Set} object. \end{DoxyCompactList}\item 
+\hypertarget{class_cell_set_a6e9f853835e8982dd178dad534a9678c}{}\label{class_cell_set_a6e9f853835e8982dd178dad534a9678c} 
+\hyperlink{class_cell_set_a6e9f853835e8982dd178dad534a9678c}{$\sim$\+Cell\+Set} ()
+\begin{DoxyCompactList}\small\item\em Default \hyperlink{class_cell_set}{Cell\+Set} destructor. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+set$<$ \hyperlink{class_cell}{Cell} $\ast$ $>$ \hyperlink{class_cell_set_a16ffb9da795fb77b5214ff0ad276c325}{get\+Set} ()
+\begin{DoxyCompactList}\small\item\em Accessor function to cell\+\_\+set. \end{DoxyCompactList}\item 
+void \hyperlink{class_cell_set_a589f95793822a6c76b45ab3c5cadeda3}{insert} (\hyperlink{class_cell}{Cell} $\ast$a\+Cell)
+\begin{DoxyCompactList}\small\item\em Function to that inserts a \hyperlink{class_cell}{Cell} pointer in cell\+\_\+set. \end{DoxyCompactList}\item 
+void \hyperlink{class_cell_set_a9e802e2d27938d62d578bdf602e540c3}{add\+All} (std\+::unordered\+\_\+set$<$ \hyperlink{class_cell}{Cell} $\ast$$>$ a\+Set)
+\begin{DoxyCompactList}\small\item\em Function to add all of a \hyperlink{class_cell}{Cell} pointer set elements to cell\+\_\+set. \end{DoxyCompactList}\item 
+void \hyperlink{class_cell_set_a0d3c7fe4074fff58db2bf6932bf20ab0}{add\+All} (std\+::list$<$ \hyperlink{class_cell}{Cell} $\ast$$>$ a\+List)
+\begin{DoxyCompactList}\small\item\em Function to add all of a \hyperlink{class_cell}{Cell} pointer list elements to cell\+\_\+set. \end{DoxyCompactList}\item 
+void \hyperlink{class_cell_set_a13671e16ec2d31a9d5ae628f0df87890}{remove\+All} (std\+::unordered\+\_\+set$<$ \hyperlink{class_cell}{Cell} $\ast$$>$ a\+Set)
+\begin{DoxyCompactList}\small\item\em Function to remove all of a \hyperlink{class_cell}{Cell} pointer Unordered\+\_\+set elements present in cell\+\_\+set. \end{DoxyCompactList}\item 
+bool \hyperlink{class_cell_set_aaf42eb737301463a3ebf6a86c13a7dc4}{empty} ()
+\begin{DoxyCompactList}\small\item\em Asserts if cell\+\_\+set is empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 141 of file map.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_cell_set_a9e802e2d27938d62d578bdf602e540c3}{}\label{class_cell_set_a9e802e2d27938d62d578bdf602e540c3} 
+\index{Cell\+Set@{Cell\+Set}!add\+All@{add\+All}}
+\index{add\+All@{add\+All}!Cell\+Set@{Cell\+Set}}
+\subsubsection{\texorpdfstring{add\+All()}{addAll()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Cell\+Set\+::add\+All (\begin{DoxyParamCaption}\item[{std\+::unordered\+\_\+set$<$ \hyperlink{class_cell}{Cell} $\ast$$>$}]{a\+Set }\end{DoxyParamCaption})}
+
+
+
+Function to add all of a \hyperlink{class_cell}{Cell} pointer set elements to cell\+\_\+set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Set} & an Unordered\+\_\+set of \hyperlink{class_cell}{Cell} pointers to add to the Unordered\+\_\+set cell\+\_\+set. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 603 of file map.\+cpp.
+
+
+\begin{DoxyCode}
+604 \{
+605     \textcolor{keywordflow}{for} (\hyperlink{class_cell}{Cell}* c: aSet)
+606     \{
+607         cell\_set.insert(c);
+608     \}
+609 \}
+\end{DoxyCode}
+\hypertarget{class_cell_set_a0d3c7fe4074fff58db2bf6932bf20ab0}{}\label{class_cell_set_a0d3c7fe4074fff58db2bf6932bf20ab0} 
+\index{Cell\+Set@{Cell\+Set}!add\+All@{add\+All}}
+\index{add\+All@{add\+All}!Cell\+Set@{Cell\+Set}}
+\subsubsection{\texorpdfstring{add\+All()}{addAll()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Cell\+Set\+::add\+All (\begin{DoxyParamCaption}\item[{std\+::list$<$ \hyperlink{class_cell}{Cell} $\ast$$>$}]{a\+List }\end{DoxyParamCaption})}
+
+
+
+Function to add all of a \hyperlink{class_cell}{Cell} pointer list elements to cell\+\_\+set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Set} & a List of \hyperlink{class_cell}{Cell} pointers to add to the Unordered\+\_\+set cell\+\_\+set. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 613 of file map.\+cpp.
+
+
+\begin{DoxyCode}
+614 \{
+615     \textcolor{keywordflow}{for} (\hyperlink{class_cell}{Cell}* c: aList)
+616     \{
+617         cell\_set.insert(c);
+618     \}
+619 \}
+\end{DoxyCode}
+\hypertarget{class_cell_set_aaf42eb737301463a3ebf6a86c13a7dc4}{}\label{class_cell_set_aaf42eb737301463a3ebf6a86c13a7dc4} 
+\index{Cell\+Set@{Cell\+Set}!empty@{empty}}
+\index{empty@{empty}!Cell\+Set@{Cell\+Set}}
+\subsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily bool Cell\+Set\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Asserts if cell\+\_\+set is empty. 
+
+return true if the \hyperlink{class_cell}{Cell} pointer Unordered\+\_\+set cell\+\_\+set contains no elements. 
+
+Definition at line 632 of file map.\+cpp.
+
+
+\begin{DoxyCode}
+633 \{
+634     \textcolor{keywordflow}{return} cell\_set.empty();
+635 \}
+\end{DoxyCode}
+\hypertarget{class_cell_set_a16ffb9da795fb77b5214ff0ad276c325}{}\label{class_cell_set_a16ffb9da795fb77b5214ff0ad276c325} 
+\index{Cell\+Set@{Cell\+Set}!get\+Set@{get\+Set}}
+\index{get\+Set@{get\+Set}!Cell\+Set@{Cell\+Set}}
+\subsubsection{\texorpdfstring{get\+Set()}{getSet()}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+set$<$ \hyperlink{class_cell}{Cell} $\ast$ $>$ Cell\+Set\+::get\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Accessor function to cell\+\_\+set. 
+
+return the Unordered\+\_\+set of \hyperlink{class_cell}{Cell} pointers cell\+\_\+set. 
+
+Definition at line 589 of file map.\+cpp.
+
+
+\begin{DoxyCode}
+590 \{
+591     \textcolor{keywordflow}{return} cell\_set;
+592 \}
+\end{DoxyCode}
+\hypertarget{class_cell_set_a589f95793822a6c76b45ab3c5cadeda3}{}\label{class_cell_set_a589f95793822a6c76b45ab3c5cadeda3} 
+\index{Cell\+Set@{Cell\+Set}!insert@{insert}}
+\index{insert@{insert}!Cell\+Set@{Cell\+Set}}
+\subsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void Cell\+Set\+::insert (\begin{DoxyParamCaption}\item[{\hyperlink{class_cell}{Cell} $\ast$}]{a\+Cell }\end{DoxyParamCaption})}
+
+
+
+Function to that inserts a \hyperlink{class_cell}{Cell} pointer in cell\+\_\+set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Cell} & \hyperlink{class_cell}{Cell} pointer to insert in the Unordered\+\_\+set cell\+\_\+set. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 596 of file map.\+cpp.
+
+
+\begin{DoxyCode}
+597 \{
+598     cell\_set.insert(aCell);
+599 \}
+\end{DoxyCode}
+\hypertarget{class_cell_set_a13671e16ec2d31a9d5ae628f0df87890}{}\label{class_cell_set_a13671e16ec2d31a9d5ae628f0df87890} 
+\index{Cell\+Set@{Cell\+Set}!remove\+All@{remove\+All}}
+\index{remove\+All@{remove\+All}!Cell\+Set@{Cell\+Set}}
+\subsubsection{\texorpdfstring{remove\+All()}{removeAll()}}
+{\footnotesize\ttfamily void Cell\+Set\+::remove\+All (\begin{DoxyParamCaption}\item[{std\+::unordered\+\_\+set$<$ \hyperlink{class_cell}{Cell} $\ast$$>$}]{a\+Set }\end{DoxyParamCaption})}
+
+
+
+Function to remove all of a \hyperlink{class_cell}{Cell} pointer Unordered\+\_\+set elements present in cell\+\_\+set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Set} & an Unordered\+\_\+set of \hyperlink{class_cell}{Cell} pointers to remove to the Unordered\+\_\+set cell\+\_\+set. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 623 of file map.\+cpp.
+
+
+\begin{DoxyCode}
+624 \{
+625     \textcolor{keywordflow}{for} (\hyperlink{class_cell}{Cell}* c : aSet)
+626     \{
+627         cell\_set.erase(c);
+628     \}
+629 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+map.\+h\item 
+map.\+cpp\end{DoxyCompactItemize}

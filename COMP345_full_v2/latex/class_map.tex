@@ -1,0 +1,254 @@
+\hypertarget{class_map}{}\section{Map Class Reference}
+\label{class_map}\index{Map@{Map}}
+
+
+\hyperlink{class_map}{Map} object.  
+
+
+
+
+{\ttfamily \#include $<$map.\+h$>$}
+
+Inheritance diagram for Map\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_map}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_map_ab98b96f44d9fef2a266556297cee71be}{}\label{class_map_ab98b96f44d9fef2a266556297cee71be} 
+\hyperlink{class_map}{Map} {\bfseries s\+Load} (std\+::string filename)
+\item 
+\hyperlink{class_map_a0f5ad0fd4563497b4214038cbca8b582}{Map} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for a \hyperlink{class_map}{Map}. \end{DoxyCompactList}\item 
+\hypertarget{class_map_a2edce4c7d4627d9f0ed6ae08021590ed}{}\label{class_map_a2edce4c7d4627d9f0ed6ae08021590ed} 
+{\bfseries Map} (std\+::string a\+Name, int h, int w)
+\item 
+\hypertarget{class_map_aa403fbe09394ccf39747588f5168e3b2}{}\label{class_map_aa403fbe09394ccf39747588f5168e3b2} 
+\hyperlink{class_map_aa403fbe09394ccf39747588f5168e3b2}{$\sim$\+Map} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_map}{Map} destructor. \end{DoxyCompactList}\item 
+\hypertarget{class_map_a904c445fdce79257fedeba09070cf88a}{}\label{class_map_a904c445fdce79257fedeba09070cf88a} 
+void {\bfseries reset} ()
+\item 
+\hypertarget{class_map_af7c347ec2e29fc7b97c81730f94176f2}{}\label{class_map_af7c347ec2e29fc7b97c81730f94176f2} 
+bool {\bfseries start} (\hyperlink{class_player}{Player} $\ast$a\+Player)
+\item 
+\hypertarget{class_map_ab22dc646bc833bb6b4070dcc2d3bd7c0}{}\label{class_map_ab22dc646bc833bb6b4070dcc2d3bd7c0} 
+bool {\bfseries cell\+Exists} (int row, int col)
+\item 
+\hypertarget{class_map_afd34d12227676b3cebeed9f5fae2508f}{}\label{class_map_afd34d12227676b3cebeed9f5fae2508f} 
+int {\bfseries get\+Width} ()
+\item 
+\hypertarget{class_map_a2b09c8875af2efb711fc3a022e70427d}{}\label{class_map_a2b09c8875af2efb711fc3a022e70427d} 
+int {\bfseries get\+Height} ()
+\item 
+\hypertarget{class_map_ac031089e3376749c6a9b97d0cce8c598}{}\label{class_map_ac031089e3376749c6a9b97d0cce8c598} 
+void {\bfseries set\+Name} (std\+::string a\+Name)
+\item 
+\hypertarget{class_map_a67432b1e7f5ab087a75a74e2dd6589ec}{}\label{class_map_a67432b1e7f5ab087a75a74e2dd6589ec} 
+std\+::string {\bfseries get\+Name} ()
+\item 
+\hypertarget{class_map_afc1c246f4bc6bde164ac2dafa79bf5fb}{}\label{class_map_afc1c246f4bc6bde164ac2dafa79bf5fb} 
+\hyperlink{class_cell}{Cell} $\ast$ \hyperlink{class_map_afc1c246f4bc6bde164ac2dafa79bf5fb}{get\+Cell} (int row, int col)
+\begin{DoxyCompactList}\small\item\em Function that returns a pointer to a board \hyperlink{class_cell}{Cell}. \end{DoxyCompactList}\item 
+\hypertarget{class_map_a26b8b9bc68f8f7e5b4f74cbd3210dd30}{}\label{class_map_a26b8b9bc68f8f7e5b4f74cbd3210dd30} 
+void {\bfseries clear\+Cell} (int row, int col)
+\item 
+\hypertarget{class_map_a502496d0178402534ec6701d10bbb0e6}{}\label{class_map_a502496d0178402534ec6701d10bbb0e6} 
+bool {\bfseries add\+Stop} (int row, int col, int position)
+\item 
+\hypertarget{class_map_a382d1000a33c473bd96a619a0dd11d16}{}\label{class_map_a382d1000a33c473bd96a619a0dd11d16} 
+bool {\bfseries update\+First\+Stop} (int row, int col)
+\item 
+\hypertarget{class_map_a0320959aa6cdae5dfe4cff3f79ebd40a}{}\label{class_map_a0320959aa6cdae5dfe4cff3f79ebd40a} 
+bool {\bfseries update\+Last\+Stop} (int row, int col)
+\item 
+\hypertarget{class_map_a808119272b760e43615ffc396cf6feb6}{}\label{class_map_a808119272b760e43615ffc396cf6feb6} 
+bool {\bfseries remove\+Stop} (int row, int col, int position)
+\item 
+\hypertarget{class_map_a9f10c89830337667bc392e3814b5e616}{}\label{class_map_a9f10c89830337667bc392e3814b5e616} 
+bool {\bfseries add\+To\+Cell} (\hyperlink{class_placeable}{Placeable} $\ast$to\+Place, int row, int col)
+\item 
+bool \hyperlink{class_map_a7b5c1d8ed873a72484f27e99bcdff97a}{set\+Row\+Wall} (int row, int from, int end)
+\begin{DoxyCompactList}\small\item\em Mehtod that instantiate \hyperlink{class_wall}{Wall} objects in a horizontal range \hyperlink{class_cell}{Cell}. \end{DoxyCompactList}\item 
+bool \hyperlink{class_map_a7e89d11a89a796ac46e60722533f23d4}{set\+Col\+Wall} (int col, int from, int end)
+\begin{DoxyCompactList}\small\item\em Mehtod that instantiate \hyperlink{class_wall}{Wall} objects in a vertical range \hyperlink{class_cell}{Cell}. \end{DoxyCompactList}\item 
+\hypertarget{class_map_a9c37a12b6aa0fcf4f849a706c4cd2598}{}\label{class_map_a9c37a12b6aa0fcf4f849a706c4cd2598} 
+bool {\bfseries move} (int b\+Row, int b\+Col, int e\+Row, int e\+Col)
+\item 
+\hypertarget{class_map_af9b2cb5b80f93e05fe94d24f0cd0b4d0}{}\label{class_map_af9b2cb5b80f93e05fe94d24f0cd0b4d0} 
+bool {\bfseries move} (int b\+Row, int b\+Col, \hyperlink{class_direction}{Direction} dir)
+\item 
+\hypertarget{class_map_a22641b39f3eadb59771d2e5d02ff19c3}{}\label{class_map_a22641b39f3eadb59771d2e5d02ff19c3} 
+bool {\bfseries move} (\hyperlink{class_cell}{Cell} $\ast$from, \hyperlink{class_direction}{Direction} dir)
+\item 
+\hypertarget{class_map_ad1af1c1145fbc4675952fa10c0aacf61}{}\label{class_map_ad1af1c1145fbc4675952fa10c0aacf61} 
+bool {\bfseries valid\+Path} ()
+\item 
+\hypertarget{class_map_a6749a0b9a270aef552af6bd94f88e7bc}{}\label{class_map_a6749a0b9a270aef552af6bd94f88e7bc} 
+bool {\bfseries valid\+Path} (int begin\+Row, int begin\+Col, int exit\+Row, int exit\+Col)
+\item 
+\hypertarget{class_map_aeb226f399e3e44cc5ecb100b4c378848}{}\label{class_map_aeb226f399e3e44cc5ecb100b4c378848} 
+int $\ast$$\ast$ {\bfseries dijkstra} (int const exit\+Row, int const exit\+Col)
+\item 
+\hypertarget{class_map_aa9ac575aa037a6d8ed05eb4c36bb66c1}{}\label{class_map_aa9ac575aa037a6d8ed05eb4c36bb66c1} 
+int $\ast$$\ast$ {\bfseries dijkstra} (\hyperlink{class_cell}{Cell} $\ast$reference)
+\item 
+\hypertarget{class_map_a76ba15e9f73cfdf657e00720744b4466}{}\label{class_map_a76ba15e9f73cfdf657e00720744b4466} 
+bool {\bfseries operator==} (\hyperlink{class_map}{Map} \&const rhs\+Map)
+\item 
+\hypertarget{class_map_a13a2dfbee73ab704f06d9a6cf153beb6}{}\label{class_map_a13a2dfbee73ab704f06d9a6cf153beb6} 
+bool {\bfseries operator!=} (\hyperlink{class_map}{Map} \&const rhs\+Map)
+\item 
+\hypertarget{class_map_af7b0ff0228286f88cd6b6a2b87604004}{}\label{class_map_af7b0ff0228286f88cd6b6a2b87604004} 
+void {\bfseries load} (std\+::string filename)
+\item 
+\hypertarget{class_map_a0b67e2b03238fd18ecab89d8369ca67b}{}\label{class_map_a0b67e2b03238fd18ecab89d8369ca67b} 
+void {\bfseries save} (std\+::string filename)
+\item 
+\hypertarget{class_map_a8f2e95c92c3b1b36d9212b101d755bd8}{}\label{class_map_a8f2e95c92c3b1b36d9212b101d755bd8} 
+vector$<$ \hyperlink{class_cell}{Cell} $\ast$ $>$ {\bfseries operator\mbox{[}$\,$\mbox{]}} (int i)
+\item 
+\hypertarget{class_map_a94c656e72ab63c3791c1f8522f56f603}{}\label{class_map_a94c656e72ab63c3791c1f8522f56f603} 
+std\+::string {\bfseries to\+String} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_map_a5862ce4a3b20cb267fc19d4167aa3f05}{}\label{class_map_a5862ce4a3b20cb267fc19d4167aa3f05} 
+static const int $\ast$$\ast$ {\bfseries get\+Distance\+Graph} (int const exit\+Row, int const exit\+Col)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_map_ac98d07dd8f7b70e16ccb9a01abf56b9c}{}\label{class_map_ac98d07dd8f7b70e16ccb9a01abf56b9c} 
+class {\bfseries boost\+::serialization\+::access}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_map}{Map} object. 
+
+Definition at line 43 of file map.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_map_a0f5ad0fd4563497b4214038cbca8b582}{}\label{class_map_a0f5ad0fd4563497b4214038cbca8b582} 
+\index{Map@{Map}!Map@{Map}}
+\index{Map@{Map}!Map@{Map}}
+\subsubsection{\texorpdfstring{Map()}{Map()}}
+{\footnotesize\ttfamily Map\+::\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for a \hyperlink{class_map}{Map}. 
+
+initializes a blank \hyperlink{class_map}{Map} of size 10 x 10. 
+
+Definition at line 16 of file map.\+cpp.
+
+
+\begin{DoxyCode}
+16          : height(5), width(5),
+17 board(vector<vector<Cell*>>()),
+18 stops(std::list<Cell*>())
+19 \{
+20     initMap();
+21     stops.push\_front((*\textcolor{keyword}{this})[0][0]);
+22     stops.push\_back(\hyperlink{class_map_afc1c246f4bc6bde164ac2dafa79bf5fb}{getCell}(this->getHeight() - 1, this->getWidth() - 1));
+23 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_map_a7e89d11a89a796ac46e60722533f23d4}{}\label{class_map_a7e89d11a89a796ac46e60722533f23d4} 
+\index{Map@{Map}!set\+Col\+Wall@{set\+Col\+Wall}}
+\index{set\+Col\+Wall@{set\+Col\+Wall}!Map@{Map}}
+\subsubsection{\texorpdfstring{set\+Col\+Wall()}{setColWall()}}
+{\footnotesize\ttfamily bool Map\+::set\+Col\+Wall (\begin{DoxyParamCaption}\item[{int}]{col,  }\item[{int}]{start,  }\item[{int}]{end }\end{DoxyParamCaption})}
+
+
+
+Mehtod that instantiate \hyperlink{class_wall}{Wall} objects in a vertical range \hyperlink{class_cell}{Cell}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em col} & the index of the col to set the \hyperlink{class_wall}{Wall} in. \\
+\hline
+{\em start} & the index of the cell at which to start the \hyperlink{class_wall}{Wall}. \\
+\hline
+{\em end} & the index of the \hyperlink{class_cell}{Cell} at which to end the \hyperlink{class_wall}{Wall}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 270 of file map.\+cpp.
+
+
+\begin{DoxyCode}
+271 \{
+272     \textcolor{keywordtype}{int} i;
+273 
+274     \textcolor{keywordflow}{if} (cellExists(start, col) && cellExists(end, col))
+275     \{
+276 
+277         \textcolor{keywordflow}{for} (i = start; i < this->getHeight() && i <= end; i++)
+278         \{
+279             \textcolor{keywordflow}{return} board[i][col]->setContent(\textcolor{keyword}{new} \hyperlink{class_wall}{Wall}());
+280         \}
+281 
+282         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+283     \}
+284 
+285     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+286 \}
+\end{DoxyCode}
+\hypertarget{class_map_a7b5c1d8ed873a72484f27e99bcdff97a}{}\label{class_map_a7b5c1d8ed873a72484f27e99bcdff97a} 
+\index{Map@{Map}!set\+Row\+Wall@{set\+Row\+Wall}}
+\index{set\+Row\+Wall@{set\+Row\+Wall}!Map@{Map}}
+\subsubsection{\texorpdfstring{set\+Row\+Wall()}{setRowWall()}}
+{\footnotesize\ttfamily bool Map\+::set\+Row\+Wall (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{start,  }\item[{int}]{end }\end{DoxyParamCaption})}
+
+
+
+Mehtod that instantiate \hyperlink{class_wall}{Wall} objects in a horizontal range \hyperlink{class_cell}{Cell}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & the index of the row to set the \hyperlink{class_wall}{Wall} in. \\
+\hline
+{\em start} & the index of the cell at which to start the \hyperlink{class_wall}{Wall}. \\
+\hline
+{\em end} & the index of the \hyperlink{class_cell}{Cell} at which to end the \hyperlink{class_wall}{Wall}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 250 of file map.\+cpp.
+
+
+\begin{DoxyCode}
+251 \{
+252     \textcolor{keywordtype}{int} j;
+253 
+254     \textcolor{keywordflow}{if} (cellExists(row, start) && cellExists(row, end))
+255     \{
+256 
+257         \textcolor{keywordflow}{for} (j = start; j < this->getWidth() && j <= end; j++)
+258         \{
+259             \textcolor{keywordflow}{return} board[row][j]->setContent(\textcolor{keyword}{new} \hyperlink{class_wall}{Wall}());
+260         \}
+261     \}
+262 
+263     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+264 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+map.\+h\item 
+map.\+cpp\end{DoxyCompactItemize}

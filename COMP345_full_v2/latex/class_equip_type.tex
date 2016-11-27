@@ -1,0 +1,69 @@
+\hypertarget{class_equip_type}{}\section{Equip\+Type Class Reference}
+\label{class_equip_type}\index{Equip\+Type@{Equip\+Type}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_equip_type_a05327988569e884c73fe56aecfb5c31e}{}\label{class_equip_type_a05327988569e884c73fe56aecfb5c31e} 
+vector$<$ \hyperlink{class_ability}{Ability} $>$ {\bfseries get\+Enchantments} () const
+\item 
+\hypertarget{class_equip_type_adc5b044a73400362f38078e25b242272}{}\label{class_equip_type_adc5b044a73400362f38078e25b242272} 
+const bool {\bfseries is\+Allowed} (const \hyperlink{class_ability}{Ability} abl) const
+\item 
+\hypertarget{class_equip_type_a1cf5a5d3ab3ff6bd9da46061073e23ec}{}\label{class_equip_type_a1cf5a5d3ab3ff6bd9da46061073e23ec} 
+const bool {\bfseries is\+Allowed} (int an\+Index) const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_equip_type_abb382741bb477afd8ee58971dbbde300}{}\label{class_equip_type_abb382741bb477afd8ee58971dbbde300} 
+static const int {\bfseries get\+Count} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_equip_type_a62ce6b1e8a21549560eb00ae4cf70e3d}{}\label{class_equip_type_a62ce6b1e8a21549560eb00ae4cf70e3d} 
+const std\+::unordered\+\_\+set$<$ const \hyperlink{class_ability}{Ability} $\ast$ $>$ {\bfseries stats}
+\item 
+\hypertarget{class_equip_type_a7f5c248cfd8972043915fab139c49309}{}\label{class_equip_type_a7f5c248cfd8972043915fab139c49309} 
+const int {\bfseries index}
+\item 
+\hypertarget{class_equip_type_a1b05978633df80f88bf0a6b1497308d4}{}\label{class_equip_type_a1b05978633df80f88bf0a6b1497308d4} 
+const std\+::string {\bfseries name}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_equip_type_a0ad3a2f66447465ec7bcf023517aad4d}{}\label{class_equip_type_a0ad3a2f66447465ec7bcf023517aad4d} 
+static const \hyperlink{class_equip_type}{Equip\+Type} {\bfseries H\+E\+L\+M\+ET} = \hyperlink{class_equip_type}{Equip\+Type}(\char`\"{}Helmet\char`\"{}, std\+::unordered\+\_\+set$<$const \hyperlink{class_ability}{Ability}$\ast$$>$\{ \&Ability\+::\+I\+N\+TL, \&Ability\+::\+W\+IS, \&Ability\+::\+AC \})
+\item 
+\hypertarget{class_equip_type_a75eb1f613017700885b5ba17b869288f}{}\label{class_equip_type_a75eb1f613017700885b5ba17b869288f} 
+static const \hyperlink{class_equip_type}{Equip\+Type} {\bfseries C\+U\+I\+R\+A\+SS} = \hyperlink{class_equip_type}{Equip\+Type}(\char`\"{}Armor\char`\"{}, std\+::unordered\+\_\+set$<$const \hyperlink{class_ability}{Ability}$\ast$$>$\{ \&Ability\+::\+AC \})
+\item 
+\hypertarget{class_equip_type_ad4fcb251950aa992744f8fa8501a830f}{}\label{class_equip_type_ad4fcb251950aa992744f8fa8501a830f} 
+static const \hyperlink{class_equip_type}{Equip\+Type} {\bfseries B\+O\+O\+TS} = \hyperlink{class_equip_type}{Equip\+Type}(\char`\"{}Boots\char`\"{}, std\+::unordered\+\_\+set$<$const \hyperlink{class_ability}{Ability}$\ast$$>$\{ \&Ability\+::\+AC, \&Ability\+::\+S\+TR, \&Ability\+::\+C\+ON, \&Ability\+::\+W\+IS, \&Ability\+::\+C\+HA \})
+\item 
+\hypertarget{class_equip_type_ac6d91237e6bf68bceda1b19e57022b42}{}\label{class_equip_type_ac6d91237e6bf68bceda1b19e57022b42} 
+static const \hyperlink{class_equip_type}{Equip\+Type} {\bfseries R\+I\+NG} = \hyperlink{class_equip_type}{Equip\+Type}(\char`\"{}Ring\char`\"{}, std\+::unordered\+\_\+set$<$const \hyperlink{class_ability}{Ability}$\ast$$>$\{ \&Ability\+::\+S\+TR, \&Ability\+::\+C\+ON \})
+\item 
+\hypertarget{class_equip_type_a09cc664449dd4ade565f79e45c835f95}{}\label{class_equip_type_a09cc664449dd4ade565f79e45c835f95} 
+static const \hyperlink{class_equip_type}{Equip\+Type} {\bfseries B\+E\+LT} = \hyperlink{class_equip_type}{Equip\+Type}(\char`\"{}Belt\char`\"{}, std\+::unordered\+\_\+set$<$const \hyperlink{class_ability}{Ability}$\ast$$>$\{ \&Ability\+::\+AC, \&Ability\+::\+D\+EX \})
+\item 
+\hypertarget{class_equip_type_a49babc5bcad67546676717becb5a4c40}{}\label{class_equip_type_a49babc5bcad67546676717becb5a4c40} 
+static const \hyperlink{class_equip_type}{Equip\+Type} {\bfseries S\+H\+I\+E\+LD} = \hyperlink{class_equip_type}{Equip\+Type}(\char`\"{}Shield\char`\"{}, std\+::unordered\+\_\+set$<$const \hyperlink{class_ability}{Ability}$\ast$$>$\{ \&Ability\+::\+AC \})
+\item 
+\hypertarget{class_equip_type_a7897c25db67405c77cb0237c0c49c7c5}{}\label{class_equip_type_a7897c25db67405c77cb0237c0c49c7c5} 
+static const \hyperlink{class_equip_type}{Equip\+Type} {\bfseries W\+E\+A\+P\+ON} = \hyperlink{class_equip_type}{Equip\+Type}(\char`\"{}Weapon\char`\"{}, std\+::unordered\+\_\+set$<$const \hyperlink{class_ability}{Ability}$\ast$$>$\{ \&Ability\+::\+A\+TK, \&Ability\+::\+D\+MG \})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 82 of file config.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+config.\+h\item 
+config.\+cpp\end{DoxyCompactItemize}

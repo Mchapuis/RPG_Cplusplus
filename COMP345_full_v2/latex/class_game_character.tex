@@ -1,0 +1,268 @@
+\hypertarget{class_game_character}{}\section{Game\+Character Class Reference}
+\label{class_game_character}\index{Game\+Character@{Game\+Character}}
+
+
+Base class for character types \hyperlink{class_player}{Player}, Npc\+Enepmy and \hyperlink{class_friendly}{Friendly}.  
+
+
+
+
+{\ttfamily \#include $<$character.\+h$>$}
+
+Inheritance diagram for Game\+Character\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_game_character}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_game_character_ad5aee02539362a4d081bb87dd0192995}{}\label{class_game_character_ad5aee02539362a4d081bb87dd0192995} 
+{\bfseries Game\+Character} (std\+::string a\+Name, int a\+Level)
+\item 
+\hypertarget{class_game_character_a175c4c67c7276a9c64833afbccf392ee}{}\label{class_game_character_a175c4c67c7276a9c64833afbccf392ee} 
+const char {\bfseries get\+Symbol} ()
+\item 
+\hypertarget{class_game_character_a1acb3766c648348716a1b162626d6ffa}{}\label{class_game_character_a1acb3766c648348716a1b162626d6ffa} 
+std\+::string {\bfseries get\+Name} ()
+\item 
+\hypertarget{class_game_character_af11d88fb41e0ec3f7711e18e63be62f4}{}\label{class_game_character_af11d88fb41e0ec3f7711e18e63be62f4} 
+void {\bfseries set\+Name} (std\+::string a\+Name)
+\item 
+\hypertarget{class_game_character_ad36b2f145cd55553ded91242a9c929ce}{}\label{class_game_character_ad36b2f145cd55553ded91242a9c929ce} 
+virtual bool {\bfseries reset} ()
+\item 
+\hypertarget{class_game_character_aa989c9d337840ce0f103dc102351b282}{}\label{class_game_character_aa989c9d337840ce0f103dc102351b282} 
+void {\bfseries reset\+Level} ()
+\item 
+\hypertarget{class_game_character_a092512872c1d5e2d41484a6cf82cab81}{}\label{class_game_character_a092512872c1d5e2d41484a6cf82cab81} 
+bool {\bfseries unlock} ()
+\item 
+\hypertarget{class_game_character_a31aa568d3cb993da2592926d49ab5457}{}\label{class_game_character_a31aa568d3cb993da2592926d49ab5457} 
+int {\bfseries get\+Level} ()
+\item 
+void \hyperlink{class_game_character_a367a537148a995677d9649b975cb326b}{level\+Up} ()
+\begin{DoxyCompactList}\small\item\em Function for a single level increment. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_game_character_a0e6839e7c79e97ba7daea9ed0fc2569e}{update\+Lvl} (int a\+Level)
+\begin{DoxyCompactList}\small\item\em Function to set a characters level. \end{DoxyCompactList}\item 
+\hypertarget{class_game_character_a65326d8f34ef36911b58b1654dce357b}{}\label{class_game_character_a65326d8f34ef36911b58b1654dce357b} 
+\hyperlink{class_inventory}{Inventory} {\bfseries get\+Inventory} ()
+\item 
+int $\ast$ \hyperlink{class_game_character_a9b1de762235904d9f11147780ffb45f1}{get\+All\+Base\+Abl} ()
+\item 
+\hypertarget{class_game_character_ac7dd71d84cef1fa1cc31787c2a2f02aa}{}\label{class_game_character_ac7dd71d84cef1fa1cc31787c2a2f02aa} 
+int \hyperlink{class_game_character_ac7dd71d84cef1fa1cc31787c2a2f02aa}{get\+Base\+Abl} (\hyperlink{class_ability}{Ability} abl)
+\begin{DoxyCompactList}\small\item\em Function that returns a single base ability of a character. \end{DoxyCompactList}\item 
+\hypertarget{class_game_character_af604f6f1df72988de0b3f34625844545}{}\label{class_game_character_af604f6f1df72988de0b3f34625844545} 
+void \hyperlink{class_game_character_af604f6f1df72988de0b3f34625844545}{set\+Base\+Abl} (\hyperlink{class_ability}{Ability} abl, int value)
+\begin{DoxyCompactList}\small\item\em Function that sets a single requested base ability of a character. \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{class_game_character_a369f58b909a9ac72e572cd5c65773779}{get\+All\+Bonus} ()
+\item 
+\hypertarget{class_game_character_ab7f1c82a0451f417dad7651c55d96880}{}\label{class_game_character_ab7f1c82a0451f417dad7651c55d96880} 
+int \hyperlink{class_game_character_ab7f1c82a0451f417dad7651c55d96880}{get\+Bonus} (\hyperlink{class_ability}{Ability} abl)
+\begin{DoxyCompactList}\small\item\em Function that returns a single ability bonus of a character. \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{class_game_character_ab70746cb0cd382cbe56c0190a03a3024}{get\+All\+Net\+Stats} ()
+\item 
+int \hyperlink{class_game_character_a94e6371f4f2f14c6a9e6aa9c8e78775b}{get\+Net\+Stat} (\hyperlink{class_ability}{Ability} abl)
+\item 
+\hypertarget{class_game_character_abbe3c5c7e6de419f6e14aaa74b91c60d}{}\label{class_game_character_abbe3c5c7e6de419f6e14aaa74b91c60d} 
+bool {\bfseries add\+To\+Pack} (\hyperlink{class_item}{Item} $\ast$an\+Item)
+\item 
+\hypertarget{class_game_character_af8e3c23dd71472b27f3daa860e88beef}{}\label{class_game_character_af8e3c23dd71472b27f3daa860e88beef} 
+void {\bfseries remove\+From\+Pack} (\hyperlink{class_item}{Item} $\ast$an\+Item)
+\item 
+\hypertarget{class_game_character_a8774e9795a985ae6ba05a6f29cd18074}{}\label{class_game_character_a8774e9795a985ae6ba05a6f29cd18074} 
+bool {\bfseries equip} (\hyperlink{class_equipment}{Equipment} $\ast$an\+Item)
+\item 
+\hypertarget{class_game_character_a6a281827355113352486a9a71882b110}{}\label{class_game_character_a6a281827355113352486a9a71882b110} 
+bool {\bfseries unequip} (\hyperlink{class_equip_type}{Equip\+Type} a\+Type)
+\item 
+\hypertarget{class_game_character_af8c976c875abf76993e716533a25a7b6}{}\label{class_game_character_af8c976c875abf76993e716533a25a7b6} 
+std\+::string {\bfseries to\+String} ()
+\item 
+\hypertarget{class_game_character_ad3656092f8da6899751616597295418b}{}\label{class_game_character_ad3656092f8da6899751616597295418b} 
+virtual void {\bfseries load} (std\+::string filename)
+\item 
+\hypertarget{class_game_character_a37ea5f779910d981baec0ae871a1c097}{}\label{class_game_character_a37ea5f779910d981baec0ae871a1c097} 
+virtual void {\bfseries save} (std\+::string filename)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_game_character_ac98d07dd8f7b70e16ccb9a01abf56b9c}{}\label{class_game_character_ac98d07dd8f7b70e16ccb9a01abf56b9c} 
+class {\bfseries boost\+::serialization\+::access}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for character types \hyperlink{class_player}{Player}, Npc\+Enepmy and \hyperlink{class_friendly}{Friendly}. 
+
+The \hyperlink{class_game_character}{Game\+Character} object holds the the name, level, ability scores, bonus, modifiers, and \hyperlink{class_inventory}{Inventory} of a character. It derives extends the abstract class \hyperlink{class_placeable}{Placeable}. 
+
+Definition at line 20 of file character.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_game_character_a9b1de762235904d9f11147780ffb45f1}{}\label{class_game_character_a9b1de762235904d9f11147780ffb45f1} 
+\index{Game\+Character@{Game\+Character}!get\+All\+Base\+Abl@{get\+All\+Base\+Abl}}
+\index{get\+All\+Base\+Abl@{get\+All\+Base\+Abl}!Game\+Character@{Game\+Character}}
+\subsubsection{\texorpdfstring{get\+All\+Base\+Abl()}{getAllBaseAbl()}}
+{\footnotesize\ttfamily int $\ast$ Game\+Character\+::get\+All\+Base\+Abl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function that returns an array of a character base ability scores 
+
+Definition at line 127 of file character.\+cpp.
+
+
+\begin{DoxyCode}
+128 \{
+129     \textcolor{keywordtype}{int}* result = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[Ability::getCount()];
+130     \textcolor{keywordtype}{int} i;
+131 
+132     \textcolor{keywordflow}{for} (i = 0; i < Ability::getCount(); i++)
+133     \{
+134         result[i] = abilities[i];
+135     \}
+136 
+137     \textcolor{keywordflow}{return} result;
+138 \}
+\end{DoxyCode}
+\hypertarget{class_game_character_a369f58b909a9ac72e572cd5c65773779}{}\label{class_game_character_a369f58b909a9ac72e572cd5c65773779} 
+\index{Game\+Character@{Game\+Character}!get\+All\+Bonus@{get\+All\+Bonus}}
+\index{get\+All\+Bonus@{get\+All\+Bonus}!Game\+Character@{Game\+Character}}
+\subsubsection{\texorpdfstring{get\+All\+Bonus()}{getAllBonus()}}
+{\footnotesize\ttfamily int $\ast$ Game\+Character\+::get\+All\+Bonus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function that returns an array of a character ability bonus. 
+
+Definition at line 154 of file character.\+cpp.
+
+
+\begin{DoxyCode}
+155 \{
+156     \textcolor{keywordtype}{int}* result = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[Ability::getCount()];
+157     \textcolor{keywordtype}{int} i;
+158 
+159     \textcolor{keywordflow}{for} (i = 0; i < Ability::getCount(); i++)
+160     \{
+161         result[i] = bonus[i];
+162     \}
+163 
+164     \textcolor{keywordflow}{return} result;
+165 \}
+\end{DoxyCode}
+\hypertarget{class_game_character_ab70746cb0cd382cbe56c0190a03a3024}{}\label{class_game_character_ab70746cb0cd382cbe56c0190a03a3024} 
+\index{Game\+Character@{Game\+Character}!get\+All\+Net\+Stats@{get\+All\+Net\+Stats}}
+\index{get\+All\+Net\+Stats@{get\+All\+Net\+Stats}!Game\+Character@{Game\+Character}}
+\subsubsection{\texorpdfstring{get\+All\+Net\+Stats()}{getAllNetStats()}}
+{\footnotesize\ttfamily int $\ast$ Game\+Character\+::get\+All\+Net\+Stats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function that returns an array of a character net ability scores, with bonus and modifiers included 
+
+Definition at line 204 of file character.\+cpp.
+
+
+\begin{DoxyCode}
+205 \{
+206     \textcolor{keywordtype}{int}* result = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[Ability::getCount()];
+207     \textcolor{keywordtype}{int}* enchantments = inventory.getAllEquipMods();
+208     \textcolor{keywordtype}{int} i;
+209 
+210     \textcolor{keywordflow}{for} (i = 0; i < Ability::getCount(); i++)
+211     \{
+212         result[i] = abilities[i] + enchantments[i];
+213         \textcolor{comment}{//result[i] = abilities[i] + modifiers[i] + itemModifiers[i];}
+214     \}
+215 
+216     \textcolor{keywordflow}{return} result;
+217 \}
+\end{DoxyCode}
+\hypertarget{class_game_character_a94e6371f4f2f14c6a9e6aa9c8e78775b}{}\label{class_game_character_a94e6371f4f2f14c6a9e6aa9c8e78775b} 
+\index{Game\+Character@{Game\+Character}!get\+Net\+Stat@{get\+Net\+Stat}}
+\index{get\+Net\+Stat@{get\+Net\+Stat}!Game\+Character@{Game\+Character}}
+\subsubsection{\texorpdfstring{get\+Net\+Stat()}{getNetStat()}}
+{\footnotesize\ttfamily int Game\+Character\+::get\+Net\+Stat (\begin{DoxyParamCaption}\item[{\hyperlink{class_ability}{Ability}}]{abl }\end{DoxyParamCaption})}
+
+Function that returns a single net ability score of a character, with bonus and modifiers included. 
+
+Definition at line 221 of file character.\+cpp.
+
+
+\begin{DoxyCode}
+222 \{
+223     \textcolor{keywordflow}{return} abilities[abl.index]
+224         + bonus[abl.index]
+225         \textcolor{comment}{//+ modifiers[abl.index]}
+226         + inventory.getEquipMod(abl);
+227 \}
+\end{DoxyCode}
+\hypertarget{class_game_character_a367a537148a995677d9649b975cb326b}{}\label{class_game_character_a367a537148a995677d9649b975cb326b} 
+\index{Game\+Character@{Game\+Character}!level\+Up@{level\+Up}}
+\index{level\+Up@{level\+Up}!Game\+Character@{Game\+Character}}
+\subsubsection{\texorpdfstring{level\+Up()}{levelUp()}}
+{\footnotesize\ttfamily void Game\+Character\+::level\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function for a single level increment. 
+
+The function gives the character an ability point every 4 levels, as per D\&D rules (here randomly) 
+
+Definition at line 80 of file character.\+cpp.
+
+
+\begin{DoxyCode}
+81 \{
+82     \textcolor{keywordtype}{int} i;
+83 
+84     level++;
+85 
+86     \textcolor{comment}{//randomly increase an ability bonus each 4 levels.}
+87     \textcolor{keywordflow}{if} (level % 4 == 0)
+88     \{
+89         i = rand() % 6;
+90         bonus[Ability::getMainAbls()[i].index]++;
+91     \}
+92 
+93     updateBonus();
+94 
+95     abilities[Ability::HP.index] += this->hitDie();
+96     Hp = abilities[Ability::HP.index];
+97 \}
+\end{DoxyCode}
+\hypertarget{class_game_character_a0e6839e7c79e97ba7daea9ed0fc2569e}{}\label{class_game_character_a0e6839e7c79e97ba7daea9ed0fc2569e} 
+\index{Game\+Character@{Game\+Character}!update\+Lvl@{update\+Lvl}}
+\index{update\+Lvl@{update\+Lvl}!Game\+Character@{Game\+Character}}
+\subsubsection{\texorpdfstring{update\+Lvl()}{updateLvl()}}
+{\footnotesize\ttfamily void Game\+Character\+::update\+Lvl (\begin{DoxyParamCaption}\item[{int}]{to\+Level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Function to set a characters level. 
+
+The function calls on Game\+Character\+::level\+UP to ensure the character stats move up accordingly 
+
+Implements \hyperlink{class_placeable}{Placeable}.
+
+
+
+Definition at line 102 of file character.\+cpp.
+
+
+\begin{DoxyCode}
+103 \{
+104     \textcolor{keywordflow}{if} (toLevel < 0) toLevel = 0;
+105 
+106     \textcolor{keywordflow}{if} (level == 0 && toLevel > 0) inventory.updateLvl(toLevel);
+107     
+108     \textcolor{keywordflow}{while} (level < toLevel) this->\hyperlink{class_game_character_a367a537148a995677d9649b975cb326b}{levelUp}();
+109 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+character.\+h\item 
+character.\+cpp\end{DoxyCompactItemize}

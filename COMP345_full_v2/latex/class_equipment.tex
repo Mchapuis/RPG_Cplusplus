@@ -1,0 +1,143 @@
+\hypertarget{class_equipment}{}\section{Equipment Class Reference}
+\label{class_equipment}\index{Equipment@{Equipment}}
+Inheritance diagram for Equipment\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.487180cm]{class_equipment}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int $\ast$ \hyperlink{class_equipment_a9e2505f187dadc04a811a9d0680d29cf}{get\+All\+Enchantments} ()
+\begin{DoxyCompactList}\small\item\em Getter for the Abilities total. \end{DoxyCompactList}\item 
+\hypertarget{class_equipment_a562d37bd3587b738c13c262650cf8489}{}\label{class_equipment_a562d37bd3587b738c13c262650cf8489} 
+int {\bfseries get\+Enchantment} (\hyperlink{class_ability}{Ability} $\ast$abl)
+\item 
+\hypertarget{class_equipment_a476657aab86ed7d26a97aa77454f7ac3}{}\label{class_equipment_a476657aab86ed7d26a97aa77454f7ac3} 
+int {\bfseries get\+Enchantment} (int index)
+\item 
+void \hyperlink{class_equipment_ab56d6a16b2151d7793c4b5fddde1f145}{update\+Lvl} (int player\+Level)
+\begin{DoxyCompactList}\small\item\em Method to set the enchantment on the item acording to the player level on map load. \end{DoxyCompactList}\item 
+\hypertarget{class_equipment_a274e31858324c1774dd022315ee056a9}{}\label{class_equipment_a274e31858324c1774dd022315ee056a9} 
+virtual \hyperlink{class_equip_type}{Equip\+Type} const  $\ast$ {\bfseries get\+Type} ()
+\item 
+\hypertarget{class_equipment_a66ae3c2ca283f3788abbd61b45ee5077}{}\label{class_equipment_a66ae3c2ca283f3788abbd61b45ee5077} 
+std\+::string {\bfseries to\+String} ()
+\item 
+\hypertarget{class_equipment_ac534ea06d524c524201e359f54938146}{}\label{class_equipment_ac534ea06d524c524201e359f54938146} 
+virtual void {\bfseries save} (std\+::string filename)
+\item 
+\hypertarget{class_equipment_ac07ac998f85529e90bd209b32c89809d}{}\label{class_equipment_ac07ac998f85529e90bd209b32c89809d} 
+virtual void {\bfseries load} (std\+::string filename)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_equipment_ab98d0ccbf2f89274a0c4aa9d4763e35c}{}\label{class_equipment_ab98d0ccbf2f89274a0c4aa9d4763e35c} 
+{\bfseries Equipment} (std\+::string a\+Name, \hyperlink{class_equip_type}{Equip\+Type} const $\ast$a\+Type)
+\item 
+\hypertarget{class_equipment_ac6946f620ba8e13c3dfd039d4c604f09}{}\label{class_equipment_ac6946f620ba8e13c3dfd039d4c604f09} 
+virtual void {\bfseries set\+Enchantment} (\hyperlink{class_ability}{Ability} abl, int bonus)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_equipment_ac98d07dd8f7b70e16ccb9a01abf56b9c}{}\label{class_equipment_ac98d07dd8f7b70e16ccb9a01abf56b9c} 
+class {\bfseries boost\+::serialization\+::access}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 73 of file inv2.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_equipment_a9e2505f187dadc04a811a9d0680d29cf}{}\label{class_equipment_a9e2505f187dadc04a811a9d0680d29cf} 
+\index{Equipment@{Equipment}!get\+All\+Enchantments@{get\+All\+Enchantments}}
+\index{get\+All\+Enchantments@{get\+All\+Enchantments}!Equipment@{Equipment}}
+\subsubsection{\texorpdfstring{get\+All\+Enchantments()}{getAllEnchantments()}}
+{\footnotesize\ttfamily int $\ast$ Equipment\+::get\+All\+Enchantments (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the Abilities total. 
+
+\begin{DoxyReturn}{Returns}
+will returns the Abilities result 
+\end{DoxyReturn}
+
+
+Definition at line 57 of file inv2.\+cpp.
+
+
+\begin{DoxyCode}
+58 \{
+59     \textcolor{keywordtype}{int}* result = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[Ability::getCount()];
+60     \textcolor{keywordtype}{int} i;
+61 
+62     \textcolor{keywordflow}{for} (i = 0; i < Ability::getCount(); i++)
+63     \{
+64         \textcolor{keywordflow}{if} (this->getType()->isAllowed(i))
+65         \{
+66             result[i] = enchantments[i];
+67         \}
+68         \textcolor{keywordflow}{else}
+69         \{
+70             result[i] = 0;
+71         \}
+72     \}
+73 
+74     \textcolor{keywordflow}{return} result;
+75 \}
+\end{DoxyCode}
+\hypertarget{class_equipment_ab56d6a16b2151d7793c4b5fddde1f145}{}\label{class_equipment_ab56d6a16b2151d7793c4b5fddde1f145} 
+\index{Equipment@{Equipment}!update\+Lvl@{update\+Lvl}}
+\index{update\+Lvl@{update\+Lvl}!Equipment@{Equipment}}
+\subsubsection{\texorpdfstring{update\+Lvl()}{updateLvl()}}
+{\footnotesize\ttfamily void Equipment\+::update\+Lvl (\begin{DoxyParamCaption}\item[{int}]{player\+Level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Method to set the enchantment on the item acording to the player level on map load. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Level} & give the player level to set the Abilities (the ones that are on enchantments (1)) to it\textquotesingle{}s level \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_item}{Item}.
+
+
+
+Definition at line 134 of file inv2.\+cpp.
+
+
+\begin{DoxyCode}
+135 \{
+136     vector<Ability> allowed = this->getType()->getEnchantments();
+137     \textcolor{keywordtype}{int} points = playerLevel;
+138     \textcolor{keywordtype}{int} bonus;
+139     \textcolor{keywordtype}{float} rnd;
+140 
+141     \textcolor{keywordflow}{for} (\hyperlink{class_ability}{Ability} a : allowed)
+142     \{
+143         rnd = ( rand() % 100) / 100.0;
+144         bonus = min(points, min((\textcolor{keywordtype}{int})(rnd * points), 5));
+145         \textcolor{comment}{//cout << "rnd:" << rnd << "  points:" << points << "  bonus:" << bonus << endl;}
+146         enchantments[a.index] = bonus;
+147         points -= bonus;
+148     \}
+149 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+inv2.\+h\item 
+inv2.\+cpp\end{DoxyCompactItemize}

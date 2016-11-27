@@ -1,0 +1,128 @@
+\hypertarget{class_cell_list}{}\section{Cell\+List Class Reference}
+\label{class_cell_list}\index{Cell\+List@{Cell\+List}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_cell_list_aa5c3ce5f60d54a1222f783b719f7f18d}{}\label{class_cell_list_aa5c3ce5f60d54a1222f783b719f7f18d} 
+\hyperlink{class_cell_list_aa5c3ce5f60d54a1222f783b719f7f18d}{Cell\+List} ()
+\begin{DoxyCompactList}\small\item\em Default constructor of a \hyperlink{class_cell_list}{Cell\+List} object. \end{DoxyCompactList}\item 
+\hypertarget{class_cell_list_a2f7854cd49caefac1f84654ab550e896}{}\label{class_cell_list_a2f7854cd49caefac1f84654ab550e896} 
+\hyperlink{class_cell_list_a2f7854cd49caefac1f84654ab550e896}{$\sim$\+Cell\+List} ()
+\begin{DoxyCompactList}\small\item\em Default \hyperlink{class_cell_list}{Cell\+List} destructor. \end{DoxyCompactList}\item 
+std\+::list$<$ \hyperlink{class_cell}{Cell} $\ast$ $>$ \hyperlink{class_cell_list_aa5fee7de166143e16a0ec1f20349db55}{get\+List} ()
+\begin{DoxyCompactList}\small\item\em Accessor function to cell\+\_\+list. \end{DoxyCompactList}\item 
+void \hyperlink{class_cell_list_a94857958e9f2156c7b4c76fd774a5fda}{add\+All} (std\+::unordered\+\_\+set$<$ \hyperlink{class_cell}{Cell} $\ast$$>$ a\+Set)
+\begin{DoxyCompactList}\small\item\em Function to add all of a set elements to cell\+\_\+list. \end{DoxyCompactList}\item 
+\hyperlink{class_cell}{Cell} $\ast$ \hyperlink{class_cell_list_abc7337272382af9d9782628666f9e594}{remove} ()
+\begin{DoxyCompactList}\small\item\em Function that removes and returns the first element of the List cell\+\_\+list. \end{DoxyCompactList}\item 
+bool \hyperlink{class_cell_list_a5df3e74d57494b51859a6a223f8b2a30}{empty} ()
+\begin{DoxyCompactList}\small\item\em Asserts if cell\+\_\+list is empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 127 of file map.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_cell_list_a94857958e9f2156c7b4c76fd774a5fda}{}\label{class_cell_list_a94857958e9f2156c7b4c76fd774a5fda} 
+\index{Cell\+List@{Cell\+List}!add\+All@{add\+All}}
+\index{add\+All@{add\+All}!Cell\+List@{Cell\+List}}
+\subsubsection{\texorpdfstring{add\+All()}{addAll()}}
+{\footnotesize\ttfamily void Cell\+List\+::add\+All (\begin{DoxyParamCaption}\item[{std\+::unordered\+\_\+set$<$ \hyperlink{class_cell}{Cell} $\ast$$>$}]{a\+Set }\end{DoxyParamCaption})}
+
+
+
+Function to add all of a set elements to cell\+\_\+list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Set} & and Unordered\+\_\+set of \hyperlink{class_cell}{Cell} pointers to add to the List cell\+\_\+list. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 551 of file map.\+cpp.
+
+
+\begin{DoxyCode}
+552 \{
+553     \textcolor{keywordflow}{for}(\hyperlink{class_cell}{Cell}* c: aSet)
+554     \{
+555         cell\_list.push\_front(c);
+556     \}
+557 \}
+\end{DoxyCode}
+\hypertarget{class_cell_list_a5df3e74d57494b51859a6a223f8b2a30}{}\label{class_cell_list_a5df3e74d57494b51859a6a223f8b2a30} 
+\index{Cell\+List@{Cell\+List}!empty@{empty}}
+\index{empty@{empty}!Cell\+List@{Cell\+List}}
+\subsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily bool Cell\+List\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Asserts if cell\+\_\+list is empty. 
+
+return true if the \hyperlink{class_cell}{Cell} pointer List cell\+\_\+list contains no elements. 
+
+Definition at line 570 of file map.\+cpp.
+
+
+\begin{DoxyCode}
+571 \{
+572     \textcolor{keywordflow}{return} cell\_list.empty();
+573 \}
+\end{DoxyCode}
+\hypertarget{class_cell_list_aa5fee7de166143e16a0ec1f20349db55}{}\label{class_cell_list_aa5fee7de166143e16a0ec1f20349db55} 
+\index{Cell\+List@{Cell\+List}!get\+List@{get\+List}}
+\index{get\+List@{get\+List}!Cell\+List@{Cell\+List}}
+\subsubsection{\texorpdfstring{get\+List()}{getList()}}
+{\footnotesize\ttfamily std\+::list$<$ \hyperlink{class_cell}{Cell} $\ast$ $>$ Cell\+List\+::get\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Accessor function to cell\+\_\+list. 
+
+return the list of \hyperlink{class_cell}{Cell} pointers cell\+\_\+list. 
+
+Definition at line 544 of file map.\+cpp.
+
+
+\begin{DoxyCode}
+545 \{
+546     \textcolor{keywordflow}{return} cell\_list;
+547 \}
+\end{DoxyCode}
+\hypertarget{class_cell_list_abc7337272382af9d9782628666f9e594}{}\label{class_cell_list_abc7337272382af9d9782628666f9e594} 
+\index{Cell\+List@{Cell\+List}!remove@{remove}}
+\index{remove@{remove}!Cell\+List@{Cell\+List}}
+\subsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily \hyperlink{class_cell}{Cell} $\ast$ Cell\+List\+::remove (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function that removes and returns the first element of the List cell\+\_\+list. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_cell}{Cell} pointer, first element of the \hyperlink{class_cell}{Cell} pointer list cell\+\_\+list. 
+\end{DoxyReturn}
+
+
+Definition at line 561 of file map.\+cpp.
+
+
+\begin{DoxyCode}
+562 \{
+563     \hyperlink{class_cell}{Cell}* c = cell\_list.front();
+564     cell\_list.pop\_front();
+565     \textcolor{keywordflow}{return} c;
+566 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+map.\+h\item 
+map.\+cpp\end{DoxyCompactItemize}

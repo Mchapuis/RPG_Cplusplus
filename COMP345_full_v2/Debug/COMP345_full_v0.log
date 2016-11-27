@@ -1,0 +1,207 @@
+﻿Build started 2016-11-27 11:18:01 AM.
+     1>Project "C:\Users\Aline\Documents\Visual Studio 2013\Projects\COMP345_full_v2\COMP345_full_v0.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\local\boost_1_62_0 /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\COMP345_full_v0.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt character.cpp
+         character.cpp
+     1>c:\users\aline\documents\visual studio 2013\projects\comp345_full_v2\basic_structure.h(39): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\aline\documents\visual studio 2013\projects\comp345_full_v2\basic_structure.h(43): warning C4806: '==' : unsafe operation: no value of type 'bool' promoted to type 'int' can equal the given constant
+     1>c:\users\aline\documents\visual studio 2013\projects\comp345_full_v2\basic_structure.h(111): warning C4309: 'initializing' : truncation of constant value
+     1>c:\users\aline\documents\visual studio 2013\projects\comp345_full_v2\character.cpp(29): warning C4553: '==' : operator has no effect; did you intend '='?
+     1>c:\users\aline\documents\visual studio 2013\projects\comp345_full_v2\character.cpp(23): warning C4101: 'i' : unreferenced local variable
+     1>c:\users\aline\documents\visual studio 2013\projects\comp345_full_v2\character.cpp(40): warning C4101: 'i' : unreferenced local variable
+     1>c:\users\aline\documents\visual studio 2013\projects\comp345_full_v2\character.cpp(77): warning C4101: 'i' : unreferenced local variable
+     1>c:\users\aline\documents\visual studio 2013\projects\comp345_full_v2\character.cpp(169): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\aline\documents\visual studio 2013\projects\comp345_full_v2\character.cpp(177): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\aline\documents\visual studio 2013\projects\comp345_full_v2\character.cpp(356): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\aline\documents\visual studio 2013\projects\comp345_full_v2\character.cpp(348): warning C4101: 'j' : unreferenced local variable
+     1>c:\local\boost_1_62_0\boost\serialization\smart_cast.hpp(184): warning C4540: dynamic_cast used to convert to inaccessible or ambiguous base; run-time test will fail ('const GameCharacter *' to 'const MySerializable *')
+                 c:\local\boost_1_62_0\boost\serialization\smart_cast.hpp(207) : see reference to function template instantiation 'T boost::serialization::smart_cast_impl::pointer<T>::polymorphic::cast<U>(U *)' being compiled
+                 with
+                 [
+                     T=const type *
+         ,            U=GameCharacter
+                 ]
+                 c:\local\boost_1_62_0\boost\serialization\smart_cast.hpp(207) : see reference to function template instantiation 'T boost::serialization::smart_cast_impl::pointer<T>::polymorphic::cast<U>(U *)' being compiled
+                 with
+                 [
+                     T=const type *
+         ,            U=GameCharacter
+                 ]
+                 c:\local\boost_1_62_0\boost\serialization\smart_cast.hpp(262) : see reference to function template instantiation 'T boost::serialization::smart_cast_impl::pointer<T>::cast<const Derived>(U *)' being compiled
+                 with
+                 [
+                     T=const type *
+         ,            Derived=GameCharacter
+         ,            U=GameCharacter
+                 ]
+                 c:\local\boost_1_62_0\boost\serialization\smart_cast.hpp(262) : see reference to function template instantiation 'T boost::serialization::smart_cast_impl::pointer<T>::cast<const Derived>(U *)' being compiled
+                 with
+                 [
+                     T=const type *
+         ,            Derived=GameCharacter
+         ,            U=GameCharacter
+                 ]
+                 c:\local\boost_1_62_0\boost\serialization\void_cast.hpp(168) : see reference to function template instantiation 'T boost::serialization::smart_cast<const Base*,const Derived*>(U)' being compiled
+                 with
+                 [
+                     T=const type *
+         ,            Base=type
+         ,            Derived=GameCharacter
+         ,            U=const GameCharacter *
+                 ]
+                 c:\local\boost_1_62_0\boost\serialization\void_cast.hpp(164) : while compiling class template member function 'const void *boost::serialization::void_cast_detail::void_caster_primitive<Derived,Base>::upcast(const void *const ) const'
+                 with
+                 [
+                     Derived=GameCharacter
+         ,            Base=type
+                 ]
+                 c:\local\boost_1_62_0\boost\serialization\void_cast.hpp(280) : see reference to class template instantiation 'boost::serialization::void_cast_detail::void_caster_primitive<Derived,Base>' being compiled
+                 with
+                 [
+                     Derived=GameCharacter
+         ,            Base=type
+                 ]
+                 c:\local\boost_1_62_0\boost\serialization\base_object.hpp(67) : see reference to function template instantiation 'const boost::serialization::void_cast_detail::void_caster &boost::serialization::void_cast_register<Derived,Base>(const Derived *,const Base *)' being compiled
+                 with
+                 [
+                     Derived=GameCharacter
+         ,            Base=type
+                 ]
+                 c:\local\boost_1_62_0\boost\serialization\base_object.hpp(64) : while compiling class template member function 'const void *boost::serialization::detail::base_register<type,Derived>::polymorphic::invoke(void)'
+                 with
+                 [
+                     Derived=GameCharacter
+                 ]
+                 c:\local\boost_1_62_0\boost\serialization\base_object.hpp(81) : see reference to function template instantiation 'const void *boost::serialization::detail::base_register<type,Derived>::polymorphic::invoke(void)' being compiled
+                 with
+                 [
+                     Derived=GameCharacter
+                 ]
+                 c:\local\boost_1_62_0\boost\serialization\base_object.hpp(81) : see reference to class template instantiation 'boost::serialization::detail::base_register<type,Derived>::polymorphic' being compiled
+                 with
+                 [
+                     Derived=GameCharacter
+                 ]
+                 c:\local\boost_1_62_0\boost\serialization\base_object.hpp(75) : while compiling class template member function 'const void *boost::serialization::detail::base_register<type,Derived>::invoke(void)'
+                 with
+                 [
+                     Derived=GameCharacter
+                 ]
+                 c:\local\boost_1_62_0\boost\serialization\base_object.hpp(93) : see reference to function template instantiation 'const void *boost::serialization::detail::base_register<type,Derived>::invoke(void)' being compiled
+                 with
+                 [
+                     Derived=GameCharacter
+                 ]
+                 c:\local\boost_1_62_0\boost\serialization\base_object.hpp(93) : see reference to class template instantiation 'boost::serialization::detail::base_register<type,Derived>' being compiled
+                 with
+                 [
+                     Derived=GameCharacter
+                 ]
+                 c:\users\aline\documents\visual studio 2013\projects\comp345_full_v2\character.h(29) : see reference to function template instantiation 'MySerializable &boost::serialization::base_object<MySerializable,GameCharacter>(Derived &)' being compiled
+                 with
+                 [
+                     Derived=GameCharacter
+                 ]
+                 c:\local\boost_1_62_0\boost\serialization\access.hpp(116) : see reference to function template instantiation 'void GameCharacter::serialize<Archive>(Archive &,const unsigned int)' being compiled
+                 with
+                 [
+                     Archive=boost::archive::text_oarchive
+                 ]
+                 c:\local\boost_1_62_0\boost\serialization\serialization.hpp(68) : see reference to function template instantiation 'void boost::serialization::access::serialize<Archive,T>(Archive &,T &,const unsigned int)' being compiled
+                 with
+                 [
+                     Archive=boost::archive::text_oarchive
+         ,            T=GameCharacter
+                 ]
+                 c:\local\boost_1_62_0\boost\serialization\serialization.hpp(126) : see reference to function template instantiation 'void boost::serialization::serialize<Archive,T>(Archive &,T &,const unsigned int)' being compiled
+                 with
+                 [
+                     Archive=boost::archive::text_oarchive
+         ,            T=GameCharacter
+                 ]
+                 c:\local\boost_1_62_0\boost\archive\detail\oserializer.hpp(153) : see reference to function template instantiation 'void boost::serialization::serialize_adl<Archive,T>(Archive &,T &,const unsigned int)' being compiled
+                 with
+                 [
+                     Archive=boost::archive::text_oarchive
+         ,            T=GameCharacter
+                 ]
+                 c:\local\boost_1_62_0\boost\archive\detail\oserializer.hpp(145) : while compiling class template member function 'void boost::archive::detail::oserializer<Archive,T>::save_object_data(boost::archive::detail::basic_oarchive &,const void *) const'
+                 with
+                 [
+                     Archive=boost::archive::text_oarchive
+         ,            T=GameCharacter
+                 ]
+                 c:\local\boost_1_62_0\boost\archive\detail\oserializer.hpp(170) : see reference to class template instantiation 'boost::archive::detail::oserializer<Archive,T>' being compiled
+                 with
+                 [
+                     Archive=boost::archive::text_oarchive
+         ,            T=GameCharacter
+                 ]
+                 c:\local\boost_1_62_0\boost\archive\detail\oserializer.hpp(167) : while compiling class template member function 'const boost::archive::detail::basic_oserializer &boost::archive::detail::pointer_oserializer<Archive,Serializable>::get_basic_serializer(void) const'
+                 with
+                 [
+                     Archive=boost::archive::text_oarchive
+         ,            Serializable=GameCharacter
+                 ]
+                 c:\local\boost_1_62_0\boost\serialization\export.hpp(73) : see reference to class template instantiation 'boost::archive::detail::pointer_oserializer<Archive,Serializable>' being compiled
+                 with
+                 [
+                     Archive=boost::archive::text_oarchive
+         ,            Serializable=GameCharacter
+                 ]
+                 c:\local\boost_1_62_0\boost\serialization\export.hpp(70) : while compiling class template member function 'const boost::archive::detail::basic_pointer_oserializer &boost::archive::detail::export_impl<Archive,Serializable>::enable_save(boost::mpl::true_)'
+                 with
+                 [
+                     Archive=boost::archive::text_oarchive
+         ,            Serializable=GameCharacter
+                 ]
+                 c:\local\boost_1_62_0\boost\serialization\export.hpp(103) : see reference to function template instantiation 'const boost::archive::detail::basic_pointer_oserializer &boost::archive::detail::export_impl<Archive,Serializable>::enable_save(boost::mpl::true_)' being compiled
+                 with
+                 [
+                     Archive=boost::archive::text_oarchive
+         ,            Serializable=GameCharacter
+                 ]
+                 c:\local\boost_1_62_0\boost\serialization\export.hpp(101) : see reference to class template instantiation 'boost::archive::detail::export_impl<Archive,Serializable>' being compiled
+                 with
+                 [
+                     Archive=boost::archive::text_oarchive
+         ,            Serializable=GameCharacter
+                 ]
+                 c:\local\boost_1_62_0\boost\serialization\export.hpp(100) : while compiling class template member function 'void boost::archive::detail::ptr_serialization_support<Archive,Serializable>::instantiate(void)'
+                 with
+                 [
+                     Archive=boost::archive::text_oarchive
+         ,            Serializable=GameCharacter
+                 ]
+                 c:\local\boost_1_62_0\boost\archive\detail\register_archive.hpp(27) : see reference to class template instantiation 'boost::archive::detail::ptr_serialization_support<Archive,Serializable>' being compiled
+                 with
+                 [
+                     Archive=boost::archive::text_oarchive
+         ,            Serializable=GameCharacter
+                 ]
+                 c:\local\boost_1_62_0\boost\serialization\export.hpp(123) : see reference to class template instantiation 'boost::archive::detail::_ptr_serialization_support<boost::archive::text_oarchive,T>' being compiled
+                 with
+                 [
+                     T=GameCharacter
+                 ]
+                 c:\local\boost_1_62_0\boost\serialization\export.hpp(119) : while compiling class template member function 'void boost::archive::detail::extra_detail::guid_initializer<GameCharacter>::export_guid(boost::mpl::false_) const'
+                 c:\local\boost_1_62_0\boost\serialization\export.hpp(133) : see reference to function template instantiation 'void boost::archive::detail::extra_detail::guid_initializer<GameCharacter>::export_guid(boost::mpl::false_) const' being compiled
+                 c:\users\aline\documents\visual studio 2013\projects\comp345_full_v2\character.cpp(5) : see reference to class template instantiation 'boost::archive::detail::extra_detail::guid_initializer<GameCharacter>' being compiled
+     1>c:\users\aline\documents\visual studio 2013\projects\comp345_full_v2\character.cpp(163): warning C4715: 'GameCharacter::damageRoll' : not all control paths return a value
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Aline\Documents\Visual Studio 2013\Projects\COMP345_full_v2\Debug\COMP345_full_v0.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\local\boost_1_62_0\lib32-msvc-12.0" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Aline\Documents\Visual Studio 2013\Projects\COMP345_full_v2\Debug\COMP345_full_v0.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Aline\Documents\Visual Studio 2013\Projects\COMP345_full_v2\Debug\COMP345_full_v0.lib" /MACHINE:X86 Debug\basic_structure.obj
+         Debug\cell.obj
+         Debug\character.obj
+         Debug\config.obj
+         Debug\driver2.obj
+         Debug\game.obj
+         Debug\inv2.obj
+         Debug\map.obj
+         Debug\stdafx.obj
+            Creating library C:\Users\Aline\Documents\Visual Studio 2013\Projects\COMP345_full_v2\Debug\COMP345_full_v0.lib and object C:\Users\Aline\Documents\Visual Studio 2013\Projects\COMP345_full_v2\Debug\COMP345_full_v0.exp
+         COMP345_full_v0.vcxproj -> C:\Users\Aline\Documents\Visual Studio 2013\Projects\COMP345_full_v2\Debug\COMP345_full_v0.exe
+     1>Done Building Project "C:\Users\Aline\Documents\Visual Studio 2013\Projects\COMP345_full_v2\COMP345_full_v0.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.55
