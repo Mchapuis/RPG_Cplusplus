@@ -1,0 +1,8 @@
+﻿'COMP345_full_v0.exe' (Win32): Loaded 'C:\Users\mrtnchps\Documents\GitHub\RPG_RETAKE\COMP345_full_v2\Debug\COMP345_full_v0.exe'. Symbols loaded.
+'COMP345_full_v0.exe' (Win32): Loaded 'C:\Windows\SysWOW64\ntdll.dll'. Cannot find or open the PDB file.
+'COMP345_full_v0.exe' (Win32): Loaded 'C:\Windows\SysWOW64\kernel32.dll'. Cannot find or open the PDB file.
+'COMP345_full_v0.exe' (Win32): Loaded 'C:\Windows\SysWOW64\KernelBase.dll'. Cannot find or open the PDB file.
+'COMP345_full_v0.exe' (Win32): Loaded 'C:\Windows\SysWOW64\msvcp120d.dll'. Cannot find or open the PDB file.
+'COMP345_full_v0.exe' (Win32): Loaded 'C:\Windows\SysWOW64\msvcr120d.dll'. Cannot find or open the PDB file.
+The thread 0xa3c has exited with code -1073741510 (0xc000013a).
+The program '[7956] COMP345_full_v0.exe' has exited with code -1073741510 (0xc000013a).

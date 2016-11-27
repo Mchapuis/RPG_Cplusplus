@@ -44,6 +44,9 @@ vector<int> GameCharacter::abilitiesRoll()
 		result[a.index] = abilityRoll();
 	}
 
+	//order the elements in the array
+	std::sort(result[0], result[6]);
+
 	return result;
 }
 
