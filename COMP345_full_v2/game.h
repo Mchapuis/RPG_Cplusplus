@@ -30,7 +30,7 @@ public:
 	void createPlayer();
 	void createPlayerFromLoad();
 	void mapEditor(Map map);
-	void display();
+	void display(GameCharacter *gh);
 };
 
 #endif

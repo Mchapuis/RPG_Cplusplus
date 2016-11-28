@@ -35,19 +35,30 @@ name(aName), level(0), baseAtk(aBaseAtk), Hp(0), inventory(Inventory())
 //Assume ability rools of 4d6 drop lowest, and 1d10 Hit Die. 
 vector<int> GameCharacter::abilitiesRoll()
 {
+	int SIZE = 6;
 	vector<Ability> abls = Ability::getMainAbls();
-	vector<int> result = vector<int>(6);
-
-	int i;
-
-	for (const Ability a : abls)
-	{
-		result[a.index] = abilityRoll();
+	vector<int> result = vector<int>(SIZE);
+	
+	
+	//Take all the randoms numbers
+	for (int i = 0; i < SIZE; i++){
+		result[i] = abilityRoll();
 	}
 
 	//order the elements in the array
 	std::sort(result.begin(), result.end());
 
+	//decreasing order...
+	std::reverse(result.begin(), result.end());
+
+	//put numbers in the Ability const array...
+	int i = 0;
+	for (const Ability a : abls)
+	{
+		result[a.index] = result[i];
+		//cout << "result:::" << result[i] << endl;
+		i++;
+	}
 	return result;
 }
 
@@ -346,7 +357,7 @@ int GameCharacter::getNetStat(Ability abl)
 
 std::string GameCharacter::toString()
 {
-	std::string result = this->getClassName() + "class\n";
+	std::string result = "Fighter";
 	std::string temp = "";
 	int i;
 	int j;
@@ -355,24 +366,22 @@ std::string GameCharacter::toString()
 	result += "Lvl:" + to_string(level) + " ";
 	result += "HP:" + to_string(Hp) + "/" + to_string(MaxHp);
 	
-
-
-	result += "\n"; //new line for the abilities and modifiers
+	result += "        "; //spaces for the abilities and modifiers clarity
 
 	for (i = 0; i < abilities.size(); i++)
 	{
 		temp = Ability::get(i).abbr;
 
-		while (temp.size() < 7) temp += " ";
-
+		while (temp.size() < 1) temp += " ";
+		temp += ":";
 		temp += to_string(abilities[i]);
 
 		if (bonus[i] != 0)
 		{
-			temp += " / " + to_string(bonus[i]);
+			temp += "/" + to_string(bonus[i]);
 		}
 
-		result += temp + '\n';
+		result += temp + "  ";
 	}
 
 	return (result + inventory.toString());

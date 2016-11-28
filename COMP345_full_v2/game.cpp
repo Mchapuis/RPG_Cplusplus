@@ -538,9 +538,18 @@ void Game::mapEditor(Map map){
 
 //!Display the inventory, worn items and backpack
 //!@param : Call to string methods
-void Game::display(){
-	
+void Game::display(GameCharacter *gh){
+
+	//Before the information, the display of attacks and rounds are here..
+	//example...
+
+	cout << "\n________________________________INFORMATIONS_________________________________________\n";
 	//Call the character in play to display what he has.
 	//This calls ---> 
-	Game::player.toString();
+	cout << gh->toString();
+
+	//equip/unequip...to be added here!!!! 
+	cout << "\n\nEQUIP/UNEQUIP____PRESS P"<<endl;
+	cout << "BACK_____________PRESS B" << endl;
+	
 }

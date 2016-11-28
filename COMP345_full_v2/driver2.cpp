@@ -443,12 +443,12 @@ void testSave8()
 	Map* myMap = new Map("map1", 15, 20);
 
 	Cell* pCell = NULL;
-	Player myPlayer;
+	Player *myPlayer = new Player();
 	Chest myChest;
 	Enemy myEnemy;
 	Friendly myFriend;
 
-	myPlayer.load("player1");
+	myPlayer->load("player1");
 	myChest.load("chest1");
 	myEnemy.load("enemy1");
 	myFriend.load("friend2");
@@ -476,7 +476,7 @@ void testSave8()
 
 	cout << endl << myMap->toString2() << endl;
 
-	cout << myMap->start(&myPlayer);
+	cout << myMap->start(myPlayer);
 
 	cout << endl<< endl << myMap->printGraph();
 
@@ -492,7 +492,7 @@ void testSave8()
 
 	char dir;
 	map<char, const Direction*> keyMap = Direction::getMap();
-
+	
 	while (pCell != exit)
 	{
 		do{
@@ -504,7 +504,11 @@ void testSave8()
 		pCell = myMap->move(pCell, *keyMap[dir]);
 
 		cout << endl << endl << myMap->toString2();
-	}
+		Game aGame = Game();
+		aGame.display(myPlayer);
+	}	
+	
+	
 }
 
 int main(int argc, char *argv[])
@@ -513,19 +517,27 @@ int main(int argc, char *argv[])
 	
 	//std::srand(time(0));
 
-	
-
-	//testSave6();
+	testSave2();
+	testSave3();
+	testSave6();
 	
 	testSave8();
-	cout << endl << "Aaaaaah yeeeee daaawg!!!!";
+	//cout << endl << "Aaaaaah yeeeee daaawg!!!!";
 	
+	//Player myPlayer = Player();
 	
 	//Game newGame = Game();
-	//newGame.display();
+	/*
+	Player test = Player();
+	int *anArray = test.getAllBaseAbl();
 
-
-	cin >> k;
+	for (int i = 0; i < 6;i++){
+		cout << *anArray << " " << endl;
+		anArray++;
+	}
+	*/
+	system("pause");
+	//cin >> k;
 }
 
 
