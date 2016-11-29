@@ -59,7 +59,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#friends">Friends</a> &#124;
@@ -107,6 +106,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>start</b> (<a class="
 <tr class="memitem:ab22dc646bc833bb6b4070dcc2d3bd7c0"><td class="memItemLeft" align="right" valign="top"><a id="ab22dc646bc833bb6b4070dcc2d3bd7c0"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>cellExists</b> (int row, int col)</td></tr>
 <tr class="separator:ab22dc646bc833bb6b4070dcc2d3bd7c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdfd27c6dfea00eabb9c69a596deef29"><td class="memItemLeft" align="right" valign="top"><a id="acdfd27c6dfea00eabb9c69a596deef29"></a>
+vector&lt; vector&lt; <a class="el" href="class_cell.html">Cell</a> * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getBoard</b> ()</td></tr>
+<tr class="separator:acdfd27c6dfea00eabb9c69a596deef29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd34d12227676b3cebeed9f5fae2508f"><td class="memItemLeft" align="right" valign="top"><a id="afd34d12227676b3cebeed9f5fae2508f"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>getWidth</b> ()</td></tr>
 <tr class="separator:afd34d12227676b3cebeed9f5fae2508f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -126,9 +128,9 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getName</b> ()
 <tr class="memitem:a26b8b9bc68f8f7e5b4f74cbd3210dd30"><td class="memItemLeft" align="right" valign="top"><a id="a26b8b9bc68f8f7e5b4f74cbd3210dd30"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>clearCell</b> (int row, int col)</td></tr>
 <tr class="separator:a26b8b9bc68f8f7e5b4f74cbd3210dd30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a502496d0178402534ec6701d10bbb0e6"><td class="memItemLeft" align="right" valign="top"><a id="a502496d0178402534ec6701d10bbb0e6"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>addStop</b> (int row, int col, int position)</td></tr>
-<tr class="separator:a502496d0178402534ec6701d10bbb0e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0af5ff34086a69ca33ac85969045751"><td class="memItemLeft" align="right" valign="top"><a id="ad0af5ff34086a69ca33ac85969045751"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>addStop</b> (int row, int col, int index)</td></tr>
+<tr class="separator:ad0af5ff34086a69ca33ac85969045751"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a382d1000a33c473bd96a619a0dd11d16"><td class="memItemLeft" align="right" valign="top"><a id="a382d1000a33c473bd96a619a0dd11d16"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>updateFirstStop</b> (int row, int col)</td></tr>
 <tr class="separator:a382d1000a33c473bd96a619a0dd11d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,6 +140,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>updateLastStop</b> (i
 <tr class="memitem:a808119272b760e43615ffc396cf6feb6"><td class="memItemLeft" align="right" valign="top"><a id="a808119272b760e43615ffc396cf6feb6"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>removeStop</b> (int row, int col, int position)</td></tr>
 <tr class="separator:a808119272b760e43615ffc396cf6feb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9885a25e59304d88ea6d452d948a6f5c"><td class="memItemLeft" align="right" valign="top"><a id="a9885a25e59304d88ea6d452d948a6f5c"></a>
+<a class="el" href="class_cell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getBegin</b> ()</td></tr>
+<tr class="separator:a9885a25e59304d88ea6d452d948a6f5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c076465db569dc53d47b7429e785188"><td class="memItemLeft" align="right" valign="top"><a id="a3c076465db569dc53d47b7429e785188"></a>
+<a class="el" href="class_cell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getExit</b> ()</td></tr>
+<tr class="separator:a3c076465db569dc53d47b7429e785188"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f10c89830337667bc392e3814b5e616"><td class="memItemLeft" align="right" valign="top"><a id="a9f10c89830337667bc392e3814b5e616"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>addToCell</b> (<a class="el" href="class_placeable.html">Placeable</a> *toPlace, int row, int col)</td></tr>
 <tr class="separator:a9f10c89830337667bc392e3814b5e616"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,27 +155,33 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>addToCell</b> (<a cla
 <tr class="memitem:a7e89d11a89a796ac46e60722533f23d4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_map.html#a7e89d11a89a796ac46e60722533f23d4">setColWall</a> (int col, int from, int end)</td></tr>
 <tr class="memdesc:a7e89d11a89a796ac46e60722533f23d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mehtod that instantiate <a class="el" href="class_wall.html">Wall</a> objects in a vertical range <a class="el" href="class_cell.html">Cell</a>.  <a href="#a7e89d11a89a796ac46e60722533f23d4">More...</a><br /></td></tr>
 <tr class="separator:a7e89d11a89a796ac46e60722533f23d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c37a12b6aa0fcf4f849a706c4cd2598"><td class="memItemLeft" align="right" valign="top"><a id="a9c37a12b6aa0fcf4f849a706c4cd2598"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>move</b> (int bRow, int bCol, int eRow, int eCol)</td></tr>
-<tr class="separator:a9c37a12b6aa0fcf4f849a706c4cd2598"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9b2cb5b80f93e05fe94d24f0cd0b4d0"><td class="memItemLeft" align="right" valign="top"><a id="af9b2cb5b80f93e05fe94d24f0cd0b4d0"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>move</b> (int bRow, int bCol, <a class="el" href="class_direction.html">Direction</a> dir)</td></tr>
-<tr class="separator:af9b2cb5b80f93e05fe94d24f0cd0b4d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22641b39f3eadb59771d2e5d02ff19c3"><td class="memItemLeft" align="right" valign="top"><a id="a22641b39f3eadb59771d2e5d02ff19c3"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>move</b> (<a class="el" href="class_cell.html">Cell</a> *from, <a class="el" href="class_direction.html">Direction</a> dir)</td></tr>
-<tr class="separator:a22641b39f3eadb59771d2e5d02ff19c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf124535e6f73756eb345c0c2729318e"><td class="memItemLeft" align="right" valign="top"><a id="aaf124535e6f73756eb345c0c2729318e"></a>
+<a class="el" href="class_cell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>move</b> (int srcRow, int srcCol, int destRow, int destCol)</td></tr>
+<tr class="separator:aaf124535e6f73756eb345c0c2729318e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18ed9496bb0cd446cef68f96cc63e626"><td class="memItemLeft" align="right" valign="top"><a id="a18ed9496bb0cd446cef68f96cc63e626"></a>
+<a class="el" href="class_cell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>move</b> (int bRow, int bCol, <a class="el" href="class_direction.html">Direction</a> dir)</td></tr>
+<tr class="separator:a18ed9496bb0cd446cef68f96cc63e626"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88ec7e2175681e74c48d1684ff4753a0"><td class="memItemLeft" align="right" valign="top"><a id="a88ec7e2175681e74c48d1684ff4753a0"></a>
+<a class="el" href="class_cell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>move</b> (<a class="el" href="class_cell.html">Cell</a> *source, <a class="el" href="class_direction.html">Direction</a> dir)</td></tr>
+<tr class="separator:a88ec7e2175681e74c48d1684ff4753a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a006f7d493b6679cf0e6a9eab9ed00e73"><td class="memItemLeft" align="right" valign="top"><a id="a006f7d493b6679cf0e6a9eab9ed00e73"></a>
+<a class="el" href="class_cell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>move</b> (<a class="el" href="class_cell.html">Cell</a> *source, <a class="el" href="class_cell.html">Cell</a> *dest)</td></tr>
+<tr class="separator:a006f7d493b6679cf0e6a9eab9ed00e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18246b65a8f794b5620e523524fdb8e7"><td class="memItemLeft" align="right" valign="top"><a id="a18246b65a8f794b5620e523524fdb8e7"></a>
+<a class="el" href="class_player.html">Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getPlayer</b> ()</td></tr>
+<tr class="separator:a18246b65a8f794b5620e523524fdb8e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1af1c1145fbc4675952fa10c0aacf61"><td class="memItemLeft" align="right" valign="top"><a id="ad1af1c1145fbc4675952fa10c0aacf61"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>validPath</b> ()</td></tr>
 <tr class="separator:ad1af1c1145fbc4675952fa10c0aacf61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6749a0b9a270aef552af6bd94f88e7bc"><td class="memItemLeft" align="right" valign="top"><a id="a6749a0b9a270aef552af6bd94f88e7bc"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>validPath</b> (int beginRow, int beginCol, int exitRow, int exitCol)</td></tr>
 <tr class="separator:a6749a0b9a270aef552af6bd94f88e7bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb226f399e3e44cc5ecb100b4c378848"><td class="memItemLeft" align="right" valign="top"><a id="aeb226f399e3e44cc5ecb100b4c378848"></a>
-int **&#160;</td><td class="memItemRight" valign="bottom"><b>dijkstra</b> (int const exitRow, int const exitCol)</td></tr>
-<tr class="separator:aeb226f399e3e44cc5ecb100b4c378848"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9ac575aa037a6d8ed05eb4c36bb66c1"><td class="memItemLeft" align="right" valign="top"><a id="aa9ac575aa037a6d8ed05eb4c36bb66c1"></a>
-int **&#160;</td><td class="memItemRight" valign="bottom"><b>dijkstra</b> (<a class="el" href="class_cell.html">Cell</a> *reference)</td></tr>
-<tr class="separator:aa9ac575aa037a6d8ed05eb4c36bb66c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51aac90778c2a06c43ff151fe42e0a2a"><td class="memItemLeft" align="right" valign="top"><a id="a51aac90778c2a06c43ff151fe42e0a2a"></a>
+vector&lt; vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>dijkstra</b> (int const refRow, int const refCol)</td></tr>
+<tr class="separator:a51aac90778c2a06c43ff151fe42e0a2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92525f41812b35f69ddb6b2e6bc28e13"><td class="memItemLeft" align="right" valign="top"><a id="a92525f41812b35f69ddb6b2e6bc28e13"></a>
+vector&lt; vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>dijkstra</b> (<a class="el" href="class_cell.html">Cell</a> *reference)</td></tr>
+<tr class="separator:a92525f41812b35f69ddb6b2e6bc28e13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76ba15e9f73cfdf657e00720744b4466"><td class="memItemLeft" align="right" valign="top"><a id="a76ba15e9f73cfdf657e00720744b4466"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (<a class="el" href="class_map.html">Map</a> &amp;const rhsMap)</td></tr>
 <tr class="separator:a76ba15e9f73cfdf657e00720744b4466"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -183,9 +197,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>save</b> (std::string
 <tr class="memitem:a8f2e95c92c3b1b36d9212b101d755bd8"><td class="memItemLeft" align="right" valign="top"><a id="a8f2e95c92c3b1b36d9212b101d755bd8"></a>
 vector&lt; <a class="el" href="class_cell.html">Cell</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>operator[]</b> (int i)</td></tr>
 <tr class="separator:a8f2e95c92c3b1b36d9212b101d755bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad90ace533d344806630a886a6c7eea05"><td class="memItemLeft" align="right" valign="top"><a id="ad90ace533d344806630a886a6c7eea05"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>printGraph</b> ()</td></tr>
+<tr class="separator:ad90ace533d344806630a886a6c7eea05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94c656e72ab63c3791c1f8522f56f603"><td class="memItemLeft" align="right" valign="top"><a id="a94c656e72ab63c3791c1f8522f56f603"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>toString</b> ()</td></tr>
 <tr class="separator:a94c656e72ab63c3791c1f8522f56f603"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0574d5f4543eb879d8f736ec696c6376"><td class="memItemLeft" align="right" valign="top"><a id="a0574d5f4543eb879d8f736ec696c6376"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>toString2</b> ()</td></tr>
+<tr class="separator:a0574d5f4543eb879d8f736ec696c6376"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -202,7 +222,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_map.html" title="Map object. ">Map</a> object. </p>
 
-<p>Definition at line <a class="el" href="map_8h_source.html#l00043">43</a> of file <a class="el" href="map_8h_source.html">map.h</a>.</p>
+<p>Definition at line <a class="el" href="map_8h_source.html#l00065">65</a> of file <a class="el" href="map_8h_source.html">map.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0f5ad0fd4563497b4214038cbca8b582"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0f5ad0fd4563497b4214038cbca8b582">&sect;&nbsp;</a></span>Map()</h2>
@@ -222,9 +242,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
 <p>Default constructor for a <a class="el" href="class_map.html" title="Map object. ">Map</a>. </p>
 <p>initializes a blank <a class="el" href="class_map.html" title="Map object. ">Map</a> of size 10 x 10. </p>
 
-<p>Definition at line <a class="el" href="map_8cpp_source.html#l00016">16</a> of file <a class="el" href="map_8cpp_source.html">map.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;         : height(5), width(5),</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;board(vector&lt;vector&lt;Cell*&gt;&gt;()),</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;stops(std::list&lt;Cell*&gt;())</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    initMap();</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    stops.push_front((*<span class="keyword">this</span>)[0][0]);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    stops.push_back(<a class="code" href="class_map.html#afc1c246f4bc6bde164ac2dafa79bf5fb">getCell</a>(this-&gt;getHeight() - 1, this-&gt;getWidth() - 1));</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div><div class="ttc" id="class_map_html_afc1c246f4bc6bde164ac2dafa79bf5fb"><div class="ttname"><a href="class_map.html#afc1c246f4bc6bde164ac2dafa79bf5fb">Map::getCell</a></div><div class="ttdeci">Cell * getCell(int row, int col)</div><div class="ttdoc">Function that returns a pointer to a board Cell. </div><div class="ttdef"><b>Definition:</b> <a href="map_8cpp_source.html#l00152">map.cpp:152</a></div></div>
-</div><!-- fragment -->
+<p>Definition at line <a class="el" href="map_8cpp_source.html#l00035">35</a> of file <a class="el" href="map_8cpp_source.html">map.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;         : height(5), width(5),</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;board(vector&lt;vector&lt;Cell*&gt;&gt;()),</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;stops(std::list&lt;Cell*&gt;())</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    initMap();</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    stops.push_front(board[0][0]);</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    stops.push_back(board[this-&gt;getHeight()-1][this-&gt;getWidth()-1]);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    validPath();</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -270,8 +289,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="map_8cpp_source.html#l00270">270</a> of file <a class="el" href="map_8cpp_source.html">map.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;{</div><div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keywordtype">int</span> i;</div><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;</div><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordflow">if</span> (cellExists(start, col) &amp;&amp; cellExists(end, col))</div><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    {</div><div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;</div><div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        <span class="keywordflow">for</span> (i = start; i &lt; this-&gt;getHeight() &amp;&amp; i &lt;= end; i++)</div><div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        {</div><div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            <span class="keywordflow">return</span> board[i][col]-&gt;setContent(<span class="keyword">new</span> <a class="code" href="class_wall.html">Wall</a>());</div><div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        }</div><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;</div><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    }</div><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;</div><div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;}</div><div class="ttc" id="class_wall_html"><div class="ttname"><a href="class_wall.html">Wall</a></div><div class="ttdef"><b>Definition:</b> <a href="basic__structure_8h_source.html#l00040">basic_structure.h:40</a></div></div>
+<p>Definition at line <a class="el" href="map_8cpp_source.html#l00300">300</a> of file <a class="el" href="map_8cpp_source.html">map.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;{</div><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordtype">int</span> i;</div><div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;</div><div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="keywordflow">if</span> (this-&gt;cellExists(start, col) &amp;&amp; this-&gt;cellExists(end, col))</div><div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    {</div><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;</div><div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <span class="keywordflow">for</span> (i = start; i &lt; this-&gt;getHeight() &amp;&amp; i &lt;= end; i++)</div><div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        {</div><div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            board[i][col]-&gt;setContent(<span class="keyword">new</span> <a class="code" href="class_wall.html">Wall</a>());</div><div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        }</div><div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;</div><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    }</div><div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;</div><div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;}</div><div class="ttc" id="class_wall_html"><div class="ttname"><a href="class_wall.html">Wall</a></div><div class="ttdef"><b>Definition:</b> <a href="basic__structure_8h_source.html#l00048">basic_structure.h:48</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -317,8 +336,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="map_8cpp_source.html#l00250">250</a> of file <a class="el" href="map_8cpp_source.html">map.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;{</div><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordtype">int</span> j;</div><div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordflow">if</span> (cellExists(row, start) &amp;&amp; cellExists(row, end))</div><div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    {</div><div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;</div><div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="keywordflow">for</span> (j = start; j &lt; this-&gt;getWidth() &amp;&amp; j &lt;= end; j++)</div><div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        {</div><div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <span class="keywordflow">return</span> board[row][j]-&gt;setContent(<span class="keyword">new</span> <a class="code" href="class_wall.html">Wall</a>());</div><div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        }</div><div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    }</div><div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;}</div><div class="ttc" id="class_wall_html"><div class="ttname"><a href="class_wall.html">Wall</a></div><div class="ttdef"><b>Definition:</b> <a href="basic__structure_8h_source.html#l00040">basic_structure.h:40</a></div></div>
+<p>Definition at line <a class="el" href="map_8cpp_source.html#l00278">278</a> of file <a class="el" href="map_8cpp_source.html">map.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;{</div><div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordtype">int</span> j;</div><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;</div><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keywordflow">if</span> (this-&gt;cellExists(row, start) &amp;&amp; this-&gt;cellExists(row, end))</div><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    {</div><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;</div><div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="keywordflow">for</span> (j = start; j &lt; this-&gt;getWidth() &amp;&amp; j &lt;= end; j++)</div><div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        {</div><div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            board[row][j]-&gt;setContent(<span class="keyword">new</span> <a class="code" href="class_wall.html">Wall</a>());</div><div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        }</div><div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;</div><div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    }</div><div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;</div><div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;}</div><div class="ttc" id="class_wall_html"><div class="ttname"><a href="class_wall.html">Wall</a></div><div class="ttdef"><b>Definition:</b> <a href="basic__structure_8h_source.html#l00048">basic_structure.h:48</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -329,7 +348,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 24 2016 16:45:27 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 29 2016 00:45:10 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.12
 </small></address>

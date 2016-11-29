@@ -171,9 +171,9 @@ backpack(unordered_set<Item*>())
 
 	equipped = vector<Equipment*>(EquipType::getCount());
 
-	for (i = 0; i < EquipType::getCount(); i++)
+	for (Equipment* e : equipped)
 	{
-		equipped[i] = nullptr;
+		e = nullptr;
 	}
 }
 
@@ -235,14 +235,10 @@ void Inventory::updateLvl(int aLevel)
 int Inventory::getEquipMod(Ability abl)
 {
 	int result = 0;
-	int i;
 
-	for (i = 0; i < EquipType::getCount(); i++)
+	for (Equipment* e : equipped)
 	{
-		if (equipped[i] != nullptr)
-		{
-			result += equipped[i]->getEnchantment(&abl);
-		}
+		if (e != NULL) result += e->getEnchantment(&abl);
 	}
 
 	return result;

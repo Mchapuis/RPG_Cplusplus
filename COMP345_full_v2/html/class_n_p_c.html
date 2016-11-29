@@ -82,12 +82,12 @@ Inheritance diagram for NPC:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad33bef700a6b0b6d5619dc8af4e9ac62"><td class="memItemLeft" align="right" valign="top"><a id="ad33bef700a6b0b6d5619dc8af4e9ac62"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>NPC</b> (std::string aName, int aLevel)</td></tr>
-<tr class="separator:ad33bef700a6b0b6d5619dc8af4e9ac62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e81f8ecedc0eb22349a68cd224dbc23"><td class="memItemLeft" align="right" valign="top"><a id="a7e81f8ecedc0eb22349a68cd224dbc23"></a>
-const char&#160;</td><td class="memItemRight" valign="bottom"><b>getSymbol</b> ()</td></tr>
-<tr class="separator:a7e81f8ecedc0eb22349a68cd224dbc23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae701662c099470aa99a4730c024b9f84"><td class="memItemLeft" align="right" valign="top"><a id="ae701662c099470aa99a4730c024b9f84"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>NPC</b> (std::string aName, int aBaseAtk, int aLevel)</td></tr>
+<tr class="separator:ae701662c099470aa99a4730c024b9f84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c15a5d8f02b5962aab11187b6ff5029"><td class="memItemLeft" align="right" valign="top"><a id="a3c15a5d8f02b5962aab11187b6ff5029"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getSymbol</b> ()</td></tr>
+<tr class="separator:a3c15a5d8f02b5962aab11187b6ff5029"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90707f8d4132352e3a79f1774df9a3aa"><td class="memItemLeft" align="right" valign="top"><a id="a90707f8d4132352e3a79f1774df9a3aa"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> ()</td></tr>
 <tr class="separator:a90707f8d4132352e3a79f1774df9a3aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -101,9 +101,9 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>load</b> (std
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>save</b> (std::string filename)</td></tr>
 <tr class="separator:a2ac4ef18f0adffd50ec066347ed027a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_game_character"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_game_character')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_game_character.html">GameCharacter</a></td></tr>
-<tr class="memitem:ad5aee02539362a4d081bb87dd0192995 inherit pub_methods_class_game_character"><td class="memItemLeft" align="right" valign="top"><a id="ad5aee02539362a4d081bb87dd0192995"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>GameCharacter</b> (std::string aName, int aLevel)</td></tr>
-<tr class="separator:ad5aee02539362a4d081bb87dd0192995 inherit pub_methods_class_game_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47cc5180a843cd2fe156d794fdc9ebf5 inherit pub_methods_class_game_character"><td class="memItemLeft" align="right" valign="top"><a id="a47cc5180a843cd2fe156d794fdc9ebf5"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>GameCharacter</b> (std::string aName, int aBaseAtk, int aLevel)</td></tr>
+<tr class="separator:a47cc5180a843cd2fe156d794fdc9ebf5 inherit pub_methods_class_game_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1acb3766c648348716a1b162626d6ffa inherit pub_methods_class_game_character"><td class="memItemLeft" align="right" valign="top"><a id="a1acb3766c648348716a1b162626d6ffa"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getName</b> ()</td></tr>
 <tr class="separator:a1acb3766c648348716a1b162626d6ffa inherit pub_methods_class_game_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -113,9 +113,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setName</b> (std::str
 <tr class="memitem:aa989c9d337840ce0f103dc102351b282 inherit pub_methods_class_game_character"><td class="memItemLeft" align="right" valign="top"><a id="aa989c9d337840ce0f103dc102351b282"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>resetLevel</b> ()</td></tr>
 <tr class="separator:aa989c9d337840ce0f103dc102351b282 inherit pub_methods_class_game_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a092512872c1d5e2d41484a6cf82cab81 inherit pub_methods_class_game_character"><td class="memItemLeft" align="right" valign="top"><a id="a092512872c1d5e2d41484a6cf82cab81"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>unlock</b> ()</td></tr>
-<tr class="separator:a092512872c1d5e2d41484a6cf82cab81 inherit pub_methods_class_game_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba3f150692940ea183b98e97f5f8e22b inherit pub_methods_class_game_character"><td class="memItemLeft" align="right" valign="top"><a id="aba3f150692940ea183b98e97f5f8e22b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setStrategy</b> (<a class="el" href="class_character_strategy.html">CharacterStrategy</a> *aStrategy)</td></tr>
+<tr class="separator:aba3f150692940ea183b98e97f5f8e22b inherit pub_methods_class_game_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a839bfae2fc758ac20955df055d376e39 inherit pub_methods_class_game_character"><td class="memItemLeft" align="right" valign="top"><a id="a839bfae2fc758ac20955df055d376e39"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setMap</b> (<a class="el" href="class_map.html">Map</a> *aMap)</td></tr>
+<tr class="separator:a839bfae2fc758ac20955df055d376e39 inherit pub_methods_class_game_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31aa568d3cb993da2592926d49ab5457 inherit pub_methods_class_game_character"><td class="memItemLeft" align="right" valign="top"><a id="a31aa568d3cb993da2592926d49ab5457"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>getLevel</b> ()</td></tr>
 <tr class="separator:a31aa568d3cb993da2592926d49ab5457 inherit pub_methods_class_game_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,9 +128,15 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>getLevel</b> ()</td></
 <tr class="memitem:a0e6839e7c79e97ba7daea9ed0fc2569e inherit pub_methods_class_game_character"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_character.html#a0e6839e7c79e97ba7daea9ed0fc2569e">updateLvl</a> (int aLevel)</td></tr>
 <tr class="memdesc:a0e6839e7c79e97ba7daea9ed0fc2569e inherit pub_methods_class_game_character"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to set a characters level.  <a href="class_game_character.html#a0e6839e7c79e97ba7daea9ed0fc2569e">More...</a><br /></td></tr>
 <tr class="separator:a0e6839e7c79e97ba7daea9ed0fc2569e inherit pub_methods_class_game_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65326d8f34ef36911b58b1654dce357b inherit pub_methods_class_game_character"><td class="memItemLeft" align="right" valign="top"><a id="a65326d8f34ef36911b58b1654dce357b"></a>
-<a class="el" href="class_inventory.html">Inventory</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getInventory</b> ()</td></tr>
-<tr class="separator:a65326d8f34ef36911b58b1654dce357b inherit pub_methods_class_game_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f288196c757a627102c21edf49a6390 inherit pub_methods_class_game_character"><td class="memItemLeft" align="right" valign="top"><a id="a6f288196c757a627102c21edf49a6390"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>startTurn</b> (<a class="el" href="class_map.html">Map</a> *map, std::map&lt; <a class="el" href="class_placeable.html">Placeable</a> *, <a class="el" href="class_cell.html">Cell</a> *&gt; objects)</td></tr>
+<tr class="separator:a6f288196c757a627102c21edf49a6390 inherit pub_methods_class_game_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac775c4c164ae60211f324fed6eed2e3f inherit pub_methods_class_game_character"><td class="memItemLeft" align="right" valign="top"><a id="ac775c4c164ae60211f324fed6eed2e3f"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>unlock</b> (<a class="el" href="class_lockable.html">Lockable</a> *lock)</td></tr>
+<tr class="separator:ac775c4c164ae60211f324fed6eed2e3f inherit pub_methods_class_game_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add3f9ad86d6c9913b1be92a8b8b4d012 inherit pub_methods_class_game_character"><td class="memItemLeft" align="right" valign="top"><a id="add3f9ad86d6c9913b1be92a8b8b4d012"></a>
+<a class="el" href="class_inventory.html">Inventory</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getInventory</b> ()</td></tr>
+<tr class="separator:add3f9ad86d6c9913b1be92a8b8b4d012 inherit pub_methods_class_game_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b1de762235904d9f11147780ffb45f1 inherit pub_methods_class_game_character"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_character.html#a9b1de762235904d9f11147780ffb45f1">getAllBaseAbl</a> ()</td></tr>
 <tr class="separator:a9b1de762235904d9f11147780ffb45f1 inherit pub_methods_class_game_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7dd71d84cef1fa1cc31787c2a2f02aa inherit pub_methods_class_game_character"><td class="memItemLeft" align="right" valign="top"><a id="ac7dd71d84cef1fa1cc31787c2a2f02aa"></a>
@@ -138,12 +147,36 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_character.html#af604f6f1df72988de0b3f34625844545">setBaseAbl</a> (<a class="el" href="class_ability.html">Ability</a> abl, int value)</td></tr>
 <tr class="memdesc:af604f6f1df72988de0b3f34625844545 inherit pub_methods_class_game_character"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that sets a single requested base ability of a character. <br /></td></tr>
 <tr class="separator:af604f6f1df72988de0b3f34625844545 inherit pub_methods_class_game_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32f566a57e294fb9d22f2f0365c00fe8 inherit pub_methods_class_game_character"><td class="memItemLeft" align="right" valign="top"><a id="a32f566a57e294fb9d22f2f0365c00fe8"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getHp</b> ()</td></tr>
+<tr class="separator:a32f566a57e294fb9d22f2f0365c00fe8 inherit pub_methods_class_game_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b12fa4278c415418863f6c14ae52e23 inherit pub_methods_class_game_character"><td class="memItemLeft" align="right" valign="top"><a id="a7b12fa4278c415418863f6c14ae52e23"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getMaxHp</b> ()</td></tr>
+<tr class="separator:a7b12fa4278c415418863f6c14ae52e23 inherit pub_methods_class_game_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0892acfa5bb8aeab17c12c22aec74ca0 inherit pub_methods_class_game_character"><td class="memItemLeft" align="right" valign="top"><a id="a0892acfa5bb8aeab17c12c22aec74ca0"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>modifyHp</b> (int variation)</td></tr>
+<tr class="separator:a0892acfa5bb8aeab17c12c22aec74ca0 inherit pub_methods_class_game_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a369f58b909a9ac72e572cd5c65773779 inherit pub_methods_class_game_character"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_character.html#a369f58b909a9ac72e572cd5c65773779">getAllBonus</a> ()</td></tr>
 <tr class="separator:a369f58b909a9ac72e572cd5c65773779 inherit pub_methods_class_game_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7f1c82a0451f417dad7651c55d96880 inherit pub_methods_class_game_character"><td class="memItemLeft" align="right" valign="top"><a id="ab7f1c82a0451f417dad7651c55d96880"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_character.html#ab7f1c82a0451f417dad7651c55d96880">getBonus</a> (<a class="el" href="class_ability.html">Ability</a> abl)</td></tr>
 <tr class="memdesc:ab7f1c82a0451f417dad7651c55d96880 inherit pub_methods_class_game_character"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that returns a single ability bonus of a character. <br /></td></tr>
 <tr class="separator:ab7f1c82a0451f417dad7651c55d96880 inherit pub_methods_class_game_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e1cd61a4ec51ff67a504ec35f32d618 inherit pub_methods_class_game_character"><td class="memItemLeft" align="right" valign="top"><a id="a7e1cd61a4ec51ff67a504ec35f32d618"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getRange</b> ()</td></tr>
+<tr class="separator:a7e1cd61a4ec51ff67a504ec35f32d618 inherit pub_methods_class_game_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab814a969b1aea65059f7a133ea52d421 inherit pub_methods_class_game_character"><td class="memItemLeft" align="right" valign="top"><a id="ab814a969b1aea65059f7a133ea52d421"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>numOfAttacks</b> ()</td></tr>
+<tr class="separator:ab814a969b1aea65059f7a133ea52d421 inherit pub_methods_class_game_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a5d3bcc7836caba4beee3d11e3f0ec8 inherit pub_methods_class_game_character"><td class="memItemLeft" align="right" valign="top"><a id="a6a5d3bcc7836caba4beee3d11e3f0ec8"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>AC</b> ()</td></tr>
+<tr class="separator:a6a5d3bcc7836caba4beee3d11e3f0ec8 inherit pub_methods_class_game_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07a375bafe6a8e65e4108fb10662803b inherit pub_methods_class_game_character"><td class="memItemLeft" align="right" valign="top"><a id="a07a375bafe6a8e65e4108fb10662803b"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>ATK_Bonus</b> (int NthAttack)</td></tr>
+<tr class="separator:a07a375bafe6a8e65e4108fb10662803b inherit pub_methods_class_game_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a8a63bd8b533736661291f64cc2ba17 inherit pub_methods_class_game_character"><td class="memItemLeft" align="right" valign="top"><a id="a5a8a63bd8b533736661291f64cc2ba17"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>attack</b> (<a class="el" href="class_game_character.html">GameCharacter</a> *opponent, int distance)</td></tr>
+<tr class="separator:a5a8a63bd8b533736661291f64cc2ba17 inherit pub_methods_class_game_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab70746cb0cd382cbe56c0190a03a3024 inherit pub_methods_class_game_character"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_character.html#ab70746cb0cd382cbe56c0190a03a3024">getAllNetStats</a> ()</td></tr>
 <tr class="separator:ab70746cb0cd382cbe56c0190a03a3024 inherit pub_methods_class_game_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94e6371f4f2f14c6a9e6aa9c8e78775b inherit pub_methods_class_game_character"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_character.html#a94e6371f4f2f14c6a9e6aa9c8e78775b">getNetStat</a> (<a class="el" href="class_ability.html">Ability</a> abl)</td></tr>
@@ -176,7 +209,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="character_8h_source.html#l00132">132</a> of file <a class="el" href="character_8h_source.html">character.h</a>.</p>
+<p>Definition at line <a class="el" href="character_8h_source.html#l00158">158</a> of file <a class="el" href="character_8h_source.html">character.h</a>.</p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="character_8h_source.html">character.h</a></li>
 <li><a class="el" href="character_8cpp_source.html">character.cpp</a></li>
@@ -184,7 +217,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 24 2016 16:45:27 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 29 2016 00:45:10 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.12
 </small></address>

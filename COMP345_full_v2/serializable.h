@@ -1,3 +1,8 @@
+#pragma once
+
+#ifndef _SERIALIZABLE_H_
+#define _SERIALIZABLE_H_
+
 #include "config.h"
 
 #include <string>
@@ -20,3 +25,5 @@ public:
 };
 
 BOOST_SERIALIZATION_ASSUME_ABSTRACT(MySerializable);
+
+#endif

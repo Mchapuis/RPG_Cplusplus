@@ -13,20 +13,30 @@
 class Game
 {
 private:
-
-	static Game INSTANCE;
-
 	
-	Map map;
-	Player player;
-	
+	Map* map;
+	vector<vector<Cell*>> board;
+	Player* player;
+	Cell* pCell;
+	std::list<GameCharacter*> characters;
+	std::map<Placeable*, Cell*> objects;
+
+	static bool isCharacter(Placeable* obj);
+	void Game::removePos(Placeable* obj);
+	void cleanUp();
+
 public:
 	Game();
-	~Game();
+	Game::Game(Map* aMap, Player* aPlayer);
+	~Game() {}
 	Game getInstance();
-	void turn(GameCharacter);
+	void nextTurn();
+
 	Player loadPlayer();
 	Map loadMap();
+	
+	void startGame();
+
 	void createPlayer();
 	void createPlayerFromLoad();
 	void mapEditor(Map map);

@@ -1,0 +1,124 @@
+\hypertarget{class_hostile_strategy}{}\section{Hostile\+Strategy Class Reference}
+\label{class_hostile_strategy}\index{Hostile\+Strategy@{Hostile\+Strategy}}
+Inheritance diagram for Hostile\+Strategy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_hostile_strategy}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_hostile_strategy_af884f2bab20bad670123aac4dbfb453a}{}\label{class_hostile_strategy_af884f2bab20bad670123aac4dbfb453a} 
+{\bfseries Hostile\+Strategy} (\hyperlink{class_game_character}{Game\+Character} $\ast$myself)
+\item 
+void \hyperlink{class_hostile_strategy_aaca0f223b92c48cb9b6b412b26fde34f}{turn} (std\+::map$<$ \hyperlink{class_placeable}{Placeable} $\ast$, \hyperlink{class_cell}{Cell} $\ast$$>$ objects)
+\item 
+\hypertarget{class_hostile_strategy_ad53152ca0a675b5eaf261f8a13658144}{}\label{class_hostile_strategy_ad53152ca0a675b5eaf261f8a13658144} 
+int {\bfseries take\+Damage} (\hyperlink{class_game_character}{Game\+Character} $\ast$attacker, int damage\+Value)
+\item 
+\hypertarget{class_hostile_strategy_abb0aa50c237c5e01f6a879d408c7518c}{}\label{class_hostile_strategy_abb0aa50c237c5e01f6a879d408c7518c} 
+void {\bfseries set\+Map} (\hyperlink{class_map}{Map} $\ast$a\+Map)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_hostile_strategy_ac98d07dd8f7b70e16ccb9a01abf56b9c}{}\label{class_hostile_strategy_ac98d07dd8f7b70e16ccb9a01abf56b9c} 
+class {\bfseries boost\+::serialization\+::access}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 72 of file character\+\_\+strategy.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_hostile_strategy_aaca0f223b92c48cb9b6b412b26fde34f}{}\label{class_hostile_strategy_aaca0f223b92c48cb9b6b412b26fde34f} 
+\index{Hostile\+Strategy@{Hostile\+Strategy}!turn@{turn}}
+\index{turn@{turn}!Hostile\+Strategy@{Hostile\+Strategy}}
+\subsubsection{\texorpdfstring{turn()}{turn()}}
+{\footnotesize\ttfamily void Hostile\+Strategy\+::turn (\begin{DoxyParamCaption}\item[{std\+::map$<$ \hyperlink{class_placeable}{Placeable} $\ast$, \hyperlink{class_cell}{Cell} $\ast$$>$}]{objects }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Hostile Ennemy stragtegy. Will seek the player if in a radius of 6 cells and attack him as soon as he is in range, depending on his weapon. 
+
+Implements \hyperlink{class_character_strategy}{Character\+Strategy}.
+
+
+
+Definition at line 71 of file character\+\_\+strategy.\+cpp.
+
+
+\begin{DoxyCode}
+72 \{
+73     \textcolor{keywordtype}{int} i;
+74 
+75     \textcolor{keywordtype}{int} range = me->getRange(); \textcolor{comment}{//get weapon range}
+76 
+77     \textcolor{keywordtype}{int} visibility = std::max(range, SIGHT\_DIST);
+78 
+79     \textcolor{keywordtype}{bool} walking = \textcolor{keyword}{true};
+80 
+81     std::map<Placeable*, Cell*>::iterator iter;
+82     \hyperlink{class_cell}{Cell}* temp;
+83     \hyperlink{class_cell}{Cell}* myCell = objects[me];
+84     \hyperlink{class_cell}{Cell}* playerCell = objects[map->getPlayer()];
+85 
+86     distGraph = graph(map, playerCell);
+87 
+88     \textcolor{keywordflow}{while} (walking)
+89     \{
+90         i = getSpeed(me);
+91 
+92         \textcolor{keywordflow}{if} (!canSee(myCell, playerCell))
+93         \{
+94             \textcolor{keywordflow}{while} (i > 0 && walking)
+95             \{
+96                 temp = myCell;
+97 
+98                 \textcolor{keywordflow}{do}
+99                 \{
+100                     myCell = map->move(myCell, Direction::randDir());
+101 
+102                     \textcolor{keywordflow}{if} (canSee(myCell, playerCell))
+103                     \{
+104                         walking = \textcolor{keyword}{false};
+105                         \textcolor{keywordflow}{break};
+106                     \}
+107                 \} \textcolor{keywordflow}{while} (temp == myCell);
+108 
+109                 i--;
+110             \}
+111         \}
+112 
+113         \textcolor{keywordflow}{if} (canSee(myCell, playerCell) && i > 0 && temp != 0)
+114         \{
+115             \textcolor{keywordflow}{while} (i > 0)
+116             \{
+117                 i--;
+118                 myCell = map->move(myCell, stepToward(distGraph, map, myCell, playerCell));
+119                 
+120                 \textcolor{keywordflow}{if} (lineDist(myCell, playerCell) <= range)
+121                 \{
+122                     walking = \textcolor{keyword}{false};
+123                     \textcolor{keywordflow}{break};
+124                 \}
+125             \}
+126         \}
+127     \}
+128 
+129     \textcolor{keywordflow}{if} (lineDist(myCell, playerCell) <= range)
+130     \{
+131         me->attack(map->getPlayer(), lineDist(myCell, playerCell));
+132     \}
+133 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+character\+\_\+strategy.\+h\item 
+character\+\_\+strategy.\+cpp\end{DoxyCompactItemize}

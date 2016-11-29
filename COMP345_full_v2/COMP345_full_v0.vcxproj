@@ -53,6 +53,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>C:\local\boost_1_62_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ShowIncludes>false</ShowIncludes>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -84,10 +85,12 @@
     <ClInclude Include="basic_structure.h" />
     <ClInclude Include="cell.h" />
     <ClInclude Include="character.h" />
+    <ClInclude Include="character_strategy.h" />
     <ClInclude Include="config.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="inventory_exceptions.h" />
     <ClInclude Include="inv2.h" />
+    <ClInclude Include="iStrategies.h" />
     <ClInclude Include="map.h" />
     <ClInclude Include="placeable.h" />
     <ClInclude Include="serializable.h" />
@@ -98,6 +101,7 @@
     <ClCompile Include="basic_structure.cpp" />
     <ClCompile Include="cell.cpp" />
     <ClCompile Include="character.cpp" />
+    <ClCompile Include="character_strategy.cpp" />
     <ClCompile Include="config.cpp" />
     <ClCompile Include="driver2.cpp" />
     <ClCompile Include="game.cpp" />

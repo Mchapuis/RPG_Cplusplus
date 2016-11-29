@@ -88,12 +88,12 @@ Inheritance diagram for GameCharacter:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad5aee02539362a4d081bb87dd0192995"><td class="memItemLeft" align="right" valign="top"><a id="ad5aee02539362a4d081bb87dd0192995"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>GameCharacter</b> (std::string aName, int aLevel)</td></tr>
-<tr class="separator:ad5aee02539362a4d081bb87dd0192995"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a175c4c67c7276a9c64833afbccf392ee"><td class="memItemLeft" align="right" valign="top"><a id="a175c4c67c7276a9c64833afbccf392ee"></a>
-const char&#160;</td><td class="memItemRight" valign="bottom"><b>getSymbol</b> ()</td></tr>
-<tr class="separator:a175c4c67c7276a9c64833afbccf392ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47cc5180a843cd2fe156d794fdc9ebf5"><td class="memItemLeft" align="right" valign="top"><a id="a47cc5180a843cd2fe156d794fdc9ebf5"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>GameCharacter</b> (std::string aName, int aBaseAtk, int aLevel)</td></tr>
+<tr class="separator:a47cc5180a843cd2fe156d794fdc9ebf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ba3c0844dffbe7bc597d25eabfafd73"><td class="memItemLeft" align="right" valign="top"><a id="a9ba3c0844dffbe7bc597d25eabfafd73"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getSymbol</b> ()</td></tr>
+<tr class="separator:a9ba3c0844dffbe7bc597d25eabfafd73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1acb3766c648348716a1b162626d6ffa"><td class="memItemLeft" align="right" valign="top"><a id="a1acb3766c648348716a1b162626d6ffa"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getName</b> ()</td></tr>
 <tr class="separator:a1acb3766c648348716a1b162626d6ffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -106,9 +106,12 @@ virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> ()<
 <tr class="memitem:aa989c9d337840ce0f103dc102351b282"><td class="memItemLeft" align="right" valign="top"><a id="aa989c9d337840ce0f103dc102351b282"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>resetLevel</b> ()</td></tr>
 <tr class="separator:aa989c9d337840ce0f103dc102351b282"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a092512872c1d5e2d41484a6cf82cab81"><td class="memItemLeft" align="right" valign="top"><a id="a092512872c1d5e2d41484a6cf82cab81"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>unlock</b> ()</td></tr>
-<tr class="separator:a092512872c1d5e2d41484a6cf82cab81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba3f150692940ea183b98e97f5f8e22b"><td class="memItemLeft" align="right" valign="top"><a id="aba3f150692940ea183b98e97f5f8e22b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setStrategy</b> (<a class="el" href="class_character_strategy.html">CharacterStrategy</a> *aStrategy)</td></tr>
+<tr class="separator:aba3f150692940ea183b98e97f5f8e22b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a839bfae2fc758ac20955df055d376e39"><td class="memItemLeft" align="right" valign="top"><a id="a839bfae2fc758ac20955df055d376e39"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setMap</b> (<a class="el" href="class_map.html">Map</a> *aMap)</td></tr>
+<tr class="separator:a839bfae2fc758ac20955df055d376e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31aa568d3cb993da2592926d49ab5457"><td class="memItemLeft" align="right" valign="top"><a id="a31aa568d3cb993da2592926d49ab5457"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>getLevel</b> ()</td></tr>
 <tr class="separator:a31aa568d3cb993da2592926d49ab5457"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,9 +121,15 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>getLevel</b> ()</td></
 <tr class="memitem:a0e6839e7c79e97ba7daea9ed0fc2569e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_character.html#a0e6839e7c79e97ba7daea9ed0fc2569e">updateLvl</a> (int aLevel)</td></tr>
 <tr class="memdesc:a0e6839e7c79e97ba7daea9ed0fc2569e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to set a characters level.  <a href="#a0e6839e7c79e97ba7daea9ed0fc2569e">More...</a><br /></td></tr>
 <tr class="separator:a0e6839e7c79e97ba7daea9ed0fc2569e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65326d8f34ef36911b58b1654dce357b"><td class="memItemLeft" align="right" valign="top"><a id="a65326d8f34ef36911b58b1654dce357b"></a>
-<a class="el" href="class_inventory.html">Inventory</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getInventory</b> ()</td></tr>
-<tr class="separator:a65326d8f34ef36911b58b1654dce357b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f288196c757a627102c21edf49a6390"><td class="memItemLeft" align="right" valign="top"><a id="a6f288196c757a627102c21edf49a6390"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>startTurn</b> (<a class="el" href="class_map.html">Map</a> *map, std::map&lt; <a class="el" href="class_placeable.html">Placeable</a> *, <a class="el" href="class_cell.html">Cell</a> *&gt; objects)</td></tr>
+<tr class="separator:a6f288196c757a627102c21edf49a6390"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac775c4c164ae60211f324fed6eed2e3f"><td class="memItemLeft" align="right" valign="top"><a id="ac775c4c164ae60211f324fed6eed2e3f"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>unlock</b> (<a class="el" href="class_lockable.html">Lockable</a> *lock)</td></tr>
+<tr class="separator:ac775c4c164ae60211f324fed6eed2e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add3f9ad86d6c9913b1be92a8b8b4d012"><td class="memItemLeft" align="right" valign="top"><a id="add3f9ad86d6c9913b1be92a8b8b4d012"></a>
+<a class="el" href="class_inventory.html">Inventory</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getInventory</b> ()</td></tr>
+<tr class="separator:add3f9ad86d6c9913b1be92a8b8b4d012"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b1de762235904d9f11147780ffb45f1"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_character.html#a9b1de762235904d9f11147780ffb45f1">getAllBaseAbl</a> ()</td></tr>
 <tr class="separator:a9b1de762235904d9f11147780ffb45f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7dd71d84cef1fa1cc31787c2a2f02aa"><td class="memItemLeft" align="right" valign="top"><a id="ac7dd71d84cef1fa1cc31787c2a2f02aa"></a>
@@ -131,12 +140,36 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_character.html#af604f6f1df72988de0b3f34625844545">setBaseAbl</a> (<a class="el" href="class_ability.html">Ability</a> abl, int value)</td></tr>
 <tr class="memdesc:af604f6f1df72988de0b3f34625844545"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that sets a single requested base ability of a character. <br /></td></tr>
 <tr class="separator:af604f6f1df72988de0b3f34625844545"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32f566a57e294fb9d22f2f0365c00fe8"><td class="memItemLeft" align="right" valign="top"><a id="a32f566a57e294fb9d22f2f0365c00fe8"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getHp</b> ()</td></tr>
+<tr class="separator:a32f566a57e294fb9d22f2f0365c00fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b12fa4278c415418863f6c14ae52e23"><td class="memItemLeft" align="right" valign="top"><a id="a7b12fa4278c415418863f6c14ae52e23"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getMaxHp</b> ()</td></tr>
+<tr class="separator:a7b12fa4278c415418863f6c14ae52e23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0892acfa5bb8aeab17c12c22aec74ca0"><td class="memItemLeft" align="right" valign="top"><a id="a0892acfa5bb8aeab17c12c22aec74ca0"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>modifyHp</b> (int variation)</td></tr>
+<tr class="separator:a0892acfa5bb8aeab17c12c22aec74ca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a369f58b909a9ac72e572cd5c65773779"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_character.html#a369f58b909a9ac72e572cd5c65773779">getAllBonus</a> ()</td></tr>
 <tr class="separator:a369f58b909a9ac72e572cd5c65773779"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7f1c82a0451f417dad7651c55d96880"><td class="memItemLeft" align="right" valign="top"><a id="ab7f1c82a0451f417dad7651c55d96880"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_character.html#ab7f1c82a0451f417dad7651c55d96880">getBonus</a> (<a class="el" href="class_ability.html">Ability</a> abl)</td></tr>
 <tr class="memdesc:ab7f1c82a0451f417dad7651c55d96880"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that returns a single ability bonus of a character. <br /></td></tr>
 <tr class="separator:ab7f1c82a0451f417dad7651c55d96880"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e1cd61a4ec51ff67a504ec35f32d618"><td class="memItemLeft" align="right" valign="top"><a id="a7e1cd61a4ec51ff67a504ec35f32d618"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getRange</b> ()</td></tr>
+<tr class="separator:a7e1cd61a4ec51ff67a504ec35f32d618"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab814a969b1aea65059f7a133ea52d421"><td class="memItemLeft" align="right" valign="top"><a id="ab814a969b1aea65059f7a133ea52d421"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>numOfAttacks</b> ()</td></tr>
+<tr class="separator:ab814a969b1aea65059f7a133ea52d421"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a5d3bcc7836caba4beee3d11e3f0ec8"><td class="memItemLeft" align="right" valign="top"><a id="a6a5d3bcc7836caba4beee3d11e3f0ec8"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>AC</b> ()</td></tr>
+<tr class="separator:a6a5d3bcc7836caba4beee3d11e3f0ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07a375bafe6a8e65e4108fb10662803b"><td class="memItemLeft" align="right" valign="top"><a id="a07a375bafe6a8e65e4108fb10662803b"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>ATK_Bonus</b> (int NthAttack)</td></tr>
+<tr class="separator:a07a375bafe6a8e65e4108fb10662803b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a8a63bd8b533736661291f64cc2ba17"><td class="memItemLeft" align="right" valign="top"><a id="a5a8a63bd8b533736661291f64cc2ba17"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>attack</b> (<a class="el" href="class_game_character.html">GameCharacter</a> *opponent, int distance)</td></tr>
+<tr class="separator:a5a8a63bd8b533736661291f64cc2ba17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab70746cb0cd382cbe56c0190a03a3024"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_character.html#ab70746cb0cd382cbe56c0190a03a3024">getAllNetStats</a> ()</td></tr>
 <tr class="separator:ab70746cb0cd382cbe56c0190a03a3024"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94e6371f4f2f14c6a9e6aa9c8e78775b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_character.html#a94e6371f4f2f14c6a9e6aa9c8e78775b">getNetStat</a> (<a class="el" href="class_ability.html">Ability</a> abl)</td></tr>
@@ -177,7 +210,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
 <div class="textblock"><p>Base class for character types <a class="el" href="class_player.html">Player</a>, NpcEnepmy and <a class="el" href="class_friendly.html">Friendly</a>. </p>
 <p>The <a class="el" href="class_game_character.html" title="Base class for character types Player, NpcEnepmy and Friendly. ">GameCharacter</a> object holds the the name, level, ability scores, bonus, modifiers, and <a class="el" href="class_inventory.html">Inventory</a> of a character. It derives extends the abstract class <a class="el" href="class_placeable.html">Placeable</a>. </p>
 
-<p>Definition at line <a class="el" href="character_8h_source.html#l00020">20</a> of file <a class="el" href="character_8h_source.html">character.h</a>.</p>
+<p>Definition at line <a class="el" href="character_8h_source.html#l00021">21</a> of file <a class="el" href="character_8h_source.html">character.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a9b1de762235904d9f11147780ffb45f1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9b1de762235904d9f11147780ffb45f1">&sect;&nbsp;</a></span>getAllBaseAbl()</h2>
@@ -195,8 +228,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
 </div><div class="memdoc">
 <p>Function that returns an array of a character base ability scores </p>
 
-<p>Definition at line <a class="el" href="character_8cpp_source.html#l00127">127</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordtype">int</span>* result = <span class="keyword">new</span> <span class="keywordtype">int</span>[Ability::getCount()];</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">int</span> i;</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; Ability::getCount(); i++)</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    {</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        result[i] = abilities[i];</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">return</span> result;</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="character_8cpp_source.html#l00287">287</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;{</div><div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="keywordtype">int</span>* result = <span class="keyword">new</span> <span class="keywordtype">int</span>[6];</div><div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keywordtype">int</span> i;</div><div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;</div><div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; 6; i++)</div><div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    {</div><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        result[i] = abilities[i];</div><div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    }</div><div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;</div><div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="keywordflow">return</span> result;</div><div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <a id="a369f58b909a9ac72e572cd5c65773779"></a>
@@ -215,8 +248,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
 </div><div class="memdoc">
 <p>Function that returns an array of a character ability bonus. </p>
 
-<p>Definition at line <a class="el" href="character_8cpp_source.html#l00154">154</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;{</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordtype">int</span>* result = <span class="keyword">new</span> <span class="keywordtype">int</span>[Ability::getCount()];</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordtype">int</span> i;</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; Ability::getCount(); i++)</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    {</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        result[i] = bonus[i];</div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    }</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">return</span> result;</div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;}</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="character_8cpp_source.html#l00314">314</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;{</div><div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keywordtype">int</span>* result = <span class="keyword">new</span> <span class="keywordtype">int</span>[6];</div><div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keywordtype">int</span> i;</div><div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;</div><div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; 6; i++)</div><div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    {</div><div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        result[i] = bonus[i];</div><div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    }</div><div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;</div><div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordflow">return</span> result;</div><div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <a id="ab70746cb0cd382cbe56c0190a03a3024"></a>
@@ -235,8 +268,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
 </div><div class="memdoc">
 <p>Function that returns an array of a character net ability scores, with bonus and modifiers included </p>
 
-<p>Definition at line <a class="el" href="character_8cpp_source.html#l00204">204</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;{</div><div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keywordtype">int</span>* result = <span class="keyword">new</span> <span class="keywordtype">int</span>[Ability::getCount()];</div><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordtype">int</span>* enchantments = inventory.getAllEquipMods();</div><div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordtype">int</span> i;</div><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;</div><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; Ability::getCount(); i++)</div><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    {</div><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        result[i] = abilities[i] + enchantments[i];</div><div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="comment">//result[i] = abilities[i] + modifiers[i] + itemModifiers[i];</span></div><div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    }</div><div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;</div><div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordflow">return</span> result;</div><div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;}</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="character_8cpp_source.html#l00345">345</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;{</div><div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="keywordtype">int</span>* result = <span class="keyword">new</span> <span class="keywordtype">int</span>[6];</div><div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="keywordtype">int</span>* enchantments = inventory.getAllEquipMods();</div><div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <span class="keywordtype">int</span> i;</div><div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;</div><div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; 6; i++)</div><div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    {</div><div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        result[i] = abilities[i] + enchantments[i];</div><div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <span class="comment">//result[i] = abilities[i] + modifiers[i] + itemModifiers[i];</span></div><div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    }</div><div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;</div><div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keywordflow">return</span> result;</div><div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <a id="a94e6371f4f2f14c6a9e6aa9c8e78775b"></a>
@@ -256,8 +289,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
 </div><div class="memdoc">
 <p>Function that returns a single net ability score of a character, with bonus and modifiers included. </p>
 
-<p>Definition at line <a class="el" href="character_8cpp_source.html#l00221">221</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;{</div><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordflow">return</span> abilities[abl.index]</div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        + bonus[abl.index]</div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="comment">//+ modifiers[abl.index]</span></div><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        + inventory.getEquipMod(abl);</div><div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;}</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="character_8cpp_source.html#l00362">362</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;{</div><div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keywordflow">return</span> this-&gt;calcBonus(abl)</div><div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        + inventory.getEquipMod(abl);</div><div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <a id="a367a537148a995677d9649b975cb326b"></a>
@@ -278,8 +311,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
 <p>Function for a single level increment. </p>
 <p>The function gives the character an ability point every 4 levels, as per D&amp;D rules (here randomly) </p>
 
-<p>Definition at line <a class="el" href="character_8cpp_source.html#l00080">80</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">int</span> i;</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    level++;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">//randomly increase an ability bonus each 4 levels.</span></div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span> (level % 4 == 0)</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    {</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        i = rand() % 6;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        bonus[Ability::getMainAbls()[i].index]++;</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    updateBonus();</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    abilities[Ability::HP.index] += this-&gt;hitDie();</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    Hp = abilities[Ability::HP.index];</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="character_8cpp_source.html#l00105">105</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">int</span> i;</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    level++;</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">//randomly increase an ability bonus each 4 levels.</span></div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">if</span> (level % 4 == 0)</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    {</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        i = rand() % 6;</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        bonus[Ability::getMainAbls()[i].index]++;</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    updateBonus();</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    MaxHp += this-&gt;hitDie();</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    Hp = MaxHp;</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <a id="a0e6839e7c79e97ba7daea9ed0fc2569e"></a>
@@ -311,8 +344,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
 
 <p>Implements <a class="el" href="class_placeable.html">Placeable</a>.</p>
 
-<p>Definition at line <a class="el" href="character_8cpp_source.html#l00102">102</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">if</span> (toLevel &lt; 0) toLevel = 0;</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">if</span> (level == 0 &amp;&amp; toLevel &gt; 0) inventory.updateLvl(toLevel);</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    </div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">while</span> (level &lt; toLevel) this-&gt;<a class="code" href="class_game_character.html#a367a537148a995677d9649b975cb326b">levelUp</a>();</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div><div class="ttc" id="class_game_character_html_a367a537148a995677d9649b975cb326b"><div class="ttname"><a href="class_game_character.html#a367a537148a995677d9649b975cb326b">GameCharacter::levelUp</a></div><div class="ttdeci">void levelUp()</div><div class="ttdoc">Function for a single level increment. </div><div class="ttdef"><b>Definition:</b> <a href="character_8cpp_source.html#l00080">character.cpp:80</a></div></div>
+<p>Definition at line <a class="el" href="character_8cpp_source.html#l00127">127</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">if</span> (toLevel &lt; 0) toLevel = 0;</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">if</span> (level == 0 &amp;&amp; toLevel &gt; 0) inventory.updateLvl(toLevel);</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    </div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">while</span> (level &lt; toLevel) this-&gt;<a class="code" href="class_game_character.html#a367a537148a995677d9649b975cb326b">levelUp</a>();</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div><div class="ttc" id="class_game_character_html_a367a537148a995677d9649b975cb326b"><div class="ttname"><a href="class_game_character.html#a367a537148a995677d9649b975cb326b">GameCharacter::levelUp</a></div><div class="ttdeci">void levelUp()</div><div class="ttdoc">Function for a single level increment. </div><div class="ttdef"><b>Definition:</b> <a href="character_8cpp_source.html#l00105">character.cpp:105</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -323,7 +356,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 24 2016 16:45:27 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 29 2016 00:45:09 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.12
 </small></address>

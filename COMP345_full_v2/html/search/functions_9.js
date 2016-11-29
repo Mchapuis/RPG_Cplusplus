@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['updatelvl',['updateLvl',['../class_game_character.html#a0e6839e7c79e97ba7daea9ed0fc2569e',1,'GameCharacter::updateLvl()'],['../class_equipment.html#ab56d6a16b2151d7793c4b5fddde1f145',1,'Equipment::updateLvl()']]]
+  ['setbaseabl',['setBaseAbl',['../class_game_character.html#af604f6f1df72988de0b3f34625844545',1,'GameCharacter']]],
+  ['setcolwall',['setColWall',['../class_map.html#a7e89d11a89a796ac46e60722533f23d4',1,'Map']]],
+  ['setcontent',['setContent',['../class_cell.html#add026562137122494104071baa175473',1,'Cell']]],
+  ['setdesc',['setDesc',['../class_campain.html#aa2e22983799e1b99ea554796398c97f1',1,'Campain']]],
+  ['setrowwall',['setRowWall',['../class_map.html#a7b5c1d8ed873a72484f27e99bcdff97a',1,'Map']]]
 ];

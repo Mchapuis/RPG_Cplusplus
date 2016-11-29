@@ -19,7 +19,7 @@ const std::string Friendly::symbol = "F";
 //! Takes a name and an initial level.
 //! The assigned level generates a character with according stats.
 GameCharacter::GameCharacter(string aName, int aBaseAtk, int aLevel) :
-name(aName), level(0), baseAtk(aBaseAtk), Hp(0), inventory(Inventory())
+name(aName), level(0), baseAtk(aBaseAtk), Hp(0), MaxHp(0), inventory(Inventory())
 {
 	int i;
 
@@ -147,9 +147,22 @@ int GameCharacter::hitDie()
 	return die + bonus[Ability::CON.index];
 }
 
+int GameCharacter::getRange()
+{
+	Weapon* weapon;
+
+	if (this->inventory.getEquipType(EquipType::WEAPON) != NULL)
+	{
+		weapon = (Weapon*) this->inventory.getEquipType(EquipType::WEAPON);
+		return weapon->getRange();
+	}
+
+	return -1;
+}
+
 int GameCharacter::damageRoll(int distance)
 {
-	Weapon* weapon = (Weapon*) this->getInventory().getEquipType(EquipType::WEAPON);
+	Weapon* weapon = (Weapon*) this->inventory.getEquipType(EquipType::WEAPON);
 	pair<int, int> dmg;
 	int range;
 	int str;
@@ -162,20 +175,36 @@ int GameCharacter::damageRoll(int distance)
 	}
 	else
 	{
+
 		dmg = weapon->getDamage();
 		range = weapon->getRange();
 		str = this->getNetStat(Ability::STR);
 		dext = this->getNetStat(Ability::DEX);
-		
+	
 		if (range > 1 && str > 0) str = 0;
-		if (range <= 1) dext = 0;
+
+		if (range <= 1)
+		{
+			dext = 0;
+
+			if (distance > 1) return 0; //Assume their is no long-range melee weapons
+		}
 
 		roll = Dice::roll(dmg.first, dmg.second);
 		roll += str + dext;
 
 		if (range > 1 && distance > range) roll -= 2 * (distance - range);
+
+		return roll;
 	}
 }
+
+void GameCharacter::startTurn(int distance)
+{
+
+}
+
+
 
 bool GameCharacter::unlock(Lockable* lock)
 {
@@ -196,20 +225,27 @@ bool GameCharacter::unlock(Lockable* lock)
 	return false;
 }
 
-void GameCharacter::attack(GameCharacter opponent, int distance)
+void GameCharacter::attack(GameCharacter* opponent, int distance)
 {
 	int attackCount = this->numOfAttacks();
 	int d20;
 	int atk_bonus;
 	int i;
 
+	if (distance > 10) return;
+
+	//cout << this->name << " attacks " << opponent->name << '\n';
+
 	//Loop through character number of attacks.
-	for (i = 1; i < attackCount; i++)
+	for (i = 1; i <= attackCount; i++)
 	{
 		atk_bonus = this->ATK_Bonus(i);
 
 		// Roll 1d20
 		d20 = Dice::roll(1, 20);
+
+		//cout << i << "Dice roll = " << d20 << '\n';
+		//cout << i << "Opponent AC = " << opponent->AC() << '\n';
 
 		// If roll 1, miss.
 		if (d20 == 1) continue;
@@ -218,25 +254,30 @@ void GameCharacter::attack(GameCharacter opponent, int distance)
 		if (d20 == 20)
 		{
 			//Attack roll to see if critical hit.
-			if (Dice::roll(1, 20, ATK_Bonus(i)) >= opponent.AC())
+			if (Dice::roll(1, 20, ATK_Bonus(i)) >= opponent->AC())
 			{
-				opponent.takeDamage(this->damageRoll(distance) * 2);
+				opponent->takeDamage(this->damageRoll(distance) * 2);
 			}
 
 			//Normal hit if not.
-			opponent.takeDamage(this->damageRoll(distance));
+			opponent->takeDamage(this->damageRoll(distance));
 		}
 		//Complete standard attack roll if between 2 and 18.
-		else if (d20 + ATK_Bonus(i) >= opponent.AC())
+		else if (d20 + ATK_Bonus(i) >= opponent->AC())
 		{
-			opponent.takeDamage(this->damageRoll(distance));
+			int damage = this->damageRoll(distance);
+
+			//cout << i << "damage roll: " << damage << endl;
+			opponent->takeDamage(damage);
+			//cout << i << "opponent hp: " << opponent->Hp << "/" << opponent->MaxHp <<  endl;
 		}
 	}
+
 }
 
-int GameCharacter::takeDamage(int damageValue)
+int GameCharacter::modifyHp(int variation)
 {
-	if (Hp > 0) Hp -= std::min(1, damageValue);
+	Hp = (Hp + variation <= 0) ? Hp == 0 : Hp + variation;
 
 	return Hp;
 }
@@ -299,35 +340,6 @@ int GameCharacter::ATK_Bonus(int NthAttack)
 	return 0;
 }
 
-/*
-//! Function that returns an array of a character
-//! ability modifiers
-int* GameCharacter::getAllEnchantments()
-{
-	int* result = new int[Ability::getCount()];
-	int i;
-
-	for (i = 0; i < Ability::getCount(); i++)
-	{
-		result[i] = modifiers[i];
-	}
-
-	return result;
-}
-
-//! Function that returns a single ability modifier of a character.
-int GameCharacter::getMod(Ability abl)
-{
-	return modifiers[abl.index];
-}
-
-//! Function that sets a single base modifier ability of a character.
-void GameCharacter::setMod(Ability abl, int value)
-{
-	modifiers[abl.index] = value;
-}
-*/
-
 //! Function that returns an array of a character
 //! net ability scores, with bonus and modifiers included
 int* GameCharacter::getAllNetStats()
@@ -349,9 +361,7 @@ int* GameCharacter::getAllNetStats()
 //! of a character, with bonus and modifiers included.
 int GameCharacter::getNetStat(Ability abl)
 {
-	return abilities[abl.index]
-		+ bonus[abl.index]
-		//+ modifiers[abl.index]
+	return this->calcBonus(abl)
 		+ inventory.getEquipMod(abl);
 }
 

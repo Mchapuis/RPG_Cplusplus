@@ -3,14 +3,23 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_game_af04a043c997c34e9c4cd4fbb1db3ff73}{}\label{class_game_af04a043c997c34e9c4cd4fbb1db3ff73} 
-void {\bfseries turn} (\hyperlink{class_game_character}{Game\+Character})
+\hypertarget{class_game_a0592b20bb4dafc38a3cfdb7c5f5e963f}{}\label{class_game_a0592b20bb4dafc38a3cfdb7c5f5e963f} 
+{\bfseries Game} (\hyperlink{class_map}{Map} $\ast$a\+Map, \hyperlink{class_player}{Player} $\ast$a\+Player)
+\item 
+\hypertarget{class_game_a18d94ea20a9e7085faf15b0abb83a87c}{}\label{class_game_a18d94ea20a9e7085faf15b0abb83a87c} 
+\hyperlink{class_game}{Game} {\bfseries get\+Instance} ()
+\item 
+\hypertarget{class_game_a801658c7cef474bc1d9a830f4a79034c}{}\label{class_game_a801658c7cef474bc1d9a830f4a79034c} 
+void {\bfseries next\+Turn} ()
 \item 
 \hypertarget{class_game_a5d22cebed1061d51b2c3aaba2352972d}{}\label{class_game_a5d22cebed1061d51b2c3aaba2352972d} 
 \hyperlink{class_player}{Player} {\bfseries load\+Player} ()
 \item 
 \hypertarget{class_game_ac7c8b111e2f09bbcf92a3da037992e57}{}\label{class_game_ac7c8b111e2f09bbcf92a3da037992e57} 
 \hyperlink{class_map}{Map} {\bfseries load\+Map} ()
+\item 
+\hypertarget{class_game_ae8638ccdb0ef3bf39a6affa30aa1258f}{}\label{class_game_ae8638ccdb0ef3bf39a6affa30aa1258f} 
+void {\bfseries start\+Game} ()
 \item 
 \hypertarget{class_game_a9e5b2d2156debcd958e2eae6fc79730a}{}\label{class_game_a9e5b2d2156debcd958e2eae6fc79730a} 
 void {\bfseries create\+Player} ()
@@ -20,6 +29,8 @@ void {\bfseries create\+Player\+From\+Load} ()
 \item 
 \hypertarget{class_game_ac3276ead57322cccdeed919fd7f28b34}{}\label{class_game_ac3276ead57322cccdeed919fd7f28b34} 
 void {\bfseries map\+Editor} (\hyperlink{class_map}{Map} map)
+\item 
+void \hyperlink{class_game_ac8c66f86b907bc8afc33c8e31b800611}{display} (\hyperlink{class_game_character}{Game\+Character} $\ast$gh)
 \end{DoxyCompactItemize}
 
 
@@ -28,6 +39,42 @@ void {\bfseries map\+Editor} (\hyperlink{class_map}{Map} map)
 
 Definition at line 13 of file game.\+h.
 
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_game_ac8c66f86b907bc8afc33c8e31b800611}{}\label{class_game_ac8c66f86b907bc8afc33c8e31b800611} 
+\index{Game@{Game}!display@{display}}
+\index{display@{display}!Game@{Game}}
+\subsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void Game\+::display (\begin{DoxyParamCaption}\item[{\hyperlink{class_game_character}{Game\+Character} $\ast$}]{gh }\end{DoxyParamCaption})}
+
+Display the inventory, worn items and backpack 
+\begin{DoxyParams}{Parameters}
+{\em } & Call to string methods \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 654 of file game.\+cpp.
+
+
+\begin{DoxyCode}
+654                                    \{
+655 
+656     \textcolor{comment}{//Before the information, the display of attacks and rounds are here..}
+657     \textcolor{comment}{//example...}
+658 
+659     cout << \textcolor{stringliteral}{"\(\backslash\)n\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_INFORMATIONS\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\(\backslash\)n"};
+660     \textcolor{comment}{//Call the character in play to display what he has.}
+661     \textcolor{comment}{//This calls ---> }
+662     cout << gh->toString();
+663 
+664     \textcolor{comment}{//equip/unequip...to be added here!!!! }
+665     cout << \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nEQUIP/UNEQUIP\_\_\_\_PRESS P"}<<endl;
+666     cout << \textcolor{stringliteral}{"BACK\_\_\_\_\_\_\_\_\_\_\_\_\_PRESS B"} << endl;
+667     
+668 \}
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

@@ -38,6 +38,9 @@ bool {\bfseries start} (\hyperlink{class_player}{Player} $\ast$a\+Player)
 \hypertarget{class_map_ab22dc646bc833bb6b4070dcc2d3bd7c0}{}\label{class_map_ab22dc646bc833bb6b4070dcc2d3bd7c0} 
 bool {\bfseries cell\+Exists} (int row, int col)
 \item 
+\hypertarget{class_map_acdfd27c6dfea00eabb9c69a596deef29}{}\label{class_map_acdfd27c6dfea00eabb9c69a596deef29} 
+vector$<$ vector$<$ \hyperlink{class_cell}{Cell} $\ast$ $>$ $>$ {\bfseries get\+Board} ()
+\item 
 \hypertarget{class_map_afd34d12227676b3cebeed9f5fae2508f}{}\label{class_map_afd34d12227676b3cebeed9f5fae2508f} 
 int {\bfseries get\+Width} ()
 \item 
@@ -56,8 +59,8 @@ std\+::string {\bfseries get\+Name} ()
 \hypertarget{class_map_a26b8b9bc68f8f7e5b4f74cbd3210dd30}{}\label{class_map_a26b8b9bc68f8f7e5b4f74cbd3210dd30} 
 void {\bfseries clear\+Cell} (int row, int col)
 \item 
-\hypertarget{class_map_a502496d0178402534ec6701d10bbb0e6}{}\label{class_map_a502496d0178402534ec6701d10bbb0e6} 
-bool {\bfseries add\+Stop} (int row, int col, int position)
+\hypertarget{class_map_ad0af5ff34086a69ca33ac85969045751}{}\label{class_map_ad0af5ff34086a69ca33ac85969045751} 
+bool {\bfseries add\+Stop} (int row, int col, int index)
 \item 
 \hypertarget{class_map_a382d1000a33c473bd96a619a0dd11d16}{}\label{class_map_a382d1000a33c473bd96a619a0dd11d16} 
 bool {\bfseries update\+First\+Stop} (int row, int col)
@@ -68,6 +71,12 @@ bool {\bfseries update\+Last\+Stop} (int row, int col)
 \hypertarget{class_map_a808119272b760e43615ffc396cf6feb6}{}\label{class_map_a808119272b760e43615ffc396cf6feb6} 
 bool {\bfseries remove\+Stop} (int row, int col, int position)
 \item 
+\hypertarget{class_map_a9885a25e59304d88ea6d452d948a6f5c}{}\label{class_map_a9885a25e59304d88ea6d452d948a6f5c} 
+\hyperlink{class_cell}{Cell} $\ast$ {\bfseries get\+Begin} ()
+\item 
+\hypertarget{class_map_a3c076465db569dc53d47b7429e785188}{}\label{class_map_a3c076465db569dc53d47b7429e785188} 
+\hyperlink{class_cell}{Cell} $\ast$ {\bfseries get\+Exit} ()
+\item 
 \hypertarget{class_map_a9f10c89830337667bc392e3814b5e616}{}\label{class_map_a9f10c89830337667bc392e3814b5e616} 
 bool {\bfseries add\+To\+Cell} (\hyperlink{class_placeable}{Placeable} $\ast$to\+Place, int row, int col)
 \item 
@@ -75,14 +84,20 @@ bool \hyperlink{class_map_a7b5c1d8ed873a72484f27e99bcdff97a}{set\+Row\+Wall} (in
 \begin{DoxyCompactList}\small\item\em Mehtod that instantiate \hyperlink{class_wall}{Wall} objects in a horizontal range \hyperlink{class_cell}{Cell}. \end{DoxyCompactList}\item 
 bool \hyperlink{class_map_a7e89d11a89a796ac46e60722533f23d4}{set\+Col\+Wall} (int col, int from, int end)
 \begin{DoxyCompactList}\small\item\em Mehtod that instantiate \hyperlink{class_wall}{Wall} objects in a vertical range \hyperlink{class_cell}{Cell}. \end{DoxyCompactList}\item 
-\hypertarget{class_map_a9c37a12b6aa0fcf4f849a706c4cd2598}{}\label{class_map_a9c37a12b6aa0fcf4f849a706c4cd2598} 
-bool {\bfseries move} (int b\+Row, int b\+Col, int e\+Row, int e\+Col)
+\hypertarget{class_map_aaf124535e6f73756eb345c0c2729318e}{}\label{class_map_aaf124535e6f73756eb345c0c2729318e} 
+\hyperlink{class_cell}{Cell} $\ast$ {\bfseries move} (int src\+Row, int src\+Col, int dest\+Row, int dest\+Col)
 \item 
-\hypertarget{class_map_af9b2cb5b80f93e05fe94d24f0cd0b4d0}{}\label{class_map_af9b2cb5b80f93e05fe94d24f0cd0b4d0} 
-bool {\bfseries move} (int b\+Row, int b\+Col, \hyperlink{class_direction}{Direction} dir)
+\hypertarget{class_map_a18ed9496bb0cd446cef68f96cc63e626}{}\label{class_map_a18ed9496bb0cd446cef68f96cc63e626} 
+\hyperlink{class_cell}{Cell} $\ast$ {\bfseries move} (int b\+Row, int b\+Col, \hyperlink{class_direction}{Direction} dir)
 \item 
-\hypertarget{class_map_a22641b39f3eadb59771d2e5d02ff19c3}{}\label{class_map_a22641b39f3eadb59771d2e5d02ff19c3} 
-bool {\bfseries move} (\hyperlink{class_cell}{Cell} $\ast$from, \hyperlink{class_direction}{Direction} dir)
+\hypertarget{class_map_a88ec7e2175681e74c48d1684ff4753a0}{}\label{class_map_a88ec7e2175681e74c48d1684ff4753a0} 
+\hyperlink{class_cell}{Cell} $\ast$ {\bfseries move} (\hyperlink{class_cell}{Cell} $\ast$source, \hyperlink{class_direction}{Direction} dir)
+\item 
+\hypertarget{class_map_a006f7d493b6679cf0e6a9eab9ed00e73}{}\label{class_map_a006f7d493b6679cf0e6a9eab9ed00e73} 
+\hyperlink{class_cell}{Cell} $\ast$ {\bfseries move} (\hyperlink{class_cell}{Cell} $\ast$source, \hyperlink{class_cell}{Cell} $\ast$dest)
+\item 
+\hypertarget{class_map_a18246b65a8f794b5620e523524fdb8e7}{}\label{class_map_a18246b65a8f794b5620e523524fdb8e7} 
+\hyperlink{class_player}{Player} $\ast$ {\bfseries get\+Player} ()
 \item 
 \hypertarget{class_map_ad1af1c1145fbc4675952fa10c0aacf61}{}\label{class_map_ad1af1c1145fbc4675952fa10c0aacf61} 
 bool {\bfseries valid\+Path} ()
@@ -90,11 +105,11 @@ bool {\bfseries valid\+Path} ()
 \hypertarget{class_map_a6749a0b9a270aef552af6bd94f88e7bc}{}\label{class_map_a6749a0b9a270aef552af6bd94f88e7bc} 
 bool {\bfseries valid\+Path} (int begin\+Row, int begin\+Col, int exit\+Row, int exit\+Col)
 \item 
-\hypertarget{class_map_aeb226f399e3e44cc5ecb100b4c378848}{}\label{class_map_aeb226f399e3e44cc5ecb100b4c378848} 
-int $\ast$$\ast$ {\bfseries dijkstra} (int const exit\+Row, int const exit\+Col)
+\hypertarget{class_map_a51aac90778c2a06c43ff151fe42e0a2a}{}\label{class_map_a51aac90778c2a06c43ff151fe42e0a2a} 
+vector$<$ vector$<$ int $>$ $>$ {\bfseries dijkstra} (int const ref\+Row, int const ref\+Col)
 \item 
-\hypertarget{class_map_aa9ac575aa037a6d8ed05eb4c36bb66c1}{}\label{class_map_aa9ac575aa037a6d8ed05eb4c36bb66c1} 
-int $\ast$$\ast$ {\bfseries dijkstra} (\hyperlink{class_cell}{Cell} $\ast$reference)
+\hypertarget{class_map_a92525f41812b35f69ddb6b2e6bc28e13}{}\label{class_map_a92525f41812b35f69ddb6b2e6bc28e13} 
+vector$<$ vector$<$ int $>$ $>$ {\bfseries dijkstra} (\hyperlink{class_cell}{Cell} $\ast$reference)
 \item 
 \hypertarget{class_map_a76ba15e9f73cfdf657e00720744b4466}{}\label{class_map_a76ba15e9f73cfdf657e00720744b4466} 
 bool {\bfseries operator==} (\hyperlink{class_map}{Map} \&const rhs\+Map)
@@ -111,8 +126,14 @@ void {\bfseries save} (std\+::string filename)
 \hypertarget{class_map_a8f2e95c92c3b1b36d9212b101d755bd8}{}\label{class_map_a8f2e95c92c3b1b36d9212b101d755bd8} 
 vector$<$ \hyperlink{class_cell}{Cell} $\ast$ $>$ {\bfseries operator\mbox{[}$\,$\mbox{]}} (int i)
 \item 
+\hypertarget{class_map_ad90ace533d344806630a886a6c7eea05}{}\label{class_map_ad90ace533d344806630a886a6c7eea05} 
+std\+::string {\bfseries print\+Graph} ()
+\item 
 \hypertarget{class_map_a94c656e72ab63c3791c1f8522f56f603}{}\label{class_map_a94c656e72ab63c3791c1f8522f56f603} 
 std\+::string {\bfseries to\+String} ()
+\item 
+\hypertarget{class_map_a0574d5f4543eb879d8f736ec696c6376}{}\label{class_map_a0574d5f4543eb879d8f736ec696c6376} 
+std\+::string {\bfseries to\+String2} ()
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -131,7 +152,7 @@ class {\bfseries boost\+::serialization\+::access}
 \subsection{Detailed Description}
 \hyperlink{class_map}{Map} object. 
 
-Definition at line 43 of file map.\+h.
+Definition at line 65 of file map.\+h.
 
 
 
@@ -148,18 +169,19 @@ Default constructor for a \hyperlink{class_map}{Map}.
 
 initializes a blank \hyperlink{class_map}{Map} of size 10 x 10. 
 
-Definition at line 16 of file map.\+cpp.
+Definition at line 35 of file map.\+cpp.
 
 
 \begin{DoxyCode}
-16          : height(5), width(5),
-17 board(vector<vector<Cell*>>()),
-18 stops(std::list<Cell*>())
-19 \{
-20     initMap();
-21     stops.push\_front((*\textcolor{keyword}{this})[0][0]);
-22     stops.push\_back(\hyperlink{class_map_afc1c246f4bc6bde164ac2dafa79bf5fb}{getCell}(this->getHeight() - 1, this->getWidth() - 1));
-23 \}
+35          : height(5), width(5),
+36 board(vector<vector<Cell*>>()),
+37 stops(std::list<Cell*>())
+38 \{
+39     initMap();
+40     stops.push\_front(board[0][0]);
+41     stops.push\_back(board[this->getHeight()-1][this->getWidth()-1]);
+42     validPath();
+43 \}
 \end{DoxyCode}
 
 
@@ -185,26 +207,26 @@ Mehtod that instantiate \hyperlink{class_wall}{Wall} objects in a vertical range
 \end{DoxyParams}
 
 
-Definition at line 270 of file map.\+cpp.
+Definition at line 300 of file map.\+cpp.
 
 
 \begin{DoxyCode}
-271 \{
-272     \textcolor{keywordtype}{int} i;
-273 
-274     \textcolor{keywordflow}{if} (cellExists(start, col) && cellExists(end, col))
-275     \{
-276 
-277         \textcolor{keywordflow}{for} (i = start; i < this->getHeight() && i <= end; i++)
-278         \{
-279             \textcolor{keywordflow}{return} board[i][col]->setContent(\textcolor{keyword}{new} \hyperlink{class_wall}{Wall}());
-280         \}
-281 
-282         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-283     \}
-284 
-285     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-286 \}
+301 \{
+302     \textcolor{keywordtype}{int} i;
+303 
+304     \textcolor{keywordflow}{if} (this->cellExists(start, col) && this->cellExists(end, col))
+305     \{
+306 
+307         \textcolor{keywordflow}{for} (i = start; i < this->getHeight() && i <= end; i++)
+308         \{
+309             board[i][col]->setContent(\textcolor{keyword}{new} \hyperlink{class_wall}{Wall}());
+310         \}
+311 
+312         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+313     \}
+314 
+315     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+316 \}
 \end{DoxyCode}
 \hypertarget{class_map_a7b5c1d8ed873a72484f27e99bcdff97a}{}\label{class_map_a7b5c1d8ed873a72484f27e99bcdff97a} 
 \index{Map@{Map}!set\+Row\+Wall@{set\+Row\+Wall}}
@@ -227,24 +249,26 @@ Mehtod that instantiate \hyperlink{class_wall}{Wall} objects in a horizontal ran
 \end{DoxyParams}
 
 
-Definition at line 250 of file map.\+cpp.
+Definition at line 278 of file map.\+cpp.
 
 
 \begin{DoxyCode}
-251 \{
-252     \textcolor{keywordtype}{int} j;
-253 
-254     \textcolor{keywordflow}{if} (cellExists(row, start) && cellExists(row, end))
-255     \{
-256 
-257         \textcolor{keywordflow}{for} (j = start; j < this->getWidth() && j <= end; j++)
-258         \{
-259             \textcolor{keywordflow}{return} board[row][j]->setContent(\textcolor{keyword}{new} \hyperlink{class_wall}{Wall}());
-260         \}
-261     \}
-262 
-263     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-264 \}
+279 \{
+280     \textcolor{keywordtype}{int} j;
+281 
+282     \textcolor{keywordflow}{if} (this->cellExists(row, start) && this->cellExists(row, end))
+283     \{
+284 
+285         \textcolor{keywordflow}{for} (j = start; j < this->getWidth() && j <= end; j++)
+286         \{
+287             board[row][j]->setContent(\textcolor{keyword}{new} \hyperlink{class_wall}{Wall}());
+288         \}
+289 
+290         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+291     \}
+292 
+293     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+294 \}
 \end{DoxyCode}
 
 

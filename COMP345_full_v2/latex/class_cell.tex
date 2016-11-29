@@ -3,18 +3,15 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_cell_a3c614b825bdf6a24d4a3e2e52b310568}{Cell} (int new\+Row, int new\+Col, \hyperlink{class_placeable}{Placeable} $\ast$new\+Content)
+\hypertarget{class_cell_a99702fd5fc54b66ffae38a7098c844fd}{}\label{class_cell_a99702fd5fc54b66ffae38a7098c844fd} 
+{\bfseries Cell} (int new\+Row, int new\+Col)
 \item 
 \hypertarget{class_cell_a9fa559f7a28e2b4336c6879ca09304d8}{}\label{class_cell_a9fa559f7a28e2b4336c6879ca09304d8} 
 \hyperlink{class_cell_a9fa559f7a28e2b4336c6879ca09304d8}{$\sim$\+Cell} ()
 \begin{DoxyCompactList}\small\item\em Board \hyperlink{class_cell}{Cell} destructor. \end{DoxyCompactList}\item 
-int \hyperlink{class_cell_a6665d7f040a6a7b140e8d27c608a421e}{get\+Row} ()
+const int \hyperlink{class_cell_a7d9b27ccd514968a69a2b9ee0ad6c612}{get\+Row} ()
 \item 
-void \hyperlink{class_cell_abe20d88439c8e1482a207fc1d627d00e}{set\+Row} (int a\+Row)
-\item 
-int \hyperlink{class_cell_ace419ef9ac6690bab2dd554d8b9f0d2f}{get\+Col} ()
-\item 
-void \hyperlink{class_cell_a1985a73d12e0e439ec05317e220cafee}{set\+Col} (int a\+Col)
+const int \hyperlink{class_cell_a4c9b2812a2d37e17c1a473e8b905d048}{get\+Col} ()
 \item 
 std\+::unordered\+\_\+set$<$ \hyperlink{class_cell}{Cell} $\ast$ $>$ \hyperlink{class_cell_a9912ab381441093706286584eff721fa}{get\+Adjacent} ()
 \item 
@@ -41,8 +38,8 @@ std\+::string {\bfseries to\+String} ()
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_cell_a1790df33d948969ca983970e1ae91f1b}{}\label{class_cell_a1790df33d948969ca983970e1ae91f1b} 
-static bool {\bfseries move} (\hyperlink{class_cell}{Cell} $\ast$from, \hyperlink{class_cell}{Cell} $\ast$to)
+\hypertarget{class_cell_ac3a2780a20988ddcfd29aa460dbb7a9e}{}\label{class_cell_ac3a2780a20988ddcfd29aa460dbb7a9e} 
+static \hyperlink{class_cell}{Cell} $\ast$ {\bfseries move} (\hyperlink{class_cell}{Cell} $\ast$from, \hyperlink{class_cell}{Cell} $\ast$to)
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -59,34 +56,6 @@ Definition at line 14 of file cell.\+h.
 
 
 
-\subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_cell_a3c614b825bdf6a24d4a3e2e52b310568}{}\label{class_cell_a3c614b825bdf6a24d4a3e2e52b310568} 
-\index{Cell@{Cell}!Cell@{Cell}}
-\index{Cell@{Cell}!Cell@{Cell}}
-\subsubsection{\texorpdfstring{Cell()}{Cell()}}
-{\footnotesize\ttfamily Cell\+::\+Cell (\begin{DoxyParamCaption}\item[{int}]{new\+Row,  }\item[{int}]{new\+Col,  }\item[{\hyperlink{class_placeable}{Placeable} $\ast$}]{new\+Content }\end{DoxyParamCaption})}
-
-Parametrized \hyperlink{class_cell}{Cell} constructor. 
-\begin{DoxyParams}{Parameters}
-{\em new\+Row} & integer value of the row index to assign to row. \\
-\hline
-{\em new\+Col} & integer value of the column index to assign to col. input is not checked. Could be set as invalid for test purposes \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 17 of file cell.\+cpp.
-
-
-\begin{DoxyCode}
-17                                                         : content(newContent), adjacent(
-      std::unordered\_set<Cell*>()), row(newRow), col(newCol)
-18 \{
-19     
-20 \}
-\end{DoxyCode}
-
-
 \subsection{Member Function Documentation}
 \hypertarget{class_cell_a90d2e75867bd5f2b553dec1498fdf4e6}{}\label{class_cell_a90d2e75867bd5f2b553dec1498fdf4e6} 
 \index{Cell@{Cell}!add\+Adjacent@{add\+Adjacent}}
@@ -101,13 +70,13 @@ Function to add a cell pointer to the set of adjacent cells.
 \end{DoxyParams}
 
 
-Definition at line 75 of file cell.\+cpp.
+Definition at line 34 of file cell.\+cpp.
 
 
 \begin{DoxyCode}
-76 \{
-77     adjacent.insert(aCell);
-78 \}
+35 \{
+36     adjacent.insert(aCell);
+37 \}
 \end{DoxyCode}
 \hypertarget{class_cell_a9912ab381441093706286584eff721fa}{}\label{class_cell_a9912ab381441093706286584eff721fa} 
 \index{Cell@{Cell}!get\+Adjacent@{get\+Adjacent}}
@@ -120,51 +89,51 @@ unordered\+\_\+set of cell pointers to each adjacent cells in the map.
 \end{DoxyReturn}
 
 
-Definition at line 68 of file cell.\+cpp.
+Definition at line 27 of file cell.\+cpp.
 
 
 \begin{DoxyCode}
-69 \{
-70     \textcolor{keywordflow}{return} adjacent;
-71 \}
+28 \{
+29     \textcolor{keywordflow}{return} adjacent;
+30 \}
 \end{DoxyCode}
-\hypertarget{class_cell_ace419ef9ac6690bab2dd554d8b9f0d2f}{}\label{class_cell_ace419ef9ac6690bab2dd554d8b9f0d2f} 
+\hypertarget{class_cell_a4c9b2812a2d37e17c1a473e8b905d048}{}\label{class_cell_a4c9b2812a2d37e17c1a473e8b905d048} 
 \index{Cell@{Cell}!get\+Col@{get\+Col}}
 \index{get\+Col@{get\+Col}!Cell@{Cell}}
 \subsubsection{\texorpdfstring{get\+Col()}{getCol()}}
-{\footnotesize\ttfamily int Cell\+::get\+Col (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily const int Cell\+::get\+Col (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 Accessor function for the cell column. \begin{DoxyReturn}{Returns}
 integer of the index of the cell column in its array. 
 \end{DoxyReturn}
 
 
-Definition at line 39 of file cell.\+cpp.
+Definition at line 13 of file cell.\+cpp.
 
 
 \begin{DoxyCode}
-40 \{
-41     \textcolor{keywordflow}{return} col;
-42 \}
+14 \{
+15     \textcolor{keywordflow}{return} col;
+16 \}
 \end{DoxyCode}
-\hypertarget{class_cell_a6665d7f040a6a7b140e8d27c608a421e}{}\label{class_cell_a6665d7f040a6a7b140e8d27c608a421e} 
+\hypertarget{class_cell_a7d9b27ccd514968a69a2b9ee0ad6c612}{}\label{class_cell_a7d9b27ccd514968a69a2b9ee0ad6c612} 
 \index{Cell@{Cell}!get\+Row@{get\+Row}}
 \index{get\+Row@{get\+Row}!Cell@{Cell}}
 \subsubsection{\texorpdfstring{get\+Row()}{getRow()}}
-{\footnotesize\ttfamily int Cell\+::get\+Row (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily const int Cell\+::get\+Row (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 Accessor function for the cell row. \begin{DoxyReturn}{Returns}
 integer of the index of the cell row in its array. 
 \end{DoxyReturn}
 
 
-Definition at line 53 of file cell.\+cpp.
+Definition at line 20 of file cell.\+cpp.
 
 
 \begin{DoxyCode}
-54 \{
-55     \textcolor{keywordflow}{return} row;
-56 \}
+21 \{
+22     \textcolor{keywordflow}{return} row;
+23 \}
 \end{DoxyCode}
 \hypertarget{class_cell_a6c7344ef2aa917e70364221bf86ff8bc}{}\label{class_cell_a6c7344ef2aa917e70364221bf86ff8bc} 
 \index{Cell@{Cell}!is\+Empty@{is\+Empty}}
@@ -177,13 +146,13 @@ bool value, true if the cell\textquotesingle{}s \hyperlink{class_placeable}{Plac
 \end{DoxyReturn}
 
 
-Definition at line 109 of file cell.\+cpp.
+Definition at line 71 of file cell.\+cpp.
 
 
 \begin{DoxyCode}
-110 \{
-111     \textcolor{keywordflow}{return} (content == NULL);
-112 \}
+72 \{
+73     \textcolor{keywordflow}{return} (content == NULL);
+74 \}
 \end{DoxyCode}
 \hypertarget{class_cell_af8625542ca100de4cc6e221ea131f05c}{}\label{class_cell_af8625542ca100de4cc6e221ea131f05c} 
 \index{Cell@{Cell}!is\+Walkable@{is\+Walkable}}
@@ -196,13 +165,15 @@ bool value, true if the cell\textquotesingle{}s Cell\+Content pointer is null Or
 \end{DoxyReturn}
 
 
-Definition at line 102 of file cell.\+cpp.
+Definition at line 62 of file cell.\+cpp.
 
 
 \begin{DoxyCode}
-103 \{
-104     \textcolor{keywordflow}{return} content->isWalkable();
-105 \}
+63 \{
+64     \textcolor{keywordflow}{if} (content == NULL) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+65     
+66     \textcolor{keywordflow}{return} content->isWalkable();
+67 \}
 \end{DoxyCode}
 \hypertarget{class_cell_a5d9bda81ac204c982b084c7b02f4d6de}{}\label{class_cell_a5d9bda81ac204c982b084c7b02f4d6de} 
 \index{Cell@{Cell}!remove\+Adjacent@{remove\+Adjacent}}
@@ -217,55 +188,13 @@ Function to remove a cell pointer to the set of adjacent cells.
 \end{DoxyParams}
 
 
-Definition at line 82 of file cell.\+cpp.
+Definition at line 41 of file cell.\+cpp.
 
 
 \begin{DoxyCode}
-83 \{
-84     adjacent.erase(aCell);
-85 \}
-\end{DoxyCode}
-\hypertarget{class_cell_a1985a73d12e0e439ec05317e220cafee}{}\label{class_cell_a1985a73d12e0e439ec05317e220cafee} 
-\index{Cell@{Cell}!set\+Col@{set\+Col}}
-\index{set\+Col@{set\+Col}!Cell@{Cell}}
-\subsubsection{\texorpdfstring{set\+Col()}{setCol()}}
-{\footnotesize\ttfamily void Cell\+::set\+Col (\begin{DoxyParamCaption}\item[{int}]{a\+Col }\end{DoxyParamCaption})}
-
-Mutator function for the cell column position in its map. 
-\begin{DoxyParams}{Parameters}
-{\em a\+Col} & integer value, new row index to assign. \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 46 of file cell.\+cpp.
-
-
-\begin{DoxyCode}
-47 \{
-48     col = aCol;
-49 \}
-\end{DoxyCode}
-\hypertarget{class_cell_abe20d88439c8e1482a207fc1d627d00e}{}\label{class_cell_abe20d88439c8e1482a207fc1d627d00e} 
-\index{Cell@{Cell}!set\+Row@{set\+Row}}
-\index{set\+Row@{set\+Row}!Cell@{Cell}}
-\subsubsection{\texorpdfstring{set\+Row()}{setRow()}}
-{\footnotesize\ttfamily void Cell\+::set\+Row (\begin{DoxyParamCaption}\item[{int}]{a\+Row }\end{DoxyParamCaption})}
-
-Mutator function for the cell column position in its map. 
-\begin{DoxyParams}{Parameters}
-{\em a\+Row} & integer value, new column index to assign. \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 60 of file cell.\+cpp.
-
-
-\begin{DoxyCode}
-61 \{
-62     row = aRow;
-63 \}
+42 \{
+43     adjacent.erase(aCell);
+44 \}
 \end{DoxyCode}
 
 

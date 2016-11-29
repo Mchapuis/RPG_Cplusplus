@@ -83,15 +83,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a41cbb1a47f33edbba4e7d8addf464102"><td class="memItemLeft" align="right" valign="top"><a id="a41cbb1a47f33edbba4e7d8addf464102"></a>
 <a class="el" href="class_key_item.html">KeyItem</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getKey</b> ()</td></tr>
 <tr class="separator:a41cbb1a47f33edbba4e7d8addf464102"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5e0a6889781e0e615503bb2857b81ab"><td class="memItemLeft" align="right" valign="top"><a id="aa5e0a6889781e0e615503bb2857b81ab"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setLock</b> (bool isLocked)</td></tr>
-<tr class="separator:aa5e0a6889781e0e615503bb2857b81ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6297adf59c34be6743690ffac934e1c3"><td class="memItemLeft" align="right" valign="top"><a id="a6297adf59c34be6743690ffac934e1c3"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getStatus</b> ()</td></tr>
+<tr class="separator:a6297adf59c34be6743690ffac934e1c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1a63132342bc4bcb58d63f5ee4dc94a"><td class="memItemLeft" align="right" valign="top"><a id="af1a63132342bc4bcb58d63f5ee4dc94a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setStatus</b> (int aStatus)</td></tr>
+<tr class="separator:af1a63132342bc4bcb58d63f5ee4dc94a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99c6790e2b56bef4618a1f3a461b7c63"><td class="memItemLeft" align="right" valign="top"><a id="a99c6790e2b56bef4618a1f3a461b7c63"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>unlock</b> (<a class="el" href="class_key_item.html">KeyItem</a> aKey)</td></tr>
+<tr class="separator:a99c6790e2b56bef4618a1f3a461b7c63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5593ee3b706c7a47f0e0bc9035be3433"><td class="memItemLeft" align="right" valign="top"><a id="a5593ee3b706c7a47f0e0bc9035be3433"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>open</b> ()</td></tr>
+<tr class="separator:a5593ee3b706c7a47f0e0bc9035be3433"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7050cc99c85178d73aba1fe4c81161f5"><td class="memItemLeft" align="right" valign="top"><a id="a7050cc99c85178d73aba1fe4c81161f5"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isLocked</b> ()</td></tr>
 <tr class="separator:a7050cc99c85178d73aba1fe4c81161f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64634c5e5ab6142fe99043a8c1e2ea18"><td class="memItemLeft" align="right" valign="top"><a id="a64634c5e5ab6142fe99043a8c1e2ea18"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>unlock</b> (<a class="el" href="class_key_item.html">KeyItem</a> aKey)</td></tr>
-<tr class="separator:a64634c5e5ab6142fe99043a8c1e2ea18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3520cfcd7af2d8f3d2f5bb615be76f10"><td class="memItemLeft" align="right" valign="top"><a id="a3520cfcd7af2d8f3d2f5bb615be76f10"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isOpen</b> ()</td></tr>
+<tr class="separator:a3520cfcd7af2d8f3d2f5bb615be76f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46cd55be38b7bd08e3fe5c39f80e412c"><td class="memItemLeft" align="right" valign="top"><a id="a46cd55be38b7bd08e3fe5c39f80e412c"></a>
 virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>keyName</b> ()</td></tr>
 <tr class="separator:a46cd55be38b7bd08e3fe5c39f80e412c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -113,7 +122,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="basic__structure_8h_source.html#l00011">11</a> of file <a class="el" href="basic__structure_8h_source.html">basic_structure.h</a>.</p>
+<p>Definition at line <a class="el" href="basic__structure_8h_source.html#l00015">15</a> of file <a class="el" href="basic__structure_8h_source.html">basic_structure.h</a>.</p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="basic__structure_8h_source.html">basic_structure.h</a></li>
 <li><a class="el" href="basic__structure_8cpp_source.html">basic_structure.cpp</a></li>
@@ -121,7 +130,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>boost::serialization
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 24 2016 16:45:27 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 29 2016 00:45:10 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.12
 </small></address>

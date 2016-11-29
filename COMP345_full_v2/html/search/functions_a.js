@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['_7ecell',['~Cell',['../class_cell.html#a9fa559f7a28e2b4336c6879ca09304d8',1,'Cell']]],
-  ['_7ecelllist',['~CellList',['../class_cell_list.html#a2f7854cd49caefac1f84654ab550e896',1,'CellList']]],
-  ['_7ecellset',['~CellSet',['../class_cell_set.html#a6e9f853835e8982dd178dad534a9678c',1,'CellSet']]],
-  ['_7emap',['~Map',['../class_map.html#aa403fbe09394ccf39747588f5168e3b2',1,'Map']]]
+  ['turn',['turn',['../class_human_player_strategy.html#a0f83d38f051a8eb5c6ae3946ae93844d',1,'HumanPlayerStrategy::turn()'],['../class_hostile_strategy.html#aaca0f223b92c48cb9b6b412b26fde34f',1,'HostileStrategy::turn()'],['../class_friendly_strategy.html#a372ce94bfd796d7d7577dbe64104bea4',1,'FriendlyStrategy::turn()']]]
 ];

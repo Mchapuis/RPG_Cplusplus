@@ -8,14 +8,16 @@
 
 #include <utility>
 
+class Player;
+
 #include "cell.h"
-#include "basic_structure.h"
 #include "character.h"
 /*
 #include <boost\archive\text_iarchive.hpp>
 #include <boost\archive\text_oarchive.hpp>
 #include <boost\serialization\export.hpp>
 */
+
 using namespace std;
 
 class Direction
@@ -53,6 +55,7 @@ private:
 public:
 	static bool valid(char aChar) { return keyMap.count(aChar) > 0; }
 	static map<char, const Direction*> getMap(){ return keyMap; }
+	static Direction randDir();
 	const int x_vel;
 	const int y_vel;
 	const char key;
@@ -61,13 +64,6 @@ public:
 //! Map object.
 class Map: public MySerializable
 {
-	//! 
-	class MapBuilder
-	{
-	private:
-		int height;
-		int width;
-	};
 
 private:
 	friend class boost::serialization::access;
@@ -88,7 +84,9 @@ private:
 	//unsaved
 	int width;
 	int height;
-	
+
+	Player* player;
+
 	vector<vector<int>> distanceGraph;
 
 	void initMap();
@@ -105,6 +103,7 @@ public:
 	bool start(Player* aPlayer);
 	bool cellExists(int row, int col);
 
+	vector<vector<Cell*>> getBoard() { return board; };
 	int getWidth(){ return width; }
 	int getHeight(){ return height; }
 
@@ -129,6 +128,8 @@ public:
 	Cell* move(int bRow, int bCol, Direction dir);
 	Cell* move(Cell* source, Direction dir);
 	Cell* move(Cell* source, Cell* dest);
+
+	Player* getPlayer(){ return player; }
 
 	bool validPath();
 	bool validPath(int beginRow, int beginCol, int exitRow, int exitCol);

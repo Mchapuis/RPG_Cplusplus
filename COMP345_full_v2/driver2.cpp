@@ -69,13 +69,13 @@ void testSave1()
 	for (Equipment* e: equip1)
 	{
 		e->updateLvl(5);
-		cout << e->toString() << endl;
+		//cout << e->toString() << endl;
 	}
 
 	for (Equipment* e : equip2)
 	{
 		e->updateLvl(1);
-		cout << e->toString() << endl;
+		//cout << e->toString() << endl;
 	}
 
 	head1->save(head1->getName());
@@ -93,11 +93,12 @@ void testSave1()
 	belt2->load(belt1->getName());
 	shield2->load(shield1->getName());
 	weapon2->load(weapon1->getName());
-
+	/*
 	for (Equipment* e : equip2)
 	{
 		cout << e->toString() << endl;
 	}
+	*/
 }
 
 void testSave2()
@@ -157,13 +158,11 @@ void testSave2()
 		p1.equip(e);
 	}
 
-	cout << p1.toString() << endl << endl;
+	//cout << p1.toString() << endl << endl;
 
 	p1.save(p1.getName());
 
-	p2.load(p1.getName());
-
-	cout << p2.toString();
+	//cout << p2.toString();
 
 	p2.save("player2");
 
@@ -224,7 +223,7 @@ void testSave3()
 		c1.addItem(e);
 	}
 
-	cout << c1.toString() << endl;
+	//cout << c1.toString() << endl;
 
 	for (Item* e : equip2)
 	{
@@ -232,7 +231,7 @@ void testSave3()
 		c2.addItem(e);
 	}
 
-	cout << c2.toString() << endl;
+	//cout << c2.toString() << endl;
 
 	//CALL UPDATE_BONUS WHEN LOAD CHARACTER 
 
@@ -302,6 +301,16 @@ void testSave4()
 	equip1.push_back(key1);
 	KeyItem* key2 = new KeyItem("key2", 0);
 	equip2.push_back(key2);
+
+	for (Item* i : equip1)
+	{
+		i->save(i->getName());
+	}
+
+	for (Item* i : equip2)
+	{
+		i->save(i->getName());
+	}
 
 	/*
 	void save(std::string filename)
@@ -388,8 +397,8 @@ void testSave6()
 		f1.addToPack(e);
 	}
 
-	cout << e1.toString();
-	cout << f1.toString();
+	//cout << e1.toString();
+	//cout << f1.toString();
 
 
 	e1.save(e1.getName());
@@ -474,18 +483,20 @@ void testSave8()
 	cout << "inserted: " << myMap->addToCell((Placeable*)&myEnemy, 12, 10) << endl << endl;
 	cout << "inserted: " << myMap->addToCell((Placeable*)&myFriend, 4, 2) << endl << endl;
 
-	cout << endl << myMap->toString2() << endl;
+	//cout << endl << myMap->toString2() << endl;
 
-	cout << myMap->start(myPlayer);
 
-	cout << endl<< endl << myMap->printGraph();
 
-	cout << endl << endl << myMap->toString2();
+	//cout << endl<< endl << myMap->printGraph();
+
+	//cout << endl << endl << myMap->toString2();
 	//cout << endl << (*myMap)[0][0]->isEmpty();
 
 	//Map aMap = *myMap;
 
 	//aMap.save("map1");
+
+	cout << myMap->start(myPlayer);
 
 	pCell = myMap->getBegin();
 	Cell* exit = myMap->getExit();
@@ -493,6 +504,9 @@ void testSave8()
 	char dir;
 	map<char, const Direction*> keyMap = Direction::getMap();
 	
+	for (int j = 0; j < 20; j++)
+	myPlayer->attack(&myEnemy, 1);
+
 	while (pCell != exit)
 	{
 		do{
@@ -507,21 +521,98 @@ void testSave8()
 		Game aGame = Game();
 		aGame.display(myPlayer);
 	}	
+
 	
-	
+}
+
+void testSave9()
+{
+	Map* myMap = new Map("map1", 15, 20);
+
+	Cell* pCell = NULL;
+	Player *myPlayer = new Player();
+	Chest myChest;
+	Enemy myEnemy;
+	Friendly myFriend;
+
+	myPlayer->load("player1");
+	myChest.load("chest1");
+	myEnemy.load("enemy1");
+	myFriend.load("friend2");
+
+	/*
+	Player myPlayer = Player::sLoad("player1");
+	Chest myChest = Chest::sLoad("chest1");
+	Enemy myEnemy = Enemy::sLoad("enemy1");
+	Friendly myFriend = Friendly::sLoad("friend2");
+	*/
+	//cout << myEnemy.toString();
+	//cout << myFriend.toString();
+
+	myMap->setRowWall(10, 0, 18);
+	myMap->setColWall(5, 1, 13);
+
+	myMap->updateFirstStop(0, 0);
+	myMap->updateLastStop(11, 0);
+
+	myMap->addToCell((Placeable*) new Door(), 0, 5);
+
+	myMap->addToCell((Placeable*)&myChest, 0, 13);
+	myMap->addToCell((Placeable*)&myEnemy, 12, 10);
+	myMap->addToCell((Placeable*)&myFriend, 4, 2);
+
+	//cout << endl << myMap->toString2() << endl;
+
+	Game game = Game(myMap, myPlayer);
+}
+
+void runGame(Map* myMap, Player* myPlayer)
+{
+	Cell* pCell = NULL;
+
+	myMap->start(myPlayer);
+
+	pCell = myMap->getBegin();
+	Cell* exit = myMap->getExit();
+
+	char dir;
+	map<char, const Direction*> keyMap = Direction::getMap();
+
+	//myPlayer->attack(&myEnemy, 5);
+
+	while (pCell != exit)
+	{
+		do
+		{
+			cout << "Enter a direction: ";
+			cin >> dir;
+		} while (!Direction::valid(dir));
+
+		pCell = myMap->move(pCell, *keyMap[dir]);
+
+		cout << endl << endl << myMap->toString2();
+		Game aGame = Game();
+		aGame.display(myPlayer);
+	}
+}
+
+void reboot()
+{
+	testSave2();
+	testSave3();
+	testSave4();
+	testSave6();
 }
 
 int main(int argc, char *argv[])
 {
 	int k;
 	
-	//std::srand(time(0));
-
-	testSave2();
-	testSave3();
-	testSave6();
+	std::srand(time(0));
 	
-	testSave8();
+	reboot();
+	
+
 	//cout << endl << "Aaaaaah yeeeee daaawg!!!!";
 	
 	//Player myPlayer = Player();

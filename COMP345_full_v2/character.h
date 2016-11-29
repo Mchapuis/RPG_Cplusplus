@@ -5,9 +5,9 @@
 #define _CHARACTER_H_
 
 #include "config.h"
-#include "inv2.h"
-#include "placeable.h"
 #include "basic_structure.h"
+#include "map.h"
+#include "character_strategy.h"
 
 #include <boost\archive\text_iarchive.hpp>
 #include <boost\archive\text_oarchive.hpp>
@@ -18,7 +18,7 @@
 	bonus, modifiers, and Inventory of a character.
 	It derives extends the abstract class Placeable.    
 */
-class GameCharacter : public Placeable, MySerializable
+class GameCharacter : public Placeable, public MySerializable
 {
 private:
 	// SERIALIZATION
@@ -31,6 +31,7 @@ private:
 		ar & BOOST_SERIALIZATION_NVP(level);
 		ar & BOOST_SERIALIZATION_NVP(baseAtk);
 		ar & BOOST_SERIALIZATION_NVP(Hp);
+		ar & BOOST_SERIALIZATION_NVP(MaxHp);
 		ar & BOOST_SERIALIZATION_NVP(inventory);
 		ar & BOOST_SERIALIZATION_NVP(abilities);
 		//ar & BOOST_SERIALIZATION_NVP(modifiers);
@@ -44,6 +45,7 @@ private:
 	int MaxHp;
 	Inventory inventory;
 	std::vector<int> abilities;
+	CharacterStrategy* strategy;
 	//std::vector<int> modifiers;
 
 	//Unsaved
@@ -60,6 +62,7 @@ private:
 	//! Inline function that calculates an ability bonus based on
 	//! a given current ability score.
 	int calcBonus(int baseStat) { return (baseStat / 2) - 5; }
+	int calcBonus(Ability abl) { return (abilities[abl.index] / 2) - 5; }
 	bool isWalkable() { return false; }
 
 	static const std::string symbol;
@@ -76,26 +79,36 @@ public:
 	virtual bool reset(){ return true; }
 	void resetLevel(){ level = 0; }
 
+	void setStrategy(CharacterStrategy* aStrategy){ strategy = aStrategy; }
+	void setMap(Map* aMap) { strategy->setMap(aMap); }
+
 	int getLevel() { return level; }
 	void levelUp();
 	virtual void updateLvl(int aLevel);
 
+	void startTurn(Map* map, std::map<Placeable*, Cell*> objects);
+
 	bool unlock(Lockable* lock);
 
-	Inventory getInventory() { return inventory; }
+	Inventory* getInventory() { return &inventory; }
 
 	int* getAllBaseAbl();
 	int getBaseAbl(Ability abl);
 	void setBaseAbl(Ability abl, int value);
+	int getHp(){ return Hp; }
+	int getMaxHp(){ return MaxHp; }
+	int modifyHp(int variation);
 
 	int* getAllBonus();
 	int getBonus(Ability abl);
 
+	int getRange();
+
 	int numOfAttacks() { return 1 + (level + baseAtk - 1)/5; }
-	int AC() { return 10 + this->getNetStat(Ability::AC) + getBonus(Ability::DEX); }
+	int AC() { return 10 + this->inventory.getEquipMod(Ability::AC) + getBonus(Ability::DEX); }
 	int ATK_Bonus(int NthAttack);
 
-	void attack(GameCharacter opponent, int distance);
+	void attack(GameCharacter* opponent, int distance);
 
 	//int* getAllEnchantments();
 	//int getMod(Ability abl);
@@ -106,6 +119,7 @@ public:
 
 	bool addToPack(Item* anItem) { return inventory.addToPack(anItem); }
 	void removeFromPack(Item* anItem){ inventory.removeFromPack(anItem); }
+	
 	bool equip(Equipment* anItem){ return inventory.equip(anItem); }
 	bool unequip(EquipType aType){ return inventory.unequip(aType); }
 
@@ -130,7 +144,7 @@ private:
 
 public:
 	static Player sLoad(std::string filename);
-	Player() : GameCharacter("Unnamed", 1, 0) {}
+	Player() : GameCharacter("Unnamed", 1, 0) {setStrategy((new HumanPlayerStrategy(this))); }
 	Player(std::string aName, int aBaseAtk, int aLevel) :
 		GameCharacter(aName, aBaseAtk, aLevel) {}
 	const std::string getSymbol() { return symbol; }
@@ -184,9 +198,9 @@ private:
 
 public:
 	static Enemy sLoad(std::string filename);
-	Enemy() : NPC("Unnamed", 1, 0) {}
+	Enemy() : NPC("Unnamed", 1, 0)  { setStrategy((new HumanPlayerStrategy(this))); }
 	Enemy(std::string aName, int aBaseAtk, int aLevel) :
-		NPC(aName, aBaseAtk, aLevel) {}
+		NPC(aName, aBaseAtk, aLevel)  {setStrategy((new HumanPlayerStrategy(this))); }
 	const std::string getSymbol() { return symbol; }
 	void getStrategy(){}
 	bool isWalkable() {	return true;}
@@ -210,9 +224,9 @@ private:
 
 public:
 	static Friendly sLoad(std::string filename);
-	Friendly() : NPC("Unnamed", 1, 0) {}
+	Friendly() : NPC("Unnamed", 1, 0)  { setStrategy((new HumanPlayerStrategy(this))); }
 	Friendly(std::string aName, int aBaseAtk, int aLevel) :
-		NPC(aName, aBaseAtk, aLevel) {}
+		NPC(aName, aBaseAtk, aLevel)  {	setStrategy((new HumanPlayerStrategy(this))); }
 	const std::string getSymbol() { return symbol; }
 	bool isWalkable() { return false; }
 	void getStrategy(){}

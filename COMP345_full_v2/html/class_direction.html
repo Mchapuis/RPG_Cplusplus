@@ -59,6 +59,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="class_direction-members.html">List of all members</a>  </div>
@@ -67,6 +68,18 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ad79270b5e131f3d4f70ca71b5c478c77"><td class="memItemLeft" align="right" valign="top"><a id="ad79270b5e131f3d4f70ca71b5c478c77"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>valid</b> (char aChar)</td></tr>
+<tr class="separator:ad79270b5e131f3d4f70ca71b5c478c77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeedf91220788eda4705c5c31e564b1dd"><td class="memItemLeft" align="right" valign="top"><a id="aeedf91220788eda4705c5c31e564b1dd"></a>
+static map&lt; char, const <a class="el" href="class_direction.html">Direction</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getMap</b> ()</td></tr>
+<tr class="separator:aeedf91220788eda4705c5c31e564b1dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a651d7934c9989757ba52ff636a18d478"><td class="memItemLeft" align="right" valign="top"><a id="a651d7934c9989757ba52ff636a18d478"></a>
+static <a class="el" href="class_direction.html">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><b>randDir</b> ()</td></tr>
+<tr class="separator:a651d7934c9989757ba52ff636a18d478"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ad1ddaa30789ac5c419014144b30ac7c9"><td class="memItemLeft" align="right" valign="top"><a id="ad1ddaa30789ac5c419014144b30ac7c9"></a>
@@ -75,37 +88,40 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>x_vel</b></td></
 <tr class="memitem:a4e06a7192a2abd4a84f2d7be556e5111"><td class="memItemLeft" align="right" valign="top"><a id="a4e06a7192a2abd4a84f2d7be556e5111"></a>
 const int&#160;</td><td class="memItemRight" valign="bottom"><b>y_vel</b></td></tr>
 <tr class="separator:a4e06a7192a2abd4a84f2d7be556e5111"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a3618eec098a69b747637e53e02a8c4"><td class="memItemLeft" align="right" valign="top"><a id="a3a3618eec098a69b747637e53e02a8c4"></a>
+const char&#160;</td><td class="memItemRight" valign="bottom"><b>key</b></td></tr>
+<tr class="separator:a3a3618eec098a69b747637e53e02a8c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a1d2dd636bd6f3aaf40fe2f34ee238d9a"><td class="memItemLeft" align="right" valign="top"><a id="a1d2dd636bd6f3aaf40fe2f34ee238d9a"></a>
-static const <a class="el" href="class_direction.html">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><b>N</b> = <a class="el" href="class_direction.html">Direction</a>(0, -1)</td></tr>
+static const <a class="el" href="class_direction.html">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><b>N</b> = <a class="el" href="class_direction.html">Direction</a>(0, -1, 'w')</td></tr>
 <tr class="separator:a1d2dd636bd6f3aaf40fe2f34ee238d9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4226b04e6a17c56966d815836fb16f23"><td class="memItemLeft" align="right" valign="top"><a id="a4226b04e6a17c56966d815836fb16f23"></a>
-static const <a class="el" href="class_direction.html">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><b>NE</b> = <a class="el" href="class_direction.html">Direction</a>(1, -1)</td></tr>
+static const <a class="el" href="class_direction.html">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><b>NE</b> = <a class="el" href="class_direction.html">Direction</a>(1, -1, 'e')</td></tr>
 <tr class="separator:a4226b04e6a17c56966d815836fb16f23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a326ea5eadf79659502fdf0059ad63921"><td class="memItemLeft" align="right" valign="top"><a id="a326ea5eadf79659502fdf0059ad63921"></a>
-static const <a class="el" href="class_direction.html">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><b>E</b> = <a class="el" href="class_direction.html">Direction</a>(1, 0)</td></tr>
+static const <a class="el" href="class_direction.html">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><b>E</b> = <a class="el" href="class_direction.html">Direction</a>(1, 0, 'd')</td></tr>
 <tr class="separator:a326ea5eadf79659502fdf0059ad63921"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a226e6fcf794e90dc01004c5561f16475"><td class="memItemLeft" align="right" valign="top"><a id="a226e6fcf794e90dc01004c5561f16475"></a>
-static const <a class="el" href="class_direction.html">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><b>SE</b> = <a class="el" href="class_direction.html">Direction</a>(1, 1)</td></tr>
+static const <a class="el" href="class_direction.html">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><b>SE</b> = <a class="el" href="class_direction.html">Direction</a>(1, 1, 'c')</td></tr>
 <tr class="separator:a226e6fcf794e90dc01004c5561f16475"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6e594fc32cf6d282a2fb5148d76fa08"><td class="memItemLeft" align="right" valign="top"><a id="af6e594fc32cf6d282a2fb5148d76fa08"></a>
-static const <a class="el" href="class_direction.html">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><b>S</b> = <a class="el" href="class_direction.html">Direction</a>(0, 1)</td></tr>
+static const <a class="el" href="class_direction.html">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><b>S</b> = <a class="el" href="class_direction.html">Direction</a>(0, 1, 'x')</td></tr>
 <tr class="separator:af6e594fc32cf6d282a2fb5148d76fa08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99ffb02dfb1a9cd95270afcc43daecdf"><td class="memItemLeft" align="right" valign="top"><a id="a99ffb02dfb1a9cd95270afcc43daecdf"></a>
-static const <a class="el" href="class_direction.html">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><b>SW</b> = <a class="el" href="class_direction.html">Direction</a>(-1, 1)</td></tr>
+static const <a class="el" href="class_direction.html">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><b>SW</b> = <a class="el" href="class_direction.html">Direction</a>(-1, 1, 'z')</td></tr>
 <tr class="separator:a99ffb02dfb1a9cd95270afcc43daecdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fc63021949a997df043b8aa732fc7f0"><td class="memItemLeft" align="right" valign="top"><a id="a6fc63021949a997df043b8aa732fc7f0"></a>
-static const <a class="el" href="class_direction.html">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><b>W</b> = <a class="el" href="class_direction.html">Direction</a>(-1, 0)</td></tr>
+static const <a class="el" href="class_direction.html">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><b>W</b> = <a class="el" href="class_direction.html">Direction</a>(-1, 0, 'a')</td></tr>
 <tr class="separator:a6fc63021949a997df043b8aa732fc7f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae934adbe5d344690218f8c9c0ccf5d35"><td class="memItemLeft" align="right" valign="top"><a id="ae934adbe5d344690218f8c9c0ccf5d35"></a>
-static const <a class="el" href="class_direction.html">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><b>NW</b> = <a class="el" href="class_direction.html">Direction</a>(-1, -1)</td></tr>
+static const <a class="el" href="class_direction.html">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><b>NW</b> = <a class="el" href="class_direction.html">Direction</a>(-1, -1, 'q')</td></tr>
 <tr class="separator:ae934adbe5d344690218f8c9c0ccf5d35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="map_8h_source.html#l00021">21</a> of file <a class="el" href="map_8h_source.html">map.h</a>.</p>
+<p>Definition at line <a class="el" href="map_8h_source.html#l00023">23</a> of file <a class="el" href="map_8h_source.html">map.h</a>.</p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="map_8h_source.html">map.h</a></li>
 <li><a class="el" href="map_8cpp_source.html">map.cpp</a></li>
@@ -113,7 +129,7 @@ static const <a class="el" href="class_direction.html">Direction</a>&#160;</td><
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 24 2016 16:45:26 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 29 2016 00:45:08 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.12
 </small></address>

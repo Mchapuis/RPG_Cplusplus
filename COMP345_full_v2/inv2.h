@@ -12,6 +12,8 @@ class Item;
 
 #include "config.h"
 
+#include "serializable.h"
+
 #include <boost\archive\text_iarchive.hpp>
 #include <boost\archive\text_oarchive.hpp>
 #include <boost\serialization\export.hpp>

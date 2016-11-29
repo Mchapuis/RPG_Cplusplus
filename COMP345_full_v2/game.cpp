@@ -1,14 +1,127 @@
 #include "stdafx.h"
 #include "game.h"
 
-
-Game::Game()
+Game::Game() : map(nullptr),
+player(nullptr), pCell(nullptr)
 {
+	characters = std::list<GameCharacter*>();
+	this->~Game();
+}
+
+Game::Game(Map* aMap, Player* aPlayer) :
+map(aMap), player(aPlayer)
+{
+	characters = std::list<GameCharacter*>();
+	Cell* tempCell = nullptr;
+	Placeable* tempPlace = nullptr;
+	GameCharacter* tempCharac = nullptr;
+	std::vector<GameCharacter*> tempCharacVec = std::vector<GameCharacter*>();
+	std::list<GameCharacter*>::iterator iter;
+	int dex;
+	bool inserted = false;
+	int i;
+	int j;
+	int k;
+
+	pCell = map->getBegin();
+
+	map->start(player);
+
+	for (i = 0; i < map->getHeight(); i++)
+	{
+		for (j = 0; j < map->getWidth(); j++)
+		{
+			tempCell = (*map)[i][j];
+			if (!tempCell->isEmpty())
+			{
+				tempPlace = tempCell->getContent();
+
+				objects.insert({ tempPlace, tempCell });
+
+				if (this->isCharacter(tempPlace))
+				{
+					tempCharac = (GameCharacter*) tempPlace;
+					tempCharac->setMap(map);
+
+					if (characters.empty())
+					{
+						//cout << "start " << tempCharac->getBaseAbl(Ability::DEX) << endl;
+						characters.push_front(tempCharac);
+					}
+					else
+					{
+						dex = tempCharac->getBaseAbl(Ability::DEX);
+
+						for (iter = characters.begin(); iter != characters.end(); ++iter)
+						{
+							//cout << dex << " vs " << (*iter)->getBaseAbl(Ability::DEX) << endl;
+
+							if (dex > (*iter)->getBaseAbl(Ability::DEX))
+							{
+								//cout << "insert " << dex << endl;
+								characters.insert(iter, tempCharac);
+								break;
+							}
+						}
+
+						if (iter == characters.end())
+						{
+							//cout << "insert last " << tempCharac->getBaseAbl(Ability::DEX) << endl;
+							characters.push_back(tempCharac);
+						}
+					}//else
+				}//if instance-of
+			}//if tempCell empty
+		}//for j
+	}//for i
+
+	/*
+	cout << endl << "Character list" << endl;
+
+	for (GameCharacter* g : characters)
+	{
+		cout << g->getName() << " " << g->getBaseAbl(Ability::DEX) << endl;
+	}
+	cout << endl;
+	*/
+
 }
 
 
-Game::~Game()
+bool Game::isCharacter(Placeable* obj)
 {
+	if (GameCharacter* g = dynamic_cast<GameCharacter*>(obj))
+	{
+		return true;
+	}
+
+	return false;
+}
+
+void Game::nextTurn()
+{
+	GameCharacter* gc = characters.front();
+
+	gc->startTurn(map, objects);
+
+	cleanUp();
+}
+
+void Game::cleanUp()
+{
+	std::list<GameCharacter*>::iterator iter;
+	GameCharacter* gc = nullptr;
+
+	for (iter = characters.begin(); iter != characters.end(); iter++)
+	{
+		if ((*iter)->getHp() <= 0 && (*iter)->getMaxHp() <= 0)
+		{
+			gc = *iter;
+			characters.erase(iter);
+			objects.erase((*iter));
+			delete gc;
+		}
+	}
 }
 
 void Game::createPlayer()

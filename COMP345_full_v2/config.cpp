@@ -19,11 +19,11 @@ const Ability Ability::AC = Ability("Armor Class", "AC", 0);
 
 int EquipType::count = 0;
 
-const EquipType EquipType::HELMET = EquipType("Helmet", std::unordered_set<const Ability*>{ &Ability::INTL, &Ability::WIS, &Ability::AC });
+const EquipType EquipType::HELMET = EquipType("Helmet", std::unordered_set<const Ability*>{  &Ability::AC, &Ability::INTL, &Ability::WIS, });
 const EquipType EquipType::CUIRASS = EquipType("Armor", std::unordered_set<const Ability*>{ &Ability::AC });
-const EquipType EquipType::BOOTS = EquipType("Boots", std::unordered_set<const Ability*>{ &Ability::AC, &Ability::STR, &Ability::CON, &Ability::WIS, &Ability::CHA });
-const EquipType EquipType::RING = EquipType("Ring", std::unordered_set<const Ability*>{ &Ability::STR, &Ability::CON });
-const EquipType EquipType::BELT = EquipType("Belt", std::unordered_set<const Ability*>{ &Ability::AC, &Ability::DEX });
+const EquipType EquipType::BOOTS = EquipType("Boots", std::unordered_set<const Ability*>{ &Ability::AC, &Ability::DEX });
+const EquipType EquipType::RING = EquipType("Ring", std::unordered_set<const Ability*>{ &Ability::AC, &Ability::STR, &Ability::CON, &Ability::WIS, &Ability::CHA });
+const EquipType EquipType::BELT = EquipType("Belt", std::unordered_set<const Ability*>{ &Ability::STR, &Ability::CON });
 const EquipType EquipType::SHIELD = EquipType("Shield", std::unordered_set<const Ability*>{ &Ability::AC });
 const EquipType EquipType::WEAPON = EquipType("Weapon", std::unordered_set<const Ability*>{ &Ability::ATK, &Ability::DMG });
 

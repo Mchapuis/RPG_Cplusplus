@@ -65,7 +65,7 @@ public:
 	bool reset(){ return true; }
 };
 
-class Door : public Lockable, Placeable
+class Door : public Lockable, public Placeable
 {
 private:
 	friend class boost::serialization::access;
@@ -90,7 +90,7 @@ public:
 	bool reset(){ return true; }
 };
 
-class Chest : public Lockable, Placeable, MySerializable
+class Chest : public Lockable, public Placeable, public MySerializable
 {
 private:
 	friend class boost::serialization::access;
@@ -115,7 +115,7 @@ public:
 	static Chest sLoad(std::string filename);
 	Chest() { }
 	~Chest() {} 
-	const std::string getSymbol() { return this->isOpen() ? symbolOpen : symbolClosed; }
+	const std::string getSymbol() { return (content.getBackPack().empty()) ? symbolOpen : symbolClosed; }
 	void updateLvl(int aLevel);
 	bool reset(){ return true; }
 

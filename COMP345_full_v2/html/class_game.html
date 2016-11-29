@@ -68,15 +68,24 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af04a043c997c34e9c4cd4fbb1db3ff73"><td class="memItemLeft" align="right" valign="top"><a id="af04a043c997c34e9c4cd4fbb1db3ff73"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>turn</b> (<a class="el" href="class_game_character.html">GameCharacter</a>)</td></tr>
-<tr class="separator:af04a043c997c34e9c4cd4fbb1db3ff73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0592b20bb4dafc38a3cfdb7c5f5e963f"><td class="memItemLeft" align="right" valign="top"><a id="a0592b20bb4dafc38a3cfdb7c5f5e963f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Game</b> (<a class="el" href="class_map.html">Map</a> *aMap, <a class="el" href="class_player.html">Player</a> *aPlayer)</td></tr>
+<tr class="separator:a0592b20bb4dafc38a3cfdb7c5f5e963f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18d94ea20a9e7085faf15b0abb83a87c"><td class="memItemLeft" align="right" valign="top"><a id="a18d94ea20a9e7085faf15b0abb83a87c"></a>
+<a class="el" href="class_game.html">Game</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getInstance</b> ()</td></tr>
+<tr class="separator:a18d94ea20a9e7085faf15b0abb83a87c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a801658c7cef474bc1d9a830f4a79034c"><td class="memItemLeft" align="right" valign="top"><a id="a801658c7cef474bc1d9a830f4a79034c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>nextTurn</b> ()</td></tr>
+<tr class="separator:a801658c7cef474bc1d9a830f4a79034c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d22cebed1061d51b2c3aaba2352972d"><td class="memItemLeft" align="right" valign="top"><a id="a5d22cebed1061d51b2c3aaba2352972d"></a>
 <a class="el" href="class_player.html">Player</a>&#160;</td><td class="memItemRight" valign="bottom"><b>loadPlayer</b> ()</td></tr>
 <tr class="separator:a5d22cebed1061d51b2c3aaba2352972d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7c8b111e2f09bbcf92a3da037992e57"><td class="memItemLeft" align="right" valign="top"><a id="ac7c8b111e2f09bbcf92a3da037992e57"></a>
 <a class="el" href="class_map.html">Map</a>&#160;</td><td class="memItemRight" valign="bottom"><b>loadMap</b> ()</td></tr>
 <tr class="separator:ac7c8b111e2f09bbcf92a3da037992e57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8638ccdb0ef3bf39a6affa30aa1258f"><td class="memItemLeft" align="right" valign="top"><a id="ae8638ccdb0ef3bf39a6affa30aa1258f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>startGame</b> ()</td></tr>
+<tr class="separator:ae8638ccdb0ef3bf39a6affa30aa1258f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e5b2d2156debcd958e2eae6fc79730a"><td class="memItemLeft" align="right" valign="top"><a id="a9e5b2d2156debcd958e2eae6fc79730a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>createPlayer</b> ()</td></tr>
 <tr class="separator:a9e5b2d2156debcd958e2eae6fc79730a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -86,18 +95,47 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>createPlayerFromLoad<
 <tr class="memitem:ac3276ead57322cccdeed919fd7f28b34"><td class="memItemLeft" align="right" valign="top"><a id="ac3276ead57322cccdeed919fd7f28b34"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>mapEditor</b> (<a class="el" href="class_map.html">Map</a> map)</td></tr>
 <tr class="separator:ac3276ead57322cccdeed919fd7f28b34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8c66f86b907bc8afc33c8e31b800611"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ac8c66f86b907bc8afc33c8e31b800611">display</a> (<a class="el" href="class_game_character.html">GameCharacter</a> *gh)</td></tr>
+<tr class="separator:ac8c66f86b907bc8afc33c8e31b800611"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p>Definition at line <a class="el" href="game_8h_source.html#l00013">13</a> of file <a class="el" href="game_8h_source.html">game.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac8c66f86b907bc8afc33c8e31b800611"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8c66f86b907bc8afc33c8e31b800611">&sect;&nbsp;</a></span>display()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::display </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game_character.html">GameCharacter</a> *&#160;</td>
+          <td class="paramname"><em>gh</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Display the inventory, worn items and backpack </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>Call to string methods </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="game_8cpp_source.html#l00654">654</a> of file <a class="el" href="game_8cpp_source.html">game.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;                                   {</div><div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;</div><div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;    <span class="comment">//Before the information, the display of attacks and rounds are here..</span></div><div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;    <span class="comment">//example...</span></div><div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;</div><div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\n________________________________INFORMATIONS_________________________________________\n&quot;</span>;</div><div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    <span class="comment">//Call the character in play to display what he has.</span></div><div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;    <span class="comment">//This calls ---&gt; </span></div><div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;    cout &lt;&lt; gh-&gt;toString();</div><div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;</div><div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    <span class="comment">//equip/unequip...to be added here!!!! </span></div><div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\n\nEQUIP/UNEQUIP____PRESS P&quot;</span>&lt;&lt;endl;</div><div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;BACK_____________PRESS B&quot;</span> &lt;&lt; endl;</div><div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;    </div><div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;}</div></div><!-- fragment -->
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="game_8h_source.html">game.h</a></li>
 <li><a class="el" href="game_8cpp_source.html">game.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 24 2016 16:45:27 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 29 2016 00:45:09 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.12
 </small></address>

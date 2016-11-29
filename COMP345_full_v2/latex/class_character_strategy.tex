@@ -1,0 +1,78 @@
+\hypertarget{class_character_strategy}{}\section{Character\+Strategy Class Reference}
+\label{class_character_strategy}\index{Character\+Strategy@{Character\+Strategy}}
+Inheritance diagram for Character\+Strategy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_character_strategy}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_character_strategy_a3495998eefdbd37fc0e49a506a3f1fef}{}\label{class_character_strategy_a3495998eefdbd37fc0e49a506a3f1fef} 
+virtual void {\bfseries turn} (std\+::map$<$ \hyperlink{class_placeable}{Placeable} $\ast$, \hyperlink{class_cell}{Cell} $\ast$$>$ objects)=0
+\item 
+\hypertarget{class_character_strategy_a4fb112f3dba0cae297a6928b4cc44392}{}\label{class_character_strategy_a4fb112f3dba0cae297a6928b4cc44392} 
+virtual int {\bfseries take\+Damage} (\hyperlink{class_game_character}{Game\+Character} $\ast$attacker, int damage\+Value)=0
+\item 
+\hypertarget{class_character_strategy_ad5c6878cf55a2348f99342780af704c9}{}\label{class_character_strategy_ad5c6878cf55a2348f99342780af704c9} 
+virtual void {\bfseries set\+Map} (\hyperlink{class_map}{Map} $\ast$a\+Map)=0
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_character_strategy_a7406375b0c8aa47688ef18175e3a5fc3}{}\label{class_character_strategy_a7406375b0c8aa47688ef18175e3a5fc3} 
+static int $\ast$ {\bfseries action\+Points} ()
+\item 
+\hypertarget{class_character_strategy_aa53149169982b157b5996ab7198689ff}{}\label{class_character_strategy_aa53149169982b157b5996ab7198689ff} 
+static int {\bfseries get\+Speed} (\hyperlink{class_game_character}{Game\+Character} $\ast$me)
+\item 
+\hypertarget{class_character_strategy_a1e00d8d7b651d98dddc27bc416af05f8}{}\label{class_character_strategy_a1e00d8d7b651d98dddc27bc416af05f8} 
+static int {\bfseries line\+Dist} (\hyperlink{class_cell}{Cell} $\ast$c1, \hyperlink{class_cell}{Cell} $\ast$c2)
+\item 
+\hypertarget{class_character_strategy_a54feee4e7756865d78e8db0e16ac8e21}{}\label{class_character_strategy_a54feee4e7756865d78e8db0e16ac8e21} 
+static int {\bfseries walk\+Dist} (\hyperlink{class_cell}{Cell} $\ast$c1, \hyperlink{class_cell}{Cell} $\ast$c2)
+\item 
+\hypertarget{class_character_strategy_a8ff8f5ca3a756328ba2415035734be38}{}\label{class_character_strategy_a8ff8f5ca3a756328ba2415035734be38} 
+static bool {\bfseries can\+See} (\hyperlink{class_cell}{Cell} $\ast$c1, \hyperlink{class_cell}{Cell} $\ast$c2)
+\item 
+\hypertarget{class_character_strategy_ab3fc9526417f85af2af1b9fc83cc8174}{}\label{class_character_strategy_ab3fc9526417f85af2af1b9fc83cc8174} 
+static \hyperlink{class_cell}{Cell} $\ast$ {\bfseries step\+Toward} (vector$<$ vector$<$ int $>$$>$ graph, \hyperlink{class_map}{Map} $\ast$map, \hyperlink{class_cell}{Cell} $\ast$c1, \hyperlink{class_cell}{Cell} $\ast$c2)
+\item 
+\hypertarget{class_character_strategy_a4c81af91538e3140e5afc00df92cc92e}{}\label{class_character_strategy_a4c81af91538e3140e5afc00df92cc92e} 
+static vector$<$ vector$<$ int $>$ $>$ {\bfseries graph} (\hyperlink{class_map}{Map} $\ast$map, \hyperlink{class_cell}{Cell} $\ast$dest)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_character_strategy_a3d875212b4e820c51815a681453766c6}{}\label{class_character_strategy_a3d875212b4e820c51815a681453766c6} 
+static const int {\bfseries S\+P\+E\+ED} = 5
+\item 
+\hypertarget{class_character_strategy_a1339d2601c817a30bd10eececa301623}{}\label{class_character_strategy_a1339d2601c817a30bd10eececa301623} 
+static const int {\bfseries L\+B\+S\+\_\+\+L\+I\+M\+IT} = 30
+\item 
+\hypertarget{class_character_strategy_aa883d449ed36b2ffb657db37d7f8a0d5}{}\label{class_character_strategy_aa883d449ed36b2ffb657db37d7f8a0d5} 
+static const float {\bfseries L\+B\+S\+\_\+\+P\+E\+N\+A\+L\+TY} = 0.\+33
+\item 
+\hypertarget{class_character_strategy_ae3704c4b8a67003f118a230684c8eb84}{}\label{class_character_strategy_ae3704c4b8a67003f118a230684c8eb84} 
+static const int {\bfseries S\+I\+G\+H\+T\+\_\+\+D\+I\+ST} = 6
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_character_strategy_ac98d07dd8f7b70e16ccb9a01abf56b9c}{}\label{class_character_strategy_ac98d07dd8f7b70e16ccb9a01abf56b9c} 
+class {\bfseries boost\+::serialization\+::access}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 15 of file character\+\_\+strategy.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+character\+\_\+strategy.\+h\item 
+character\+\_\+strategy.\+cpp\end{DoxyCompactItemize}

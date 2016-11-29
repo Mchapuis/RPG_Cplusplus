@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['setbaseabl',['setBaseAbl',['../class_game_character.html#af604f6f1df72988de0b3f34625844545',1,'GameCharacter']]],
-  ['setcol',['setCol',['../class_cell.html#a1985a73d12e0e439ec05317e220cafee',1,'Cell']]],
-  ['setcolwall',['setColWall',['../class_map.html#a7e89d11a89a796ac46e60722533f23d4',1,'Map']]],
-  ['setcontent',['setContent',['../class_cell.html#add026562137122494104071baa175473',1,'Cell']]],
-  ['setdesc',['setDesc',['../class_campain.html#aa2e22983799e1b99ea554796398c97f1',1,'Campain']]],
-  ['setrow',['setRow',['../class_cell.html#abe20d88439c8e1482a207fc1d627d00e',1,'Cell']]],
-  ['setrowwall',['setRowWall',['../class_map.html#a7b5c1d8ed873a72484f27e99bcdff97a',1,'Map']]]
+  ['remove',['remove',['../class_cell_list.html#abc7337272382af9d9782628666f9e594',1,'CellList']]],
+  ['removeadjacent',['removeAdjacent',['../class_cell.html#a5d9bda81ac204c982b084c7b02f4d6de',1,'Cell']]],
+  ['removeall',['removeAll',['../class_cell_set.html#a13671e16ec2d31a9d5ae628f0df87890',1,'CellSet']]],
+  ['rename',['rename',['../class_campain.html#ad14dd3cbece20b9737b282fccf4f0ee0',1,'Campain']]],
+  ['roll',['roll',['../class_dice.html#ac94cb9c94fccfc5579310769b39056a6',1,'Dice']]]
 ];

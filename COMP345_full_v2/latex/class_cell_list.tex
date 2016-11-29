@@ -22,7 +22,7 @@ bool \hyperlink{class_cell_list_a5df3e74d57494b51859a6a223f8b2a30}{empty} ()
 \subsection{Detailed Description}
 
 
-Definition at line 127 of file map.\+h.
+Definition at line 152 of file map.\+h.
 
 
 
@@ -44,16 +44,16 @@ Function to add all of a set elements to cell\+\_\+list.
 \end{DoxyParams}
 
 
-Definition at line 551 of file map.\+cpp.
+Definition at line 722 of file map.\+cpp.
 
 
 \begin{DoxyCode}
-552 \{
-553     \textcolor{keywordflow}{for}(\hyperlink{class_cell}{Cell}* c: aSet)
-554     \{
-555         cell\_list.push\_front(c);
-556     \}
-557 \}
+723 \{
+724     \textcolor{keywordflow}{for}(\hyperlink{class_cell}{Cell}* c: aSet)
+725     \{
+726         cell\_list.push\_front(c);
+727     \}
+728 \}
 \end{DoxyCode}
 \hypertarget{class_cell_list_a5df3e74d57494b51859a6a223f8b2a30}{}\label{class_cell_list_a5df3e74d57494b51859a6a223f8b2a30} 
 \index{Cell\+List@{Cell\+List}!empty@{empty}}
@@ -67,13 +67,13 @@ Asserts if cell\+\_\+list is empty.
 
 return true if the \hyperlink{class_cell}{Cell} pointer List cell\+\_\+list contains no elements. 
 
-Definition at line 570 of file map.\+cpp.
+Definition at line 741 of file map.\+cpp.
 
 
 \begin{DoxyCode}
-571 \{
-572     \textcolor{keywordflow}{return} cell\_list.empty();
-573 \}
+742 \{
+743     \textcolor{keywordflow}{return} cell\_list.empty();
+744 \}
 \end{DoxyCode}
 \hypertarget{class_cell_list_aa5fee7de166143e16a0ec1f20349db55}{}\label{class_cell_list_aa5fee7de166143e16a0ec1f20349db55} 
 \index{Cell\+List@{Cell\+List}!get\+List@{get\+List}}
@@ -87,13 +87,13 @@ Accessor function to cell\+\_\+list.
 
 return the list of \hyperlink{class_cell}{Cell} pointers cell\+\_\+list. 
 
-Definition at line 544 of file map.\+cpp.
+Definition at line 715 of file map.\+cpp.
 
 
 \begin{DoxyCode}
-545 \{
-546     \textcolor{keywordflow}{return} cell\_list;
-547 \}
+716 \{
+717     \textcolor{keywordflow}{return} cell\_list;
+718 \}
 \end{DoxyCode}
 \hypertarget{class_cell_list_abc7337272382af9d9782628666f9e594}{}\label{class_cell_list_abc7337272382af9d9782628666f9e594} 
 \index{Cell\+List@{Cell\+List}!remove@{remove}}
@@ -110,15 +110,15 @@ Function that removes and returns the first element of the List cell\+\_\+list.
 \end{DoxyReturn}
 
 
-Definition at line 561 of file map.\+cpp.
+Definition at line 732 of file map.\+cpp.
 
 
 \begin{DoxyCode}
-562 \{
-563     \hyperlink{class_cell}{Cell}* c = cell\_list.front();
-564     cell\_list.pop\_front();
-565     \textcolor{keywordflow}{return} c;
-566 \}
+733 \{
+734     \hyperlink{class_cell}{Cell}* c = cell\_list.front();
+735     cell\_list.pop\_front();
+736     \textcolor{keywordflow}{return} c;
+737 \}
 \end{DoxyCode}
 
 

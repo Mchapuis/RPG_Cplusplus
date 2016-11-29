@@ -15,6 +15,21 @@ const Direction Direction::NW = Direction(-1, -1, 'q');
 
 std::map<char, const Direction*> Direction::keyMap = create_map();
 
+Direction Direction::randDir()
+{
+	switch (rand() % 7)
+	{
+	case 0: return N;
+	case 1: return NE;
+	case 2: return E;
+	case 3: return SE;
+	case 4: return S;
+	case 5: return SW;
+	case 6: return W;
+	case 7: return NW;
+	}
+}
+
 //! Default constructor for a Map.
 /*! initializes a blank Map of size 10 x 10.*/
 Map::Map() : height(5), width(5),
@@ -145,6 +160,8 @@ bool Map::start(Player* aPlayer)
 		}
 	}
 
+	player = aPlayer;
+
 	return true;
 }
 
@@ -240,10 +257,10 @@ bool Map::removeStop(int row, int col, int position)
 
 bool Map::addToCell(Placeable* toPlace, int row, int col)
 {
-	cout << toPlace->getClassName() << " exists: " << this->cellExists(row, col) << endl;
+	//cout << toPlace->getClassName() << " exists: " << this->cellExists(row, col) << endl;
 
-	cout << " empty: " << board[row][col]->isEmpty() << endl;
-//	cout << board[row][col]->getContent()->getSymbol() << endl;
+	//cout << " empty: " << board[row][col]->isEmpty() << endl;
+    //cout << board[row][col]->getContent()->getSymbol() << endl;
 
 	if (this->cellExists(row, col) && board[row][col]->isEmpty())
 	{

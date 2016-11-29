@@ -26,7 +26,7 @@ bool \hyperlink{class_cell_set_aaf42eb737301463a3ebf6a86c13a7dc4}{empty} ()
 \subsection{Detailed Description}
 
 
-Definition at line 141 of file map.\+h.
+Definition at line 166 of file map.\+h.
 
 
 
@@ -48,16 +48,16 @@ Function to add all of a \hyperlink{class_cell}{Cell} pointer set elements to ce
 \end{DoxyParams}
 
 
-Definition at line 603 of file map.\+cpp.
+Definition at line 774 of file map.\+cpp.
 
 
 \begin{DoxyCode}
-604 \{
-605     \textcolor{keywordflow}{for} (\hyperlink{class_cell}{Cell}* c: aSet)
-606     \{
-607         cell\_set.insert(c);
-608     \}
-609 \}
+775 \{
+776     \textcolor{keywordflow}{for} (\hyperlink{class_cell}{Cell}* c: aSet)
+777     \{
+778         cell\_set.insert(c);
+779     \}
+780 \}
 \end{DoxyCode}
 \hypertarget{class_cell_set_a0d3c7fe4074fff58db2bf6932bf20ab0}{}\label{class_cell_set_a0d3c7fe4074fff58db2bf6932bf20ab0} 
 \index{Cell\+Set@{Cell\+Set}!add\+All@{add\+All}}
@@ -76,16 +76,16 @@ Function to add all of a \hyperlink{class_cell}{Cell} pointer list elements to c
 \end{DoxyParams}
 
 
-Definition at line 613 of file map.\+cpp.
+Definition at line 784 of file map.\+cpp.
 
 
 \begin{DoxyCode}
-614 \{
-615     \textcolor{keywordflow}{for} (\hyperlink{class_cell}{Cell}* c: aList)
-616     \{
-617         cell\_set.insert(c);
-618     \}
-619 \}
+785 \{
+786     \textcolor{keywordflow}{for} (\hyperlink{class_cell}{Cell}* c: aList)
+787     \{
+788         cell\_set.insert(c);
+789     \}
+790 \}
 \end{DoxyCode}
 \hypertarget{class_cell_set_aaf42eb737301463a3ebf6a86c13a7dc4}{}\label{class_cell_set_aaf42eb737301463a3ebf6a86c13a7dc4} 
 \index{Cell\+Set@{Cell\+Set}!empty@{empty}}
@@ -99,13 +99,13 @@ Asserts if cell\+\_\+set is empty.
 
 return true if the \hyperlink{class_cell}{Cell} pointer Unordered\+\_\+set cell\+\_\+set contains no elements. 
 
-Definition at line 632 of file map.\+cpp.
+Definition at line 803 of file map.\+cpp.
 
 
 \begin{DoxyCode}
-633 \{
-634     \textcolor{keywordflow}{return} cell\_set.empty();
-635 \}
+804 \{
+805     \textcolor{keywordflow}{return} cell\_set.empty();
+806 \}
 \end{DoxyCode}
 \hypertarget{class_cell_set_a16ffb9da795fb77b5214ff0ad276c325}{}\label{class_cell_set_a16ffb9da795fb77b5214ff0ad276c325} 
 \index{Cell\+Set@{Cell\+Set}!get\+Set@{get\+Set}}
@@ -119,13 +119,13 @@ Accessor function to cell\+\_\+set.
 
 return the Unordered\+\_\+set of \hyperlink{class_cell}{Cell} pointers cell\+\_\+set. 
 
-Definition at line 589 of file map.\+cpp.
+Definition at line 760 of file map.\+cpp.
 
 
 \begin{DoxyCode}
-590 \{
-591     \textcolor{keywordflow}{return} cell\_set;
-592 \}
+761 \{
+762     \textcolor{keywordflow}{return} cell\_set;
+763 \}
 \end{DoxyCode}
 \hypertarget{class_cell_set_a589f95793822a6c76b45ab3c5cadeda3}{}\label{class_cell_set_a589f95793822a6c76b45ab3c5cadeda3} 
 \index{Cell\+Set@{Cell\+Set}!insert@{insert}}
@@ -144,13 +144,13 @@ Function to that inserts a \hyperlink{class_cell}{Cell} pointer in cell\+\_\+set
 \end{DoxyParams}
 
 
-Definition at line 596 of file map.\+cpp.
+Definition at line 767 of file map.\+cpp.
 
 
 \begin{DoxyCode}
-597 \{
-598     cell\_set.insert(aCell);
-599 \}
+768 \{
+769     cell\_set.insert(aCell);
+770 \}
 \end{DoxyCode}
 \hypertarget{class_cell_set_a13671e16ec2d31a9d5ae628f0df87890}{}\label{class_cell_set_a13671e16ec2d31a9d5ae628f0df87890} 
 \index{Cell\+Set@{Cell\+Set}!remove\+All@{remove\+All}}
@@ -169,16 +169,16 @@ Function to remove all of a \hyperlink{class_cell}{Cell} pointer Unordered\+\_\+
 \end{DoxyParams}
 
 
-Definition at line 623 of file map.\+cpp.
+Definition at line 794 of file map.\+cpp.
 
 
 \begin{DoxyCode}
-624 \{
-625     \textcolor{keywordflow}{for} (\hyperlink{class_cell}{Cell}* c : aSet)
-626     \{
-627         cell\_set.erase(c);
-628     \}
-629 \}
+795 \{
+796     \textcolor{keywordflow}{for} (\hyperlink{class_cell}{Cell}* c : aSet)
+797     \{
+798         cell\_set.erase(c);
+799     \}
+800 \}
 \end{DoxyCode}
 
 

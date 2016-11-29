@@ -81,9 +81,9 @@ Inheritance diagram for Weapon:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad0708441316f06924b0da0c288b99136"><td class="memItemLeft" align="right" valign="top"><a id="ad0708441316f06924b0da0c288b99136"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Weapon</b> (std::string aName)</td></tr>
-<tr class="separator:ad0708441316f06924b0da0c288b99136"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae785e31744d4b8dd60218673d1bca9f1"><td class="memItemLeft" align="right" valign="top"><a id="ae785e31744d4b8dd60218673d1bca9f1"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Weapon</b> (std::string aName, int aRange, int dmgNbrDice, int dmgDice)</td></tr>
+<tr class="separator:ae785e31744d4b8dd60218673d1bca9f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b9a83e88b0d07a52ac605bd0044b26a"><td class="memItemLeft" align="right" valign="top"><a id="a6b9a83e88b0d07a52ac605bd0044b26a"></a>
 virtual <a class="el" href="class_equip_type.html">EquipType</a> const  *&#160;</td><td class="memItemRight" valign="bottom"><b>getType</b> ()</td></tr>
 <tr class="separator:a6b9a83e88b0d07a52ac605bd0044b26a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -93,12 +93,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setRange</b> (int new
 <tr class="memitem:af0d86939f16add54fc7ae87fea85ac21"><td class="memItemLeft" align="right" valign="top"><a id="af0d86939f16add54fc7ae87fea85ac21"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>getRange</b> ()</td></tr>
 <tr class="separator:af0d86939f16add54fc7ae87fea85ac21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a226746903ddaa7abb177665abd597086"><td class="memItemLeft" align="right" valign="top"><a id="a226746903ddaa7abb177665abd597086"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getBaseAttk</b> ()</td></tr>
-<tr class="separator:a226746903ddaa7abb177665abd597086"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab23a119713f3e433f0d3e90659ab435d"><td class="memItemLeft" align="right" valign="top"><a id="ab23a119713f3e433f0d3e90659ab435d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setBaseAttk</b> (int value)</td></tr>
-<tr class="separator:ab23a119713f3e433f0d3e90659ab435d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cc1f450354d475f7e0fe67aa9295033"><td class="memItemLeft" align="right" valign="top"><a id="a1cc1f450354d475f7e0fe67aa9295033"></a>
+std::pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getDamage</b> ()</td></tr>
+<tr class="separator:a1cc1f450354d475f7e0fe67aa9295033"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a590ffd68bf9a01c9975a9f34428c3f36"><td class="memItemLeft" align="right" valign="top"><a id="a590ffd68bf9a01c9975a9f34428c3f36"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setDamage</b> (int dmgNbrDice, int dmgDice)</td></tr>
+<tr class="separator:a590ffd68bf9a01c9975a9f34428c3f36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae382102dd74948449b7eadbb2f24bc06"><td class="memItemLeft" align="right" valign="top"><a id="ae382102dd74948449b7eadbb2f24bc06"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>save</b> (std::string filename)</td></tr>
 <tr class="separator:ae382102dd74948449b7eadbb2f24bc06"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,6 +118,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>getEnchantment</b> (in
 <tr class="memitem:ab56d6a16b2151d7793c4b5fddde1f145 inherit pub_methods_class_equipment"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_equipment.html#ab56d6a16b2151d7793c4b5fddde1f145">updateLvl</a> (int playerLevel)</td></tr>
 <tr class="memdesc:ab56d6a16b2151d7793c4b5fddde1f145 inherit pub_methods_class_equipment"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to set the enchantment on the item acording to the player level on map load.  <a href="class_equipment.html#ab56d6a16b2151d7793c4b5fddde1f145">More...</a><br /></td></tr>
 <tr class="separator:ab56d6a16b2151d7793c4b5fddde1f145 inherit pub_methods_class_equipment"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d293fd3861ebddc0a4ae1e26d54ff36 inherit pub_methods_class_equipment"><td class="memItemLeft" align="right" valign="top"><a id="a3d293fd3861ebddc0a4ae1e26d54ff36"></a>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>getWeight</b> ()</td></tr>
+<tr class="separator:a3d293fd3861ebddc0a4ae1e26d54ff36 inherit pub_methods_class_equipment"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66ae3c2ca283f3788abbd61b45ee5077 inherit pub_methods_class_equipment"><td class="memItemLeft" align="right" valign="top"><a id="a66ae3c2ca283f3788abbd61b45ee5077"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>toString</b> ()</td></tr>
 <tr class="separator:a66ae3c2ca283f3788abbd61b45ee5077 inherit pub_methods_class_equipment"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,7 +169,7 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setEnchantmen
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="inv2_8h_source.html#l00279">279</a> of file <a class="el" href="inv2_8h_source.html">inv2.h</a>.</p>
+<p>Definition at line <a class="el" href="inv2_8h_source.html#l00283">283</a> of file <a class="el" href="inv2_8h_source.html">inv2.h</a>.</p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="inv2_8h_source.html">inv2.h</a></li>
 <li><a class="el" href="inv2_8cpp_source.html">inv2.cpp</a></li>
@@ -174,7 +177,7 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setEnchantmen
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 24 2016 16:45:28 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 29 2016 00:45:11 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.12
 </small></address>

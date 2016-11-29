@@ -12,14 +12,23 @@ Inheritance diagram for Lockable\+:\begin{figure}[H]
 \hypertarget{class_lockable_a41cbb1a47f33edbba4e7d8addf464102}{}\label{class_lockable_a41cbb1a47f33edbba4e7d8addf464102} 
 \hyperlink{class_key_item}{Key\+Item} {\bfseries get\+Key} ()
 \item 
-\hypertarget{class_lockable_aa5e0a6889781e0e615503bb2857b81ab}{}\label{class_lockable_aa5e0a6889781e0e615503bb2857b81ab} 
-void {\bfseries set\+Lock} (bool is\+Locked)
+\hypertarget{class_lockable_a6297adf59c34be6743690ffac934e1c3}{}\label{class_lockable_a6297adf59c34be6743690ffac934e1c3} 
+int {\bfseries get\+Status} ()
+\item 
+\hypertarget{class_lockable_af1a63132342bc4bcb58d63f5ee4dc94a}{}\label{class_lockable_af1a63132342bc4bcb58d63f5ee4dc94a} 
+void {\bfseries set\+Status} (int a\+Status)
+\item 
+\hypertarget{class_lockable_a99c6790e2b56bef4618a1f3a461b7c63}{}\label{class_lockable_a99c6790e2b56bef4618a1f3a461b7c63} 
+int {\bfseries unlock} (\hyperlink{class_key_item}{Key\+Item} a\+Key)
+\item 
+\hypertarget{class_lockable_a5593ee3b706c7a47f0e0bc9035be3433}{}\label{class_lockable_a5593ee3b706c7a47f0e0bc9035be3433} 
+int {\bfseries open} ()
 \item 
 \hypertarget{class_lockable_a7050cc99c85178d73aba1fe4c81161f5}{}\label{class_lockable_a7050cc99c85178d73aba1fe4c81161f5} 
 bool {\bfseries is\+Locked} ()
 \item 
-\hypertarget{class_lockable_a64634c5e5ab6142fe99043a8c1e2ea18}{}\label{class_lockable_a64634c5e5ab6142fe99043a8c1e2ea18} 
-virtual bool {\bfseries unlock} (\hyperlink{class_key_item}{Key\+Item} a\+Key)
+\hypertarget{class_lockable_a3520cfcd7af2d8f3d2f5bb615be76f10}{}\label{class_lockable_a3520cfcd7af2d8f3d2f5bb615be76f10} 
+bool {\bfseries is\+Open} ()
 \item 
 \hypertarget{class_lockable_a46cd55be38b7bd08e3fe5c39f80e412c}{}\label{class_lockable_a46cd55be38b7bd08e3fe5c39f80e412c} 
 virtual std\+::string {\bfseries key\+Name} ()
@@ -44,7 +53,7 @@ class {\bfseries boost\+::serialization\+::access}
 \subsection{Detailed Description}
 
 
-Definition at line 11 of file basic\+\_\+structure.\+h.
+Definition at line 15 of file basic\+\_\+structure.\+h.
 
 
 

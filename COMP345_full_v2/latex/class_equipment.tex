@@ -19,6 +19,9 @@ int {\bfseries get\+Enchantment} (int index)
 \item 
 void \hyperlink{class_equipment_ab56d6a16b2151d7793c4b5fddde1f145}{update\+Lvl} (int player\+Level)
 \begin{DoxyCompactList}\small\item\em Method to set the enchantment on the item acording to the player level on map load. \end{DoxyCompactList}\item 
+\hypertarget{class_equipment_a3d293fd3861ebddc0a4ae1e26d54ff36}{}\label{class_equipment_a3d293fd3861ebddc0a4ae1e26d54ff36} 
+virtual int {\bfseries get\+Weight} ()
+\item 
 \hypertarget{class_equipment_a274e31858324c1774dd022315ee056a9}{}\label{class_equipment_a274e31858324c1774dd022315ee056a9} 
 virtual \hyperlink{class_equip_type}{Equip\+Type} const  $\ast$ {\bfseries get\+Type} ()
 \item 
@@ -51,7 +54,7 @@ class {\bfseries boost\+::serialization\+::access}
 \subsection{Detailed Description}
 
 
-Definition at line 73 of file inv2.\+h.
+Definition at line 75 of file inv2.\+h.
 
 
 
@@ -71,28 +74,28 @@ will returns the Abilities result
 \end{DoxyReturn}
 
 
-Definition at line 57 of file inv2.\+cpp.
+Definition at line 58 of file inv2.\+cpp.
 
 
 \begin{DoxyCode}
-58 \{
-59     \textcolor{keywordtype}{int}* result = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[Ability::getCount()];
-60     \textcolor{keywordtype}{int} i;
-61 
-62     \textcolor{keywordflow}{for} (i = 0; i < Ability::getCount(); i++)
-63     \{
-64         \textcolor{keywordflow}{if} (this->getType()->isAllowed(i))
-65         \{
-66             result[i] = enchantments[i];
-67         \}
-68         \textcolor{keywordflow}{else}
-69         \{
-70             result[i] = 0;
-71         \}
-72     \}
-73 
-74     \textcolor{keywordflow}{return} result;
-75 \}
+59 \{
+60     \textcolor{keywordtype}{int}* result = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[Ability::getCount()];
+61     \textcolor{keywordtype}{int} i;
+62 
+63     \textcolor{keywordflow}{for} (i = 0; i < Ability::getCount(); i++)
+64     \{
+65         \textcolor{keywordflow}{if} (this->getType()->isAllowed(i))
+66         \{
+67             result[i] = enchantments[i];
+68         \}
+69         \textcolor{keywordflow}{else}
+70         \{
+71             result[i] = 0;
+72         \}
+73     \}
+74 
+75     \textcolor{keywordflow}{return} result;
+76 \}
 \end{DoxyCode}
 \hypertarget{class_equipment_ab56d6a16b2151d7793c4b5fddde1f145}{}\label{class_equipment_ab56d6a16b2151d7793c4b5fddde1f145} 
 \index{Equipment@{Equipment}!update\+Lvl@{update\+Lvl}}
@@ -115,25 +118,25 @@ Reimplemented from \hyperlink{class_item}{Item}.
 
 
 
-Definition at line 134 of file inv2.\+cpp.
+Definition at line 135 of file inv2.\+cpp.
 
 
 \begin{DoxyCode}
-135 \{
-136     vector<Ability> allowed = this->getType()->getEnchantments();
-137     \textcolor{keywordtype}{int} points = playerLevel;
-138     \textcolor{keywordtype}{int} bonus;
-139     \textcolor{keywordtype}{float} rnd;
-140 
-141     \textcolor{keywordflow}{for} (\hyperlink{class_ability}{Ability} a : allowed)
-142     \{
-143         rnd = ( rand() % 100) / 100.0;
-144         bonus = min(points, min((\textcolor{keywordtype}{int})(rnd * points), 5));
-145         \textcolor{comment}{//cout << "rnd:" << rnd << "  points:" << points << "  bonus:" << bonus << endl;}
-146         enchantments[a.index] = bonus;
-147         points -= bonus;
-148     \}
-149 \}
+136 \{
+137     vector<Ability> allowed = this->getType()->getEnchantments();
+138     \textcolor{keywordtype}{int} points = playerLevel;
+139     \textcolor{keywordtype}{int} bonus;
+140     \textcolor{keywordtype}{float} rnd;
+141 
+142     \textcolor{keywordflow}{for} (\hyperlink{class_ability}{Ability} a : allowed)
+143     \{
+144         rnd = ( rand() % 100) / 100.0;
+145         bonus = min(points, min((\textcolor{keywordtype}{int})(rnd * points), 5));
+146         \textcolor{comment}{//cout << "rnd:" << rnd << "  points:" << points << "  bonus:" << bonus << endl;}
+147         enchantments[a.index] = bonus;
+148         points -= bonus;
+149     \}
+150 \}
 \end{DoxyCode}
 
 
