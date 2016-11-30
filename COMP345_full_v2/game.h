@@ -19,18 +19,18 @@ private:
 	Player* player;
 	Cell* pCell;
 	std::list<GameCharacter*> characters;
-	std::map<Placeable*, Cell*> objects;
+	std::map<Placeable*, Cell*> *objects;
 
-	static bool isCharacter(Placeable* obj);
-	void Game::removePos(Placeable* obj);
-	void cleanUp();
+	static bool isCharacter(Placeable* obj);//
+	void Game::removePos(Placeable* obj);//
+	void cleanUp();//
 
 public:
 	Game();
-	Game::Game(Map* aMap, Player* aPlayer);
+	Game::Game(Map* aMap, Player* aPlayer);//
 	~Game() {}
 	Game getInstance();
-	void nextTurn();
+	void nextTurn();//
 
 	Player loadPlayer();
 	Map loadMap();

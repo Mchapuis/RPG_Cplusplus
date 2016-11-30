@@ -1,315 +1,75 @@
-﻿Build started 2016-11-29 1:43:10 PM.
-     1>Project "C:\Users\Aline\Documents\COMP345_full_v2\COMP345_full_v0.vcxproj" on node 2 (Build target(s)).
+﻿Build started 2016-11-29 20:47:36.
+     1>Project "C:\Users\mrtnchps\Documents\GitHub\RPG_RETAKE\COMP345_full_v2\COMP345_full_v0.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\local\boost_1_62_0 /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\COMP345_full_v0.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
-         stdafx.cpp
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\local\boost_1_62_0 /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\COMP345_full_v0.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt basic_structure.cpp cell.cpp character.cpp character_strategy.cpp config.cpp driver2.cpp game.cpp inv2.cpp map.cpp
-         map.cpp
-     1>c:\users\aline\documents\comp345_full_v2\basic_structure.h(39): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\aline\documents\comp345_full_v2\basic_structure.h(43): warning C4806: '==' : unsafe operation: no value of type 'bool' promoted to type 'int' can equal the given constant
-     1>c:\users\aline\documents\comp345_full_v2\basic_structure.h(111): warning C4309: 'initializing' : truncation of constant value
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(30): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(34): error C2061: syntax error : identifier 'Map'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(35): error C2061: syntax error : identifier 'Map'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(39): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(40): error C2061: syntax error : identifier 'Map'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(58): error C2143: syntax error : missing ';' before '*'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(58): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(59): error C2143: syntax error : missing ';' before '*'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(59): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(64): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(64): error C2535: 'HumanPlayerStrategy::HumanPlayerStrategy(void)' : member function already defined or declared
-                 c:\users\aline\documents\comp345_full_v2\character_strategy.h(61) : see declaration of 'HumanPlayerStrategy::HumanPlayerStrategy'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(66): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(67): error C2061: syntax error : identifier 'Map'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(64): error C2065: 'myself' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(64): error C2614: 'HumanPlayerStrategy' : illegal member initialization: 'me' is not a base or member
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(67): error C2065: 'aMap' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(67): error C2513: 'std::map' : no variable declared before '='
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(83): error C2143: syntax error : missing ';' before '*'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(83): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(84): error C2143: syntax error : missing ';' before '*'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(84): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(89): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(89): error C2535: 'HostileStrategy::HostileStrategy(void)' : member function already defined or declared
-                 c:\users\aline\documents\comp345_full_v2\character_strategy.h(86) : see declaration of 'HostileStrategy::HostileStrategy'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(91): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(92): error C2061: syntax error : identifier 'Map'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(89): error C2065: 'myself' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(89): error C2614: 'HostileStrategy' : illegal member initialization: 'me' is not a base or member
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(92): error C2065: 'aMap' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(92): error C2513: 'std::map' : no variable declared before '='
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(108): error C2143: syntax error : missing ';' before '*'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(108): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(109): error C2143: syntax error : missing ';' before '*'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(109): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(115): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(115): error C2535: 'FriendlyStrategy::FriendlyStrategy(void)' : member function already defined or declared
-                 c:\users\aline\documents\comp345_full_v2\character_strategy.h(111) : see declaration of 'FriendlyStrategy::FriendlyStrategy'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(117): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(118): error C2061: syntax error : identifier 'Map'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(115): error C2065: 'myself' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(115): error C2614: 'FriendlyStrategy' : illegal member initialization: 'me' is not a base or member
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(118): error C2065: 'aMap' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(118): error C2513: 'std::map' : no variable declared before '='
-     1>c:\users\aline\documents\comp345_full_v2\character.h(83): error C2061: syntax error : identifier 'Map'
-     1>c:\users\aline\documents\comp345_full_v2\character.h(89): error C2061: syntax error : identifier 'Map'
-     1>c:\users\aline\documents\comp345_full_v2\character.h(83): error C2065: 'aMap' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character.h(147): error C2664: 'HumanPlayerStrategy::HumanPlayerStrategy(const HumanPlayerStrategy &)' : cannot convert argument 1 from 'Player *const ' to 'const HumanPlayerStrategy &'
-                 Reason: cannot convert from 'Player *const ' to 'const HumanPlayerStrategy'
-                 No constructor could take the source type, or constructor overload resolution was ambiguous
-     1>c:\users\aline\documents\comp345_full_v2\character.h(201): error C2664: 'HumanPlayerStrategy::HumanPlayerStrategy(const HumanPlayerStrategy &)' : cannot convert argument 1 from 'Enemy *const ' to 'const HumanPlayerStrategy &'
-                 Reason: cannot convert from 'Enemy *const ' to 'const HumanPlayerStrategy'
-                 No constructor could take the source type, or constructor overload resolution was ambiguous
-     1>c:\users\aline\documents\comp345_full_v2\character.h(203): error C2664: 'HumanPlayerStrategy::HumanPlayerStrategy(const HumanPlayerStrategy &)' : cannot convert argument 1 from 'Enemy *const ' to 'const HumanPlayerStrategy &'
-                 Reason: cannot convert from 'Enemy *const ' to 'const HumanPlayerStrategy'
-                 No constructor could take the source type, or constructor overload resolution was ambiguous
-     1>c:\users\aline\documents\comp345_full_v2\character.h(227): error C2664: 'HumanPlayerStrategy::HumanPlayerStrategy(const HumanPlayerStrategy &)' : cannot convert argument 1 from 'Friendly *const ' to 'const HumanPlayerStrategy &'
-                 Reason: cannot convert from 'Friendly *const ' to 'const HumanPlayerStrategy'
-                 No constructor could take the source type, or constructor overload resolution was ambiguous
-     1>c:\users\aline\documents\comp345_full_v2\character.h(229): error C2664: 'HumanPlayerStrategy::HumanPlayerStrategy(const HumanPlayerStrategy &)' : cannot convert argument 1 from 'Friendly *const ' to 'const HumanPlayerStrategy &'
-                 Reason: cannot convert from 'Friendly *const ' to 'const HumanPlayerStrategy'
-                 No constructor could take the source type, or constructor overload resolution was ambiguous
-     1>c:\users\aline\documents\comp345_full_v2\map.h(139): warning C4227: anachronism used : qualifiers on reference are ignored
-     1>c:\users\aline\documents\comp345_full_v2\map.h(140): warning C4227: anachronism used : qualifiers on reference are ignored
-         inv2.cpp
-     1>c:\users\aline\documents\comp345_full_v2\inv2.cpp(144): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\aline\documents\comp345_full_v2\inv2.cpp(170): warning C4101: 'i' : unreferenced local variable
-     1>c:\users\aline\documents\comp345_full_v2\inv2.cpp(350): warning C4101: 'i' : unreferenced local variable
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\local\boost_1_62_0 /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\COMP345_full_v0.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt character.cpp character_strategy.cpp driver2.cpp game.cpp map.cpp
          game.cpp
-     1>c:\users\aline\documents\comp345_full_v2\basic_structure.h(39): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\aline\documents\comp345_full_v2\basic_structure.h(43): warning C4806: '==' : unsafe operation: no value of type 'bool' promoted to type 'int' can equal the given constant
-     1>c:\users\aline\documents\comp345_full_v2\basic_structure.h(111): warning C4309: 'initializing' : truncation of constant value
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(30): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(34): error C2061: syntax error : identifier 'Map'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(35): error C2061: syntax error : identifier 'Map'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(39): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(40): error C2061: syntax error : identifier 'Map'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(58): error C2143: syntax error : missing ';' before '*'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(58): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(59): error C2143: syntax error : missing ';' before '*'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(59): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(64): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(64): error C2535: 'HumanPlayerStrategy::HumanPlayerStrategy(void)' : member function already defined or declared
-                 c:\users\aline\documents\comp345_full_v2\character_strategy.h(61) : see declaration of 'HumanPlayerStrategy::HumanPlayerStrategy'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(66): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(67): error C2061: syntax error : identifier 'Map'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(64): error C2065: 'myself' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(64): error C2614: 'HumanPlayerStrategy' : illegal member initialization: 'me' is not a base or member
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(67): error C2065: 'aMap' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(67): error C2513: 'std::map' : no variable declared before '='
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(83): error C2143: syntax error : missing ';' before '*'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(83): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(84): error C2143: syntax error : missing ';' before '*'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(84): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(89): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(89): error C2535: 'HostileStrategy::HostileStrategy(void)' : member function already defined or declared
-                 c:\users\aline\documents\comp345_full_v2\character_strategy.h(86) : see declaration of 'HostileStrategy::HostileStrategy'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(91): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(92): error C2061: syntax error : identifier 'Map'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(89): error C2065: 'myself' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(89): error C2614: 'HostileStrategy' : illegal member initialization: 'me' is not a base or member
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(92): error C2065: 'aMap' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(92): error C2513: 'std::map' : no variable declared before '='
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(108): error C2143: syntax error : missing ';' before '*'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(108): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(109): error C2143: syntax error : missing ';' before '*'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(109): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(115): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(115): error C2535: 'FriendlyStrategy::FriendlyStrategy(void)' : member function already defined or declared
-                 c:\users\aline\documents\comp345_full_v2\character_strategy.h(111) : see declaration of 'FriendlyStrategy::FriendlyStrategy'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(117): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(118): error C2061: syntax error : identifier 'Map'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(115): error C2065: 'myself' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(115): error C2614: 'FriendlyStrategy' : illegal member initialization: 'me' is not a base or member
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(118): error C2065: 'aMap' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(118): error C2513: 'std::map' : no variable declared before '='
-     1>c:\users\aline\documents\comp345_full_v2\character.h(83): error C2061: syntax error : identifier 'Map'
-     1>c:\users\aline\documents\comp345_full_v2\character.h(89): error C2061: syntax error : identifier 'Map'
-     1>c:\users\aline\documents\comp345_full_v2\character.h(83): error C2065: 'aMap' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character.h(147): error C2664: 'HumanPlayerStrategy::HumanPlayerStrategy(const HumanPlayerStrategy &)' : cannot convert argument 1 from 'Player *const ' to 'const HumanPlayerStrategy &'
-                 Reason: cannot convert from 'Player *const ' to 'const HumanPlayerStrategy'
-                 No constructor could take the source type, or constructor overload resolution was ambiguous
-     1>c:\users\aline\documents\comp345_full_v2\character.h(201): error C2664: 'HumanPlayerStrategy::HumanPlayerStrategy(const HumanPlayerStrategy &)' : cannot convert argument 1 from 'Enemy *const ' to 'const HumanPlayerStrategy &'
-                 Reason: cannot convert from 'Enemy *const ' to 'const HumanPlayerStrategy'
-                 No constructor could take the source type, or constructor overload resolution was ambiguous
-     1>c:\users\aline\documents\comp345_full_v2\character.h(203): error C2664: 'HumanPlayerStrategy::HumanPlayerStrategy(const HumanPlayerStrategy &)' : cannot convert argument 1 from 'Enemy *const ' to 'const HumanPlayerStrategy &'
-                 Reason: cannot convert from 'Enemy *const ' to 'const HumanPlayerStrategy'
-                 No constructor could take the source type, or constructor overload resolution was ambiguous
-     1>c:\users\aline\documents\comp345_full_v2\character.h(227): error C2664: 'HumanPlayerStrategy::HumanPlayerStrategy(const HumanPlayerStrategy &)' : cannot convert argument 1 from 'Friendly *const ' to 'const HumanPlayerStrategy &'
-                 Reason: cannot convert from 'Friendly *const ' to 'const HumanPlayerStrategy'
-                 No constructor could take the source type, or constructor overload resolution was ambiguous
-     1>c:\users\aline\documents\comp345_full_v2\character.h(229): error C2664: 'HumanPlayerStrategy::HumanPlayerStrategy(const HumanPlayerStrategy &)' : cannot convert argument 1 from 'Friendly *const ' to 'const HumanPlayerStrategy &'
-                 Reason: cannot convert from 'Friendly *const ' to 'const HumanPlayerStrategy'
-                 No constructor could take the source type, or constructor overload resolution was ambiguous
-     1>c:\users\aline\documents\comp345_full_v2\map.h(139): warning C4227: anachronism used : qualifiers on reference are ignored
-     1>c:\users\aline\documents\comp345_full_v2\map.h(140): warning C4227: anachronism used : qualifiers on reference are ignored
-     1>c:\users\aline\documents\comp345_full_v2\game.cpp(44): error C2660: 'GameCharacter::setMap' : function does not take 1 arguments
-     1>c:\users\aline\documents\comp345_full_v2\game.cpp(105): error C2660: 'GameCharacter::startTurn' : function does not take 2 arguments
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(39): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(43): warning C4806: '==' : unsafe operation: no value of type 'bool' promoted to type 'int' can equal the given constant
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(111): warning C4309: 'initializing' : truncation of constant value
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.h(138): warning C4227: anachronism used : qualifiers on reference are ignored
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.h(139): warning C4227: anachronism used : qualifiers on reference are ignored
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\game.cpp(24): warning C4101: 'k' : unreferenced local variable
          driver2.cpp
-     1>c:\users\aline\documents\comp345_full_v2\basic_structure.h(39): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\aline\documents\comp345_full_v2\basic_structure.h(43): warning C4806: '==' : unsafe operation: no value of type 'bool' promoted to type 'int' can equal the given constant
-     1>c:\users\aline\documents\comp345_full_v2\basic_structure.h(111): warning C4309: 'initializing' : truncation of constant value
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(30): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(34): error C2061: syntax error : identifier 'Map'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(35): error C2061: syntax error : identifier 'Map'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(39): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(40): error C2061: syntax error : identifier 'Map'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(58): error C2143: syntax error : missing ';' before '*'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(58): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(59): error C2143: syntax error : missing ';' before '*'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(59): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(64): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(64): error C2535: 'HumanPlayerStrategy::HumanPlayerStrategy(void)' : member function already defined or declared
-                 c:\users\aline\documents\comp345_full_v2\character_strategy.h(61) : see declaration of 'HumanPlayerStrategy::HumanPlayerStrategy'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(66): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(67): error C2061: syntax error : identifier 'Map'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(64): error C2065: 'myself' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(64): error C2614: 'HumanPlayerStrategy' : illegal member initialization: 'me' is not a base or member
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(67): error C2065: 'aMap' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(67): error C2513: 'std::map' : no variable declared before '='
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(83): error C2143: syntax error : missing ';' before '*'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(83): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(84): error C2143: syntax error : missing ';' before '*'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(84): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(89): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(89): error C2535: 'HostileStrategy::HostileStrategy(void)' : member function already defined or declared
-                 c:\users\aline\documents\comp345_full_v2\character_strategy.h(86) : see declaration of 'HostileStrategy::HostileStrategy'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(91): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(92): error C2061: syntax error : identifier 'Map'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(89): error C2065: 'myself' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(89): error C2614: 'HostileStrategy' : illegal member initialization: 'me' is not a base or member
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(92): error C2065: 'aMap' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(92): error C2513: 'std::map' : no variable declared before '='
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(108): error C2143: syntax error : missing ';' before '*'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(108): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(109): error C2143: syntax error : missing ';' before '*'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(109): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(115): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(115): error C2535: 'FriendlyStrategy::FriendlyStrategy(void)' : member function already defined or declared
-                 c:\users\aline\documents\comp345_full_v2\character_strategy.h(111) : see declaration of 'FriendlyStrategy::FriendlyStrategy'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(117): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(118): error C2061: syntax error : identifier 'Map'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(115): error C2065: 'myself' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(115): error C2614: 'FriendlyStrategy' : illegal member initialization: 'me' is not a base or member
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(118): error C2065: 'aMap' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(118): error C2513: 'std::map' : no variable declared before '='
-     1>c:\users\aline\documents\comp345_full_v2\character.h(83): error C2061: syntax error : identifier 'Map'
-     1>c:\users\aline\documents\comp345_full_v2\character.h(89): error C2061: syntax error : identifier 'Map'
-     1>c:\users\aline\documents\comp345_full_v2\character.h(83): error C2065: 'aMap' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character.h(147): error C2664: 'HumanPlayerStrategy::HumanPlayerStrategy(const HumanPlayerStrategy &)' : cannot convert argument 1 from 'Player *const ' to 'const HumanPlayerStrategy &'
-                 Reason: cannot convert from 'Player *const ' to 'const HumanPlayerStrategy'
-                 No constructor could take the source type, or constructor overload resolution was ambiguous
-     1>c:\users\aline\documents\comp345_full_v2\character.h(201): error C2664: 'HumanPlayerStrategy::HumanPlayerStrategy(const HumanPlayerStrategy &)' : cannot convert argument 1 from 'Enemy *const ' to 'const HumanPlayerStrategy &'
-                 Reason: cannot convert from 'Enemy *const ' to 'const HumanPlayerStrategy'
-                 No constructor could take the source type, or constructor overload resolution was ambiguous
-     1>c:\users\aline\documents\comp345_full_v2\character.h(203): error C2664: 'HumanPlayerStrategy::HumanPlayerStrategy(const HumanPlayerStrategy &)' : cannot convert argument 1 from 'Enemy *const ' to 'const HumanPlayerStrategy &'
-                 Reason: cannot convert from 'Enemy *const ' to 'const HumanPlayerStrategy'
-                 No constructor could take the source type, or constructor overload resolution was ambiguous
-     1>c:\users\aline\documents\comp345_full_v2\character.h(227): error C2664: 'HumanPlayerStrategy::HumanPlayerStrategy(const HumanPlayerStrategy &)' : cannot convert argument 1 from 'Friendly *const ' to 'const HumanPlayerStrategy &'
-                 Reason: cannot convert from 'Friendly *const ' to 'const HumanPlayerStrategy'
-                 No constructor could take the source type, or constructor overload resolution was ambiguous
-     1>c:\users\aline\documents\comp345_full_v2\character.h(229): error C2664: 'HumanPlayerStrategy::HumanPlayerStrategy(const HumanPlayerStrategy &)' : cannot convert argument 1 from 'Friendly *const ' to 'const HumanPlayerStrategy &'
-                 Reason: cannot convert from 'Friendly *const ' to 'const HumanPlayerStrategy'
-                 No constructor could take the source type, or constructor overload resolution was ambiguous
-     1>c:\users\aline\documents\comp345_full_v2\map.h(139): warning C4227: anachronism used : qualifiers on reference are ignored
-     1>c:\users\aline\documents\comp345_full_v2\map.h(140): warning C4227: anachronism used : qualifiers on reference are ignored
-     1>c:\users\aline\documents\comp345_full_v2\driver2.cpp(17): warning C4018: '<=' : signed/unsigned mismatch
-     1>c:\users\aline\documents\comp345_full_v2\driver2.cpp(611): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
-         config.cpp
-         character_strategy.cpp
-     1>c:\users\aline\documents\comp345_full_v2\basic_structure.h(39): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\aline\documents\comp345_full_v2\basic_structure.h(43): warning C4806: '==' : unsafe operation: no value of type 'bool' promoted to type 'int' can equal the given constant
-     1>c:\users\aline\documents\comp345_full_v2\basic_structure.h(111): warning C4309: 'initializing' : truncation of constant value
-     1>c:\users\aline\documents\comp345_full_v2\character.h(48): error C2143: syntax error : missing ';' before '*'
-     1>c:\users\aline\documents\comp345_full_v2\character.h(48): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\aline\documents\comp345_full_v2\character.h(82): error C2061: syntax error : identifier 'CharacterStrategy'
-     1>c:\users\aline\documents\comp345_full_v2\character.h(83): error C2061: syntax error : identifier 'Map'
-     1>c:\users\aline\documents\comp345_full_v2\character.h(89): error C2061: syntax error : identifier 'Map'
-     1>c:\users\aline\documents\comp345_full_v2\character.h(82): error C2065: 'strategy' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character.h(82): error C2065: 'aStrategy' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character.h(83): error C2065: 'strategy' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character.h(83): error C2227: left of '->setMap' must point to class/struct/union/generic type
-                 type is 'unknown-type'
-     1>c:\users\aline\documents\comp345_full_v2\character.h(83): error C2065: 'aMap' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character.h(147): error C2061: syntax error : identifier 'HumanPlayerStrategy'
-     1>c:\users\aline\documents\comp345_full_v2\character.h(147): error C2660: 'GameCharacter::setStrategy' : function does not take 1 arguments
-     1>c:\users\aline\documents\comp345_full_v2\character.h(201): error C2061: syntax error : identifier 'HumanPlayerStrategy'
-     1>c:\users\aline\documents\comp345_full_v2\character.h(201): error C2660: 'GameCharacter::setStrategy' : function does not take 1 arguments
-     1>c:\users\aline\documents\comp345_full_v2\character.h(203): error C2061: syntax error : identifier 'HumanPlayerStrategy'
-     1>c:\users\aline\documents\comp345_full_v2\character.h(203): error C2660: 'GameCharacter::setStrategy' : function does not take 1 arguments
-     1>c:\users\aline\documents\comp345_full_v2\character.h(227): error C2061: syntax error : identifier 'HumanPlayerStrategy'
-     1>c:\users\aline\documents\comp345_full_v2\character.h(227): error C2660: 'GameCharacter::setStrategy' : function does not take 1 arguments
-     1>c:\users\aline\documents\comp345_full_v2\character.h(229): error C2061: syntax error : identifier 'HumanPlayerStrategy'
-     1>c:\users\aline\documents\comp345_full_v2\character.h(229): error C2660: 'GameCharacter::setStrategy' : function does not take 1 arguments
-     1>c:\users\aline\documents\comp345_full_v2\map.h(139): warning C4227: anachronism used : qualifiers on reference are ignored
-     1>c:\users\aline\documents\comp345_full_v2\map.h(140): warning C4227: anachronism used : qualifiers on reference are ignored
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.cpp(10): warning C4305: 'initializing' : truncation from 'double' to 'const float'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.cpp(15): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.cpp(16): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.cpp(211): error C2660: 'GameCharacter::setStrategy' : function does not take 1 arguments
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(39): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(43): warning C4806: '==' : unsafe operation: no value of type 'bool' promoted to type 'int' can equal the given constant
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(111): warning C4309: 'initializing' : truncation of constant value
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.h(138): warning C4227: anachronism used : qualifiers on reference are ignored
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.h(139): warning C4227: anachronism used : qualifiers on reference are ignored
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\driver2.cpp(17): warning C4018: '<=' : signed/unsigned mismatch
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\driver2.cpp(25): warning C4101: 'i' : unreferenced local variable
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\driver2.cpp(611): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\driver2.cpp(609): warning C4101: 'k' : unreferenced local variable
          character.cpp
-     1>c:\users\aline\documents\comp345_full_v2\basic_structure.h(39): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\aline\documents\comp345_full_v2\basic_structure.h(43): warning C4806: '==' : unsafe operation: no value of type 'bool' promoted to type 'int' can equal the given constant
-     1>c:\users\aline\documents\comp345_full_v2\basic_structure.h(111): warning C4309: 'initializing' : truncation of constant value
-     1>c:\users\aline\documents\comp345_full_v2\map.h(139): warning C4227: anachronism used : qualifiers on reference are ignored
-     1>c:\users\aline\documents\comp345_full_v2\map.h(140): warning C4227: anachronism used : qualifiers on reference are ignored
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(30): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(39): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(58): error C2143: syntax error : missing ';' before '*'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(58): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(64): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(64): error C2535: 'HumanPlayerStrategy::HumanPlayerStrategy(void)' : member function already defined or declared
-                 c:\users\aline\documents\comp345_full_v2\character_strategy.h(61) : see declaration of 'HumanPlayerStrategy::HumanPlayerStrategy'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(66): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(64): error C2065: 'myself' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(64): error C2614: 'HumanPlayerStrategy' : illegal member initialization: 'me' is not a base or member
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(83): error C2143: syntax error : missing ';' before '*'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(83): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(89): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(89): error C2535: 'HostileStrategy::HostileStrategy(void)' : member function already defined or declared
-                 c:\users\aline\documents\comp345_full_v2\character_strategy.h(86) : see declaration of 'HostileStrategy::HostileStrategy'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(91): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(89): error C2065: 'myself' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(89): error C2614: 'HostileStrategy' : illegal member initialization: 'me' is not a base or member
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(108): error C2143: syntax error : missing ';' before '*'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(108): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(115): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(115): error C2535: 'FriendlyStrategy::FriendlyStrategy(void)' : member function already defined or declared
-                 c:\users\aline\documents\comp345_full_v2\character_strategy.h(111) : see declaration of 'FriendlyStrategy::FriendlyStrategy'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(117): error C2061: syntax error : identifier 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(115): error C2065: 'myself' : undeclared identifier
-     1>c:\users\aline\documents\comp345_full_v2\character_strategy.h(115): error C2614: 'FriendlyStrategy' : illegal member initialization: 'me' is not a base or member
-     1>c:\users\aline\documents\comp345_full_v2\character.h(147): error C2664: 'HumanPlayerStrategy::HumanPlayerStrategy(const HumanPlayerStrategy &)' : cannot convert argument 1 from 'Player *const ' to 'const HumanPlayerStrategy &'
-                 Reason: cannot convert from 'Player *const ' to 'const HumanPlayerStrategy'
-                 No constructor could take the source type, or constructor overload resolution was ambiguous
-     1>c:\users\aline\documents\comp345_full_v2\character.h(201): error C2664: 'HumanPlayerStrategy::HumanPlayerStrategy(const HumanPlayerStrategy &)' : cannot convert argument 1 from 'Enemy *const ' to 'const HumanPlayerStrategy &'
-                 Reason: cannot convert from 'Enemy *const ' to 'const HumanPlayerStrategy'
-                 No constructor could take the source type, or constructor overload resolution was ambiguous
-     1>c:\users\aline\documents\comp345_full_v2\character.h(203): error C2664: 'HumanPlayerStrategy::HumanPlayerStrategy(const HumanPlayerStrategy &)' : cannot convert argument 1 from 'Enemy *const ' to 'const HumanPlayerStrategy &'
-                 Reason: cannot convert from 'Enemy *const ' to 'const HumanPlayerStrategy'
-                 No constructor could take the source type, or constructor overload resolution was ambiguous
-     1>c:\users\aline\documents\comp345_full_v2\character.h(227): error C2664: 'HumanPlayerStrategy::HumanPlayerStrategy(const HumanPlayerStrategy &)' : cannot convert argument 1 from 'Friendly *const ' to 'const HumanPlayerStrategy &'
-                 Reason: cannot convert from 'Friendly *const ' to 'const HumanPlayerStrategy'
-                 No constructor could take the source type, or constructor overload resolution was ambiguous
-     1>c:\users\aline\documents\comp345_full_v2\character.h(229): error C2664: 'HumanPlayerStrategy::HumanPlayerStrategy(const HumanPlayerStrategy &)' : cannot convert argument 1 from 'Friendly *const ' to 'const HumanPlayerStrategy &'
-                 Reason: cannot convert from 'Friendly *const ' to 'const HumanPlayerStrategy'
-                 No constructor could take the source type, or constructor overload resolution was ambiguous
-     1>c:\users\aline\documents\comp345_full_v2\character.cpp(30): warning C4553: '==' : operator has no effect; did you intend '='?
-     1>c:\users\aline\documents\comp345_full_v2\character.cpp(203): error C2511: 'void GameCharacter::startTurn(int)' : overloaded member function not found in 'GameCharacter'
-                 c:\users\aline\documents\comp345_full_v2\character.h(21) : see declaration of 'GameCharacter'
-     1>c:\users\aline\documents\comp345_full_v2\character.cpp(213): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\aline\documents\comp345_full_v2\character.cpp(221): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\aline\documents\comp345_full_v2\character.cpp(381): warning C4018: '<' : signed/unsigned mismatch
-         cell.cpp
-         basic_structure.cpp
-     1>c:\users\aline\documents\comp345_full_v2\basic_structure.h(39): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\aline\documents\comp345_full_v2\basic_structure.h(43): warning C4806: '==' : unsafe operation: no value of type 'bool' promoted to type 'int' can equal the given constant
-     1>c:\users\aline\documents\comp345_full_v2\basic_structure.h(111): warning C4309: 'initializing' : truncation of constant value
-     1>c:\users\aline\documents\comp345_full_v2\basic_structure.cpp(24): warning C4305: '=' : truncation from 'int' to 'bool'
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(39): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(43): warning C4806: '==' : unsafe operation: no value of type 'bool' promoted to type 'int' can equal the given constant
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(111): warning C4309: 'initializing' : truncation of constant value
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.h(138): warning C4227: anachronism used : qualifiers on reference are ignored
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.h(139): warning C4227: anachronism used : qualifiers on reference are ignored
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character.cpp(31): warning C4553: '==' : operator has no effect; did you intend '='?
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character.cpp(25): warning C4101: 'i' : unreferenced local variable
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character.cpp(93): warning C4101: 'i' : unreferenced local variable
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character.cpp(217): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character.cpp(225): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character.cpp(385): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character.cpp(377): warning C4101: 'j' : unreferenced local variable
          Generating Code...
-     1>Done Building Project "C:\Users\Aline\Documents\COMP345_full_v2\COMP345_full_v0.vcxproj" (Build target(s)) -- FAILED.
+         Compiling...
+         map.cpp
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(39): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(43): warning C4806: '==' : unsafe operation: no value of type 'bool' promoted to type 'int' can equal the given constant
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(111): warning C4309: 'initializing' : truncation of constant value
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.h(138): warning C4227: anachronism used : qualifiers on reference are ignored
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.h(139): warning C4227: anachronism used : qualifiers on reference are ignored
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.cpp(126): warning C4101: 'temp' : unreferenced local variable
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.cpp(322): warning C4101: 'dest' : unreferenced local variable
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.cpp(658): warning C4101: 'temp' : unreferenced local variable
+         character_strategy.cpp
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(39): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(43): warning C4806: '==' : unsafe operation: no value of type 'bool' promoted to type 'int' can equal the given constant
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(111): warning C4309: 'initializing' : truncation of constant value
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.h(138): warning C4227: anachronism used : qualifiers on reference are ignored
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.h(139): warning C4227: anachronism used : qualifiers on reference are ignored
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character_strategy.cpp(12): warning C4305: 'initializing' : truncation from 'double' to 'const float'
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character_strategy.cpp(18): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character_strategy.cpp(19): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character_strategy.cpp(80): warning C4018: '<' : signed/unsigned mismatch
+         Generating Code...
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.cpp(32): warning C4715: 'Direction::randDir' : not all control paths return a value
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\mrtnchps\Documents\GitHub\RPG_RETAKE\COMP345_full_v2\Debug\COMP345_full_v0.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\local\boost_1_62_0\lib32-msvc-12.0" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\mrtnchps\Documents\GitHub\RPG_RETAKE\COMP345_full_v2\Debug\COMP345_full_v0.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\mrtnchps\Documents\GitHub\RPG_RETAKE\COMP345_full_v2\Debug\COMP345_full_v0.lib" /MACHINE:X86 Debug\basic_structure.obj
+         Debug\cell.obj
+         Debug\character.obj
+         Debug\character_strategy.obj
+         Debug\config.obj
+         Debug\driver2.obj
+         Debug\game.obj
+         Debug\inv2.obj
+         Debug\map.obj
+         Debug\stdafx.obj
+            Creating library C:\Users\mrtnchps\Documents\GitHub\RPG_RETAKE\COMP345_full_v2\Debug\COMP345_full_v0.lib and object C:\Users\mrtnchps\Documents\GitHub\RPG_RETAKE\COMP345_full_v2\Debug\COMP345_full_v0.exp
+         COMP345_full_v0.vcxproj -> C:\Users\mrtnchps\Documents\GitHub\RPG_RETAKE\COMP345_full_v2\Debug\COMP345_full_v0.exe
+     1>Done Building Project "C:\Users\mrtnchps\Documents\GitHub\RPG_RETAKE\COMP345_full_v2\COMP345_full_v0.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:17.41
+Time Elapsed 00:00:11.09

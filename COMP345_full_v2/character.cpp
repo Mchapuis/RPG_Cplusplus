@@ -1,6 +1,7 @@
 
 #include "stdafx.h"
 #include "character.h"
+#include "map.h"
 #include <algorithm>//used for sort elements in abilities array
 
 BOOST_CLASS_EXPORT_GUID(GameCharacter, "GameCharacter")
@@ -199,9 +200,12 @@ int GameCharacter::damageRoll(int distance)
 	}
 }
 
-void GameCharacter::startTurn(int distance)
+//!Give turn to a character
+//!@param: objects is a list of paired key values (example: looking for a character and a cell is an object)
+void GameCharacter::startTurn(Map* map, std::map<Placeable*, Cell*> *objects)
 {
-
+	//object map is not used anymore, but do not remove yet! :) Optimize later plz!
+	strategy->turn(objects);
 }
 
 

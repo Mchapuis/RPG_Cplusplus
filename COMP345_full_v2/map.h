@@ -8,8 +8,6 @@
 
 #include <utility>
 
-class Player;
-
 #include "cell.h"
 #include "character.h"
 /*
@@ -124,6 +122,7 @@ public:
 	bool setRowWall(int row, int from, int end);
 	bool setColWall(int col, int from, int end);
 
+	//3 first functions call the last one
 	Cell* move(int srcRow, int srcCol, int destRow, int destCol);
 	Cell* move(int bRow, int bCol, Direction dir);
 	Cell* move(Cell* source, Direction dir);

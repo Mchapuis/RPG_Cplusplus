@@ -4,9 +4,10 @@
 #ifndef _CHARACTER_H_
 #define _CHARACTER_H_
 
+class Map;
+
 #include "config.h"
 #include "basic_structure.h"
-#include "map.h"
 #include "character_strategy.h"
 
 #include <boost\archive\text_iarchive.hpp>
@@ -57,7 +58,7 @@ private:
 	int hitDie();
 
 	int damageRoll(int distance);
-	int takeDamage(int damageValue);
+	int takeDamage(int damageValue){ return strategy->takeDamage(this, damageValue); }
 
 	//! Inline function that calculates an ability bonus based on
 	//! a given current ability score.
@@ -86,7 +87,7 @@ public:
 	void levelUp();
 	virtual void updateLvl(int aLevel);
 
-	void startTurn(Map* map, std::map<Placeable*, Cell*> objects);
+	void startTurn(Map* map, std::map<Placeable*, Cell*> *objects);
 
 	bool unlock(Lockable* lock);
 

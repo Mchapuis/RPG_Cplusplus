@@ -36,7 +36,7 @@ map(aMap), player(aPlayer)
 			{
 				tempPlace = tempCell->getContent();
 
-				objects.insert({ tempPlace, tempCell });
+				objects->insert({ tempPlace, tempCell });
 
 				if (this->isCharacter(tempPlace))
 				{
@@ -105,6 +105,14 @@ void Game::nextTurn()
 	gc->startTurn(map, objects);
 
 	cleanUp();
+
+	if (!characters.empty() && gc == characters.front())
+	{
+		characters.pop_front();
+		characters.push_back(gc);
+	}
+
+	//if all dead or player dead... do something ? Or map exit?
 }
 
 void Game::cleanUp()
@@ -118,7 +126,7 @@ void Game::cleanUp()
 		{
 			gc = *iter;
 			characters.erase(iter);
-			objects.erase((*iter));
+			objects->erase((*iter));
 			delete gc;
 		}
 	}

@@ -4,7 +4,11 @@
 #define _CHARACTER_STRATEGY_H_
 
 #include "config.h"
-#include "map.h"
+#include "placeable.h"
+
+class Map;
+class Cell;
+class GameCharacter;
 
 #include <boost\archive\text_iarchive.hpp>
 #include <boost\archive\text_oarchive.hpp>
@@ -35,9 +39,10 @@ public:
 	static vector<vector<int>> graph(Map* map, Cell* dest);
 
 	virtual ~CharacterStrategy(){}
-	virtual void turn(std::map<Placeable*, Cell*> objects) = 0;
+	virtual void turn(std::map<Placeable*, Cell*> *objects) = 0;
 	virtual int takeDamage(GameCharacter* attacker, int damageValue) = 0;
 	virtual void setMap(Map* aMap) = 0;
+	//virtual string toString() = 0;//to print what is happening on screen
 };
 
 BOOST_SERIALIZATION_ASSUME_ABSTRACT(Placeable);
@@ -62,9 +67,10 @@ private:
 
 public:
 	HumanPlayerStrategy(GameCharacter* myself) : me(myself) {}
-	void turn(std::map<Placeable*, Cell*> objects); // unused by HumanToPcStrategy
+	void turn(std::map<Placeable*, Cell*> *objects); // unused by HumanToPcStrategy
 	int takeDamage(GameCharacter* attacker, int damageValue);
 	void setMap(Map* aMap){ map = aMap; }
+	//string toString();
 };
 
 
@@ -87,9 +93,10 @@ private:
 
 public:
 	HostileStrategy(GameCharacter* myself) : me(myself) {}
-	void turn(std::map<Placeable*, Cell*> objects);
+	void turn(std::map<Placeable*, Cell*> *objects);
 	int takeDamage(GameCharacter* attacker, int damageValue);
 	void setMap(Map* aMap){ map = aMap; }
+	//string toString();
 };
 
 
@@ -113,9 +120,10 @@ private:
 public:
 
 	FriendlyStrategy(GameCharacter* myself) : me(myself) {}
-	void turn(std::map<Placeable*, Cell*> objects);
+	void turn(std::map<Placeable*, Cell*> *objects);
 	int takeDamage(GameCharacter* attacker, int damageValue);
 	void setMap(Map* aMap){ map = aMap; }
+	//string toString();
 };
 
 

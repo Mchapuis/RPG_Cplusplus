@@ -15,6 +15,7 @@ const Direction Direction::NW = Direction(-1, -1, 'q');
 
 std::map<char, const Direction*> Direction::keyMap = create_map();
 
+//! @return a random direction (0 is North, 1 is N-East, etc.)
 Direction Direction::randDir()
 {
 	switch (rand() % 7)
@@ -345,14 +346,22 @@ Cell* Map::move(int bRow, int bCol, Direction dir)
 	return nullptr;
 }
 
+//!@param: cell pointer of the source and a direction
+//!Description: 
+//!@return: a pointer to a cell
 Cell* Map::move(Cell* source, Direction dir)
 {
+	// DESCRIPTION OF THIS LINE:  source->getRow() + dir.y_vel;
+	// 1- get the row in the matrice...meaning the y and add the value
+	// of the y direction value (0, 1 or -1)
+	// 2- Then do the same thing with the column value and add the value
 	int destRow = source->getRow() + dir.y_vel;
 	int destCol = source->getCol() + dir.x_vel;
 
-
+	//if cell is ok to move to
 	if (this->cellExists(destRow, destCol))
 	{
+		//return where the cell is now
 		return move(source, board[destRow][destCol]);
 	}
 
