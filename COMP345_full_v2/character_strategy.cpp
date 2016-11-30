@@ -69,11 +69,14 @@ int CharacterStrategy::getSpeed(GameCharacter* me)
 //!9- empty both stack at the end of the turn
 void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 {
-	//nme list will store ennemis close by...create list empty
-	std::list<GameCharacter*> npc = list<GameCharacter*>();
+	int answer;//to get answer from user
 
-	//unlockable will store doors or chests near by...create list empty
+	//will store ennemis/lockables close by...create list empty
+	std::list<GameCharacter*> npc = list<GameCharacter*>();
 	std::list<Lockable*> unlockable = list<Lockable*>();
+	
+	int stepsCount = getSpeed(me);//total steps available
+	int turnAvailable = 3;//available turns number left...at 0, exit turn() function
 
 	//IF PLAYER MOVE && STEPS COUNTER != 0 && TURN != OVER :: RESTART HERE
 	//if player moves, all this below need to restart to find ennemis close by and chest/doors close by
@@ -81,8 +84,9 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 	//step #1 
 	distGraph = graph(map, (*objects)[me]);
 	int i, j;//variables for the distGraph lookup
-
+	
 	// step #2
+	//------------------------GET ALL ELEMENTS NEAR PLAYER--------------
 	// iterator to go see each cell content
 	// The objects are a pair. Placeable is the key and Cell is the value
 	for (std::pair<Placeable*, Cell*> p : *objects)
@@ -114,23 +118,65 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 			}
 		}
 	}
+	//----------------------LOOP TO GET ELEMENTS ENDS HERE
 
 	//At this point, we have two lists with lockables and ennemis/friends
-	//Check if they are empty first, else give the object as an option for the player
 
-	//total steps available
-	int stepsCount = getSpeed(me);
+	//----------------------DIPLAY POSSIBLE ACTIONS TO PLAYER
+	//Ennemies in the list?
+	if (!npc.empty()){
+		//display the possibility of the attack
+		std::cout << "ATTACK -------- PRESS 1" << endl;
+	}
+	//chests/doors in the list?
+	if (!unlockable.empty()){
+		//display the possibility of the unlock door
+		std::cout << "UNLOCK -------- PRESS 2" << endl;
+	}
+	//always able to move...so always display it
+	std::cout << "MOVE ---------- PRESS 3" << endl;
+	//always able to equip/unequip...so always display it
+	std::cout << "EQUIP/UNEQUIP - PRESS 4" << endl;
+	//always able to end his turn...so always display it
+	std::cout << "END TURN?------ PRESS 5" << endl;
+	//-------------------DISPLAY ENDS HERE--------------------------
 
-	//available turns number left...at 0, exit turn() function
-	int turnAvailable = 3;
+	//get answer
+	std:: cin >> answer;
+	GameCharacter *temp;
+	int choseThis = 1;//other choice for user
+	//------------------------CHECK INPUT AND DISPLAY POSSIBILITES
+	//if choose to attack
+	if (answer == 1){
+		std::cout << "Choose the NPC to attack!!--->" << endl; 
+		while (!npc.empty()){
+			temp = npc.front();
+			std::cout << "NPC at [" << (*objects)[temp]->getRow() << ", " << (*objects)[temp]->getCol() << "]----> PRESS " << choseThis << endl;
+			choseThis++;
+		}
+	}
+	//if choose to unlock something
+	else if (answer == 2){
+
+	}
+	//if choose to move
+	else if (answer == 3){
+	}
+	//if choose to  equip/unequip
+	else if (answer == 4){
+
+	}
+	//if choose to end the turn
+	else if (answer == 5){
+
+	}
 
 
 
-	int answer;
+	
+	//std::cout << "what do you wish to do : ";
 
-	cout << "what do you wish to do : ";
-
-	cin >> answer;
+	//std::cin >> answer;
 }
 
 //! @ return: number to adjust HP...not HP itself is returned
