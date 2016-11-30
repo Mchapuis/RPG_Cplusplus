@@ -12,19 +12,21 @@
 #define CLOSED (1)
 #define OPEN (2)
 
-class Lockable
+class Lockable : public Placeable
 {
 private:
 	friend class boost::serialization::access;
 	template<class Archive>
 	void serialize(Archive & ar, const unsigned int version)
 	{
+		ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(Placeable);
 		ar & BOOST_SERIALIZATION_NVP(code);
 		ar & BOOST_SERIALIZATION_NVP(status);
 	}
 
 	int code;
 	bool status; //0 = locked/closed, 1 = unlocked/closed, >1 = unlocked/open
+	static const std::string symbol;
 
 protected:
 	Lockable() : code(rand()), status(1) {}
@@ -42,7 +44,10 @@ public:
 	bool isLocked() { return status == LOCKED; }
 	bool isOpen() { return status == OPEN; }
 	virtual std::string keyName() { return "key"; }
-	void reset(){}
+	virtual bool isWalkable(){ return false; }
+	virtual const std::string getSymbol() { return "L"; }
+	virtual void updateLvl(int aLevel) {}
+	virtual bool reset(){ return true; }
 };
 
 class Wall : public Placeable
@@ -65,7 +70,7 @@ public:
 	bool reset(){ return true; }
 };
 
-class Door : public Lockable, public Placeable
+class Door : public Lockable//, public Placeable
 {
 private:
 	friend class boost::serialization::access;
@@ -74,7 +79,6 @@ private:
 	{
 
 		ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(Lockable);
-		ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(Placeable);
 	}
 
 	static const std::string symbolOpen;
@@ -90,7 +94,7 @@ public:
 	bool reset(){ return true; }
 };
 
-class Chest : public Lockable, public Placeable, public MySerializable
+class Chest : public Lockable, public MySerializable//, public Placeable
 {
 private:
 	friend class boost::serialization::access;
@@ -98,7 +102,6 @@ private:
 	void serialize(Archive & ar, const unsigned int version)
 	{
 		ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(Lockable);
-		ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(Placeable);
 		ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(MySerializable);
 		ar & BOOST_SERIALIZATION_NVP(content);
 	}

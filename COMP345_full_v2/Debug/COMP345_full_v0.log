@@ -1,60 +1,16 @@
-﻿Build started 2016-11-29 20:47:36.
+﻿Build started 2016-11-29 23:17:17.
      1>Project "C:\Users\mrtnchps\Documents\GitHub\RPG_RETAKE\COMP345_full_v2\COMP345_full_v0.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\local\boost_1_62_0 /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\COMP345_full_v0.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt character.cpp character_strategy.cpp driver2.cpp game.cpp map.cpp
-         game.cpp
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(39): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(43): warning C4806: '==' : unsafe operation: no value of type 'bool' promoted to type 'int' can equal the given constant
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(111): warning C4309: 'initializing' : truncation of constant value
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.h(138): warning C4227: anachronism used : qualifiers on reference are ignored
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.h(139): warning C4227: anachronism used : qualifiers on reference are ignored
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\game.cpp(24): warning C4101: 'k' : unreferenced local variable
-         driver2.cpp
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(39): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(43): warning C4806: '==' : unsafe operation: no value of type 'bool' promoted to type 'int' can equal the given constant
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(111): warning C4309: 'initializing' : truncation of constant value
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.h(138): warning C4227: anachronism used : qualifiers on reference are ignored
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.h(139): warning C4227: anachronism used : qualifiers on reference are ignored
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\driver2.cpp(17): warning C4018: '<=' : signed/unsigned mismatch
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\driver2.cpp(25): warning C4101: 'i' : unreferenced local variable
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\driver2.cpp(611): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\driver2.cpp(609): warning C4101: 'k' : unreferenced local variable
-         character.cpp
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(39): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(43): warning C4806: '==' : unsafe operation: no value of type 'bool' promoted to type 'int' can equal the given constant
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(111): warning C4309: 'initializing' : truncation of constant value
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.h(138): warning C4227: anachronism used : qualifiers on reference are ignored
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.h(139): warning C4227: anachronism used : qualifiers on reference are ignored
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character.cpp(31): warning C4553: '==' : operator has no effect; did you intend '='?
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character.cpp(25): warning C4101: 'i' : unreferenced local variable
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character.cpp(93): warning C4101: 'i' : unreferenced local variable
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character.cpp(217): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character.cpp(225): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character.cpp(385): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character.cpp(377): warning C4101: 'j' : unreferenced local variable
-         Generating Code...
-         Compiling...
-         map.cpp
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(39): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(43): warning C4806: '==' : unsafe operation: no value of type 'bool' promoted to type 'int' can equal the given constant
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(111): warning C4309: 'initializing' : truncation of constant value
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.h(138): warning C4227: anachronism used : qualifiers on reference are ignored
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.h(139): warning C4227: anachronism used : qualifiers on reference are ignored
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.cpp(126): warning C4101: 'temp' : unreferenced local variable
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.cpp(322): warning C4101: 'dest' : unreferenced local variable
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.cpp(658): warning C4101: 'temp' : unreferenced local variable
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\local\boost_1_62_0 /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\COMP345_full_v0.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt character_strategy.cpp
          character_strategy.cpp
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(39): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(43): warning C4806: '==' : unsafe operation: no value of type 'bool' promoted to type 'int' can equal the given constant
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(111): warning C4309: 'initializing' : truncation of constant value
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(41): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(45): warning C4806: '==' : unsafe operation: no value of type 'bool' promoted to type 'int' can equal the given constant
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\basic_structure.h(114): warning C4309: 'initializing' : truncation of constant value
      1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.h(138): warning C4227: anachronism used : qualifiers on reference are ignored
      1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.h(139): warning C4227: anachronism used : qualifiers on reference are ignored
      1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character_strategy.cpp(12): warning C4305: 'initializing' : truncation from 'double' to 'const float'
      1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character_strategy.cpp(18): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
      1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character_strategy.cpp(19): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character_strategy.cpp(80): warning C4018: '<' : signed/unsigned mismatch
-         Generating Code...
-     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\map.cpp(32): warning C4715: 'Direction::randDir' : not all control paths return a value
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\mrtnchps\Documents\GitHub\RPG_RETAKE\COMP345_full_v2\Debug\COMP345_full_v0.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\local\boost_1_62_0\lib32-msvc-12.0" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\mrtnchps\Documents\GitHub\RPG_RETAKE\COMP345_full_v2\Debug\COMP345_full_v0.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\mrtnchps\Documents\GitHub\RPG_RETAKE\COMP345_full_v2\Debug\COMP345_full_v0.lib" /MACHINE:X86 Debug\basic_structure.obj
          Debug\cell.obj
@@ -66,10 +22,9 @@
          Debug\inv2.obj
          Debug\map.obj
          Debug\stdafx.obj
-            Creating library C:\Users\mrtnchps\Documents\GitHub\RPG_RETAKE\COMP345_full_v2\Debug\COMP345_full_v0.lib and object C:\Users\mrtnchps\Documents\GitHub\RPG_RETAKE\COMP345_full_v2\Debug\COMP345_full_v0.exp
          COMP345_full_v0.vcxproj -> C:\Users\mrtnchps\Documents\GitHub\RPG_RETAKE\COMP345_full_v2\Debug\COMP345_full_v0.exe
      1>Done Building Project "C:\Users\mrtnchps\Documents\GitHub\RPG_RETAKE\COMP345_full_v2\COMP345_full_v0.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:11.09
+Time Elapsed 00:00:02.45

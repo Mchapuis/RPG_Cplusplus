@@ -63,23 +63,68 @@ int CharacterStrategy::getSpeed(GameCharacter* me)
 //!3- give back the number of steps between each of elements in the map
 //!4- if it is an ENNEMI, check if the range of the weapon reach him---yes? Give option to attack
 //!5- if distance of 1 to a door or a chest, give option to open
+//!6- Creating two stacks on each turn: 
+//!7- ennemi stack that can be reached in this turn
+//!8- unlockable stack that can be reached in this turn
+//!9- empty both stack at the end of the turn
 void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 {
+	//nme list will store ennemis close by...create list empty
+	std::list<GameCharacter*> npc = list<GameCharacter*>();
+
+	//unlockable will store doors or chests near by...create list empty
+	std::list<Lockable*> unlockable = list<Lockable*>();
+
+	//IF PLAYER MOVE && STEPS COUNTER != 0 && TURN != OVER :: RESTART HERE
+	//if player moves, all this below need to restart to find ennemis close by and chest/doors close by
+	
 	//step #1 
 	distGraph = graph(map, (*objects)[me]);
-	//step #2
+	int i, j;//variables for the distGraph lookup
 
-	//iterator to go see each cell content
+	// step #2
+	// iterator to go see each cell content
+	// The objects are a pair. Placeable is the key and Cell is the value
 	for (std::pair<Placeable*, Cell*> p : *objects)
 	{
-		p.first;
-		
+		//Placeable* temp = p.first;
+		//Check if the object is a GameCharacter----yes? it is an ENNEMI or a FRIEND
+		if (GameCharacter *g = dynamic_cast<GameCharacter*>(p.first))
+		{
+			//get the i row # and the j column # of the GameCharacter
+			i = p.second->getRow();
+			i = p.second->getCol();
+			
+			//#step 3
+			//compare it with the matrix of distance to see if close to character--- yes? save it in the stack
+			if (distGraph[i][j] > 0 && distGraph[i][j] < 4){
+				npc.push_back(g);
+			}
+		}
+		else if (Lockable *lk = dynamic_cast<Lockable*>(p.first)){
+
+			//get the lockable object distance on map
+			i = p.second->getRow();
+			j = p.second->getCol();
+
+			//#step 3
+			//you can unlock chests or doors at 1 step distance only
+			if (distGraph[i][j] == 1){
+				unlockable.push_back(lk);
+			}
+		}
 	}
 
+	//At this point, we have two lists with lockables and ennemis/friends
+	//Check if they are empty first, else give the object as an option for the player
 
-	for (int i = 0; i < objects->size(); i++){
-		
-	}
+	//total steps available
+	int stepsCount = getSpeed(me);
+
+	//available turns number left...at 0, exit turn() function
+	int turnAvailable = 3;
+
+
 
 	int answer;
 

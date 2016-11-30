@@ -1,10 +1,12 @@
 #include "stdafx.h"
 #include "basic_structure.h"
 
+BOOST_CLASS_EXPORT_GUID(Lockable, "Lockable")
 BOOST_CLASS_EXPORT_GUID(Wall, "Wall")
 BOOST_CLASS_EXPORT_GUID(Door, "Door")
 BOOST_CLASS_EXPORT_GUID(Chest, "Chest")
 
+const std::string Lockable::symbol = "L";
 const std::string Wall::symbol = "#";
 const std::string Door::symbolOpen = "O";
 const std::string Door::symbolClosed = "0";
