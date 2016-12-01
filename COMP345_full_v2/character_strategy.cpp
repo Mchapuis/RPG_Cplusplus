@@ -131,6 +131,11 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 
 	//At this point, we have two lists with lockables and ennemis/friends
 
+	//---------------------ERASE MAP AND OTHER CONTENT
+	//system("cls");
+	//----------------------PRINT UPDATED MAP
+	//map->toString();
+
 	//----------------------DIPLAY POSSIBLE ACTIONS TO PLAYER
 	//Ennemies in the list?
 	if (!npc.empty()){

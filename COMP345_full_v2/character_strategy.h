@@ -16,7 +16,7 @@ class GameCharacter;
 
 #define AP (3) //action points
 
-class CharacterStrategy
+class CharacterStrategy 
 {
 private:
 	friend class boost::serialization::access;
@@ -45,7 +45,7 @@ public:
 	//virtual string toString() = 0;//to print what is happening on screen
 };
 
-BOOST_SERIALIZATION_ASSUME_ABSTRACT(Placeable);
+BOOST_SERIALIZATION_ASSUME_ABSTRACT(CharacterStrategy);
 
 
 
