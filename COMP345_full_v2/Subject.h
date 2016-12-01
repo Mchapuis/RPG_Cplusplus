@@ -14,7 +14,10 @@ class Subject
 public:
 	void Attach(Logger *alogger);
 	void Detach(Logger *alogger);
-	void Notify(string newlog);
+	void NotifyGame(string newlog);
+	void NotifyMap(string newlog);
+	void NotifyCharacter(string newlog);
+	void NotifyDice(string newlog);
 };
 
 #endif _SUBJECT_H_

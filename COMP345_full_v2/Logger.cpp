@@ -12,7 +12,7 @@ void Logger::Update(string l)
 
 	std::ofstream logging;
 
-	logging.open("text.txt", std::ios_base::app);
+	logging.open("log.txt", std::ios_base::app);
 
 	logging << "New log at  " << name << " is: " << log << "\n" << std::endl;
 
