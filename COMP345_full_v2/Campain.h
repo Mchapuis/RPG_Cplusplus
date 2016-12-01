@@ -18,22 +18,20 @@ private:
 		ar & BOOST_SERIALIZATION_NVP(maps);
 	}
 
-	string name;
-	string description;
-	list<Map*> maps;
-	Campain();
+	string name;/**< Name of the campain */
+	string description;/**< Description of the campain */
+	list<Map*> maps;/**< List of maps of the campain */
 
 public:
-	Campain(string newName);
-	void rename(string newName);
+	Campain() {}
+	~Campain() {}
+	Campain(string newName, string newDesc);
+	void setname(string newName);
 	void setDesc(string desc);
 	void addMapFront(Map* aMap);
 	void addMapBack(Map* aMap);
-	void addMapAt(Map* aMap, int position);
-	void removeMap(Map* aMap);
-	void removeMap(int position);
-
-	Map* operator[](int i);
+	Map getNextMap();
+	bool isEmpty();
 };
 
 #endif _CAMPAIN_H_

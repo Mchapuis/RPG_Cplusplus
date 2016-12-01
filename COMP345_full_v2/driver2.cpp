@@ -5,6 +5,7 @@
 #include "config.h"
 #include "map.h"
 #include "game.h"
+#include "campain.h"
 
 #include <boost\archive\text_iarchive.hpp>
 #include <boost\archive\text_oarchive.hpp>
@@ -563,7 +564,7 @@ void testSave9()
 
 	//cout << endl << myMap->toString2() << endl;
 
-	Game game = Game(myMap, myPlayer);
+	//Game game = Game(myMap, myPlayer);
 }
 
 void runGame(Map* myMap, Player* myPlayer)
@@ -640,15 +641,50 @@ void wrongMap3()
 	cout << endl << wMap3->toString2() << endl;
 }
 
+//!Method menu that calls campain to create one.
+void campainCreator()
+{
+	Map* map1 = new Map("Map 1", 10, 10);
+	Map* map2 = new Map("Map 2", 8, 8);
+	Map* map3 = new Map("Map 3", 12, 12);
+
+	int quantity;
+	string name;
+	string description;
+	string mapName;
+	cout << "WELCOME TO THE CAMPAIN CREATOR" << endl;
+	cout << "How many maps do you want to put on the campain?" << endl;
+	cin >> quantity;
+	cout << "What will be the name of your campain?" << endl;
+	cin >> name;
+	cout << "Please insert a line of description for the campain?" << endl;
+	cin >> description;
+	Campain newCamp = Campain(name, description);
+	cout << "Adding map 1, 2 and 3" << endl;
+	newCamp.addMapBack(map1);
+	newCamp.addMapBack(map2);
+	newCamp.addMapBack(map3);
+
+	Player *myPlayer = new Player();
+	myPlayer->load("player1");
+
+	while (newCamp.isEmpty() == true)
+	{
+		Map playMap = newCamp.getNextMap();
+		cout << endl << playMap.toString2() << endl;
+	}
+	
+}
+
+
 int main(int argc, char *argv[])
 {
 	int k;
 	
 	std::srand(time(0));
-	
-	reboot();
+	campainCreator();
 
-	wrongMap3();
+	//reboot();
 	
 	//cout << endl << "Aaaaaah yeeeee daaawg!!!!";
 	
