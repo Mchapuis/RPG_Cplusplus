@@ -56,6 +56,9 @@ private:
 	void updateBonus();
 	int hitDie();
 
+	static vector<int> abilitiesRoll();
+	static int abilityRoll();
+
 	int damageRoll(int distance);
 	int takeDamage(int damageValue){ return strategy->takeDamage(this, damageValue); }
 
@@ -79,9 +82,6 @@ public:
 	virtual bool reset(){ return true; }
 	void resetLevel(){ level = 0; }
 
-	static vector<int> abilitiesRoll();
-	static int abilityRoll();
-
 	void setStrategy(CharacterStrategy* aStrategy){ strategy = aStrategy; }
 	void setMap(Map* aMap) { strategy->setMap(aMap); }
 
@@ -95,7 +95,7 @@ public:
 
 	Inventory* getInventory() { return &inventory; }
 
-	int* getAllBaseAbl();
+	vector<int> getAllBaseAbl(){ return abilities; }
 	int getBaseAbl(Ability abl);
 	void setBaseAbl(Ability abl, int value);
 	int getHp(){ return Hp; }

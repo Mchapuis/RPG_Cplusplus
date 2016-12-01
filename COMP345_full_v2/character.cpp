@@ -286,21 +286,6 @@ int GameCharacter::modifyHp(int variation)
 	return Hp;
 }
 
-//! Function that returns an array of a character
-//! base ability scores
-int* GameCharacter::getAllBaseAbl()
-{
-	int* result = new int[6];
-	int i;
-
-	for (i = 0; i < 6; i++)
-	{
-		result[i] = abilities[i];
-	}
-
-	return result;
-}
-
 //! Function that returns a single base ability of a character.
 int GameCharacter::getBaseAbl(Ability abl)
 {
