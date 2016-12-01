@@ -673,4 +673,6 @@ void Game::display(GameCharacter *gh){
 	cout << "\n\nEQUIP/UNEQUIP____PRESS P"<<endl;
 	cout << "BACK_____________PRESS B" << endl;
 	
+
+
 }
