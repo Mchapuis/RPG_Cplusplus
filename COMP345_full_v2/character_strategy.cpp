@@ -168,12 +168,12 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 			if (attackInput == i){
 
 				//attack the npc!!!!
-				me->attack(npc.front(), me->getRange());//----??? is this ok???
+				//me->attack(npc.front(), lineDist);//----??? is this ok???
 				cout << "you have attacked!" << endl;
 				turnAvailable--;
 				isWorking = true;
 			}
-			else if ((i == npc.size-1) && !isWorking){//if at the end but nothing has been attacked
+			else if ((i == npc.size()-1) && !isWorking){//if at the end but nothing has been attacked
 				cout << "you maybe entered the wrong input of the list of NPC is not working..." << endl;
 				cout << "I am substracting from a turn anyway...." << endl;
 				turnAvailable--;
@@ -203,13 +203,13 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 			if (unlockThis == i){
 
 				//unlock object!!!!!
-				me->unlock(unlockable.front());//----??? is this ok???
+				//me->unlock(unlockable.front());//----??? is this ok???
 
 				cout << "the object is unlocked!" << endl;
 				turnAvailable--;
 				isWorking = true;
 			}
-			else if ((i == npc.size - 1) && !isWorking){//if at the end but nothing has been attacked
+			else if ((i == npc.size() - 1) && !isWorking){//if at the end but nothing has been attacked
 				cout << "you maybe entered the wrong input of the list of NPC is not working..." << endl;
 				cout << "I am substracting from a turn anyway...." << endl;
 				turnAvailable--;
@@ -282,9 +282,11 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 		//this will exit the biggest loop and terminate the function
 		turnAvailable = 4;
 	}
-	//The player wants to move? -- check the input
+	//-----------------------------------PLAYER WANTS TO MOVE
 	else{
+		//check if the input is a valid direction
 		bool validDirection = Direction::valid(answer);
+
 		//here need to check if the cell changed, if not changed then it is not taking it's steps away.
 
 		//if the input is a valid direction and the stepscount is bigger than 0
