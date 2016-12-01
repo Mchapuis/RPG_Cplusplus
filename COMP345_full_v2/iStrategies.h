@@ -1,5 +1,0 @@
-class iStrategy
-{
-public:
-	setMap();
-};
