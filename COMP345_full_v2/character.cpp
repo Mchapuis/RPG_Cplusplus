@@ -371,7 +371,7 @@ int GameCharacter::getNetStat(Ability abl)
 
 std::string GameCharacter::toString()
 {
-	std::string result = "Fighter";
+	std::string result = "";
 	std::string temp = "";
 	int i;
 	int j;
