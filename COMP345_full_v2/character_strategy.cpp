@@ -1,5 +1,6 @@
 #pragma once
 #include "stdafx.h"
+#include <cstdlib>
 #include "character_strategy.h"
 #include "map.h"
 
@@ -78,7 +79,7 @@ int CharacterStrategy::getSpeed(GameCharacter* me)
 //!9- empty both stack at the end of the turn
 void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 {
-	int answer;//to get answer from user
+	char answer;//to get answer from user
 	int bArray[3] = { 1, 1, 1 }; //all set to true, boolean array to check each action done only once per turn
 
 	//will store ennemis/lockables close by...create list empty
@@ -113,6 +114,7 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 			//compare it with the matrix of distance to see if close to character--- yes? save it in the stack
 			if (distGraph[i][j] > 0 && distGraph[i][j] < 4){
 				npc.push_back(g);
+				std::cout << "a player is near you! " << endl;
 			}
 		}
 		else if (Lockable *lk = dynamic_cast<Lockable*>(p.first)){
@@ -125,6 +127,7 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 			//you can unlock chests or doors at 1 step distance only
 			if (distGraph[i][j] == 1){
 				unlockable.push_back(lk);
+				std::cout << "a lockable is near you! " << endl;
 			}
 		}
 	}
@@ -133,9 +136,9 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 	//At this point, we have two lists with lockables and ennemis/friends
 
 	//---------------------ERASE MAP AND OTHER CONTENT
-	//system("cls");
+	system("cls");
 	//----------------------PRINT UPDATED MAP
-	map->toString();
+	std::cout << map->toString2();
 
 	//----------------------DIPLAY POSSIBLE ACTIONS TO PLAYER WHILE THE TURN IS NOT OVER
 	//----------------------turnAvailable = 0 is the end
@@ -144,7 +147,8 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 		std::cout << "YOU HAVE ---------"<<turnAvailable<<"----- TURN AVAILABLE!" << endl;
 		std::cout << "YOU HAVE ---------" << stepsCount << "---- STEPS AVAILABLE!" << endl;
 		//Ennemies in the list?
-		if (!npc.empty() && bArray[0] == 1){
+
+		if (!npc.empty() && (bArray[0] == 1)){
 			//display the possibility of the attack
 			std::cout << "ATTACK -------------- PRESS 1" << endl;
 		}
@@ -169,12 +173,13 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 		//------------------------CHECK INPUT AND DISPLAY POSSIBILITES + CALL TO ACTION
 		//------------------ATTACK!
 		//bArray has values of 0 or 1---can attack only once
-		if (answer == '1' && bArray[0] == 1){
+		if ((answer == 49) && (bArray[0] == 1)){
 
 			//---------------------ERASE MAP AND OTHER CONTENT
-			//system("cls");
+
+			system("cls");
 			//----------------------PRINT UPDATED MAP
-			map->toString();
+			std:: cout << map->toString2();
 
 			GameCharacter *temp = NULL;
 			int attackInput = 0;
@@ -191,8 +196,12 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 			bArray[0] = 0;//only can attack once---this is a boolean array
 
 			//-------------ATTACK THE CHOSEN NPC
-			cin >> attackInput;
+			std::cin >> attackInput;
 
+			//---------------------ERASE MAP AND OTHER CONTENT
+			system("cls");
+			//----------------------PRINT UPDATED MAP
+			map->toString2();
 			//Find the NPC to attack----loop throught the list
 			//to check if attack is working
 			bool isWorking = false;
@@ -202,14 +211,14 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 
 					//attack the npc!!!!
 					me->attack(map->getPlayer(), lineDist((*objects)[me], (*objects)[temp]));
-
-					cout << "you have attacked!" << endl;
+					
+					std::cout << "you have attacked!" << endl;
 					turnAvailable--;
 					isWorking = true;
 				}
-				else if ((i == npc.size() - 1) && !isWorking){//if at the end but nothing has been attacked
-					cout << "you maybe entered the wrong input ..." << endl;
-					cout << "I am substracting from a turn anyway...." << endl;
+				else if ((i == (npc.size() - 1)) && !isWorking){//if at the end but nothing has been attacked
+					std::cout << "you maybe entered the wrong input ..." << endl;
+					std::cout << "I am substracting from a turn anyway...." << endl;
 					turnAvailable--;
 				}
 			}
@@ -217,12 +226,12 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 
 		//----------------UNLOCK!
 		//if choose to unlock something
-		else if (answer == '2' && bArray[1] == 1){
+		else if (answer == 50 && bArray[1] == 1){
 
 			//---------------------ERASE MAP AND OTHER CONTENT
-			//system("cls");
+			system("cls");
 			//----------------------PRINT UPDATED MAP
-			map->toString();
+			std::cout<<map->toString2();
 
 			Lockable *temp;
 			choseThis = 0;//reset variable
@@ -236,7 +245,7 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 				choseThis++;//to get a number to press
 			}
 			bArray[1] = 0;
-			cin >> unlockThis;
+			std::cin >> unlockThis;
 
 			bool isWorking = false;
 			for (int i = 0; i < unlockable.size(); i++){
@@ -246,14 +255,14 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 					//unlock object!!!!!
 					me->unlock(unlockable.front());//----??? is this ok???
 
-					cout << "the object is unlocked! Object" << endl;
-					cout << "check if objects form chest is getting to the character" << endl;
+					std::cout << "the object is unlocked! Object" << endl;
+					std::cout << "check if objects form chest is getting to the character" << endl;
 					turnAvailable--;
 					isWorking = true;
 				}
 				else if ((i == npc.size() - 1) && !isWorking){//if at the end but nothing has been attacked
-					cout << "you maybe entered the wrong input ..." << endl;
-					cout << "I am substracting from a turn anyway...." << endl;
+					std::cout << "you maybe entered the wrong input ..." << endl;
+					std::cout << "I am substracting from a turn anyway...." << endl;
 					turnAvailable--;
 				}
 			}
@@ -261,13 +270,13 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 		}
 		//---------------EQUIP!
 		//if choose to  equip/unequip
-		else if (answer == '3' && bArray[2] == 1){
+		else if (answer == 51 && bArray[2] == 1){
 
 			//---------------------ERASE MAP AND OTHER CONTENT
-			//system("cls");
+			system("cls");
 			//----------------------PRINT UPDATED MAP
 
-			map->toString();
+			std::cout<<map->toString2();
 			int pressed = 0;
 			bool bEquip = true;
 
@@ -280,15 +289,15 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 			vector<Equipment*> backpack;
 			//if user didn't enter a good value, the inventory is reprinted and we start over
 			while (bEquip){
-				cout << "\n_______________________________EQUIP/UNEQUIP_________________________________________\n";
-				cout << "What do you want to equip? ---->" << endl;
-				cout << "Equipped items: " << endl;
+				std::cout << "\n_______________________________EQUIP/UNEQUIP_________________________________________\n";
+				std::cout << "What do you want to equip? ---->" << endl;
+				std::cout << "Equipped items: " << endl;
 				//print all the equipped items to display on screen only
 				for (int i = 0; i < equip.size(); i++){
 					tempEquip = equip[i];
-					cout << tempEquip->toString() << endl;
+					std::cout << tempEquip->toString() << endl;
 				}
-				cout << "Backpack items: " << endl;
+				std::cout << "Backpack items: " << endl;
 				//display what is in the backpack and give an input number to change
 				for (Item* i : inBackpack){
 					//check if it is an equipment object, yes put in the vector list
@@ -299,7 +308,7 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 				int counter = 0;//count # of elements in backpack to show on screen
 				//display on screen
 				for (Equipment* i : backpack){
-					cout << i->toString() << "-----PRESS " << counter << endl;
+					std::cout << i->toString() << "-----PRESS " << counter << endl;
 					counter++;
 				}
 
@@ -309,12 +318,12 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 				//go throught the backpack, found the item the user wants and equip it
 				for (int i = 0; i < backpack.size(); i++){
 					if (pressed == i){//if the element is found
-						cout << "The item " << me->equip(backpack[i]) << " has been equipped!" << endl;
+						std::cout << "The item " << me->equip(backpack[i]) << " has been equipped!" << endl;
 						bEquip = false;
 					}
 					//if it's the last item but nothing has been equipped
 					else if ((i == (backpack.size() - 1)) && (bEquip == true)){
-						cout << "Nothing has been equipped...starting again..." << endl;
+						std::cout << "Nothing has been equipped...starting again..." << endl;
 					}
 				}
 			}//end of the bEquip loop
@@ -327,12 +336,12 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 
 		//-----------------------------------------------TOGGLE BETWEEN OBJECTS IN THE ROOM
 		//this option doesn't substract from your turn, but it is available only during your turn
-		else if (answer == '4'){
+		else if (answer == 52){
 
 			//---------------------ERASE MAP AND OTHER CONTENT
-			//system("cls");
+			system("cls");
 			//----------------------PRINT MAP
-			map->toString();
+			std::cout << map->toString2();
 			//---------------------PRINT INFO
 			//------------------------GO THROUGHT ALL ELEMENTS IN tHE ROOM------
 			int nextAnswer = 0;//user input
@@ -349,8 +358,8 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 					j = p.second->getCol();
 
 					//print the object + name + position + content to screen
-					cout << "Name: " << g->getName() << " at position [ " << i << ", " << j << " ]" << endl;
-					cout << "information: " << g->toString() << endl;
+					std::cout << "Name: " << g->getName() << " at position [ " << i << ", " << j << " ]" << endl;
+					std::cout << "information: " << g->toString() << endl;
 				}
 				else if (Lockable *lk = dynamic_cast<Lockable*>(p.first)){
 
@@ -359,18 +368,27 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 					j = p.second->getCol();
 
 					//print the object + name + position + content to screen
-					cout << "Name : " << lk->getClassName() << " at position [ " << i << ", " << j << " ]" << endl;
-					cout << "locked? : " << lk->isLocked() << endl;
+					std::cout << "Name : " << lk->getClassName() << " at position [ " << i << ", " << j << " ]" << endl;
+					std::cout << "locked? : ";
+					if (lk->isLocked()){
+						std::cout << "yes" << endl;
+					}
+					else{
+						std::cout << "no" << endl;
+					}
 
 					//if the object is a chest, show content
 					if (Chest *ch = dynamic_cast<Chest*>(p.first)){
 						cout << "content : " << ch->toString() << endl;
 					}
 				}
-				cout << "PRESS 9 to get next object name and content." << endl;
-				cin >> nextAnswer;
-				//system("cls");
-				map->toString();
+				else {
+					continue;
+				}
+				std::cout << "PRESS 9 to get next object name and content." << endl;
+				std::cin >> nextAnswer;
+				system("cls");
+				std::cout<<map->toString2();
 			}
 			//----------------------LOOP TO GET ELEMENTS ENDS HERE
 
@@ -378,79 +396,102 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 
 
 		//----------------------------------------------STOP THE CHARACTER TURN OPTION
-		else if (answer == '5'){
+		else if (answer == 53){
 			//this will exit the biggest loop and terminate the function
 			//---------------------ERASE MAP AND OTHER CONTENT
-			//system("cls");
+			system("cls");
 			//----------------------PRINT UPDATED MAP
-			map->toString();
+			std::cout << map->toString2();
 			//exit
 			turnAvailable = 4;
 		}
 		//-----------------------------------PLAYER WANTS TO MOVE
 		else{
+			//string s_answer = std::to_string(answer);
+			//char s = (char)answer;
+			bool moved = true;
 			//check if the input is a valid direction
 			bool validDirection = Direction::valid(answer);
 
 			//here need to check if the cell changed, if not changed then it is not taking it's steps away.
+			while (moved){
 
-			//if the input is a valid direction and the stepscount is bigger than 0
-			//move the character and reduce it's steps count
-			if (validDirection && (stepsCount > 0)){
+				//if the input is a valid direction and the stepscount is bigger than 0
+				//move the character and reduce it's steps count
+				if (validDirection && (stepsCount > 0)){
 
-				//move the character!!!!
-				(*objects)[me] = map->move((*objects)[me], *Direction::getMap()[answer]);
+					//move the character!!!!
+					(*objects)[me] = map->move((*objects)[me], *Direction::getMap()[answer]);
 
-				//---------------------ERASE MAP AND OTHER CONTENT
-				//system("cls");
-				//----------------------PRINT UPDATED MAP
-				map->toString();
+					//---------------------ERASE MAP AND OTHER CONTENT
+					system("cls");
+					//----------------------PRINT UPDATED MAP
+					std::cout << map->toString2();
 
-				cout << "Character moved and the map reprints it`s movements!!!!" << endl;
-				stepsCount--;
+					cout << "Character moved and the map reprints it`s movements!!!!" << endl;
+					stepsCount--;
 
-				//********************************************************************************
-				//HERE NEED TO RESCAN THE ROOM FOR OBJECTS AND REDO THE TWO LISTS OF LOCKABLES AND NPC
+					//********************************************************************************
+					//HERE NEED TO RESCAN THE ROOM FOR OBJECTS AND REDO THE TWO LISTS OF LOCKABLES AND NPC
+					
+					//redo the distgraph 
+					distGraph = graph(map, (*objects)[me]);
 
-				//------------------------GET ALL ELEMENTS NEAR PLAYER--------------
-				// iterator to go see each cell content
-				// The objects are a pair. Placeable is the key and Cell is the value
-				for (std::pair<Placeable*, Cell*> p : *objects)
-				{
-					//Placeable* temp = p.first;
-					//Check if the object is a GameCharacter----yes? it is an ENNEMI or a FRIEND
-					if (GameCharacter *g = dynamic_cast<GameCharacter*>(p.first))
+					//clear the npc and unlockable list
+					npc.clear();
+					unlockable.clear();
+
+					//------------------------GET ALL ELEMENTS NEAR PLAYER--------------
+					// iterator to go see each cell content
+					// The objects are a pair. Placeable is the key and Cell is the value
+					for (std::pair<Placeable*, Cell*> p : *objects)
 					{
-						//get the i row # and the j column # of the GameCharacter
-						i = p.second->getRow();
-						i = p.second->getCol();
+						//Placeable* temp = p.first;
+						//Check if the object is a GameCharacter----yes? it is an ENNEMI or a FRIEND
+						if (GameCharacter *g = dynamic_cast<GameCharacter*>(p.first))
+						{
+							//get the i row # and the j column # of the GameCharacter
+							i = p.second->getRow();
+							j = p.second->getCol();
+							std::cout << "just tchecking if this is running" << endl;
+							std::cout << "character at [ " << i << ", " << j <<" ]"<< endl;
+							std::cout << "player is at [" << (*objects)[me]->getRow() << ", " << (*objects)[me]->getCol() <<" ]"<< endl;
+							std::cout << "distGraph number is : " << distGraph[i][j] << endl;
+							//#step 3
+							//compare it with the matrix of distance to see if close to character--- yes? save it in the stack
+							if (distGraph[i][j] > 0 && distGraph[i][j] <= 4){
+								npc.push_back(g);
+								std::cout << "a player is near you! " << endl;
+							}
+						}
+						else if (Lockable *lk = dynamic_cast<Lockable*>(p.first)){
 
-						//#step 3
-						//compare it with the matrix of distance to see if close to character--- yes? save it in the stack
-						if (distGraph[i][j] > 0 && distGraph[i][j] < 4){
-							npc.push_back(g);
+							//get the lockable object distance on map
+							i = p.second->getRow();
+							j = p.second->getCol();
+
+							//#step 3
+							//you can unlock chests or doors at 1 step distance only
+							if (distGraph[i][j] == 1){
+								unlockable.push_back(lk);
+								std::cout << "a lockable is near you! " << endl;
+							}
 						}
 					}
-					else if (Lockable *lk = dynamic_cast<Lockable*>(p.first)){
-
-						//get the lockable object distance on map
-						i = p.second->getRow();
-						j = p.second->getCol();
-
-						//#step 3
-						//you can unlock chests or doors at 1 step distance only
-						if (distGraph[i][j] == 1){
-							unlockable.push_back(lk);
-						}
-					}
+					moved = false;
+					//----------------------LOOP TO GET ELEMENTS ENDS HERE
+					//**************************************************************************
 				}
-				//----------------------LOOP TO GET ELEMENTS ENDS HERE
-				//**************************************************************************
-			}
-			else if (!validDirection || (stepsCount == 0)){
-				std::cout << "Character is not allowed to move anymore!" << endl;
-				std::cout << "OR" << endl;
-				std::cout << "Input is invalid! Try something else" << endl;
+				else if (!validDirection){
+					std::cout << "You printed : " << answer << endl;
+					std::cout << "Input is invalid! Try something else" << endl;
+					moved = false;
+				}
+				else if (stepsCount <= 0){
+					std::cout << "Character is not allowed to move anymore!" << endl;
+					turnAvailable--;
+					moved = false;
+				}
 			}
 		}//end of the move input
 	}//end of while turnAvailable != 0
