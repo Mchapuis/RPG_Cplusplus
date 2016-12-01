@@ -1,6 +1,6 @@
 // COMP345_full_v0.cpp : Defines the entry point for the console application.
 //
-
+//test for git
 #include "stdafx.h"
 #include "config.h"
 #include "map.h"
