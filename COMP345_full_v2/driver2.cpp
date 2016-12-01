@@ -604,6 +604,35 @@ void reboot()
 	testSave6();
 }
 
+
+//Wrong map 1, horizontal wall on the way to exit.
+void wrongMap1()
+{
+	Map* wMap1 = new Map("wmap1", 10, 10);
+	wMap1->setRowWall(5, 0, 9);
+	cout << endl << wMap1->toString2() << endl;
+}
+
+//Wrong map 2, chest not accesseble with a key. (how to lock door and put key in chest)
+void wrongMap2()
+{
+	Map* wMap2 = new Map("wmap2", 10, 10);
+	Chest wChest;
+	wMap2->updateFirstStop(0, 0);
+	wMap2->updateLastStop(0, 9);
+	wMap2->setRowWall(5, 0, 9);
+	wMap2->addToCell((Placeable*)&wChest, 9, 0);
+	cout << endl << wMap2->toString2() << endl;
+}
+
+//wrong map 3, vertical wall on the way to exit
+void wrongMap3()
+{
+	Map* wMap3 = new Map("wmap1", 10, 10);
+	wMap3->setColWall(5, 0, 9);
+	cout << endl << wMap3->toString2() << endl;
+}
+
 int main(int argc, char *argv[])
 {
 	int k;
@@ -611,8 +640,9 @@ int main(int argc, char *argv[])
 	std::srand(time(0));
 	
 	reboot();
-	
 
+	wrongMap3();
+	
 	//cout << endl << "Aaaaaah yeeeee daaawg!!!!";
 	
 	//Player myPlayer = Player();
