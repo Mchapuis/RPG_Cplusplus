@@ -34,7 +34,7 @@ protected:
 
 public:
 	virtual ~Lockable() {}
-	KeyItem getKey() { return *(new KeyItem(this->keyName(), code)); }
+	KeyItem* getKey() { return new KeyItem(this->keyName(), code); }
 	//void setLock(bool isLocked) { locked = isLocked; }
 	//bool isLocked() { return locked; }
 	int getStatus() { return status; }
@@ -116,8 +116,8 @@ private:
 
 public:
 	static Chest sLoad(std::string filename);
-	Chest() { }
-	~Chest() {} 
+	Chest() {}
+	~Chest() {}
 	const std::string getSymbol() { return (content.getBackPack().empty()) ? symbolOpen : symbolClosed; }
 	void updateLvl(int aLevel);
 	bool reset(){ return true; }
