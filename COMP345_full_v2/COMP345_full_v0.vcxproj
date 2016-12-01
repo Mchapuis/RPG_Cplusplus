@@ -91,7 +91,6 @@
     <ClInclude Include="game.h" />
     <ClInclude Include="inventory_exceptions.h" />
     <ClInclude Include="inv2.h" />
-    <ClInclude Include="iStrategies.h" />
     <ClInclude Include="map.h" />
     <ClInclude Include="placeable.h" />
     <ClInclude Include="serializable.h" />

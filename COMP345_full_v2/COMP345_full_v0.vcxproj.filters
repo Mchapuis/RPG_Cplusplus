@@ -57,9 +57,6 @@
     <ClInclude Include="character_strategy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="iStrategies.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Campain.h">
       <Filter>Header Files</Filter>
     </ClInclude>
