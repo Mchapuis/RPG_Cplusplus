@@ -103,16 +103,6 @@ public:
 	const bool isAllowed(int anIndex) const;
 };
 
-class Dice
-{
-private:
-	Dice();
-
-public:
-	static int roll(const int nbr_dice, const int faces);
-	static int roll(const int nbr_dice, const int faces, const int modifier);
-};
-
 class StringFunc
 {
 private:
