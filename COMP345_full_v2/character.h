@@ -201,9 +201,9 @@ private:
 
 public:
 	static Enemy sLoad(std::string filename);
-	Enemy() : NPC("Unnamed", 1, 0)  { setStrategy((new HumanPlayerStrategy(this))); }
+	Enemy() : NPC("Unnamed", 1, 0)  { setStrategy((new HostileStrategy(this))); }
 	Enemy(std::string aName, int aBaseAtk, int aLevel) :
-		NPC(aName, aBaseAtk, aLevel)  {setStrategy((new HumanPlayerStrategy(this))); }
+		NPC(aName, aBaseAtk, aLevel)  {setStrategy((new HostileStrategy(this))); }
 	const std::string getSymbol() { return symbol; }
 	void getStrategy(){}
 	bool isWalkable() {	return true;}
@@ -227,11 +227,11 @@ private:
 
 public:
 	static Friendly sLoad(std::string filename);
-	Friendly() : NPC("Unnamed", 1, 0)  { setStrategy((new HumanPlayerStrategy(this))); }
+	Friendly() : NPC("Unnamed", 1, 0)  { setStrategy((new FriendlyStrategy(this))); }
 	Friendly(std::string aName, int aBaseAtk, int aLevel) :
-		NPC(aName, aBaseAtk, aLevel)  {	setStrategy((new HumanPlayerStrategy(this))); }
+		NPC(aName, aBaseAtk, aLevel)  {	setStrategy((new FriendlyStrategy(this))); }
 	const std::string getSymbol() { return symbol; }
-	bool isWalkable() { return false; }
+	bool isWalkable() { return true; }
 	void getStrategy(){}
 
 	void load(std::string filename);

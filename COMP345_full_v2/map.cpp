@@ -446,7 +446,7 @@ vector<vector<int>> Map::dijkstra(int const refRow, int const refCol)
 		while (borderList.empty() == false)
 		{
 			currentCell = borderList.remove();
-
+			
 			if (currentCell->isEmpty() || currentCell->isWalkable())
 			{
 				borderSet.addAll(currentCell->getAdjacent());

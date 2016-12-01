@@ -5,6 +5,7 @@
 
 #include "config.h"
 #include "placeable.h"
+#include "dice.h"
 
 class Map;
 class Cell;
