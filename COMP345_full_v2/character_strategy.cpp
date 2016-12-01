@@ -170,6 +170,12 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 		//------------------ATTACK!
 		//bArray has values of 0 or 1---can attack only once
 		if (answer == '1' && bArray[0] == 1){
+
+			//---------------------ERASE MAP AND OTHER CONTENT
+			//system("cls");
+			//----------------------PRINT UPDATED MAP
+			map->toString();
+
 			GameCharacter *temp = NULL;
 			int attackInput = 0;
 			std::cout << "Choose the NPC to attack!!--->" << endl;
@@ -212,6 +218,12 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 		//----------------UNLOCK!
 		//if choose to unlock something
 		else if (answer == '2' && bArray[1] == 1){
+
+			//---------------------ERASE MAP AND OTHER CONTENT
+			//system("cls");
+			//----------------------PRINT UPDATED MAP
+			map->toString();
+
 			Lockable *temp;
 			choseThis = 0;//reset variable
 			int unlockThis = 0;
@@ -250,6 +262,12 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 		//---------------EQUIP!
 		//if choose to  equip/unequip
 		else if (answer == '3' && bArray[2] == 1){
+
+			//---------------------ERASE MAP AND OTHER CONTENT
+			//system("cls");
+			//----------------------PRINT UPDATED MAP
+
+			map->toString();
 			int pressed = 0;
 			bool bEquip = true;
 
@@ -362,6 +380,11 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 		//----------------------------------------------STOP THE CHARACTER TURN OPTION
 		else if (answer == '5'){
 			//this will exit the biggest loop and terminate the function
+			//---------------------ERASE MAP AND OTHER CONTENT
+			//system("cls");
+			//----------------------PRINT UPDATED MAP
+			map->toString();
+			//exit
 			turnAvailable = 4;
 		}
 		//-----------------------------------PLAYER WANTS TO MOVE
@@ -378,11 +401,13 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 				//move the character!!!!
 				(*objects)[me] = map->move((*objects)[me], *Direction::getMap()[answer]);
 
-				//printing the map!
-				map->toString2();
+				//---------------------ERASE MAP AND OTHER CONTENT
+				//system("cls");
+				//----------------------PRINT UPDATED MAP
+				map->toString();
+
 				cout << "Character moved and the map reprints it`s movements!!!!" << endl;
 				stepsCount--;
-				cout << "Decreasing it's steps...now you have" << stepsCount << " left." << endl;
 
 				//********************************************************************************
 				//HERE NEED TO RESCAN THE ROOM FOR OBJECTS AND REDO THE TWO LISTS OF LOCKABLES AND NPC
@@ -423,11 +448,14 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 				//**************************************************************************
 			}
 			else if (!validDirection || (stepsCount == 0)){
-				cout << "Character is not allowed to move anymore!" << endl;
+				std::cout << "Character is not allowed to move anymore!" << endl;
+				std::cout << "OR" << endl;
+				std::cout << "Input is invalid! Try something else" << endl;
 			}
 		}//end of the move input
 	}//end of while turnAvailable != 0
-	
+	std::cout << "**********************END OF YOUR TURN! NPC's TURN NOW!******************" << endl;
+
 }//end of the turn function
 
 //! @ return: number to adjust HP...not HP itself is returned
