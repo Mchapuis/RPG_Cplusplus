@@ -4,9 +4,9 @@
 #include "map.h"
 #include <algorithm>//used for sort elements in abilities array
 
-BOOST_CLASS_EXPORT_GUID(GameCharacter, "GameCharacter")
+//BOOST_CLASS_EXPORT_GUID(GameCharacter, "GameCharacter")
 BOOST_CLASS_EXPORT_GUID(Player, "Player")
-BOOST_CLASS_EXPORT_GUID(NPC, "NPC")
+//BOOST_CLASS_EXPORT_GUID(NPC, "NPC")
 BOOST_CLASS_EXPORT_GUID(Enemy, "Enemy")
 BOOST_CLASS_EXPORT_GUID(Friendly, "Friendly")
 

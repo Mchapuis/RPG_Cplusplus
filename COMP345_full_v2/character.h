@@ -27,6 +27,7 @@ private:
 	template<class Archive>
 	void serialize(Archive & ar, const unsigned int version)
 	{
+		ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(Placeable);
 		ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(MySerializable);
 		ar & BOOST_SERIALIZATION_NVP(name);
 		ar & BOOST_SERIALIZATION_NVP(level);
@@ -52,8 +53,6 @@ private:
 	//Unsaved
 	std::vector<int> bonus;
 
-	static vector<int> abilitiesRoll();
-	static int abilityRoll();
 	void updateBonus();
 	int hitDie();
 
@@ -79,6 +78,9 @@ public:
 	void setName(std::string aName){ name = aName; }
 	virtual bool reset(){ return true; }
 	void resetLevel(){ level = 0; }
+
+	static vector<int> abilitiesRoll();
+	static int abilityRoll();
 
 	void setStrategy(CharacterStrategy* aStrategy){ strategy = aStrategy; }
 	void setMap(Map* aMap) { strategy->setMap(aMap); }
@@ -138,7 +140,7 @@ private:
 	template<class Archive>
 	void serialize(Archive & ar, const unsigned int version)
 	{
-		ar & boost::serialization::base_object<GameCharacter>(*this);
+		ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(GameCharacter);
 	}
 
 	static const std::string symbol;
@@ -164,7 +166,7 @@ private:
 	template<class Archive>
 	void serialize(Archive & ar, const unsigned int version)
 	{
-		ar & boost::serialization::base_object<GameCharacter>(*this);
+		ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(GameCharacter);
 	}
 
 	static const std::string symbol;
@@ -192,7 +194,7 @@ private:
 	template<class Archive>
 	void serialize(Archive & ar, const unsigned int version)
 	{
-		ar & boost::serialization::base_object<NPC>(*this);
+		ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(NPC);
 	}
 
 	static const std::string symbol;
@@ -218,7 +220,7 @@ private:
 	template<class Archive>
 	void serialize(Archive & ar, const unsigned int version)
 	{
-		ar & boost::serialization::base_object<NPC>(*this);
+		ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(NPC);
 	}
 
 	static const std::string symbol;

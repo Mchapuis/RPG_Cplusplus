@@ -2,9 +2,9 @@
 #include "stdafx.h"
 #include "inv2.h"
 
-BOOST_CLASS_EXPORT_GUID(Item, "Item")
-BOOST_CLASS_EXPORT_GUID(Equipment, "Equipment")
-BOOST_CLASS_EXPORT_GUID(ArmorPiece, "ArmorPiece")
+//BOOST_CLASS_EXPORT_GUID(Item, "Item")
+//BOOST_CLASS_EXPORT_GUID(Equipment, "Equipment")
+//BOOST_CLASS_EXPORT_GUID(ArmorPiece, "ArmorPiece")
 BOOST_CLASS_EXPORT_GUID(Helmet, "Helmet")
 BOOST_CLASS_EXPORT_GUID(Cuirass, "Cuirass")
 BOOST_CLASS_EXPORT_GUID(Boots, "Boots")

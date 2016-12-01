@@ -697,14 +697,6 @@ void Map::load(std::string filename)
 	std::ifstream ifs(ASSETS_PATH + "maps\\" + filename);
 	boost::archive::text_iarchive ia(ifs);
 	ia >> *this;
-
-	for (i = 0; i < height; i++)
-	{
-		for (j = 0; j < width; j++)
-		{
-
-		}
-	}
 }
 
 //! Default constructor of a CellList object.
