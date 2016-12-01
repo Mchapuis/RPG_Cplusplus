@@ -178,6 +178,7 @@ public:
 	bool empty();
 };
 
+/*
 class Campain
 {
 private:
@@ -207,5 +208,6 @@ public:
 
 	Map* operator[](int i);
 };
+*/
 
 #endif

@@ -814,6 +814,7 @@ bool CellSet::empty()
 	return cell_set.empty();
 }
 
+/*
 //! Campain constructor, takes a string name.
 Campain::Campain(string newName) : name(newName)
 { }
@@ -877,3 +878,4 @@ Map* Campain::operator[](int i)
 
 	return *ite;
 }
+*/

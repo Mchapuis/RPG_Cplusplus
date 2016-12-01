@@ -57,7 +57,7 @@
     <ClInclude Include="character_strategy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Campain.h">
+    <ClInclude Include="campain.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -92,7 +92,7 @@
     <ClCompile Include="character_strategy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Campain.cpp">
+    <ClCompile Include="campain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
