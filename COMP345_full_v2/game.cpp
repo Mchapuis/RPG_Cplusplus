@@ -1,17 +1,10 @@
 #include "stdafx.h"
 #include "game.h"
 
-Game::Game() : map(nullptr),
-player(nullptr), pCell(nullptr)
+bool Game::startGame(Map* aMap, Player* aPlayer)
 {
-	characters = std::list<GameCharacter*>();
-	this->~Game();
-}
-
-Game::Game(Map* aMap, Player* aPlayer) :
-map(aMap), player(aPlayer)
-{
-	characters = std::list<GameCharacter*>();
+	map = aMap;
+	player = aPlayer;
 	Cell* tempCell = nullptr;
 	Placeable* tempPlace = nullptr;
 	GameCharacter* tempCharac = nullptr;
@@ -25,7 +18,7 @@ map(aMap), player(aPlayer)
 
 	pCell = map->getBegin();
 
-	map->start(player);
+	if (!map->start(player)) return false;
 
 	for (i = 0; i < map->getHeight(); i++)
 	{
@@ -36,11 +29,11 @@ map(aMap), player(aPlayer)
 			{
 				tempPlace = tempCell->getContent();
 
-				objects->insert({ tempPlace, tempCell });
+				objects.insert({ tempPlace, tempCell });
 
 				if (this->isCharacter(tempPlace))
 				{
-					tempCharac = (GameCharacter*) tempPlace;
+					tempCharac = (GameCharacter*)tempPlace;
 					tempCharac->setMap(map);
 
 					if (characters.empty())
@@ -75,18 +68,10 @@ map(aMap), player(aPlayer)
 		}//for j
 	}//for i
 
-	/*
-	cout << endl << "Character list" << endl;
+	this->play();
 
-	for (GameCharacter* g : characters)
-	{
-		cout << g->getName() << " " << g->getBaseAbl(Ability::DEX) << endl;
-	}
-	cout << endl;
-	*/
-
+	return true; //moifyy for return this->play();
 }
-
 
 bool Game::isCharacter(Placeable* obj)
 {
@@ -98,11 +83,18 @@ bool Game::isCharacter(Placeable* obj)
 	return false;
 }
 
-void Game::nextTurn()
+//Modify to call while(!this->nextTurn()); and return true when exits.
+void Game::play()
+{
+	while (true) player->startTurn(map, &objects);
+}
+
+//Do something if dead or map ended?
+bool Game::nextTurn()
 {
 	GameCharacter* gc = characters.front();
 
-	gc->startTurn(map, objects);
+	gc->startTurn(map, &objects);
 
 	cleanUp();
 
@@ -112,6 +104,8 @@ void Game::nextTurn()
 		characters.push_back(gc);
 	}
 
+	return true;
+	//startTurn should return bool
 	//if all dead or player dead... do something ? Or map exit?
 }
 
@@ -126,7 +120,7 @@ void Game::cleanUp()
 		{
 			gc = *iter;
 			characters.erase(iter);
-			objects->erase((*iter));
+			objects.erase((*iter));
 			delete gc;
 		}
 	}

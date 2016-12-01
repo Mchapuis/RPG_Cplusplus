@@ -567,34 +567,47 @@ void testSave9()
 	//Game game = Game(myMap, myPlayer);
 }
 
-void runGame(Map* myMap, Player* myPlayer)
+void runGame()
 {
+	Map* myMap = new Map("map1", 15, 20);
+
 	Cell* pCell = NULL;
+	Player *myPlayer = new Player();
+	Chest myChest;
+	Enemy myEnemy;
+	Friendly myFriend;
 
-	myMap->start(myPlayer);
+	myPlayer->load("player1");
+	myChest.load("chest1");
+	myEnemy.load("enemy1");
+	myFriend.load("friend2");
 
-	pCell = myMap->getBegin();
-	Cell* exit = myMap->getExit();
+	/*
+	Player myPlayer = Player::sLoad("player1");
+	Chest myChest = Chest::sLoad("chest1");
+	Enemy myEnemy = Enemy::sLoad("enemy1");
+	Friendly myFriend = Friendly::sLoad("friend2");
+	*/
+	//cout << myEnemy.toString();
+	//cout << myFriend.toString();
 
-	char dir;
-	map<char, const Direction*> keyMap = Direction::getMap();
+	myMap->setRowWall(10, 0, 18);
+	myMap->setColWall(5, 1, 13);
 
-	//myPlayer->attack(&myEnemy, 5);
+	myMap->updateFirstStop(0, 0);
+	myMap->updateLastStop(11, 0);
 
-	while (pCell != exit)
-	{
-		do
-		{
-			cout << "Enter a direction: ";
-			cin >> dir;
-		} while (!Direction::valid(dir));
+	myMap->addToCell((Placeable*) new Door(), 0, 5);
 
-		pCell = myMap->move(pCell, *keyMap[dir]);
+	myMap->addToCell((Placeable*)&myChest, 0, 13);
+	myMap->addToCell((Placeable*)&myEnemy, 12, 10);
+	myMap->addToCell((Placeable*)&myFriend, 4, 2);
 
-		cout << endl << endl << myMap->toString2();
-		Game aGame = Game();
-		aGame.display(myPlayer);
-	}
+	//cout << endl << myMap->toString2() << endl;
+
+	Game game = Game();
+
+	game.startGame(myMap, myPlayer);
 }
 
 void reboot()
@@ -677,12 +690,14 @@ void campainCreator()
 }
 
 
+
 int main(int argc, char *argv[])
 {
 	int k;
 	
 	std::srand(time(0));
-	campainCreator();
+	
+	runGame();
 
 	//reboot();
 	
