@@ -83,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="basic_structure.h" />
+    <ClInclude Include="Campain.h" />
     <ClInclude Include="cell.h" />
     <ClInclude Include="character.h" />
     <ClInclude Include="character_strategy.h" />
@@ -99,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="basic_structure.cpp" />
+    <ClCompile Include="Campain.cpp" />
     <ClCompile Include="cell.cpp" />
     <ClCompile Include="character.cpp" />
     <ClCompile Include="character_strategy.cpp" />
