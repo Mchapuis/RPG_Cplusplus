@@ -168,7 +168,8 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 			if (attackInput == i){
 
 				//attack the npc!!!!
-				//me->attack(npc.front(), lineDist);//----??? is this ok???
+				me->attack(map->getPlayer(), lineDist((*objects)[me],(*objects)[temp]));
+				
 				cout << "you have attacked!" << endl;
 				turnAvailable--;
 				isWorking = true;
@@ -292,6 +293,8 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 		//if the input is a valid direction and the stepscount is bigger than 0
 		//move the character and reduce it's steps count
 		if (validDirection && (stepsCount > 0)){
+
+			(*objects)[me] = map->move((*objects)[me], *Direction::getMap()[answer]);
 			cout << "Here the character should move, but I have no idea how, waiting for Oliver" << endl;
 			cout << "Decreasing it's steps..." << endl;
 			stepsCount--;
