@@ -35,7 +35,7 @@ public:
 	static int lineDist(Cell* c1, Cell* c2);
 	static int walkDist(Cell* c1, Cell* c2);
 	static bool canSee(Cell* c1, Cell* c2);
-	static Cell* stepToward(vector<vector<int>> graph, Map* map, Cell* c1, Cell* c2);
+	static Cell* stepToward(Map* map, Cell* c1, Cell* c2);
 	static vector<vector<int>> graph(Map* map, Cell* dest);
 
 	virtual ~CharacterStrategy(){}

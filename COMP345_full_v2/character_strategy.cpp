@@ -33,21 +33,30 @@ vector<vector<int>> CharacterStrategy::graph(Map* map, Cell* dest)
 	return map->dijkstra(dest);
 }
 
-//! @return: cell (position)
-Cell* CharacterStrategy::stepToward(vector<vector<int>> graph, Map* map, Cell* source, Cell* dest)
+//! @return: one of the closest cell (position) to the destination // same cell if someone is there 
+Cell* CharacterStrategy::stepToward(Map* map, Cell* source, Cell* dest)
 {
-	int i;
-	int j;
+	int minRow = map->getHeight() + 1;
+	int minCol = map->getWidth() + 1;
+	int min = minRow * minCol;
+	int temp;
+	vector<vector<int>> distances;
 
-	for (i = 0; i < map->getHeight(); i++)
+	distances = graph(map, dest);
+
+	for (Cell* c : source->getAdjacent())
 	{
-		for (j = 0; j < map->getWidth(); j++)
+		temp = distances[c->getRow()][c->getCol()];
+
+		if (temp < min && temp >= 0)
 		{
-			if (graph[i][j] == 1) return (*map)[i][j];
+			minRow = source->getRow();
+			minCol = source->getCol();
+			min = distances[source->getRow()][source->getCol()];
 		}
 	}
 
-	return nullptr;
+	return map->move(source, (*map)[minRow][minCol]);
 }
 
 //! @return: integer for speed of any game character
@@ -294,16 +303,58 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 		//move the character and reduce it's steps count
 		if (validDirection && (stepsCount > 0)){
 
+			//move the character!!!!
 			(*objects)[me] = map->move((*objects)[me], *Direction::getMap()[answer]);
-			cout << "Here the character should move, but I have no idea how, waiting for Oliver" << endl;
-			cout << "Decreasing it's steps..." << endl;
+
+			//printing the map!
+			map->toString2();
+			cout << "Character moved and the map reprints it`s movements!!!!" << endl;
 			stepsCount--;
+			cout << "Decreasing it's steps...now you have" << stepsCount << " left." << endl;
+			
+			//********************************************************************************
+			//HERE NEED TO RESCAN THE ROOM FOR OBJECTS AND REDO THE TWO LISTS OF LOCKABLES AND NPC
+
+			//------------------------GET ALL ELEMENTS NEAR PLAYER--------------
+			// iterator to go see each cell content
+			// The objects are a pair. Placeable is the key and Cell is the value
+			for (std::pair<Placeable*, Cell*> p : *objects)
+			{
+				//Placeable* temp = p.first;
+				//Check if the object is a GameCharacter----yes? it is an ENNEMI or a FRIEND
+				if (GameCharacter *g = dynamic_cast<GameCharacter*>(p.first))
+				{
+					//get the i row # and the j column # of the GameCharacter
+					i = p.second->getRow();
+					i = p.second->getCol();
+
+					//#step 3
+					//compare it with the matrix of distance to see if close to character--- yes? save it in the stack
+					if (distGraph[i][j] > 0 && distGraph[i][j] < 4){
+						npc.push_back(g);
+					}
+				}
+				else if (Lockable *lk = dynamic_cast<Lockable*>(p.first)){
+
+					//get the lockable object distance on map
+					i = p.second->getRow();
+					j = p.second->getCol();
+
+					//#step 3
+					//you can unlock chests or doors at 1 step distance only
+					if (distGraph[i][j] == 1){
+						unlockable.push_back(lk);
+					}
+				}
+			}
+			//----------------------LOOP TO GET ELEMENTS ENDS HERE
+			//**************************************************************************
 		}
 		else if (!validDirection || (stepsCount == 0)){
 			cout << "Character is not allowed to move anymore!" << endl;
 		}
-	}
-}
+	}//end of the move input
+}//end of the turn function
 
 //! @ return: number to adjust HP...not HP itself is returned
 //! modifyHp sends the variation of HP, not the new HP
@@ -373,7 +424,7 @@ void HostileStrategy::turn(std::map<Placeable*, Cell*> *objects)
 			{
 				i--;
 				//need to fix stepToward! not working, asks oliver
-				myCell = map->move(myCell, stepToward(distGraph, map, myCell, playerCell));
+				myCell = map->move(myCell, stepToward(map, myCell, playerCell));
 				(*objects)[me] = myCell;//Update the value
 
 				//lineDist() -- strait line distance between ennemi and player
@@ -454,7 +505,7 @@ void FriendlyStrategy::turn(std::map<Placeable*, Cell*> *objects)
 			while (i > 0)
 			{
 				i--;
-				myCell = map->move(myCell, stepToward(distGraph, map, myCell, playerCell));
+				myCell = map->move(myCell, stepToward(map, myCell, playerCell));
 				(*objects)[me] = myCell;//update value!
 				if (lineDist(myCell, playerCell) <= range)
 				{
