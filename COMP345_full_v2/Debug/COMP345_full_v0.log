@@ -1,4 +1,4 @@
-﻿Build started 2016-11-30 12:45:54.
+﻿Build started 2016-11-30 18:47:14.
      1>Project "C:\Users\mrtnchps\Documents\GitHub\RPG_RETAKE\COMP345_full_v2\COMP345_full_v0.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\local\boost_1_62_0 /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\COMP345_full_v0.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt character_strategy.cpp
@@ -11,6 +11,10 @@
      1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character_strategy.cpp(12): warning C4305: 'initializing' : truncation from 'double' to 'const float'
      1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character_strategy.cpp(18): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
      1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character_strategy.cpp(19): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character_strategy.cpp(151): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character_strategy.cpp(164): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character_strategy.cpp(206): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\mrtnchps\documents\github\rpg_retake\comp345_full_v2\character_strategy.cpp(229): warning C4018: '<' : signed/unsigned mismatch
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\mrtnchps\Documents\GitHub\RPG_RETAKE\COMP345_full_v2\Debug\COMP345_full_v0.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\local\boost_1_62_0\lib32-msvc-12.0" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\mrtnchps\Documents\GitHub\RPG_RETAKE\COMP345_full_v2\Debug\COMP345_full_v0.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\mrtnchps\Documents\GitHub\RPG_RETAKE\COMP345_full_v2\Debug\COMP345_full_v0.lib" /MACHINE:X86 Debug\basic_structure.obj
          Debug\cell.obj
@@ -22,9 +26,10 @@
          Debug\inv2.obj
          Debug\map.obj
          Debug\stdafx.obj
+            Creating library C:\Users\mrtnchps\Documents\GitHub\RPG_RETAKE\COMP345_full_v2\Debug\COMP345_full_v0.lib and object C:\Users\mrtnchps\Documents\GitHub\RPG_RETAKE\COMP345_full_v2\Debug\COMP345_full_v0.exp
          COMP345_full_v0.vcxproj -> C:\Users\mrtnchps\Documents\GitHub\RPG_RETAKE\COMP345_full_v2\Debug\COMP345_full_v0.exe
      1>Done Building Project "C:\Users\mrtnchps\Documents\GitHub\RPG_RETAKE\COMP345_full_v2\COMP345_full_v0.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:07.45
+Time Elapsed 00:00:03.14

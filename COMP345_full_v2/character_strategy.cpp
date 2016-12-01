@@ -70,7 +70,7 @@ int CharacterStrategy::getSpeed(GameCharacter* me)
 void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 {
 	int answer;//to get answer from user
-
+	int bArray[3] = { 1, 1, 1 }; //all set to true, boolean array to check each action done only once per turn
 	//will store ennemis/lockables close by...create list empty
 	std::list<GameCharacter*> npc = list<GameCharacter*>();
 	std::list<Lockable*> unlockable = list<Lockable*>();
@@ -133,50 +133,136 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 		//display the possibility of the unlock door
 		std::cout << "UNLOCK -------- PRESS 2" << endl;
 	}
-	//always able to move...so always display it
-	std::cout << "MOVE ---------- PRESS 3" << endl;
 	//always able to equip/unequip...so always display it
-	std::cout << "EQUIP/UNEQUIP - PRESS 4" << endl;
+	std::cout << "EQUIP/UNEQUIP - PRESS 3" << endl;
 	//always able to end his turn...so always display it
-	std::cout << "END TURN?------ PRESS 5" << endl;
+	std::cout << "END TURN?------ PRESS 4" << endl;
 	//-------------------DISPLAY ENDS HERE--------------------------
 
 	//get answer
 	std:: cin >> answer;
-	GameCharacter *temp;
 	int choseThis = 1;//other choice for user
 	//------------------------CHECK INPUT AND DISPLAY POSSIBILITES
-	//if choose to attack
-	if (answer == 1){
+	//------------------ATTACK!
+	if (answer == '1' && bArray[0] == 1){
+		GameCharacter *temp;
+		int attackInput = 0;
 		std::cout << "Choose the NPC to attack!!--->" << endl; 
-		while (!npc.empty()){
+		for (int i = 0; i < npc.size(); i++){
+			temp = npc.front();//get first element
+
+			//print what the first element contains
+			std::cout << "NPC at [ " << (*objects)[temp]->getRow() << ", " << (*objects)[temp]->getCol() << " ]----> PRESS " << i << endl;
+
+			npc.pop_front();//pop the first element
+			npc.push_back(temp);//put it at the end of the list
+		}
+		bArray[0] = 0;//only can attack once---this is a boolean array
+		cin >> attackInput;
+
+		//Find the NPC to attack----loop throught the list
+		for (int i = 0; i < npc.size();i++){
 			temp = npc.front();
-			std::cout << "NPC at [" << (*objects)[temp]->getRow() << ", " << (*objects)[temp]->getCol() << "]----> PRESS " << choseThis << endl;
-			choseThis++;
+			if (attackInput == i){
+				//attack the npc!!!!
+				me->attack(npc.front(), me->getRange());
+			}
 		}
 	}
+	//----------------UNLOCK!
 	//if choose to unlock something
-	else if (answer == 2){
-
+	else if (answer == '2' && bArray[1] == 1){
+		Lockable *temp;
+		choseThis = 0;//reset variable
+		std::cout << "Choose what to unlock!!--->" << endl;
+		while (!unlockable.empty()){
+			temp = unlockable.front();
+			std::cout << "Locked object at [" << (*objects)[temp]->getRow() << ", " << (*objects)[temp]->getCol() << "]----> PRESS " << choseThis << endl;
+			choseThis++;
+		}
+		bArray[1] = 0;
 	}
-	//if choose to move
-	else if (answer == 3){
-	}
+	//---------------EQUIP!
 	//if choose to  equip/unequip
-	else if (answer == 4){
+	else if (answer == '3' && bArray[2] == 1){
+		int pressed = 0;
+		bool bEquip = true;
 
-	}
-	//if choose to end the turn
-	else if (answer == 5){
+		//get objects in backpack!
+		unordered_set<Item*> inBackpack = me->getInventory()->getBackPack();
 
-	}
+		//get the vector of pointers to the equipped items of the player
+		vector<Equipment*> equip = me->getInventory()->getAllEquipment(); 
+		Equipment* tempEquip; //to get the equipment and print them
+		vector<Equipment*> backpack;
+		//if user didn't enter a good value, the inventory is reprinted and we start over
+		while (bEquip){
+			cout << "\n_______________________________EQUIP/UNEQUIP_________________________________________\n";
+			cout << "What do you want to equip? ---->" << endl;
+			cout << "Equipped items: " << endl;
+			//print all the equipped items to display on screen only
+			for (int i = 0; i < equip.size();i++){
+				tempEquip = equip[i];
+				cout << tempEquip->toString() << endl;
+			}
+			cout << "Backpack items: " << endl;
+			//display what is in the backpack and give an input number to change
+			for (Item* i : inBackpack){
+				//check if it is an equipment object, yes put in the vector list
+				if (Equipment *eq = dynamic_cast<Equipment*>(i)){
+					backpack.push_back(eq);
+				}
+			}
+			int counter = 0;//count # of elements in backpack to show on screen
+			//display on screen
+			for (Equipment* i : backpack){
+				cout << i->toString() << "-----PRESS " << counter << endl;
+				counter++;
+			}			
+			
+			//get answer from user
+			std::cin >> pressed;
 
-
-
+			//go throught the backpack, found the item the user wants and equip it
+			for (int i = 0; i < backpack.size();i++){
+				if (pressed == i){//if the element is found
+					cout << "The item " << me->equip(backpack[i]) << " has been equipped!" << endl;
+					bEquip = false;
+				}
+				//if it's the last item but nothing has been equipped
+				else if ((i == (backpack.size()-1)) && (bEquip == false)){
+					cout << "Nothing has been equiped...starting again..." << endl;
+				}
+			}
+		}//end of the bEquip loop
 	
-	//std::cout << "what do you wish to do : ";
+	//one less turn available
+	turnAvailable--;
+	//boolean array -- so the option to equip appears only once
+	bArray[2] = 0;
+	}//-----------------------------------------------END OPTION TO EQUIP
 
-	//std::cin >> answer;
+	//if choose to end the turn
+	else if (answer == '4'){
+		//this will exit the biggest loop and terminate the function
+		turnAvailable = 4;
+	}
+	//The player wants to move? -- check the input
+	else{
+		bool validDirection = Direction::valid(answer);
+		//here need to check if the cell changed, if not changed then it is not taking it's steps away.
+
+		//if the input is a valid direction and the stepscount is bigger than 0
+		//move the character and reduce it's steps count
+		if (validDirection && (stepsCount > 0)){
+			cout << "Here the character should move, but I have no idea how, waiting for Oliver" << endl;
+			cout << "Decreasing it's steps..." << endl;
+			stepsCount--;
+		}
+		else if (!validDirection || (stepsCount == 0)){
+			cout << "Character is not allowed to move anymore!" << endl;
+		}
+	}
 }
 
 //! @ return: number to adjust HP...not HP itself is returned

@@ -370,6 +370,7 @@ public:
 	void updateLvl(int aLevel);
 	Item* getEquipType(EquipType anEquip) { return equipped[anEquip.index]; }
 	Equipment getEquipment(EquipType aType) { return *equipped[aType.index]; }
+	vector<Equipment*> getAllEquipment(){ return equipped; }
 	int* getAllEquipMods();
 	int getEquipMod(Ability abl);
 	int getEquipMod(int index);
