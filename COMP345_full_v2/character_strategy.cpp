@@ -142,10 +142,10 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 	//get answer
 	std:: cin >> answer;
 	int choseThis = 1;//other choice for user
-	//------------------------CHECK INPUT AND DISPLAY POSSIBILITES
+	//------------------------CHECK INPUT AND DISPLAY POSSIBILITES + CALL TO ACTION
 	//------------------ATTACK!
 	if (answer == '1' && bArray[0] == 1){
-		GameCharacter *temp;
+		GameCharacter *temp = NULL;
 		int attackInput = 0;
 		std::cout << "Choose the NPC to attack!!--->" << endl; 
 		for (int i = 0; i < npc.size(); i++){
@@ -161,11 +161,22 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 		cin >> attackInput;
 
 		//Find the NPC to attack----loop throught the list
+		//to check if attack is working
+		bool isWorking = false;
 		for (int i = 0; i < npc.size();i++){
 			temp = npc.front();
 			if (attackInput == i){
+
 				//attack the npc!!!!
-				me->attack(npc.front(), me->getRange());
+				me->attack(npc.front(), me->getRange());//----??? is this ok???
+				cout << "you have attacked!" << endl;
+				turnAvailable--;
+				isWorking = true;
+			}
+			else if ((i == npc.size-1) && !isWorking){//if at the end but nothing has been attacked
+				cout << "you maybe entered the wrong input of the list of NPC is not working..." << endl;
+				cout << "I am substracting from a turn anyway...." << endl;
+				turnAvailable--;
 			}
 		}
 	}
@@ -174,13 +185,37 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 	else if (answer == '2' && bArray[1] == 1){
 		Lockable *temp;
 		choseThis = 0;//reset variable
+		int unlockThis = 0;
 		std::cout << "Choose what to unlock!!--->" << endl;
 		while (!unlockable.empty()){
 			temp = unlockable.front();
 			std::cout << "Locked object at [" << (*objects)[temp]->getRow() << ", " << (*objects)[temp]->getCol() << "]----> PRESS " << choseThis << endl;
+			unlockable.pop_front();//pop the first element
+			unlockable.push_back(temp);//put it at the end of the list
 			choseThis++;
 		}
 		bArray[1] = 0;
+		cin >> unlockThis;
+
+		bool isWorking = false;
+		for (int i = 0; i < unlockable.size(); i++){
+			temp = unlockable.front();
+			if (unlockThis == i){
+
+				//unlock object!!!!!
+				me->unlock(unlockable.front());//----??? is this ok???
+
+				cout << "the object is unlocked!" << endl;
+				turnAvailable--;
+				isWorking = true;
+			}
+			else if ((i == npc.size - 1) && !isWorking){//if at the end but nothing has been attacked
+				cout << "you maybe entered the wrong input of the list of NPC is not working..." << endl;
+				cout << "I am substracting from a turn anyway...." << endl;
+				turnAvailable--;
+			}
+		}
+
 	}
 	//---------------EQUIP!
 	//if choose to  equip/unequip
