@@ -618,18 +618,25 @@ void wrongMap2()
 {
 	Map* wMap2 = new Map("wmap2", 10, 10);
 	Chest wChest;
-	wMap2->updateFirstStop(0, 0);
-	wMap2->updateLastStop(0, 9);
-	wMap2->setRowWall(5, 0, 9);
+	Door wDoor;
+	wMap2->setRowWall(5, 0, 4);
+	wMap2->setRowWall(5, 6, 9);
+	wMap2->addToCell((Placeable*)&wDoor, 5, 5);
 	wMap2->addToCell((Placeable*)&wChest, 9, 0);
+	wMap2->addStop(5, 5, 1);
+	wChest.addItem(wDoor.getKey());
 	cout << endl << wMap2->toString2() << endl;
+
 }
 
-//wrong map 3, vertical wall on the way to exit
+//wrong map 3, chest on top of exit
 void wrongMap3()
 {
-	Map* wMap3 = new Map("wmap1", 10, 10);
-	wMap3->setColWall(5, 0, 9);
+	Map* wMap3 = new Map("wmap3", 10, 10);
+	Chest wChest;
+	Door wDoor;
+	wMap3->setRowWall(5, 0, 9);
+	wMap3->addToCell((Placeable*)&wChest, 9, 9);
 	cout << endl << wMap3->toString2() << endl;
 }
 
