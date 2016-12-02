@@ -4,16 +4,17 @@
 #define _GAME_H_
 
 #include "config.h"
-#include "map.h"
+#include "campain.h"
 
 #include <boost\archive\text_iarchive.hpp>
 #include <boost\archive\text_oarchive.hpp>
 #include <boost\serialization\export.hpp>
 
+//!Game class that will control the whole game
 class Game
 {
 private:
-	
+	Campain* campain;
 	Map* map;
 	vector<vector<Cell*>> board;
 	Player* player;
@@ -23,18 +24,27 @@ private:
 
 	static bool isCharacter(Placeable* obj);//
 	void Game::removePos(Placeable* obj);//
-	void cleanUp();//
+	void cleanUp();
 	void play();//
 	bool nextTurn();//
 public:
+	
+	//this constructor is calling a Campain 
+	Game() :
+		campain(nullptr), player(nullptr),
+		characters(std::list<GameCharacter*>()),
+		objects(std::map<Placeable*, Cell*>()) {}
+	/*
+	//this constructor is calling a map only
 	Game() :
 		map(nullptr), player(nullptr),
 		characters(std::list<GameCharacter*>()),
 		objects(std::map<Placeable*, Cell*>()) {}
+*/
 	~Game() {}
 	Game getInstance();
-	bool startGame(Map* aMap, Player* aPlayer);//Campain should check map...
-
+	bool startGame(Map* aMap, Player* aPlayer);//this is the old version of start game
+	bool startGame(Campain* aCampain, Player* aPlayer);//New version of start game
 	
 	Player loadPlayer();
 	Map loadMap();

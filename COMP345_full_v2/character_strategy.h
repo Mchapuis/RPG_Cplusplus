@@ -40,7 +40,7 @@ public:
 	static vector<vector<int>> graph(Map* map, Cell* dest);
 
 	virtual ~CharacterStrategy(){}
-	virtual void turn(std::map<Placeable*, Cell*> *objects) = 0;
+	virtual bool turn(std::map<Placeable*, Cell*> *objects) = 0;
 	virtual int takeDamage(GameCharacter* attacker, int damageValue) = 0;
 	virtual void setMap(Map* aMap) = 0;
 	//virtual string toString() = 0;//to print what is happening on screen
@@ -68,7 +68,7 @@ private:
 
 public:
 	HumanPlayerStrategy(GameCharacter* myself) : me(myself) {}
-	void turn(std::map<Placeable*, Cell*> *objects); // unused by HumanToPcStrategy
+	bool turn(std::map<Placeable*, Cell*> *objects); // unused by HumanToPcStrategy
 	int takeDamage(GameCharacter* attacker, int damageValue);
 	void setMap(Map* aMap){ map = aMap; }
 	//string toString();
@@ -94,13 +94,11 @@ private:
 
 public:
 	HostileStrategy(GameCharacter* myself) : me(myself) {}
-	void turn(std::map<Placeable*, Cell*> *objects);
+	bool turn(std::map<Placeable*, Cell*> *objects);
 	int takeDamage(GameCharacter* attacker, int damageValue);
 	void setMap(Map* aMap){ map = aMap; }
 	//string toString();
 };
-
-
 
 class FriendlyStrategy : public CharacterStrategy
 {
@@ -121,7 +119,7 @@ private:
 public:
 
 	FriendlyStrategy(GameCharacter* myself) : me(myself) {}
-	void turn(std::map<Placeable*, Cell*> *objects);
+	bool turn(std::map<Placeable*, Cell*> *objects);
 	int takeDamage(GameCharacter* attacker, int damageValue);
 	void setMap(Map* aMap){ map = aMap; }
 	//string toString();

@@ -77,7 +77,7 @@ int CharacterStrategy::getSpeed(GameCharacter* me)
 //!7- ennemi stack that can be reached in this turn
 //!8- unlockable stack that can be reached in this turn
 //!9- empty both stack at the end of the turn
-void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
+bool HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 {
 	char answer;//to get answer from user
 	int bArray[3] = { 1, 1, 1 }; //all set to true, boolean array to check each action done only once per turn
@@ -86,7 +86,7 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 	std::list<GameCharacter*> npc = list<GameCharacter*>();
 	std::list<Lockable*> unlockable = list<Lockable*>();
 	
-	int stepsCount = 30;//getSpeed(me);//total steps available
+	int stepsCount = 100;//getSpeed(me);//total steps available
 	int turnAvailable = 3;//available turns number left...at 0, exit turn() function
 
 	//IF PLAYER MOVE && STEPS COUNTER != 0 && TURN != OVER :: RESTART HERE
@@ -143,6 +143,7 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 	//----------------------DIPLAY POSSIBLE ACTIONS TO PLAYER WHILE THE TURN IS NOT OVER
 	//----------------------turnAvailable = 0 is the end
 	while (turnAvailable != 0){
+
 		std::cout << "--------------------PLAY!----------------------" << endl;
 		std::cout << "YOU HAVE ---------"<<turnAvailable<<"----- TURN AVAILABLE!" << endl;
 		std::cout << "YOU HAVE ---------" << stepsCount << "---- STEPS AVAILABLE!" << endl;
@@ -513,6 +514,10 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 							}
 						}
 					}
+					if (map->getExit() == (*objects)[me]){
+						return true;
+					}
+
 					moved = false;
 					//----------------------LOOP TO GET ELEMENTS ENDS HERE
 					//**************************************************************************
@@ -531,7 +536,7 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 		}//end of the move input
 	}//end of while turnAvailable != 0
 	std::cout << "**********************END OF YOUR TURN! NPC's TURN NOW!******************" << endl;
-
+	return false;
 }//end of the turn function
 
 //! @ return: number to adjust HP...not HP itself is returned
@@ -546,8 +551,12 @@ int HumanPlayerStrategy::takeDamage(GameCharacter* opponent, int damageValue)
 
 //!Hostile Ennemy stragtegy. Will seek the player if in a radius of 6 cells
 //!and attack him as soon as he is in range, depending on his weapon.
-void HostileStrategy::turn(std::map<Placeable*, Cell*> *objects)
+bool HostileStrategy::turn(std::map<Placeable*, Cell*> *objects)
 {
+	//---------------------ERASE MAP AND OTHER CONTENT
+	system("cls");
+	//---------------------PRINTING MAP
+	std::cout << map->toString2();
 	int i;
 
 	int range = me->getRange(); //get weapon range
@@ -586,6 +595,7 @@ void HostileStrategy::turn(std::map<Placeable*, Cell*> *objects)
 					//if the player is in the attack zone, stop to attack
 					if (canSee(myCell, playerCell))
 					{
+						std::cout << "Player is in the attack zone ... stop walking to attack!" << endl;
 						walking = false;
 						break;
 					}
@@ -622,6 +632,7 @@ void HostileStrategy::turn(std::map<Placeable*, Cell*> *objects)
 	{
 		me->attack(map->getPlayer(), lineDist(myCell, playerCell));
 	}
+	return false;
 }
 
 //! same as takeDamage of others..return an integer to change HP, not the new HP itself
@@ -634,8 +645,9 @@ int HostileStrategy::takeDamage(GameCharacter* attacker, int damageValue)
 
 //! Passive friendly strategy. Simply follows the player.
 //! See HostileStrategy for description of function --- nearly the same
-void FriendlyStrategy::turn(std::map<Placeable*, Cell*> *objects)
+bool FriendlyStrategy::turn(std::map<Placeable*, Cell*> *objects)
 {
+	std::cout << "FriendlyStrategy" << endl;
 	int i;
 
 	//Set to accomodate for an active friendly NPC in battles,
@@ -693,6 +705,7 @@ void FriendlyStrategy::turn(std::map<Placeable*, Cell*> *objects)
 			}
 		}
 	}
+	return false;
 }
 
 //Friends will become actively hostile if hit by the player.

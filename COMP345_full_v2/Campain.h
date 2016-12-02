@@ -30,7 +30,7 @@ public:
 	void setDesc(string desc);
 	void addMapFront(Map* aMap);
 	void addMapBack(Map* aMap);
-	Map getNextMap();
+	Map* getNextMap();
 	bool isEmpty();
 };
 

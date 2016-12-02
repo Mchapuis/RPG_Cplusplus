@@ -1,6 +1,85 @@
 #include "stdafx.h"
 #include "game.h"
 
+
+//!Old version of startGame --- asking for a map only
+//!@return: true/false on if the game has started or not
+bool Game::startGame(Campain* aCampain, Player* aPlayer)
+{
+	campain = aCampain;
+	player = aPlayer;
+	Map *aMap;//to store the next map
+	Cell* tempCell = nullptr;
+	Placeable* tempPlace = nullptr;
+	GameCharacter* tempCharac = nullptr;
+	std::vector<GameCharacter*> tempCharacVec = std::vector<GameCharacter*>();
+	std::list<GameCharacter*>::iterator iter;
+	int dex;
+	bool inserted = false;
+	int i;
+	int j;
+	int k;
+	aMap = campain->getNextMap();//get next map in the campain and store it 
+	pCell = aMap->getBegin();
+
+	if (!aMap->start(player)) return false;
+
+	for (i = 0; i < aMap->getHeight(); i++)
+	{
+		for (j = 0; j < aMap->getWidth(); j++)
+		{
+			tempCell = (*aMap)[i][j];
+			if (!tempCell->isEmpty())
+			{
+				tempPlace = tempCell->getContent();
+
+				objects.insert({ tempPlace, tempCell });
+
+				if (this->isCharacter(tempPlace))
+				{
+					tempCharac = (GameCharacter*)tempPlace;
+					tempCharac->setMap(aMap);
+
+					if (characters.empty())
+					{
+						//cout << "start " << tempCharac->getBaseAbl(Ability::DEX) << endl;
+						characters.push_front(tempCharac);
+					}
+					else
+					{
+						dex = tempCharac->getBaseAbl(Ability::DEX);
+
+						for (iter = characters.begin(); iter != characters.end(); ++iter)
+						{
+							//cout << dex << " vs " << (*iter)->getBaseAbl(Ability::DEX) << endl;
+
+							if (dex > (*iter)->getBaseAbl(Ability::DEX))
+							{
+								//cout << "insert " << dex << endl;
+								characters.insert(iter, tempCharac);
+								break;
+							}
+						}
+
+						if (iter == characters.end())
+						{
+							//cout << "insert last " << tempCharac->getBaseAbl(Ability::DEX) << endl;
+							characters.push_back(tempCharac);
+						}
+					}//else
+				}//if instance-of
+			}//if tempCell empty
+		}//for j
+	}//for i
+
+	this->play();
+
+	return true; //moifyy for return this->play();
+}
+
+/*
+//!Old version of startGame --- asking for a map only
+//!@return: true/false if the game has started or not
 bool Game::startGame(Map* aMap, Player* aPlayer)
 {
 	map = aMap;
@@ -72,7 +151,8 @@ bool Game::startGame(Map* aMap, Player* aPlayer)
 
 	return true; //moifyy for return this->play();
 }
-
+*/
+//!@return true if the object passed is a character, else false
 bool Game::isCharacter(Placeable* obj)
 {
 	if (GameCharacter* g = dynamic_cast<GameCharacter*>(obj))
@@ -83,28 +163,51 @@ bool Game::isCharacter(Placeable* obj)
 	return false;
 }
 
-//Modify to call while(!this->nextTurn()); and return true when exits.
+//!Modify to call while(!this->nextTurn()); and return true when exits.
+//!loop through turn giving loop
 void Game::play()
 {
-	while (true) player->startTurn(map, &objects);
+	//if true, pop out of loop -- so change map
+	//add nested loop in campaign so each map is called with this line
+	while (!this->nextTurn()){
+		//update level of player
+		player->levelUp();
+		//start a new map if it's not the last one
+		if (!campain->isEmpty()){
+			std::cout << "campaign is not empty" << endl;
+			map = campain->getNextMap();
+		}
+		//if last one, print win game
+		else{
+			std::cout << "GAME OVER! YOU WIN!!!" << endl;
+		}
+	};
+	//while (true) player->startTurn(map, &objects);
 }
 
-//Do something if dead or map ended?
+//!Do something if dead or map ended?
+//!give turn to each player - dequeue and requeue
 bool Game::nextTurn()
 {
+	std::cout << "nextTurn..." << endl;
 	GameCharacter* gc = characters.front();
+	bool over = false;
 
-	gc->startTurn(map, &objects);
+	//if player step on exit, return true
+	over = gc->startTurn(map, &objects);
 
-	cleanUp();
+	cleanUp();//remove deads
 
+	//if someone is left and that the player currently in game who just finished this turn is still alive
+	//put it behind the queue
 	if (!characters.empty() && gc == characters.front())
 	{
 		characters.pop_front();
 		characters.push_back(gc);
 	}
 
-	return true;
+	//if over is true, player finished map
+	return over;
 	//startTurn should return bool
 	//if all dead or player dead... do something ? Or map exit?
 }

@@ -202,10 +202,10 @@ int GameCharacter::damageRoll(int distance)
 
 //!Give turn to a character
 //!@param: objects is a list of paired key values (example: looking for a character and a cell is an object)
-void GameCharacter::startTurn(Map* map, std::map<Placeable*, Cell*> *objects)
+bool GameCharacter::startTurn(Map* map, std::map<Placeable*, Cell*> *objects)
 {
 	//object map is not used anymore, but do not remove yet! :) Optimize later plz!
-	strategy->turn(objects);
+	return strategy->turn(objects);
 }
 
 

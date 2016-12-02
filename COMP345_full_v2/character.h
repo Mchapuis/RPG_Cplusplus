@@ -89,7 +89,7 @@ public:
 	void levelUp();
 	virtual void updateLvl(int aLevel);
 
-	void startTurn(Map* map, std::map<Placeable*, Cell*> *objects);
+	bool startTurn(Map* map, std::map<Placeable*, Cell*> *objects);
 
 	unordered_set<Item*> unlock(Lockable* lock);
 

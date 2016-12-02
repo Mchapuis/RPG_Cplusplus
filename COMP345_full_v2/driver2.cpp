@@ -613,7 +613,107 @@ void runGame()
 
 	Game game = Game();
 
-	game.startGame(myMap, myPlayer);
+	//need a campain
+	//game.startGame(myMap, myPlayer);
+}
+
+void runGame2()
+{
+
+	//MAP NUMBER 1--------------------------------------------
+	Map* myMap = new Map("map1", 10, 10);
+
+	Cell* pCell = NULL;
+	Player *myPlayer = new Player();
+	Chest myChest;
+	Enemy myEnemy;
+	Friendly myFriend;
+	//Door* myDoor = new Door();
+
+	//myDoor->setLocked(true);
+
+	myPlayer->load("player1");
+	myChest.load("chest1");
+	myEnemy.load("enemy1");
+	myFriend.load("friend2");
+
+	/*
+	Player myPlayer = Player::sLoad("player1");
+	Chest myChest = Chest::sLoad("chest1");
+	Enemy myEnemy = Enemy::sLoad("enemy1");
+	Friendly myFriend = Friendly::sLoad("friend2");
+	*/
+	//cout << myEnemy.toString();
+	//cout << myFriend.toString();
+
+	myMap->setRowWall(3, 0, 3);
+	myMap->setColWall(6, 1, 3);
+
+	myMap->updateFirstStop(0, 0);
+	myMap->updateLastStop(11, 0);
+
+	//myMap->addToCell(myDoor, 0, 5);
+	//myMap->addStop(0, 5, 1);
+	myMap->addToCell((Placeable*)&myChest, 7, 7);
+	myMap->addToCell((Placeable*)&myEnemy, 0, 4);
+	myMap->addToCell((Placeable*)&myFriend, 4, 2);
+
+	//myChest.addItem(myDoor->getKey());
+	//myPlayer->addToPack(myDoor->getKey());
+
+	//cout << endl << myMap->toString2() << endl;
+
+	//MAP NUMBER 2------------------------------------------
+	Map* myMap2 = new Map("map1", 10, 10);
+
+	Cell* pCell2 = NULL;
+	Player *myPlayer2 = new Player();
+	Chest myChest2;
+	Enemy myEnemy2;
+	Friendly myFriend2;
+	//Door* myDoor = new Door();
+
+	//myDoor->setLocked(true);
+
+	myPlayer2->load("player1");
+	myChest2.load("chest1");
+	myEnemy2.load("enemy1");
+	myFriend2.load("friend2");
+
+	/*
+	Player myPlayer = Player::sLoad("player1");
+	Chest myChest = Chest::sLoad("chest1");
+	Enemy myEnemy = Enemy::sLoad("enemy1");
+	Friendly myFriend = Friendly::sLoad("friend2");
+	*/
+	//cout << myEnemy.toString();
+	//cout << myFriend.toString();
+
+	myMap2->setRowWall(8, 0, 3);
+	myMap2->setColWall(6, 1, 3);
+
+	myMap2->updateFirstStop(0, 0);
+	myMap2->updateLastStop(9, 0);
+
+	//myMap->addToCell(myDoor, 0, 5);
+	//myMap->addStop(0, 5, 1);
+	myMap2->addToCell((Placeable*)&myChest, 7, 7);
+	myMap2->addToCell((Placeable*)&myEnemy, 0, 4);
+	myMap2->addToCell((Placeable*)&myFriend, 4, 2);
+
+	//myChest.addItem(myDoor->getKey());
+	//myPlayer->addToPack(myDoor->getKey());
+
+	//cout << endl << myMap->toString2() << endl;
+
+	Campain *ca = new Campain("hello","this is a descriptio");
+	ca->addMapFront(myMap2);
+	ca->addMapBack(myMap2);
+
+	Game game = Game();
+
+	game.startGame(ca, myPlayer);
+
 }
 
 void reboot()
@@ -633,7 +733,7 @@ int main(int argc, char *argv[])
 	
 	std::srand(time(0));
 
-	runGame();
+	runGame2();
 
 	//reboot();
 	

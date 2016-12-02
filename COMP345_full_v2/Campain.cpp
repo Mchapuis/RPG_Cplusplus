@@ -49,12 +49,12 @@ void Campain::addMapBack(Map* aMap)
 	maps.push_back(aMap);
 }
 
-Map Campain::getNextMap()
+Map* Campain::getNextMap()
 {
 	Map* aMap;
 	aMap = maps.front();
 	maps.pop_front();
-	return *aMap;
+	return aMap;
 }
 
 bool Campain::isEmpty()
