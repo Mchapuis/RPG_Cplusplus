@@ -23,7 +23,7 @@ GameCharacter::GameCharacter(string aName, int aBaseAtk, int aLevel) :
 name(aName), level(0), baseAtk(aBaseAtk), Hp(0), MaxHp(0), inventory(Inventory())
 {
 	int i;
-
+	NotifyCharacter("Creating Character " + aName);
 	abilities = abilitiesRoll();
 	updateBonus();
 	//modifiers = std::vector<int>(Ability::getCount());
@@ -39,12 +39,18 @@ vector<int> GameCharacter::abilitiesRoll()
 	int SIZE = 6;
 	vector<Ability> abls = Ability::getMainAbls();
 	vector<int> result = vector<int>(SIZE);
-	
-	
+	Logger ablLog("Abilities roll logger");
+	std::string myString = " ";
+
+	ablLog.Update("Abilities Roll");
+
 	//Take all the randoms numbers
 	for (int i = 0; i < SIZE; i++){
 		result[i] = abilityRoll();
+		myString += to_string(result[i]) + " ";
 	}
+
+	ablLog.Update("rolls: " + myString);
 
 	//order the elements in the array
 	std::sort(result.begin(), result.end());
@@ -52,11 +58,19 @@ vector<int> GameCharacter::abilitiesRoll()
 	//decreasing order...
 	std::reverse(result.begin(), result.end());
 
+	myString = "";
+	for (int i = 0; i < SIZE; i++){
+		myString += to_string(result[i]) + " ";
+	}
+
+	ablLog.Update("Sorted rolls: " + myString);
+
 	//put numbers in the Ability const array...
 	int i = 0;
 	for (const Ability a : abls)
 	{
 		result[a.index] = result[i];
+		ablLog.Update(a.abbr + ": " + to_string(result[a.index]));
 		//cout << "result:::" << result[i] << endl;
 		i++;
 	}
@@ -69,19 +83,30 @@ int GameCharacter::abilityRoll()
 	vector<int> dices = vector<int>();
 	int result = 0;
 	int i;
+	int roll;
+	std::string myString = "";
+
+	Logger ablLog("Ability roll");
 
 	for (i = 0; i < 4; i++)
 	{
-		dices.push_back(Dice::roll(1, 6));
+		roll = Dice::roll(1, 6);
+		ablLog.Update("Roll " + to_string(i + 1) + " : " + to_string(roll));
+		dices.push_back(roll);
 	}
 
 	sort(dices.begin(), dices.end());
 
+	myString += "Total roll: " + to_string(dices.back());
+
 	for (i = 0; i < 3; i++)
 	{
+		myString += " + " + to_string(dices.back());
 		result += dices.back();
 		dices.pop_back();
 	}
+
+	ablLog.Update(myString + to_string(result));
 
 	return result;
 }
@@ -106,18 +131,23 @@ void GameCharacter::updateBonus()
 void GameCharacter::levelUp()
 {
 	int i;
-
+	int temp;
+	
 	level++;
+	NotifyCharacter("Character " + this->getName() + " leveling up to lvl " + to_string(this->getLevel()));
 
 	//randomly increase an ability bonus each 4 levels.
 	if (level % 4 == 0)
 	{
 		i = rand() % 6;
-		bonus[Ability::getMainAbls()[i].index]++;
+		abilities[Ability::getMainAbls()[i].index]++;
+		temp = abilities[Ability::getMainAbls()[i].index];
+		NotifyCharacter("Base Ability " + Ability::getMainAbls()[i].name + " raised to " + to_string(temp));
+		NotifyCharacter(Ability::getMainAbls()[i].name + " modifier is now " + to_string(calcBonus(temp)));
 	}
 
 	updateBonus();
-
+	temp = MaxHp;
 	MaxHp += this->hitDie();
 	Hp = MaxHp;
 }
@@ -127,6 +157,8 @@ void GameCharacter::levelUp()
     ensure the character stats move up accordingly*/
 void GameCharacter::updateLvl(int toLevel)
 {
+	NotifyMap("Update character " + this->getName() + " to level " + to_string(toLevel));
+
 	if (toLevel < 0) toLevel = 0;
 
 	if (level == 0 && toLevel > 0) inventory.updateLvl(toLevel);
@@ -144,7 +176,8 @@ int GameCharacter::hitDie()
 	}
 
 	die = Dice::roll(1, 10);
-
+	NotifyCharacter("Hit die roll: " + to_string(die));
+	NotifyCharacter("MaxHp increased of " + to_string(die + bonus[Ability::CON.index]));
 	return die + bonus[Ability::CON.index];
 }
 

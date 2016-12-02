@@ -84,8 +84,8 @@ bool HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 	int bArray[3] = { 1, 1, 1 }; //all set to true, boolean array to check each action done only once per turn
 
 	//will store ennemis/lockables close by...create list empty
-	std::list<GameCharacter*> npc = list<GameCharacter*>();
-	std::list<Lockable*> unlockable = list<Lockable*>();
+	std::list<GameCharacter*> npc = std::list<GameCharacter*>();
+	std::list<Lockable*> unlockable = std::list<Lockable*>();
 	
 	int stepsCount = getSpeed(me);//total steps available
 	int turnAvailable = 3;//available turns number left...at 0, exit turn() function
@@ -633,7 +633,7 @@ bool HostileStrategy::turn(std::map<Placeable*, Cell*> *objects)
 	}
 	
 
-	int keyAnswer = 0;
+	char keyAnswer = 0;
 	//strait line distance
 	if (lineDist(myCell, playerCell) <= range)
 	{
@@ -641,11 +641,11 @@ bool HostileStrategy::turn(std::map<Placeable*, Cell*> *objects)
 		me->attack(map->getPlayer(), lineDist(myCell, playerCell));
 
 		std::cout << "Player has been attacked, HP is now: " << map->getPlayer()->getHp() << endl;
-		
-		while (keyAnswer != 5){
+		do
+		{
 			std::cout << "Continue --- PRESS 5 --->" << endl;
 			std::cin >> keyAnswer;
-		}
+		} while (keyAnswer != 53);
 	}
 	return false;
 }

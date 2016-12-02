@@ -106,7 +106,6 @@ void characterCreator()
 	{
 		for (EquipType e : EquipType::getTypes())
 		{
-
 			cout << "Please chose your " << e.name << endl;
 			cin >> itemNumber;
 			cout << filesList.count(itemNumber) << endl;
@@ -142,6 +141,7 @@ void characterCreator()
 		}
 	} while (validEquip == false);
 	*/
+
 	//
 	//END
 	cout << "Thank you for creating a character! Here are the statistcs" << endl;
@@ -216,8 +216,8 @@ void campainCreator()
 
 	while (newCamp.isEmpty() == true)
 	{
-		Map playMap = newCamp.getNextMap();
-		cout << endl << playMap.toString2() << endl;
+		//Map playMap = newCamp.getNextMap();
+		//cout << endl << playMap.toString2() << endl;
 	}
 
 }
@@ -739,18 +739,11 @@ void characterEditor()
 	std::string str_filename;
 
 	//Default character so the file called isn't empty
-	Player p0 = Player("Default Character", 1, 1);
+	Player p0 = Player("Default Character", 1, 0);
 
 	//Character that will hold the character information
 
-	//Loading the file
-	std::ofstream ofs("test_file");
-
-	//printing to file
-	{
-		boost::archive::text_oarchive oa(ofs);
-		oa << p0;
-	}
+	p0.save("test_file");
 
 	//welcome screen
 	cout << "-------------------------------------" << endl;

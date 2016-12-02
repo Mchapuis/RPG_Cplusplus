@@ -139,12 +139,15 @@ void Equipment::updateLvl(int playerLevel)
 	int bonus;
 	float rnd;
 
+	NotifyMap("Updating " + this->getClassName() + " " + this->getName() + " to level " + to_string(playerLevel));
+
 	for (Ability a : allowed)
 	{
 		rnd = ( rand() % 100) / 100.0;
 		bonus = min(points, min((int)(rnd * points), 5));
 		//cout << "rnd:" << rnd << "  points:" << points << "  bonus:" << bonus << endl;
 		enchantments[a.index] = bonus;
+		NotifyMap(a.abbr + " bonus set to " + to_string(bonus));
 		points -= bonus;
 	}
 }
@@ -217,11 +220,14 @@ void Inventory::updateLvl(int aLevel)
 	if (aLevel > 0) return;
 	if (aLevel < 0) aLevel = 0;
 
+	NotifyMap("Update inventory to level " + to_string(aLevel));
+	NotifyMap("Equipments:");
 	for (Equipment* e : equipped)
 	{
 		e->updateLvl(aLevel);
 	}
 
+	NotifyMap("Backpack:");
 	for (Item* it : backpack)
 	{
 		if (Equipment* eq = dynamic_cast<Equipment*>(it)) 

@@ -18,20 +18,26 @@ private:
 		ar & BOOST_SERIALIZATION_NVP(maps);
 	}
 
+	int count;
 	string name;/**< Name of the campain */
 	string description;/**< Description of the campain */
 	list<Map*> maps;/**< List of maps of the campain */
-
+	list<Map*>::iterator iter;
 public:
-	Campain() {}
+	Campain() : maps(list<Map*>()) { iter = maps.begin(); }
 	~Campain() {}
 	Campain(string newName, string newDesc);
 	void setname(string newName);
+	std::string getName(){ return name; }
+	std::string getDescription(){ return description; }
 	void setDesc(string desc);
+	Map* getFront(){ return maps.front(); }
 	void addMapFront(Map* aMap);
 	void addMapBack(Map* aMap);
 	Map* getNextMap();
 	bool isEmpty();
+	bool size(){ return maps.size(); }
+	bool hasNext(){ return iter != maps.end(); }
 };
 
 #endif _CAMPAIN_H_

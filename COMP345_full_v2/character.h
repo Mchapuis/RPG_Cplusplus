@@ -19,7 +19,7 @@ class Map;
 	bonus, modifiers, and Inventory of a character.
 	It derives extends the abstract class Placeable.    
 */
-class GameCharacter : public Placeable, public MySerializable
+class GameCharacter : public Placeable, public MySerializable, public Subject
 {
 private:
 	// SERIALIZATION

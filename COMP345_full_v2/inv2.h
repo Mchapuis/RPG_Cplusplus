@@ -20,7 +20,7 @@ class Item;
 
 #include "inventory_exceptions.h"
 
-class Item : public MySerializable
+class Item : public MySerializable, public Subject
 {
 private:
 	// SERIALIZATION
@@ -338,7 +338,7 @@ public:
 	virtual void load(std::string filename);
 };
 
-class Inventory
+class Inventory: public Subject
 {
 private:
 	friend class boost::serialization::access;

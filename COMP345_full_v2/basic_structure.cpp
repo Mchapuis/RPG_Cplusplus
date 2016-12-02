@@ -82,6 +82,7 @@ unordered_set<Item*> Chest::removeAll()
 
 void Chest::updateLvl(int aLevel)
 {
+	NotifyMap("Chest updating to level " + to_string(aLevel));
 	if (aLevel > 0) content.updateLvl(aLevel);
 }
 

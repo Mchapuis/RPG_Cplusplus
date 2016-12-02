@@ -4,6 +4,7 @@
 #define _DICE_H_
 
 #include "config.h"
+#include "Subject.h"
 
 class Dice
 {

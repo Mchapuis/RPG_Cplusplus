@@ -17,7 +17,7 @@ class GameCharacter;
 
 #define AP (3) //action points
 
-class CharacterStrategy 
+class CharacterStrategy: public Subject
 {
 private:
 	friend class boost::serialization::access;

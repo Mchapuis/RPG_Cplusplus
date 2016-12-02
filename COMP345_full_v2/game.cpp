@@ -22,7 +22,15 @@ bool Game::startGame(Campain* aCampain, Player* aPlayer)
 	aMap = campain->getNextMap();//get next map in the campain and store it 
 	pCell = aMap->getBegin();
 
-	if (!aMap->start(player)) return false;
+	NotifyGame("Begin campain " + campain->getName());
+
+	if (!aMap->start(player))
+	{
+		NotifyGame("Invalid map " + aMap->getName());
+		return false;
+	}
+
+	NotifyGame("initializing map " + aMap->getName());
 
 	for (i = 0; i < aMap->getHeight(); i++)
 	{
@@ -73,7 +81,6 @@ bool Game::startGame(Campain* aCampain, Player* aPlayer)
 	}//for i
 
 	this->play();
-
 	return true; //moifyy for return this->play();
 }
 
@@ -167,11 +174,12 @@ bool Game::isCharacter(Placeable* obj)
 //!loop through turn giving loop
 void Game::play()
 {
+	NotifyGame("Game Start");
 	//if true, pop out of loop -- so change map
 	//add nested loop in campaign so each map is called with this line
 	while (!this->nextTurn()){
 		//update level of player
-		player->levelUp();
+		
 		//start a new map if it's not the last one
 		if (!campain->isEmpty()){
 			std::cout << "campaign is not empty" << endl;

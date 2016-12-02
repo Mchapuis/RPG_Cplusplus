@@ -146,16 +146,23 @@ bool Map::start(Player* aPlayer)
 {
 	this->reset();
 
-	if (!this->validPath()) return false;
+	if (!this->validPath())
+	{
+		NotifyMap("Tried to start a invalid map " + this->name);
+		return false;
+	}
+	
 	
 	stops.front()->setContent(aPlayer);
-		
+	NotifyMap("Set player " + aPlayer->getName() + "on [" + to_string(stops.front()->getRow()) + "][" + to_string(stops.front()->getCol()) + "]");
+
 	for (vector<Cell*> v : board)
 	{
 		for (Cell* c : v)
 		{
 			if (!c->isEmpty())
 			{
+				NotifyMap("Place " + c->getContent()->getSymbol() + " on [" + to_string(c->getRow()) + "][" + to_string(c->getCol()) + "]");
 				c->getContent()->updateLvl(aPlayer->getLevel());
 			}
 		}

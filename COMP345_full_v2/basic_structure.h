@@ -94,7 +94,7 @@ public:
 	unordered_set<Item*> removeAll(){ return unordered_set<Item*>(); }
 };
 
-class Chest : public Lockable, public MySerializable//, public Placeable
+class Chest : public Lockable, public MySerializable, public Subject
 {
 private:
 	friend class boost::serialization::access;

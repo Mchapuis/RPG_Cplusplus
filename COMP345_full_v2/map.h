@@ -60,7 +60,7 @@ public:
 };
 
 //! Map object.
-class Map: public MySerializable
+class Map: public MySerializable, public Subject
 {
 
 private:

@@ -11,7 +11,7 @@
 #include <boost\serialization\export.hpp>
 
 //!Game class that will control the whole game
-class Game
+class Game: public Subject
 {
 private:
 	Campain* campain;
@@ -27,6 +27,7 @@ private:
 	void cleanUp();
 	void play();//
 	bool nextTurn();//
+	bool setupMap(Map* aMap);
 public:
 	
 	//this constructor is calling a Campain 
@@ -49,7 +50,6 @@ public:
 	Player loadPlayer();
 	Map loadMap();
 	
-
 	void startGame();
 
 	void createPlayer();

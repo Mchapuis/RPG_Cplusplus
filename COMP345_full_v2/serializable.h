@@ -4,6 +4,7 @@
 #define _SERIALIZABLE_H_
 
 #include "config.h"
+#include "Subject.h"
 
 #include <string>
 #include <boost\archive\text_iarchive.hpp>
