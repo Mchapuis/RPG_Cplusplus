@@ -48,7 +48,6 @@ bool Cell::setContent(Placeable* newContent)
 {
 	if (this->content == nullptr || this->isWalkable())
 	{
-		delete content;
 		content = newContent;
 		return true;
 	}

@@ -576,12 +576,15 @@ void runGame()
 	Chest myChest;
 	Enemy myEnemy;
 	Friendly myFriend;
+	//Door* myDoor = new Door();
+
+	//myDoor->setLocked(true);
 
 	myPlayer->load("player1");
 	myChest.load("chest1");
 	myEnemy.load("enemy1");
 	myFriend.load("friend2");
-
+	
 	/*
 	Player myPlayer = Player::sLoad("player1");
 	Chest myChest = Chest::sLoad("chest1");
@@ -597,11 +600,14 @@ void runGame()
 	myMap->updateFirstStop(0, 0);
 	myMap->updateLastStop(11, 0);
 
-	myMap->addToCell((Placeable*) new Door(), 0, 5);
-
+	//myMap->addToCell(myDoor, 0, 5);
+	//myMap->addStop(0, 5, 1);
 	myMap->addToCell((Placeable*)&myChest, 0, 13);
 	myMap->addToCell((Placeable*)&myEnemy, 12, 10);
 	myMap->addToCell((Placeable*)&myFriend, 4, 2);
+
+	//myChest.addItem(myDoor->getKey());
+	//myPlayer->addToPack(myDoor->getKey());
 
 	//cout << endl << myMap->toString2() << endl;
 

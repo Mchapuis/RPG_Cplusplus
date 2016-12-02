@@ -370,7 +370,21 @@ Cell* Map::move(Cell* source, Direction dir)
 
 Cell* Map::move(Cell* source, Cell* dest)
 {
-	if (!source->isEmpty() && dest->isWalkable())
+	Placeable* temp = (!dest->isEmpty()) ? dest->getContent() : nullptr;
+	bool isLocked = true;
+
+
+	if (temp != NULL)
+	{
+		if (Door* d = dynamic_cast<Door*>(temp))
+		{
+			isLocked = d->isLocked();
+		}
+	}
+
+	cout << (!source->isEmpty()) << " " << (temp == NULL) << " " << !isLocked << endl;
+	//system("pause");
+	if (!source->isEmpty() && (temp == NULL || (!isLocked)))
 	{
 		dest->setContent(source->getContent());
 		source->clear();
@@ -447,7 +461,7 @@ vector<vector<int>> Map::dijkstra(int const refRow, int const refCol)
 		{
 			currentCell = borderList.remove();
 			
-			if (currentCell->isEmpty() || currentCell->isWalkable())
+			if (currentCell->isEmpty() || currentCell->isWalkable() )
 			{
 				borderSet.addAll(currentCell->getAdjacent());
 				distanceGraph[currentCell->getRow()][currentCell->getCol()] = count;
@@ -463,6 +477,18 @@ vector<vector<int>> Map::dijkstra(int const refRow, int const refCol)
 	return distanceGraph;
 }
 
+bool Map::hasDoor(Cell* aCell)
+{
+	Placeable* temp = (!aCell->isEmpty()) ? aCell->getContent() : nullptr;
+	bool isLocked = true;
+
+	if (temp != NULL)
+	{
+		if (Door* d = dynamic_cast<Door*>(temp)) return true;
+	}
+
+	return false;
+}
 
 /*
 int** Map::dijkstra(Cell* exit)

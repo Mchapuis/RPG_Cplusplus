@@ -91,7 +91,7 @@ public:
 
 	void startTurn(Map* map, std::map<Placeable*, Cell*> *objects);
 
-	bool unlock(Lockable* lock);
+	unordered_set<Item*> unlock(Lockable* lock);
 
 	Inventory* getInventory() { return &inventory; }
 
