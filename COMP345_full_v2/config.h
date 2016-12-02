@@ -89,12 +89,13 @@ public:
 
 private:
 	static int count;
-
+	static vector<EquipType> equiptypes;
 	EquipType(std::string aName, std::unordered_set<const Ability*> enchantments) :
 		index(count), name(aName), stats(enchantments) { count++; }
 
 public:
 	static const int getCount() { return count; }
+	static vector<EquipType> getTypes(){ return equiptypes; }
 	const std::unordered_set<const Ability*> stats;
 	vector<Ability> getEnchantments() const;
 	const int index;
