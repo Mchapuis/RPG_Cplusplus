@@ -58,7 +58,8 @@ void characterCreator()
 	map<int, std::string> filesList;
 	int itemNumber;
 	vector<int> abilities; //to get abilities of the character
-
+	Item* tempItem = nullptr;
+	bool validEquip = true;
 	const int ARRAY_SIZE = 6;
 	//for random number for abilities
 	int i_randomNumber;
@@ -101,9 +102,60 @@ void characterCreator()
 	{
 		cout << p.first << ". " << p.second << endl;
 	}
-	cout << "Please choose the number for the belt:" << endl;
-	cin >> itemNumber;
-	//pNew.equip(itemNumber);
+
+	do
+	{
+		validEquip = true;
+
+		do
+		{
+			cout << "Please choose the number of an item to equip, or 0 if finished: " << endl;
+			cin >> itemNumber;
+
+			if (filesList.count(itemNumber) > 1)
+			{
+				
+
+				try
+				{
+					tempItem->load(filesList[itemNumber]);
+					pNew.equip((Equipment*)tempItem);
+				}
+				catch (exception e)
+				{
+					cout << filesList[itemNumber] << " is not a valid equipment. " << endl;
+					continue;
+				}
+
+				/*
+				if (Equipment* e = dynamic_cast<Equipment*>(tempItem))
+				{
+					pNew.equip(e);
+					cout << filesList[itemNumber] << " has been equipped." << endl;
+				}
+				else
+				{
+					cout << filesList[itemNumber] << " is not a valid equipment. " << endl;
+				}
+				*/
+			}
+
+			else if (itemNumber != 0)
+			{
+				cout << "Invalid option. ";
+			}
+
+		} while (itemNumber != 0);
+
+		for (Equipment* eq : pNew.getInventory()->getAllEquipment())
+		{
+			if (eq == NULL)
+			{
+				cout << "Missing: " << eq->getType()->name << "." << endl;
+				validEquip = false;
+			}
+		}
+	} while (validEquip == false);
 
 	//
 	//END
@@ -394,6 +446,7 @@ void mapCreator()
 //Method to edit maps
 void mapEditor()
 {
+	/*
 	bool bValid = true;
 	//name of file to load from
 	string str_filename;
@@ -433,8 +486,8 @@ void mapEditor()
 
 	string mapName;
 	Map* aMap;
-	int height;
-	int width;
+	int height = 0;
+	int width = 0;
 	int row;
 	int column;
 	string chestItem;
@@ -630,6 +683,7 @@ void mapEditor()
 		cout << "We are not saving the map!" << endl;
 		cout << "This is the end of the creation map ...." << endl;
 	}
+	*/
 }
 
 //method to test 3 wrong maps
