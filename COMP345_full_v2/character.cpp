@@ -260,11 +260,11 @@ void GameCharacter::attack(GameCharacter* opponent, int distance)
 			//Attack roll to see if critical hit.
 			if (Dice::roll(1, 20, ATK_Bonus(i)) >= opponent->AC())
 			{
-				opponent->takeDamage(this->damageRoll(distance) * 2);
+				opponent->takeDamage(this, this->damageRoll(distance) * 2);
 			}
 
 			//Normal hit if not.
-			opponent->takeDamage(this->damageRoll(distance));
+			opponent->takeDamage(this, this->damageRoll(distance));
 		}
 		//Complete standard attack roll if between 2 and 18.
 		else if (d20 + ATK_Bonus(i) >= opponent->AC())
@@ -272,7 +272,7 @@ void GameCharacter::attack(GameCharacter* opponent, int distance)
 			int damage = this->damageRoll(distance);
 
 			//cout << i << "damage roll: " << damage << endl;
-			opponent->takeDamage(damage);
+			opponent->takeDamage(this, damage);
 			//cout << i << "opponent hp: " << opponent->Hp << "/" << opponent->MaxHp <<  endl;
 		}
 	}
@@ -281,7 +281,7 @@ void GameCharacter::attack(GameCharacter* opponent, int distance)
 
 int GameCharacter::modifyHp(int variation)
 {
-	Hp = (Hp + variation <= 0) ? Hp == 0 : Hp + variation;
+	Hp = (Hp - variation <= 0) ? Hp == 0 : Hp - variation;
 
 	return Hp;
 }

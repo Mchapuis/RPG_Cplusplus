@@ -211,9 +211,9 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 
 					//attack the npc!!!!
 					std::cout << "NPC info before: ---> HP: " << temp->getHp()  <<", Lvl " << temp->getLevel()<< endl;
-					me->attack(map->getPlayer(), lineDist((*objects)[me], (*objects)[temp]));
+					me->attack(temp, lineDist((*objects)[me], (*objects)[temp]));
 					std::cout << "you have attacked! " << endl;
-					std::cout << "NPC info before: ---> HP: " << temp->getHp() << ", Lvl " << temp->getLevel() << endl;
+					std::cout << "NPC info after: ---> HP: " << temp->getHp() << ", Lvl " << temp->getLevel() << endl;
 					turnAvailable--;
 					isWorking = true;
 				}
@@ -232,7 +232,7 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 			//---------------------ERASE MAP AND OTHER CONTENT
 			system("cls");
 			//----------------------PRINT UPDATED MAP
-			std::cout<<map->toString2();
+			std::cout << map->toString2();
 
 			Lockable *temp;
 			choseThis = 0;//reset variable
@@ -240,13 +240,23 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 			std::cout << "Choose what to unlock!!--->" << endl;
 			for (int k = 0; k < unlockable.size(); k++){
 				temp = unlockable.front();
-				std::cout << "Locked object at [" << (*objects)[temp]->getRow() << ", " << (*objects)[temp]->getCol() << "]----> PRESS " << choseThis << endl;
+				if (temp->isLocked()){
+					std::cout << "Locked object at [" << (*objects)[temp]->getRow() << ", " << (*objects)[temp]->getCol() << "]----> PRESS " << choseThis << endl;
+				}
+				else{
+					std::cout << "Unlocked object at [" << (*objects)[temp]->getRow() << ", " << (*objects)[temp]->getCol() << "]----> PRESS " << choseThis << endl;
+				}
+				
 				unlockable.pop_front();//pop the first element
 				unlockable.push_back(temp);//put it at the end of the list
 				choseThis++;//to get a number to press
 			}
+
 			bArray[1] = 0;
 			std::cin >> unlockThis;
+
+			//to check if chest is open or not
+			unordered_set<Item*> checkContent = unordered_set<Item*>();
 
 			bool isWorking = false;
 			for (int i = 0; i < unlockable.size(); i++){
@@ -254,9 +264,18 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 				if (unlockThis == i){
 
 					//unlock object!!!!!
-					me->unlock(unlockable.front());//----??? is this ok???
-
-					std::cout << "the object is unlocked! Object" << endl;
+					checkContent = me->unlock(unlockable.front());//----??? is this ok???
+					
+					if (!checkContent.empty()){
+						std::cout << "the chest is unlocked! Here is the content of the chest:" << endl;
+						//Printing elements of the chest and 
+						cout << temp->toString();
+						std::cout << "Here is the content of your backpack now!" << endl;
+						cout << me->toString();
+					}
+					else{
+						std::cout << "the chest is empty" << endl;
+					}
 					turnAvailable--;
 					isWorking = true;
 				}
@@ -480,11 +499,17 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 							i = p.second->getRow();
 							j = p.second->getCol();
 
+							//TESTING FOR DEBUGGING
+							//std::cout << "just tchecking if this is running" << endl;
+							//std::cout << "lockable at [ " << i << ", " << j <<" ]"<< endl;
+							//std::cout << "player is at [" << (*objects)[me]->getRow() << ", " << (*objects)[me]->getCol() <<" ]"<< endl;
+							//std::cout << "distGraph number is : " << distGraph[i][j] << endl;
+
 							//#step 3
 							//you can unlock chests or doors at 1 step distance only
-							if (distGraph[i][j] == 1){
+							if (lineDist((*objects)[me], (*objects)[lk]) == 1){
 								unlockable.push_back(lk);
-								//std::cout << "a lockable is near you! " << endl;
+								std::cout << "a lockable is near you! " << endl;
 							}
 						}
 					}
@@ -677,6 +702,7 @@ int FriendlyStrategy::takeDamage(GameCharacter* attacker, int damageValue)
 
 	if (attacker == map->getPlayer())
 	{
+		me->modifyHp(damage);
 		me->setStrategy(new HostileStrategy(me));
 		this->~FriendlyStrategy();
 	}

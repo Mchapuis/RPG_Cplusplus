@@ -60,7 +60,7 @@ private:
 	static int abilityRoll();
 
 	int damageRoll(int distance);
-	int takeDamage(int damageValue){ return strategy->takeDamage(this, damageValue); }
+	int takeDamage(GameCharacter* attacker, int damageValue){ return strategy->takeDamage(attacker, damageValue); }
 
 	//! Inline function that calculates an ability bonus based on
 	//! a given current ability score.

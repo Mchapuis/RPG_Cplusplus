@@ -46,6 +46,7 @@ public:
 	virtual const std::string getSymbol() { return "L"; }
 	virtual void updateLvl(int aLevel) {}
 	virtual bool reset(){ return true; }
+	virtual std::string toString(){ return " "; }
 };
 
 class Wall : public Placeable

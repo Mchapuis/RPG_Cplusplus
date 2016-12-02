@@ -70,8 +70,11 @@ unordered_set<Item*> Chest::removeAll()
 
 	if (!this->isLocked())
 	{
-		copyOfContent = this->getAll();
-		content = Inventory();
+		copyOfContent = this->content.getBackPack();
+		for (Item* i : this->content.getBackPack())
+		{
+			i = nullptr;
+		}
 	}
 
 	return copyOfContent;

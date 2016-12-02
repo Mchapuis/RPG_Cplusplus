@@ -632,7 +632,7 @@ int main(int argc, char *argv[])
 	int k;
 	
 	std::srand(time(0));
-	
+
 	runGame();
 
 	//reboot();
