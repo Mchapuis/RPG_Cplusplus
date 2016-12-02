@@ -92,42 +92,26 @@ void characterCreator()
 	cout << "------------------>WIS: " << abilities[4] << endl;
 	cout << "------------------>CHA: " << abilities[5] << endl;
 
-	/////////////EQUIP ITEMS
-	cout << "This is the list of saved items:" << endl;
 
-	//
+	/*
+	//EQUIP ITEMS
+	cout << "This is the list of saved items:" << endl;
 	filesList = listFiles(ASSETS_PATH + "//items//");
 
 	for (std::pair<int, std::string> p : filesList)
 	{
 		cout << p.first << ". " << p.second << endl;
 	}
-
 	do
 	{
-		validEquip = true;
-
-		do
+		for (EquipType e : EquipType::getTypes())
 		{
-			cout << "Please choose the number of an item to equip, or 0 if finished: " << endl;
+
+			cout << "Please chose your " << e.name << endl;
 			cin >> itemNumber;
-
-			if (filesList.count(itemNumber) > 1)
+			cout << filesList.count(itemNumber) << endl;
+			if (filesList.count(itemNumber) > 0)
 			{
-				
-
-				try
-				{
-					tempItem->load(filesList[itemNumber]);
-					pNew.equip((Equipment*)tempItem);
-				}
-				catch (exception e)
-				{
-					cout << filesList[itemNumber] << " is not a valid equipment. " << endl;
-					continue;
-				}
-
-				/*
 				if (Equipment* e = dynamic_cast<Equipment*>(tempItem))
 				{
 					pNew.equip(e);
@@ -137,7 +121,7 @@ void characterCreator()
 				{
 					cout << filesList[itemNumber] << " is not a valid equipment. " << endl;
 				}
-				*/
+
 			}
 
 			else if (itemNumber != 0)
@@ -145,7 +129,8 @@ void characterCreator()
 				cout << "Invalid option. ";
 			}
 
-		} while (itemNumber != 0);
+
+		}
 
 		for (Equipment* eq : pNew.getInventory()->getAllEquipment())
 		{
@@ -156,7 +141,7 @@ void characterCreator()
 			}
 		}
 	} while (validEquip == false);
-
+	*/
 	//
 	//END
 	cout << "Thank you for creating a character! Here are the statistcs" << endl;
@@ -171,6 +156,7 @@ void characterCreator()
 	cout << "------------------>INTL: " << abilities[3] << endl;
 	cout << "------------------>WIS: " << abilities[4] << endl;
 	cout << "------------------>CHA: " << abilities[5] << endl;
+	/*
 	cout << "Equipment:" << endl;
 	cout << "Belt:" << endl;
 	cout << "Boots:" << endl;
@@ -179,7 +165,7 @@ void characterCreator()
 	cout << "Ring:" << endl;
 	cout << "Shield:" << endl;
 	cout << "Weapon:" << endl;
-
+	*/
 	cout << "Do you want to save this character? Please enter Y or N" << endl;
 	cin >> str_answer;
 	if ((str_answer.compare("Y") == 0) || (str_answer.compare("y") == 0)){
