@@ -21,28 +21,26 @@ private:
 	{
 		ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(Placeable);
 		ar & BOOST_SERIALIZATION_NVP(code);
-		ar & BOOST_SERIALIZATION_NVP(status);
+		ar & BOOST_SERIALIZATION_NVP(locked);
 	}
 
 	int code;
-	bool status; //0 = locked/closed, 1 = unlocked/closed, >1 = unlocked/open
+	bool locked; //0 = locked/closed, 1 = unlocked/closed, >1 = unlocked/open
 	static const std::string symbol;
 
 protected:
-	Lockable() : code(rand()), status(1) {}
-	Lockable(std::string name) : code(rand()), status(1) {}
+	Lockable() : code(rand()), locked(false) {}
+	Lockable(std::string name) : code(rand()), locked(false) {}
 
 public:
 	virtual ~Lockable() {}
 	KeyItem* getKey() { return new KeyItem(this->keyName(), code); }
 	//void setLock(bool isLocked) { locked = isLocked; }
 	//bool isLocked() { return locked; }
-	int getStatus() { return status; }
-	void setStatus(int aStatus) { status = (aStatus < 0) ? 0 : aStatus; }
-	int unlock(KeyItem aKey);
-	int open();
-	bool isLocked() { return status == LOCKED; }
-	bool isOpen() { return status == OPEN; }
+	void setLocked(bool isLocked) { locked = isLocked; }
+	bool unlock(KeyItem aKey);
+	bool isLocked() { return locked; }
+	virtual unordered_set<Item*> removeAll() { return unordered_set<Item*>(); }
 	virtual std::string keyName() { return "key"; }
 	virtual bool isWalkable(){ return false; }
 	virtual const std::string getSymbol() { return "L"; }
@@ -88,10 +86,11 @@ public:
 	Door() {}
 	~Door() {}
 	void updateLvl(int aLevel){}
-	const std::string getSymbol() { return this->isOpen() ? symbolOpen : symbolClosed; }
+	const std::string getSymbol() { return this->isLocked() ? symbolClosed : symbolOpen; }
 	bool isWalkable() { return !this->isLocked(); }
 	std::string keyName() { return "Door Key"; }
 	bool reset(){ return true; }
+	unordered_set<Item*> removeAll(){ return unordered_set<Item*>(); }
 };
 
 class Chest : public Lockable, public MySerializable//, public Placeable
@@ -128,6 +127,7 @@ public:
 	unordered_set<Item*> removeAll();
 	std::string keyName() { return "Chest Key"; }
 	bool isWalkable() { return false; }
+	unordered_set<Item*> open(){ return (!isLocked()) ? this->content.getBackPack() : unordered_set<Item*>(); }
 
 	void load(std::string filename);
 	void save(std::string filename);

@@ -210,11 +210,11 @@ void GameCharacter::startTurn(Map* map, std::map<Placeable*, Cell*> *objects)
 
 
 
-bool GameCharacter::unlock(Lockable* lock)
+unordered_set<Item*> GameCharacter::unlock(Lockable* lock)
 {
 	std::unordered_set<KeyItem*> keyChain;
 
-	if (!lock->isLocked()) return lock->open();
+	if (!lock->isLocked()) return lock->removeAll();
 
 	for (KeyItem* k : keyChain)
 	{
@@ -222,11 +222,11 @@ bool GameCharacter::unlock(Lockable* lock)
 		{
 			keyChain.erase(k);
 			delete k;
-			return lock->open();
+			return lock->removeAll();
 		}
 	}
 
-	return false;
+	return std::unordered_set<Item*>();
 }
 
 void GameCharacter::attack(GameCharacter* opponent, int distance)

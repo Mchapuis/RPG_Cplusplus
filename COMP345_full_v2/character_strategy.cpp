@@ -86,7 +86,7 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 	std::list<GameCharacter*> npc = list<GameCharacter*>();
 	std::list<Lockable*> unlockable = list<Lockable*>();
 	
-	int stepsCount = getSpeed(me);//total steps available
+	int stepsCount = 30;//getSpeed(me);//total steps available
 	int turnAvailable = 3;//available turns number left...at 0, exit turn() function
 
 	//IF PLAYER MOVE && STEPS COUNTER != 0 && TURN != OVER :: RESTART HERE
@@ -201,7 +201,7 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 			//---------------------ERASE MAP AND OTHER CONTENT
 			system("cls");
 			//----------------------PRINT UPDATED MAP
-			map->toString2();
+			std::cout << map->toString2();
 			//Find the NPC to attack----loop throught the list
 			//to check if attack is working
 			bool isWorking = false;
@@ -210,9 +210,10 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 				if (attackInput == i){
 
 					//attack the npc!!!!
+					std::cout << "NPC info before: ---> HP: " << temp->getHp()  <<", Lvl " << temp->getLevel()<< endl;
 					me->attack(map->getPlayer(), lineDist((*objects)[me], (*objects)[temp]));
-					
-					std::cout << "you have attacked!" << endl;
+					std::cout << "you have attacked! " << endl;
+					std::cout << "NPC info before: ---> HP: " << temp->getHp() << ", Lvl " << temp->getLevel() << endl;
 					turnAvailable--;
 					isWorking = true;
 				}
@@ -237,7 +238,7 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 			choseThis = 0;//reset variable
 			int unlockThis = 0;
 			std::cout << "Choose what to unlock!!--->" << endl;
-			while (!unlockable.empty()){
+			for (int k = 0; k < unlockable.size(); k++){
 				temp = unlockable.front();
 				std::cout << "Locked object at [" << (*objects)[temp]->getRow() << ", " << (*objects)[temp]->getCol() << "]----> PRESS " << choseThis << endl;
 				unlockable.pop_front();//pop the first element
@@ -256,7 +257,6 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 					me->unlock(unlockable.front());//----??? is this ok???
 
 					std::cout << "the object is unlocked! Object" << endl;
-					std::cout << "check if objects form chest is getting to the character" << endl;
 					turnAvailable--;
 					isWorking = true;
 				}
@@ -279,7 +279,6 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 			std::cout<<map->toString2();
 			int pressed = 0;
 			bool bEquip = true;
-
 			//get objects in backpack!
 			unordered_set<Item*> inBackpack = me->getInventory()->getBackPack();
 
@@ -306,21 +305,29 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 					}
 				}
 				int counter = 0;//count # of elements in backpack to show on screen
+
 				//display on screen
-				for (Equipment* i : backpack){
-					std::cout << i->toString() << "-----PRESS " << counter << endl;
-					counter++;
+				//for (Equipment* i : backpack){
+					//std::cout << i->toString() << "            -----PRESS " << counter << endl;
+					//counter++;
+				//}
+				for (int k = 0; k < backpack.size();k++){
+					std::cout << backpack[k]->toString() << "               -----PRESS " << k << endl;
 				}
 
 				//get answer from user
 				std::cin >> pressed;
 
 				//go throught the backpack, found the item the user wants and equip it
-				for (int i = 0; i < backpack.size(); i++){
-					if (pressed == i){//if the element is found
-						std::cout << "The item " << me->equip(backpack[i]) << " has been equipped!" << endl;
+				for (int k = 0; k < backpack.size(); k++){
+					if (pressed == k){//if the element is found
+						me->equip(backpack[k]);
 						bEquip = false;
-					}
+
+						system("cls");
+						std::cout << map->toString2();
+						std::cout << "The item has been equipped!" << endl;
+					} 
 					//if it's the last item but nothing has been equipped
 					else if ((i == (backpack.size() - 1)) && (bEquip == true)){
 						std::cout << "Nothing has been equipped...starting again..." << endl;
@@ -428,7 +435,7 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 					//----------------------PRINT UPDATED MAP
 					std::cout << map->toString2();
 
-					cout << "Character moved and the map reprints it`s movements!!!!" << endl;
+					//cout << "Character moved and the map reprints it`s movements!!!!" << endl;
 					stepsCount--;
 
 					//********************************************************************************
@@ -453,15 +460,18 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 							//get the i row # and the j column # of the GameCharacter
 							i = p.second->getRow();
 							j = p.second->getCol();
-							std::cout << "just tchecking if this is running" << endl;
-							std::cout << "character at [ " << i << ", " << j <<" ]"<< endl;
-							std::cout << "player is at [" << (*objects)[me]->getRow() << ", " << (*objects)[me]->getCol() <<" ]"<< endl;
-							std::cout << "distGraph number is : " << distGraph[i][j] << endl;
+
+							//TESTING FOR DEBUGGING
+							//std::cout << "just tchecking if this is running" << endl;
+							//std::cout << "character at [ " << i << ", " << j <<" ]"<< endl;
+							//std::cout << "player is at [" << (*objects)[me]->getRow() << ", " << (*objects)[me]->getCol() <<" ]"<< endl;
+							//std::cout << "distGraph number is : " << distGraph[i][j] << endl;
+							
 							//#step 3
 							//compare it with the matrix of distance to see if close to character--- yes? save it in the stack
 							if (distGraph[i][j] > 0 && distGraph[i][j] <= 4){
 								npc.push_back(g);
-								std::cout << "a player is near you! " << endl;
+								//std::cout << "a player is near you! " << endl;
 							}
 						}
 						else if (Lockable *lk = dynamic_cast<Lockable*>(p.first)){
@@ -474,7 +484,7 @@ void HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 							//you can unlock chests or doors at 1 step distance only
 							if (distGraph[i][j] == 1){
 								unlockable.push_back(lk);
-								std::cout << "a lockable is near you! " << endl;
+								//std::cout << "a lockable is near you! " << endl;
 							}
 						}
 					}

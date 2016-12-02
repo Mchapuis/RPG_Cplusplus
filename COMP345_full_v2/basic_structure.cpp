@@ -14,18 +14,11 @@ const std::string Chest::symbolOpen = string(1, dollar);
 const std::string Chest::symbolClosed = string(1, cent);
 
 
-int Lockable::unlock(KeyItem aKey)
+bool Lockable::unlock(KeyItem aKey)
 {
-	if (code == aKey.getCode() && status == LOCKED) status = CLOSED;
+	if (locked && code == aKey.getCode()) locked = false;
 
-	return status;
-}
-
-int Lockable::open()
-{
-	if (status == CLOSED) status = OPEN;
-	
-	return status;
+	return locked;
 }
 
 /*
@@ -75,7 +68,7 @@ unordered_set<Item*> Chest::removeAll()
 {
 	unordered_set<Item*> copyOfContent = unordered_set<Item*>();
 
-	if (this->getStatus() > 1)
+	if (!this->isLocked())
 	{
 		copyOfContent = this->getAll();
 		content = Inventory();

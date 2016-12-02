@@ -135,6 +135,8 @@ public:
 	vector<vector<int>> dijkstra(int const refRow, int const refCol);
 	vector<vector<int>> dijkstra(Cell* reference);
 
+	bool hasDoor(Cell* aCell);
+
 	bool operator==(Map& const rhsMap);
 	bool operator!=(Map& const rhsMap);
 
