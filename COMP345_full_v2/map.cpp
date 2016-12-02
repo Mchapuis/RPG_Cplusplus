@@ -18,7 +18,7 @@ std::map<char, const Direction*> Direction::keyMap = create_map();
 //! @return a random direction (0 is North, 1 is N-East, etc.)
 Direction Direction::randDir()
 {
-	switch (rand() % 7)
+	switch (rand() % 8)
 	{
 	case 0: return N;
 	case 1: return NE;
