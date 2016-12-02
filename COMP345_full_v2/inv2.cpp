@@ -266,6 +266,7 @@ int Inventory::getWeight()
 
 	for (Equipment* e : equipped)
 	{
+		if (e != NULL)
 		result += e->getWeight();
 	}
 

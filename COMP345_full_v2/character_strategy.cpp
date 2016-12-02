@@ -42,18 +42,19 @@ Cell* CharacterStrategy::stepToward(Map* map, Cell* source, Cell* dest)
 	int min = minRow * minCol;
 	int temp;
 	vector<vector<int>> distances;
-
+	unordered_set<Cell*> adjacents = source->getAdjacent();
 	distances = graph(map, dest);
+	
 
-	for (Cell* c : source->getAdjacent())
+	for (Cell* c : adjacents)
 	{
 		temp = distances[c->getRow()][c->getCol()];
 
 		if (temp < min && temp >= 0)
 		{
-			minRow = source->getRow();
-			minCol = source->getCol();
-			min = distances[source->getRow()][source->getCol()];
+			minRow = c->getRow();
+			minCol = c->getCol();
+			min = temp;
 		}
 	}
 
@@ -86,7 +87,7 @@ bool HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 	std::list<GameCharacter*> npc = list<GameCharacter*>();
 	std::list<Lockable*> unlockable = list<Lockable*>();
 	
-	int stepsCount = 100;//getSpeed(me);//total steps available
+	int stepsCount = getSpeed(me);//total steps available
 	int turnAvailable = 3;//available turns number left...at 0, exit turn() function
 
 	//IF PLAYER MOVE && STEPS COUNTER != 0 && TURN != OVER :: RESTART HERE
@@ -430,7 +431,7 @@ bool HumanPlayerStrategy::turn(std::map<Placeable*, Cell*> *objects)
 			//----------------------PRINT UPDATED MAP
 			std::cout << map->toString2();
 			//exit
-			turnAvailable = 4;
+			turnAvailable = 0;
 		}
 		//-----------------------------------PLAYER WANTS TO MOVE
 		else{
@@ -557,7 +558,8 @@ bool HostileStrategy::turn(std::map<Placeable*, Cell*> *objects)
 	system("cls");
 	//---------------------PRINTING MAP
 	std::cout << map->toString2();
-	int i;
+	int i = getSpeed(me);
+	int j = 0;
 
 	int range = me->getRange(); //get weapon range
 
@@ -572,10 +574,9 @@ bool HostileStrategy::turn(std::map<Placeable*, Cell*> *objects)
 
 	distGraph = graph(map, playerCell);
 
-	while (walking)
-	{
-		i = getSpeed(me);//speed is 3 now because there is no weight now.
 
+	while (walking && i > 0)
+	{
 		//cansee() give two cells - calculate linear distance, return true or false
 		if (!canSee(myCell, playerCell))
 		{
@@ -600,20 +601,24 @@ bool HostileStrategy::turn(std::map<Placeable*, Cell*> *objects)
 						break;
 					}
 				} while (temp == myCell);//while the cell I am on didn;t change...
-
+				std::cout << map->toString2();
 				i--;
 			}
 		}
 
 		//am I the the player and I can still move and my cell is not null --- see through walls
-		if (canSee(myCell, playerCell) && i > 0 && temp != NULL)
+		if (canSee(myCell, playerCell) && i > 0)
 		{
 			while (i > 0)
 			{
 				i--;
+				cout << i;
 				//need to fix stepToward! not working, asks oliver
-				myCell = map->move(myCell, stepToward(map, myCell, playerCell));
+				//std::cout << "before my cell update value" << endl;
+				myCell = stepToward(map, myCell, playerCell);
+				//std::cout << "Trying to update cell value" << endl;
 				(*objects)[me] = myCell;//Update the value
+				std::cout << map->toString2();
 
 				//lineDist() -- strait line distance between ennemi and player
 				// range is the weapon
@@ -626,11 +631,21 @@ bool HostileStrategy::turn(std::map<Placeable*, Cell*> *objects)
 			}
 		}
 	}
+	
 
+	int keyAnswer = 0;
 	//strait line distance
 	if (lineDist(myCell, playerCell) <= range)
 	{
+		std::cout << "Player HP before is : " << map->getPlayer()->getHp() << endl;
 		me->attack(map->getPlayer(), lineDist(myCell, playerCell));
+
+		std::cout << "Player has been attacked, HP is now: " << map->getPlayer()->getHp() << endl;
+		
+		while (keyAnswer != 5){
+			std::cout << "Continue --- PRESS 5 --->" << endl;
+			std::cin >> keyAnswer;
+		}
 	}
 	return false;
 }
@@ -647,14 +662,14 @@ int HostileStrategy::takeDamage(GameCharacter* attacker, int damageValue)
 //! See HostileStrategy for description of function --- nearly the same
 bool FriendlyStrategy::turn(std::map<Placeable*, Cell*> *objects)
 {
-	std::cout << "FriendlyStrategy" << endl;
-	int i;
+	//---------------------ERASE MAP AND OTHER CONTENT
+	system("cls");
+	//---------------------PRINTING MAP
+	std::cout << map->toString2();
+	int i = getSpeed(me);
+	int j = 0;
 
-	//Set to accomodate for an active friendly NPC in battles,
-	//but not implemented yet.
-	int range = me->getRange();
-
-	int visibility = std::max(range, SIGHT_DIST);
+	int visibility = SIGHT_DIST;
 
 	bool walking = true;
 
@@ -665,46 +680,54 @@ bool FriendlyStrategy::turn(std::map<Placeable*, Cell*> *objects)
 
 	distGraph = graph(map, playerCell);
 
-	while (walking)
+	while (walking && i > 0)
 	{
-		i = getSpeed(me);
-
+		//cansee() give two cells - calculate linear distance, return true or false
 		if (!canSee(myCell, playerCell))
 		{
-			while (i > 0 && walking)
+			while (i > 0 && walking)//if my speed is bigger than 0 and I am still walking
 			{
+				//record the cell I am on
 				temp = myCell;
 
+				//loop while temp == myCell...
+				//--if the movement is possible, the cell value will be different
+				//--if the movement is impossible, the cell value returned is the same.
 				do
 				{
+					//get a random direction form randDir()
 					myCell = map->move(myCell, Direction::randDir());
-					(*objects)[me] = myCell;//update value
+					(*objects)[me] = myCell;//me is a placebale index value and myCell is the value attached to the index 
+					//if the player is in the attack zone, stop to attack
 					if (canSee(myCell, playerCell))
 					{
+						std::cout << "Friend saw the player and follows him" << endl;
 						walking = false;
 						break;
 					}
-				} while (temp == myCell);
-
+				} while (temp == myCell);//while the cell I am on didn;t change...
+				std::cout << map->toString2();
 				i--;
 			}
 		}
 
-		if (canSee(myCell, playerCell) && i > 0 && temp != NULL)
+		//am I the the player and I can still move and my cell is not null --- see through walls
+		if (canSee(myCell, playerCell) && i > 0)
 		{
 			while (i > 0)
 			{
 				i--;
-				myCell = map->move(myCell, stepToward(map, myCell, playerCell));
-				(*objects)[me] = myCell;//update value!
-				if (lineDist(myCell, playerCell) <= range)
-				{
-					walking = false;
-					break;
-				}
+				cout << i;
+				//need to fix stepToward! not working, asks oliver
+				//std::cout << "before my cell update value" << endl;
+				myCell = stepToward(map, myCell, playerCell);
+				//std::cout << "Trying to update cell value" << endl;
+				(*objects)[me] = myCell;//Update the value
+				std::cout << map->toString2();
 			}
 		}
 	}
+
 	return false;
 }
 
